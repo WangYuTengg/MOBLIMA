@@ -12,7 +12,7 @@ import java.util.*;
 
 public class Payment {
     
-    private static double base_price = 10;
+    public static double base_price = 10;
     
     public static void setBasePrice(double price)
     {
@@ -28,11 +28,11 @@ public class Payment {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         int day = calendar.get(Calendar.DAY_OF_WEEK);
-        if (mType == "SENIOR" && day >= 1 && day <= 5 && date.getHours() < 18 && !show.is3D())
+        if (mType == "SENIOR" && day >= 1 && day <= 5 && calendar.get(Calendar.HOUR_OF_DAY) < 18 && !show.is3D())
         {
         		price = 0.5 * base_price;
         }
-        else if (mType == "STUDENT" && day >= 1 && day <= 5 && date.getHours() < 18)
+        else if (mType == "STUDENT" && day >= 1 && day <= 5 && calendar.get(Calendar.HOUR_OF_DAY) < 18)
         {	
         		if(!show.is3D()) price = 0.8 * base_price;
         		else price = 0.8 * base_price + 2;
@@ -44,7 +44,7 @@ public class Payment {
         }
         else if (day == 5)
         {
-        	if (date.getHours() < 18)
+        	if (calendar.get(Calendar.HOUR_OF_DAY) < 18)
         	{
         		if(!show.is3D()) price = base_price;
             	else price = base_price + 2;
