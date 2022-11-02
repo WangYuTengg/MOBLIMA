@@ -5,10 +5,10 @@ import controller.*;
 import model.MovieGoer;
 
 public class MainMenuUi {
-	public void main() {
+	public void main(Database db) {
 		Scanner sc = new Scanner(System.in);
 		boolean exit = false;
-		DataController.main(); // initialise database
+
 		do {
 			System.out.println("||----------- Welcome to MOBLIMA ----------||");
 			System.out.println("1. Login as admin");
@@ -128,6 +128,7 @@ public class MainMenuUi {
 	// verifyLogin method for both admin and user
 	public static boolean verifyLogin() {
 		// add verifying code here
+		System.out.println("");
 		boolean result = true;
 		if (result == true)
 			System.out.println("Login verified.");
