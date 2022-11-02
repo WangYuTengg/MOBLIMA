@@ -82,7 +82,7 @@ public class ShowListing {
 		displayShows(5);
 	}
 
-	public void createShow() {
+	public void createShow() throws ParseException {
 		Movie[] movies = (Movie[]) Database.movieListing.getMovies().toArray();
 		for (int i = 0; i < movies.length; i++) {
 			System.out.printf("%d. Movie Name: %s\n", i + 1, movies[i].getTitle());
@@ -119,7 +119,7 @@ public class ShowListing {
 		System.out.println("Show successfully deleted!");
 	}
 
-	public void updateShow(int show_ind) {
+	public void updateShow(int show_ind) throws ParseException {
 		Scanner in = new Scanner(System.in);
 		int choice;
 		Show show = shows.get(show_ind);
