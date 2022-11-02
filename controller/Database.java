@@ -66,12 +66,12 @@ public class Database {
 	 */
 	Database(ArrayList<Cineplex> cineplexes, MovieListing movieListing, ShowListing showListing,
 			BookingSystem bookingSystem, ArrayList<MovieGoer> movieGoers, ArrayList<Staff> staffs) {
-		this.cineplexes = cineplexes;
-		this.movieListing = movieListing;
-		this.showListing = showListing;
-		this.bookingSystem = bookingSystem;
-		this.movieGoers = movieGoers;
-		this.staffs = staffs;
+		Database.cineplexes = new ArrayList<Cineplex>();
+		Database.movieListing = new MovieListing();
+		Database.showListing = new ShowListing();
+		Database.bookingSystem = new BookingSystem(Database.showListing);
+		Database.movieGoers = new ArrayList<MovieGoer>();
+		Database.staffs = new ArrayList<Staff>();
 	}
 
 	// Methods
