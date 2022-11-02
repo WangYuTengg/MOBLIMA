@@ -86,17 +86,10 @@ public class MovieGoer {
 	// Functionalities
 
 	/**
-	 * Display all movies.
-	 */
-	public void displayMovieListing() {
-		Database.movieListing.listMovies();
-	}
-
-	/**
 	 * Add review to a movie.
 	 */
-	public void addReview() {
-		this.displayMovieListing();
+	public static void addReview() {
+		Database.movieListing.listMovies();
 		System.out.println("Please choose the movie by index:\n");
 		Scanner sc = new Scanner(System.in);
 		int index = sc.nextInt();
