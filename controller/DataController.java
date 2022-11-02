@@ -3,17 +3,19 @@ package controller;
 import model.Cinema;
 import model.Cineplex;
 import model.MovieGoer;
+import model.Staff;
+import model.Movie;
 
 public class DataController {
 
-	public static void main() {
+	public static Database main() {
 		Database database = new Database();
 		initCineplexes(database);
 		initMovieGoers(database);
 		initStaff(database);
 		initMovieListing(database);
 		initShowListing(database);
-		return;
+		return database;
 	}
 
 	public static void initCineplexes(Database db) {
@@ -57,10 +59,28 @@ public class DataController {
 	}
 
 	public static void initStaff(Database db) {
-		return;
+		Staff admin1 = new Staff("admin1", "admin123", "Yu Teng");
+		Staff admin2 = new Staff("admin2", "admin123", "Yong Jian");
+		Staff admin3 = new Staff("admin3", "admin123", "Davyn");
+		Staff admin4 = new Staff("admin4", "admin123", "Aditya");
+		Staff admin5 = new Staff("admin5", "admin123", "Si Han");
+
+		db.addStaff(admin1);
+		db.addStaff(admin2);
+		db.addStaff(admin3);
+		db.addStaff(admin4);
+		db.addStaff(admin5);
+
 	}
 
 	public static void initMovieListing(Database db) {
+		String[] avengersCast = {"Tom Hiddlestone", "Samuel L Jackson", "Chris Hemsworth"};
+		String[] blackAdamCast = {"Dwayne Johnson", "Sarah Shahi"};
+		Movie theAvengers = new Movie("The Avengers", true, "NOW_SHOWING", "Anthony Russo", "The Avengers band together to defeat bad dudes", avengersCast, 3);
+		Movie blackAdam = new Movie("Black Adam", true, "PREVIEW", "Collet-Sarra", "Teth adams was bestowed powers by god", blackAdamCast, 2);
+		
+		Database.movieListing.addMovie(theAvengers);
+		Database.movieListing.addMovie(blackAdam);
 		return;
 	}
 
