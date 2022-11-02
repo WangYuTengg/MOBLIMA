@@ -115,7 +115,7 @@ public class MovieGoer {
 	/*
 	 * 
 	 */
-	public void searchMovie() {
+	public static void searchMovie() {
 		return;
 	}
 
@@ -143,7 +143,7 @@ public class MovieGoer {
 	/**
 	 * View the detail of the movie.
 	 */
-	public void viewMovieDetails() {
+	public static void viewMovieDetails() {
 		Database.movieListing.listMovies();
 		System.out.printf("Enter the index of movie:\n");
 		Scanner sc = new Scanner(System.in);
@@ -153,3 +153,4 @@ public class MovieGoer {
 	}
 
 }
+
