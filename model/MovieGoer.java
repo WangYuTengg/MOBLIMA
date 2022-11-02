@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MovieGoer {
-	Scanner sc = new Scanner(System.in);
-	// Attributes
 	/**
 	 * MovieGoer's age
 	 */
@@ -32,8 +30,6 @@ public class MovieGoer {
 	 */
 	private ArrayList<Ticket> tickets;
 
-	// Constructor
-
 	/**
 	 * Creates a MovieGoer with the given attributes
 	 */
@@ -45,8 +41,6 @@ public class MovieGoer {
 		this.tickets = new ArrayList<Ticket>();
 	}
 
-	// Methods
-	// Get Methods
 	/*
 	 * Get the age of this MovieGoer
 	 * 
@@ -100,8 +94,9 @@ public class MovieGoer {
 		
 		// loop to get a valid index from user
 		do{
-			System.out.println("Please choose the movie by index:\n");
+			System.out.println("Please choose the movie by index:");
 			System.out.println("Enter -1 to exit.");
+			System.out.println("Select option: ");
 
 			//check for integer input
 			while (!sc.hasNextInt()) {
@@ -117,12 +112,12 @@ public class MovieGoer {
 			}
 
 			// check for valid movie index
-			if ( userInput > 0 && userInput <= moviesLength) {
+			if ( userInput >= 0 && userInput <= moviesLength) {
 				exit = true; //exit loop
 			} 
 			else System.out.println("Invalid index, please try again.");
 		}while(!exit);
-		index = userInput - 1;
+		index = userInput;
 
 		// Loop to get a valid rating
 		do{
@@ -130,7 +125,7 @@ public class MovieGoer {
 			System.out.println("Option selected: ");
 			//check for integer input
 			while (!sc.hasNextInt()) {
-				System.out.println("Please enter a number.");
+				System.out.println("Please enter a valid rating ( 1 to 5 ).");
 				sc.next();
 			}
 			userInput = sc.nextInt();
@@ -143,15 +138,13 @@ public class MovieGoer {
 		rating = userInput;
 
 		// get MovieGoer input for movie review
-		System.out.println("Please enter the comment:\n");
+		System.out.println("Please enter the comment: ");
 		String comment = sc.next();
-		sc.close();
 
 		// add review to Movie
 		Database.movieListing.getMovies().get(index).addReview(rating, comment);
 		System.out.printf("Successfully adding review to %s!\n",
 				Database.movieListing.getMovies().get(index).getTitle());
-		return;
 	}
 
 	/**
@@ -188,7 +181,6 @@ public class MovieGoer {
 		} else {
 			System.out.println("No history available");
 		}
-		return;
 	}
 
 	/**
@@ -206,7 +198,7 @@ public class MovieGoer {
 
 		// loop to get valid index of movie from MovieGoer
 		do{
-			System.out.println("Please choose the movie by index:\n");
+			System.out.println("Please choose the movie by index:");
 			System.out.println("Enter -1 to exit.");
 			System.out.print("Select Option: ");
 
@@ -224,15 +216,13 @@ public class MovieGoer {
 			}
 
 			// check for valid movie index
-			if ( userInput > 0 && userInput <= moviesLength) {
+			if ( userInput >= 0 && userInput <= moviesLength) {
 				exit = true; //exit loop
 			} 
 			else System.out.println("Invalid index, please try again.");
 		}while(!exit);
-		index = userInput - 1;
-		sc.close();
+		index = userInput;
 		Database.movieListing.getMovies().get(index).display();
-		return;
 	}
-
 }
+
