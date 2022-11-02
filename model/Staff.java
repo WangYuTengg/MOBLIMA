@@ -172,8 +172,9 @@ public class Staff {
     public void setTicketPrice(){
         Scanner scan = new Scanner(System.in);
         double price = scan.nextDouble();
-        Payment.setTicketPrice(price);
+        Payment.setBasePrice(price);
         System.out.println("The base ticket price has been updated.");
+        scan.close();
     }
     
 }
