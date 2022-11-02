@@ -59,7 +59,13 @@ public class Movie{
      * @param castLength    the length of the cast list of the movie.
      */
     public Movie(String title,boolean blockbuster,ShowingStatus status,String director,String synopsis,String[] cast,int castLength){
-        this.movieTitle=title;this.isBlockbuster=blockbuster;this.showingStatus=status;this.director=director;this.synopsis=synopsis;this.cast=cast;this.castLength=castLength;
+        this.movieTitle=title;
+        this.isBlockbuster=blockbuster;
+        this.showingStatus=status;
+        this.director=director;
+        this.synopsis=synopsis;
+        this.cast=cast;
+        this.castLength=castLength;
     }
     /**
      * Get the title of the movie.
