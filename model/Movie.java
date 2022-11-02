@@ -4,7 +4,7 @@
  @author    Guo Sihan
  @since     2022-10-30
  */
-package model;
+package MOBLIMA;
 import java.util.ArrayList;
 
 public class Movie{
@@ -12,10 +12,6 @@ public class Movie{
      * The title of the movie.
      */
     private String movieTitle;
-    /**
-     * The 3D type of the movie.
-     */
-    private boolean is3D;
     /**
      * The bolockbuster type of the movie.
      */
@@ -62,19 +58,14 @@ public class Movie{
      * @param cast          the cast list of the movie.
      * @param castLength    the length of the cast list of the movie.
      */
-    public Movie(String title,boolean is3D,boolean blockbuster,String status,String director,String synopsis,String[] cast,int castLength){
-        this.movieTitle=title;this.is3D=is3D;this.isBlockbuster=blockbuster;this.showingStatus=status;this.director=director;this.synopsis=synopsis;this.cast=cast;this.castLength=castLength;
+    public Movie(String title,boolean blockbuster,String status,String director,String synopsis,String[] cast,int castLength){
+        this.movieTitle=title;this.isBlockbuster=blockbuster;this.showingStatus=status;this.director=director;this.synopsis=synopsis;this.cast=cast;this.castLength=castLength;
     }
     /**
      * Get the title of the movie.
      * @return  the title of the movie.
      */
     public String getTitle(){return this.movieTitle;}
-    /**
-     * Get the 3D type of the movie.
-     * @return  the 3D type of the movie.
-     */
-    public boolean is3D(){return this.is3D;}
     /**
      * Get the blockbuster type of the movie.
      * @return  the blockbuster type of the movie.
@@ -121,11 +112,6 @@ public class Movie{
      */
     public void setStatus(String st){this.showingStatus=st;}
     /**
-     * Set the 3D type of the movie.
-     * @param is3D  the 3D type to be set.
-     */
-    public void set3D(boolean is3D){this.is3D=is3D;}
-    /**
      * Set the blockbuster type of the movie.
      * @param blockbuster  the blockbuster type to be set.
      */
@@ -150,7 +136,6 @@ public class Movie{
      */
     public void display(){
         System.out.printf("Movie titile:\n%s\n",this.movieTitle);
-        System.out.printf("Movie 3D type:\n%b\n",this.is3D);
         System.out.printf("Movie blockbuster type:\n%b\n",this.isBlockbuster);
         System.out.printf("Movie status:\n%s\n",this.showingStatus);
         System.out.printf("Movie synposis:\n%s\n",this.synopsis);

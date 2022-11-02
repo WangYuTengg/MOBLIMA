@@ -5,7 +5,7 @@
   @since    2022-10-30
 */
 
-package model;
+package MOBLIMA;
 import java.util.*;
 import java.text.*;
 
@@ -22,6 +22,10 @@ public class Show {
      * The movie of the show.
      */
     private Movie movie;
+    /**
+     * The 3D type of the show.
+     */
+    private boolean is3D;
     /**
      * The cinema of the show.
      */
@@ -72,6 +76,11 @@ public class Show {
      */
     public void setCinema(Cinema cinema){this.cinema=cinema;}
     /**
+     * Set the 3D type of the show.
+     * @param is3D  the 3D type.
+     */
+    public void set3D(boolean is3D){this.is3D=is3D;}
+    /**
      * Finding the th ticket
      * @param index the index of the ticket to be find.
      * @return      the ticket found.
@@ -92,6 +101,11 @@ public class Show {
      * @return  the cineplex of the show.
      */
     public Cineplex getCineplex(){return this.cineplex;}
+    /**
+     * Get the 3D type of the show.
+     * @return  the 3D type.
+     */
+    public boolean is3D(){return this.is3D;}
     /**
      * Get the time of the show.
      * @return  the time of the show.
