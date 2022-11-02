@@ -56,8 +56,8 @@ public class BookingSystem {
 		for (int i = 0; i < show_length; i++) {
 			if (movie_name.equals(shows[i].getMovie().getTitle())
 					&& cineplex_name.equals(shows[i].getCineplex().getName())) {
-				System.out.printf("index: %d, Movie Name: %s, Cineplex Name: %s, Showtime: %s:%s\n", i + 1, movie_name,
-						cineplex_name, shows[i].getShowDate(), shows[i].getShowTime());
+				System.out.printf("index: %d, Movie Name: %s, Cineplex Name: %s, Showtime: %s\n", i + 1, movie_name,
+						cineplex_name, shows[i].getShowTime());
 			}
 		}
 		System.out.println("Choose Show Index");
