@@ -2,7 +2,7 @@ package boundary;
 
 import java.util.Scanner;
 import controller.*;
-import model.*;
+import model.MovieGoer;
 
 public class MainMenuUi {
 	public void main() {
@@ -92,6 +92,9 @@ public class MainMenuUi {
 			MovieGoerUI movieGoerUI = new MovieGoerUI();
 			BookingUI bookingUI = new BookingUI();
 
+			//temp MovieGoer to pass in
+			MovieGoer member1 = new MovieGoer(30, "John Tan", 1,"abc123");
+
 			switch (movieGoerInput) {
 			case "1":
 				movieGoerUI.searchMovieUI();
@@ -109,7 +112,7 @@ public class MainMenuUi {
 				bookingUI.bookTicketUI();
 				break;
 			case "6":
-				movieGoerUI.viewBookingHistoryUI();
+				movieGoerUI.viewBookingHistoryUI(member1);
 				break;
 			case "7":
 				System.out.println("Logging out --- Returning to Main Menu");
