@@ -1,4 +1,5 @@
-mport java.time.LocalDate;
+package model;
+import java.time.LocalDate;
 
 public enum Holiday {
     NEW_YEARS_DAY(LocalDate.of(2022, 1, 1)),
