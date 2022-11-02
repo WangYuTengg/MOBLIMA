@@ -109,7 +109,7 @@ public class MainMenuUi {
 				movieGoerUI.rateMovieUI();
 				break;
 			case "5":
-				bookingUI.bookTicketUI();
+				bookingUI.bookTicketUI(member1);
 				break;
 			case "6":
 				movieGoerUI.viewBookingHistoryUI(member1);
