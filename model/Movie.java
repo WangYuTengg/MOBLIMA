@@ -19,7 +19,7 @@ public class Movie{
     /**
      * The showing status of the movie.
      */
-    private String showingStatus;
+    private ShowingStatus showingStatus;
     /**
      * The director of the movie.
      */
@@ -58,7 +58,7 @@ public class Movie{
      * @param cast          the cast list of the movie.
      * @param castLength    the length of the cast list of the movie.
      */
-    public Movie(String title,boolean blockbuster,String status,String director,String synopsis,String[] cast,int castLength){
+    public Movie(String title,boolean blockbuster,ShowingStatus status,String director,String synopsis,String[] cast,int castLength){
         this.movieTitle=title;this.isBlockbuster=blockbuster;this.showingStatus=status;this.director=director;this.synopsis=synopsis;this.cast=cast;this.castLength=castLength;
     }
     /**
@@ -75,7 +75,7 @@ public class Movie{
      * Get the showing status of the movie.
      * @return  the showing status of the movie.
      */
-    public String getStatus(){return this.showingStatus;}
+    public ShowingStatus getStatus(){return this.showingStatus;}
     /**
      * Get the synopsis of the movie.
      * @return  the synopsis of the movie.
@@ -110,7 +110,7 @@ public class Movie{
      * Set the showing status as st.
      * @param st    the showing status to be set as.
      */
-    public void setStatus(String st){this.showingStatus=st;}
+    public void setStatus(ShowingStatus st){this.showingStatus=st;}
     /**
      * Set the blockbuster type of the movie.
      * @param blockbuster  the blockbuster type to be set.
