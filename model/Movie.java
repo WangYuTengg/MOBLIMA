@@ -4,7 +4,7 @@
  @author    Guo Sihan
  @since     2022-10-30
  */
-package MOBLIMA;
+package model;
 import java.util.ArrayList;
 
 public class Movie{
