@@ -35,7 +35,7 @@ public class BookingSystem {
 	}
 
 	// book tickets
-	public Ticket[] book(String id) {
+	public Ticket[] book(int id) {
 		Movie[] movies = (Movie[]) Database.movieListing.getMovies().toArray();
 		for (int i = 0; i < movies.length; i++) {
 			System.out.printf("%d. Movie Name: %s\n", i + 1, movies[i].getTitle());
