@@ -107,7 +107,7 @@ public class MovieGoer {
 	 * Book tickets.
 	 */
 	public void bookTickets() {
-		Ticket[] temp = Database.bookingSystem.book(Database.movieListing.getMovies(), id);
+		Ticket[] temp = Database.bookingSystem.book(id);
 		for (Ticket i : temp)
 			this.tickets.add(i);
 	}
