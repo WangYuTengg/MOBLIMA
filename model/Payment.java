@@ -12,9 +12,9 @@ import java.util.*;
 
 public class Payment {
     
-    private double base_price = 10;
+    private static double base_price = 10;
     
-    public void setBasePrice(double price)
+    public static void setBasePrice(double price)
     {
     	base_price = price;
     	System.out.println("Price updated successfully");
