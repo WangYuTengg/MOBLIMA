@@ -45,9 +45,9 @@ public class MovieListing {
 			choice = in.nextInt();
 			switch (choice) {
 			case 1:
-				System.out.println("Enter Movie Type");
-				String type = in.next();
-				movies.get(movie_ind).setType(type);
+				System.out.println("Is the movie a BlockBuster?");
+				Boolean type = in.nextBoolean();
+				movies.get(movie_ind).setBlockbuster(type);
 				break;
 			case 2:
 				System.out.println("Enter Movie Synopsis");
