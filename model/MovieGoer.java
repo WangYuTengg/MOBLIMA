@@ -89,18 +89,69 @@ public class MovieGoer {
 	 * Add review to a movie.
 	 */
 	public static void addReview() {
+		// declare variables needed
+		int moviesLength = Database.movieListing.length();
+		int userInput, index, rating;
+		boolean exit = false;
+
+		// list the movies for MovieGoer to see
 		Database.movieListing.listMovies();
-		System.out.println("Please choose the movie by index:\n");
 		Scanner sc = new Scanner(System.in);
-		int index = sc.nextInt();
-		System.out.println("Please enter the rating:\n");
-		int rating = sc.nextInt();
+		
+		// loop to get a valid index from user
+		do{
+			System.out.println("Please choose the movie by index:\n");
+			System.out.println("Enter -1 to exit.");
+
+			//check for integer input
+			while (!sc.hasNextInt()) {
+				System.out.println("Please enter a number.");
+				sc.next();
+			}
+			userInput = sc.nextInt();
+
+			// return to main menu if MovieGoer inputs -1
+			if (userInput == -1){
+				System.out.println("Returning to main menu. Review not added.");
+				return;
+			}
+
+			// check for valid movie index
+			if ( userInput > 0 && userInput <= moviesLength) {
+				exit = true; //exit loop
+			} 
+			else System.out.println("Invalid index, please try again.");
+		}while(!exit);
+		index = userInput - 1;
+
+		// Loop to get a valid rating
+		do{
+			System.out.println("Please enter rating ( 1 to 5 )");
+			System.out.println("Option selected: ");
+			//check for integer input
+			while (!sc.hasNextInt()) {
+				System.out.println("Please enter a number.");
+				sc.next();
+			}
+			userInput = sc.nextInt();
+			// check for valid movie index
+			if ( userInput > 0 && userInput <= 5) {
+				exit = true; //exit loop
+			} 
+			else System.out.println("Invalid rating, please try again.");
+		}while(!exit);
+		rating = userInput;
+
+		// get MovieGoer input for movie review
 		System.out.println("Please enter the comment:\n");
 		String comment = sc.next();
 		sc.close();
+
+		// add review to Movie
 		Database.movieListing.getMovies().get(index).addReview(rating, comment);
 		System.out.printf("Successfully adding review to %s!\n",
 				Database.movieListing.getMovies().get(index).getTitle());
+		return;
 	}
 
 	/**
@@ -144,13 +195,44 @@ public class MovieGoer {
 	 * View the detail of the movie.
 	 */
 	public static void viewMovieDetails() {
+		// declare variables needed
+		int moviesLength = Database.movieListing.length();
+		int userInput, index;
+		boolean exit = false;
+
+		// display list of movies for MovieGoer to choose movie to view details of
 		Database.movieListing.listMovies();
-		System.out.printf("Enter the index of movie:\n");
 		Scanner sc = new Scanner(System.in);
-		int index = sc.nextInt();
+
+		// loop to get valid index of movie from MovieGoer
+		do{
+			System.out.println("Please choose the movie by index:\n");
+			System.out.println("Enter -1 to exit.");
+			System.out.print("Select Option: ");
+
+			//check for integer input
+			while (!sc.hasNextInt()) {
+				System.out.println("Please enter a number.");
+				sc.next();
+			}
+			userInput = sc.nextInt();
+
+			// return to main menu if MovieGoer inputs -1
+			if (userInput == -1){
+				System.out.println("Returning to main menu. Review not added.");
+				return; 
+			}
+
+			// check for valid movie index
+			if ( userInput > 0 && userInput <= moviesLength) {
+				exit = true; //exit loop
+			} 
+			else System.out.println("Invalid index, please try again.");
+		}while(!exit);
+		index = userInput - 1;
 		sc.close();
 		Database.movieListing.getMovies().get(index).display();
+		return;
 	}
 
 }
-
