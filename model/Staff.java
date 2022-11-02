@@ -1,5 +1,3 @@
-package model;
-
 /**
  Represents the Staff Class.
  @version   1.0
@@ -7,8 +5,10 @@ package model;
  @since     2022-11-01
  */
 
+package model;
 import controller.Database;
 import java.util.Scanner;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public class Staff {
@@ -93,8 +93,8 @@ public class Staff {
             }
         }
 
-        System.out.println("Enter the Movie Type: "); // movie type
-        String type = scan.nextLine();
+        System.out.println("Is the movie a Blockbuster movie?"); // movie type
+        Boolean type = scan.nextBoolean();
 
         System.out.println("Enter the Movie's Showing Status: "); // movie showing status
         String status = scan.nextLine();
@@ -144,7 +144,11 @@ public class Staff {
      * Adding a Show class to the MovieListing class.
      */
     public void addShow(){
-        Database.showListing.createShow();
+        try {
+			Database.showListing.createShow();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
         System.out.println("The Show has been successfully created.");
     }
 
@@ -164,7 +168,11 @@ public class Staff {
         Database.showListing.displayShows();
         System.out.println("Input the index of the show to be updated");
         int choice = scan.nextInt();
-        Database.showListing.updateShow(choice);
+        try {
+			Database.showListing.updateShow(choice);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
         System.out.println("The Show has been udpated.");
         scan.close();
     }
@@ -174,7 +182,7 @@ public class Staff {
         double price = scan.nextDouble();
         Payment.setBasePrice(price);
         System.out.println("The base ticket price has been updated.");
-        scan.close();
+		scan.close();
     }
     
 }
