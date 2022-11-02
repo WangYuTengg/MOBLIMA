@@ -1,6 +1,0 @@
-public enum moviegoerType 
-{
-		STANDARD,
-		STUDENT,
-		SENIOR
-}
