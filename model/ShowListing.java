@@ -99,6 +99,8 @@ public class ShowListing {
 		String cineplex_name = cineplex[cineplex_ind - 1].getName();
 		System.out.println("Enter Cinema Number");
 		int cinema_ind = in.nextInt();
+		System.out.println("Is the Show going to be in 3D?");
+		boolean is3D = in.nextBoolean();
 		System.out.println("Enter Show time(yyyy-MM-dd hh:mm)");
 		SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd hh:mm");
 		Date showtime = ft.parse(in.next());
@@ -106,7 +108,7 @@ public class ShowListing {
 		double price = in.nextDouble();
 		in.close();
 		shows.add(new Show((cineplex[cineplex_ind].getCinemaList())[cinema_ind], movies[movie_ind - 1],
-				cineplex[cineplex_ind - 1], showtime, price));
+				cineplex[cineplex_ind - 1], is3D, showtime, price));
 		System.out.println("Show successfully created!");
 	}
 
@@ -125,7 +127,7 @@ public class ShowListing {
 		Show show = shows.get(show_ind);
 		do {
 			System.out.printf("Choose Action:\n" + "1. Update Cinema\n" + "2. Update Movie\n" + "3. Update Show time\n"
-					+ "4. Update ticket price\n" + "5. Exit\n");
+					+ "4. Update ticket price\n" + "5. Update is3D\n" + "6. Exit\n");
 			choice = in.nextInt();
 			switch (choice) {
 			case 1:
@@ -156,8 +158,13 @@ public class ShowListing {
 				double price = in.nextDouble();
 				show.setPrice(price);
 				System.out.println("Price updated successfully!");
+			case 5: 
+				System.out.println("Is the show in 3D?");
+				boolean is3D = in.nextBoolean();
+				show.set3D(is3D);
+				break;	
 			}
-		} while (choice != 5);
+		} while (choice != 6);
 		in.close();
 	}
 
