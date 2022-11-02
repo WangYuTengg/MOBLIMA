@@ -144,7 +144,7 @@ public class MovieGoer {
 	 * View the detail of the movie.
 	 */
 	public void viewMovieDetails() {
-		this.displayMovieListing();
+		Database.movieListing.listMovies();
 		System.out.printf("Enter the index of movie:\n");
 		Scanner sc = new Scanner(System.in);
 		int index = sc.nextInt();
