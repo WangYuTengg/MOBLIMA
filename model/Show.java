@@ -51,9 +51,10 @@ public class Show {
      * @param showTime      the time of the show.
      * @param price         the general price of each ticket of the show.
      */
-    public Show(Cinema cinema,Movie movie,Cineplex cineplex,Date showTime,double price){
+    public Show(Cinema cinema,Movie movie,Cineplex cineplex,boolean is3d,Date showTime,double price){
         this.tickets=new Ticket[cinema.getLayoutRowLength()*cinema.getLayoutColumnLength()];
         this.price=price;this.cinema=new Cinema(cinema);this.movie=movie;this.cineplex=cineplex;this.showTime=showTime;
+		this.is3D = is3d;
     }
     /**
      * Set the movie of the show.
