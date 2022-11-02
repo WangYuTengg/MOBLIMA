@@ -7,6 +7,9 @@ import model.MovieGoer;
 
 public class MovieGoerUI {
 
+	/*
+	 * Method to search movie 
+	 */
 	public void searchMovieUI() {
 		boolean exit = false;
 		Scanner sc = new Scanner(System.in);
@@ -15,8 +18,6 @@ public class MovieGoerUI {
 			exit = true;
 		} while (!exit);
 		System.out.println("Returning to Movie Goer menu...");
-		sc.close();
-		return;
 	}
 
 	/**
@@ -42,8 +43,6 @@ public class MovieGoerUI {
 			}
 		} while (!exit);
 		System.out.println("Returning to Movie Goer menu...");
-		sc.close();
-		return;
 	}
 
 	/**
@@ -73,10 +72,9 @@ public class MovieGoerUI {
 			default: System.out.println("Please enter a valid option. ");
 			}
 		} while (!exit);
-		sc.close();
 		System.out.println("Returning to Movie Goer menu...");
-		return;
 	}
+
 	/**
 	 * Method to allow MovieGoer to choose to rate a movie
 	 */
@@ -100,10 +98,11 @@ public class MovieGoerUI {
 			}
 		} while (!exit);
 		System.out.println("Returning to Movie Goer menu...");
-		sc.close();
-		return;
 	}
 
+	/*
+	 * Method to viewBookingHistory of MovieGoer
+	 */
 	public void viewBookingHistoryUI(MovieGoer user) {
 		boolean exit = false;
 		Scanner sc = new Scanner(System.in);
@@ -124,8 +123,5 @@ public class MovieGoerUI {
 			} 
 		} while (!exit);
 		System.out.println("Returning to Movie Goer menu...");
-		sc.close();
-		return;
 	}
-
 }
