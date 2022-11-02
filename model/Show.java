@@ -5,7 +5,7 @@
   @since    2022-10-30
 */
 
-package MOBLIMA;
+package model;
 import java.util.*;
 import java.text.*;
 
