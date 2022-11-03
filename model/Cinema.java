@@ -1,25 +1,25 @@
 package model;
 /**
  Represents a cinema
- @version   1.0
+ @version   1.4
  @author    Guo Sihan
  @since     2022-10-30
  */
-
 public class Cinema {
     /**
      * The index of the cinema.
      */
     private int index;
+
     /**
      * The unique code of each cinema
      */
-    
     private String cinemaCode;
+
     /**
      * The type of the cinema.
      */
-    private String type;
+    private boolean isPlatinum;
     
     /**
      * The name of the cineplex.
@@ -44,15 +44,15 @@ public class Cinema {
     /**
      * Constructs a new cinema with the given attributes
      * @param index         the index of the cinema.
-     * @param type          the type of the cinema.
+     * @param isPlatinum    whether cinema is platinum class
      * @param cineplex      the name of the cineplex.
      * @param rowLength     the number of rows of the seats.
      * @param columnLength  the number of columns of the seats.
      */
-    public Cinema(int index, String cinemaCode, String type,String cineplex,int rowLength,int columnLength){
+    public Cinema(int index, String cinemaCode, boolean isPlatinum, String cineplex,int rowLength,int columnLength){
         this.index = index;
         this.cinemaCode = cinemaCode;
-        this.type = type;
+        this.isPlatinum = isPlatinum;
         this.cineplexName = cineplex;
         this.rowLength = rowLength;
         this.columnLength = columnLength;
@@ -72,7 +72,7 @@ public class Cinema {
     public Cinema(Cinema a){
         this.index = a.index;
         this.cinemaCode = a.cinemaCode;
-        this.type = a.type;
+        this.isPlatinum = a.isPlatinum;
         this.cineplexName = a.cineplexName;
         this.rowLength = a.rowLength;
         this.columnLength = a.columnLength;
@@ -95,7 +95,7 @@ public class Cinema {
      * Get the type of the cinema.
      * @return  the type of the cinema.
      */
-    public String getType(){return this.type;}
+    public boolean getType(){return this.isPlatinum;}
     
     /**
      * Get the name of the cineplex.
@@ -114,6 +114,14 @@ public class Cinema {
      * @return  the number of columns of the seats
      */
     public int getLayoutColumnLength(){return this.columnLength;}
+
+    /**
+     * Get cinema code
+     * @return cinemaCode
+     */
+    public String getCinemaCode(){
+        return this.cinemaCode;
+    }
     
     /**
      * Find the occupying status of seats.
@@ -135,4 +143,5 @@ public class Cinema {
     public void assignSeat(int row,int column){
     	this.layout[row][column].assign();
     	}
+    
 }

@@ -41,14 +41,38 @@ public class Cineplex{
     }
     
     /**
+     * Return list of cinema in cineplex
+     * @return  cinemaList
+     */
+    public Cinema[] getCinemaList() {
+    	return this.cinemaList;
+    }
+
+    /**
+     * Get cinema using cinema code
+     * @param cinemacode
+     * @return cinema 
+     */
+    public Cinema getCinema(String cinemacode){
+        for (Cinema cinema: cinemaList) {
+            if (cinema.getCinemaCode().equals(cinemacode)) return cinema;
+        }
+        return null;
+    }
+
+    /**
+     * Get cinema using index
+     * @param index
+     */
+    public Cinema getCinema(int cinemaId){
+        return cinemaList[cinemaId];
+    }
+    
+    /**
      * Add a cinema to the cineplex.
      * @param a the cinema to be added to the cineplex.
      */
     public void addCinema(Cinema a){
     	this.cinemaList[this.cinemaNum++]=a;
-    }
-   
-    public Cinema[] getCinemaList() {
-    	return this.cinemaList;
     }
 }
