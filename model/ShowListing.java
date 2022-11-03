@@ -159,7 +159,7 @@ public class ShowListing {
 				show.set3D(is3D);
 				break;	
 			}
-		} while (choice != 6);
+		} while (choice != 5);
 		in.close();
 	}
 
