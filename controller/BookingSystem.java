@@ -36,7 +36,8 @@ public class BookingSystem {
 
 	// book tickets
 	public Ticket[] book(int id) {
-		Movie[] movies = (Movie[]) Database.movieListing.getMovies().toArray();
+		Movie[] movies =  new Movie[Database.movieListing.getMovies().size()];
+	    movies = Database.movieListing.getMovies().toArray(movies);
 		for (int i = 0; i < movies.length; i++) {
 			System.out.printf("%d. Movie Name: %s\n", i + 1, movies[i].getTitle());
 		}
@@ -44,7 +45,8 @@ public class BookingSystem {
 		Scanner in = new Scanner(System.in);
 		int movie_ind = in.nextInt();
 		String movie_name = movies[movie_ind - 1].getTitle();
-		Cineplex cineplex[] = (Cineplex[]) Database.cineplexes.toArray();
+		Cineplex cineplex[] = new Cineplex[Database.cineplexes.size()];
+		cineplex = Database.cineplexes.toArray(cineplex);
 		for (int i = 0; i < cineplex.length; i++) {
 			System.out.printf("%d. Cineplex Name: %s\n", i + 1, cineplex[i].getName());
 		}
