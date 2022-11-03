@@ -97,15 +97,15 @@ public class DataController {
 		//public Show(Cinema cinema,Movie movie,Cineplex cineplex,boolean is3d,Date showTime)
 		Calendar calendar = new GregorianCalendar();
 		Date date = calendar.getTime();
-		Show TAshow1 = new Show(cineplex1.getCinema("AAN"), theAvengers, cineplex1, false, date);
-		Show HGshow1 = new Show(cineplex1.getCinema("AAN"), hungerGames, cineplex1, false,  date);
-		Show HGshow2 = new Show(cineplex1.getCinema("AAN"), hungerGames, cineplex1, false, date);
-		Show HGshow3 = new Show(cineplex1.getCinema("AAN"), hungerGames, cineplex1, false,  date);
-		Show TAshow2 = new Show(cineplex1.getCinema("BAN"), theAvengers, cineplex2, false,  date);
-		Show HGshow4 = new Show(cineplex1.getCinema("BAN"), hungerGames, cineplex2, false, date);
-		Show HGshow5 = new Show(cineplex1.getCinema("BAN"), hungerGames, cineplex2, false, date);
-		Show TAshow3 = new Show(cineplex1.getCinema("BCP"), theAvengers, cineplex2, true,  date);
-		Show TAshow4 = new Show(cineplex1.getCinema("BCP"), theAvengers, cineplex2, true,  date);
+		Show TAshow1 = new Show(cinema1, theAvengers, cineplex1, false, date);
+		Show HGshow1 = new Show(cinema1, hungerGames, cineplex1, false,  date);
+		Show HGshow2 = new Show(cinema1, hungerGames, cineplex1, false, date);
+		Show HGshow3 = new Show(cinema1, hungerGames, cineplex1, false,  date);
+		Show TAshow2 = new Show(cinema4, theAvengers, cineplex2, false,  date);
+		Show HGshow4 = new Show(cinema4, hungerGames, cineplex2, false, date);
+		Show HGshow5 = new Show(cinema4, hungerGames, cineplex2, false, date);
+		Show TAshow3 = new Show(cinema6, theAvengers, cineplex2, true,  date);
+		Show TAshow4 = new Show(cinema6, theAvengers, cineplex2, true,  date);
 
 		Database.showListing.addShow(TAshow1);
 		Database.showListing.addShow(TAshow2);

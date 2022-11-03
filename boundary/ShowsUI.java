@@ -17,26 +17,27 @@ public class ShowsUI {
 			String adminInput = sc.next();
 			switch (adminInput) {
 			case "1":
-				System.out.println("Creating show of movie...");
+				System.out.println("------- Creating show of movie -------");
+				Staff.addShow();
 				break;
 			case "2":
-				System.out.println("Updating show of movie...");
+				System.out.println("------ Update showing of movie -------");
+				Staff.updateShow();
 				break;
 			case "3":
-				System.out.println("Deleting show of movie...");
+				System.out.println("------- Deleting showing of movie -------");
+				Staff.deleteShow();
 				break;
 			case "4":
-				System.out.println("Viewing list of showings...");
+				System.out.println("||----- Display Shows -----||");
+				Database.showListing.displayShows();
 				break;
 			case "5":
 				exit = true;
 				break;
-			default:
-				System.out.println("Enter a valid option.");
+			default: System.out.println("Enter a valid option.");
 			}
 		} while (!exit);
 		System.out.println("Returning to Admin menu...");
-		return;
 	}
-
 }
