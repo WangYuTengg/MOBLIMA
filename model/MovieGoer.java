@@ -217,7 +217,7 @@ public class MovieGoer {
 			} 
 			else System.out.println("Invalid index, please try again.");
 		}while(!exit);
-		index = userInput;
+		index = userInput-1;
 		Database.movieListing.getMovies().get(index).display();
 	}
 }
