@@ -2,6 +2,7 @@ package boundary;
 
 import java.util.Scanner;
 import model.Staff;
+import controller.Database;
 
 public class MovieListingUI {
 	private static Scanner sc = new Scanner(System.in);
@@ -24,12 +25,15 @@ public class MovieListingUI {
 				break;
 			case "2":
 				System.out.println("Updating movie...");
+				Staff.editMovie();
 				break;
 			case "3":
 				System.out.println("Deleting movie...");
+				Staff.deleteMovie();
 				break;
 			case "4":
 				System.out.println("Displaying movie list...");
+				Database.movieListing.listMovies();
 				break;
 			case "5":
 				exit = true;
