@@ -113,7 +113,7 @@ public class Show {
      * @param seatIndex the index of the seat.
      * @return          the ticket created.
      */
-    public Ticket createTicket(String seatIndex){
+    public Ticket createTicket(String seatIndex, String TID){
         Scanner sc=new Scanner(seatIndex);
         int row=(sc.nextInt()-1);
         int column=(int)(sc.next().charAt(0)-'A');
@@ -123,7 +123,7 @@ public class Show {
         else
             this.cinema.assignSeat(row,column);
         this.movie.addSale();
-        return this.tickets[this.ticketLength++]=new Ticket(seatIndex,this.cineplex.getName(),this.movie.getTitle(),this.showTime,this.cinema.getIndex(),this.ticketLength+1,this.price);
+        return this.tickets[this.ticketLength++]=new Ticket(seatIndex,this.cineplex.getName(),this.movie.getTitle(),this.showTime,this.cinema.getIndex(),this.ticketLength+1,this.price, TID);
     }
     /**
      * To display the detail of the show.
