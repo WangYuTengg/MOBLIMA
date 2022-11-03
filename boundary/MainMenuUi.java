@@ -5,10 +5,9 @@ import controller.*;
 import model.MovieGoer;
 
 public class MainMenuUi {
+	private static Scanner sc = new Scanner(System.in);
 	public void main(Database db) {
-		Scanner sc = new Scanner(System.in);
 		boolean exit = false;
-		
 		// main program loop
 		do {
 			System.out.println("||----------- Welcome to MOBLIMA ----------||");
@@ -33,13 +32,11 @@ public class MainMenuUi {
 			}
 		} while (exit == false);
 		System.out.println("||---- Program End ----||");
-		sc.close();
 	}
 
 	// admin UI after logging in ---------------------
 	public static void adminLogin() {
 		boolean loggedIn = true;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("||----------- Admin Menu -----------||");
 			System.out.println("1. Add/Delete/Update movies in movie listing");
@@ -74,7 +71,6 @@ public class MainMenuUi {
 	// movieGoer UI after logging in --------------------
 	public static void movieGoerLogin() {
 		boolean loggedIn = true;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("||----------- Movie Goer Menu -----------||");
 			System.out.println("1. Search/List Movie");
@@ -88,7 +84,6 @@ public class MainMenuUi {
 
 			String movieGoerInput = sc.next();
 			MovieGoerUI movieGoerUI = new MovieGoerUI();
-			BookingUI bookingUI = new BookingUI();
 
 			//temp MovieGoer to pass in
 			MovieGoer member1 = new MovieGoer(30, "John Tan", 1,"abc123");
@@ -107,7 +102,7 @@ public class MainMenuUi {
 				movieGoerUI.rateMovieUI();
 				break;
 			case "5":
-				bookingUI.bookTicketUI(member1);
+				Database.getMovieGoer("Adam Wong").bookTickets();
 				break;
 			case "6":
 				movieGoerUI.viewBookingHistoryUI(member1);

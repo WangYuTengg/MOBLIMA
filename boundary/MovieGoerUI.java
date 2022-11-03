@@ -6,16 +6,38 @@ import controller.Database;
 import model.MovieGoer;
 
 public class MovieGoerUI {
-
+	private static Scanner sc = new Scanner(System.in);
 	/*
 	 * Method to search movie 
 	 */
 	public void searchMovieUI() {
 		boolean exit = false;
-		Scanner sc = new Scanner(System.in);
 		do {
-			//code
-			exit = true;
+			System.out.println("||-------- Search Movie Menu --------||");
+			System.out.println("1. List all movies");
+			System.out.println("2. Search Movie by movie title");
+			System.out.println("3. Search Movie by Director");
+			System.out.println("4. Return to Movie Goer menu");
+			System.out.printf("Select your option:  ");
+			String userInput = sc.nextLine();
+			switch(userInput){
+				case "1": 
+					System.out.println("----- Listing all movies -----");
+					Database.movieListing.listMovies();
+					break;
+				case "2":
+					System.out.println("----- Seaching movie by title -----");
+					Database.movieListing.searchMovieByTitle();
+					break;
+				case "3":
+					System.out.println("----- Searching movie by director -----");
+					Database.movieListing.searchMovieByDirector();
+					break;
+				case "4":
+					exit = true;
+					break; 
+				default: System.out.println("Please select a valid option.");
+			}
 		} while (!exit);
 		System.out.println("Returning to Movie Goer menu...");
 	}
@@ -25,7 +47,6 @@ public class MovieGoerUI {
 	 */
 	public void viewMovieDetailsUI() {
 		boolean exit = false;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("||-------- View Movie Details Menu --------||");
 			System.out.println("1. Select movie to view details of ");
@@ -50,7 +71,6 @@ public class MovieGoerUI {
 	 */
 	public void listTop5UI() {
 		boolean exit = false;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("||-------- List top 5 menu --------||");
 			System.out.println("Would you like to list top 5 by: ");
@@ -80,7 +100,6 @@ public class MovieGoerUI {
 	 */
 	public void rateMovieUI() {
 		boolean exit = false;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("||------- Rate Movie Menu -------||");
 			System.out.println("1. Rate a movie ");
@@ -105,7 +124,6 @@ public class MovieGoerUI {
 	 */
 	public void viewBookingHistoryUI(MovieGoer user) {
 		boolean exit = false;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("||-------- View Booking History menu --------||");
 			System.out.println("1. View your booking history");
@@ -124,4 +142,5 @@ public class MovieGoerUI {
 		} while (!exit);
 		System.out.println("Returning to Movie Goer menu...");
 	}
+
 }

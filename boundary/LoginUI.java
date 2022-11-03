@@ -8,7 +8,6 @@ import controller.Database;
 public class LoginUI {
 
     private static Scanner sc = new Scanner(System.in);
-    private static Scanner sc2 = new Scanner(System.in);
 
     public static boolean main(int role){
         if (role == 1) return verifyAdmin();
@@ -16,7 +15,6 @@ public class LoginUI {
         else return false;
     }
     
-
     private static boolean verifyAdmin(){
         Staff currentStaff;
         // validate staffID
@@ -31,7 +29,7 @@ public class LoginUI {
 
         // validate password
         System.out.print("Enter your password:  ");
-        String password = sc2.nextLine();
+        String password = sc.nextLine();
         
         if ( password.equals(currentStaff.getPass()) ){
             System.out.printf("Welcome %s, you have successfully logged in as admin.\n", currentStaff.getName());
@@ -40,7 +38,6 @@ public class LoginUI {
             System.out.printf("Wrong password - returning to main menu.\n"); 
             return false;
         }
-        
     }
 
     private static boolean verifyMovieGoer(){
@@ -60,7 +57,7 @@ public class LoginUI {
         String password = sc.nextLine();
 
         if ( password.equals(currentUser.getPass())){
-            System.out.printf("Welcome %s, you have successfully logged in as a user.", currentUser.getName());
+            System.out.printf("Welcome %s, you have successfully logged in as a usern.\n", currentUser.getName());
             return true;
         } else {
             System.out.println("Wrong password - returning to main menu."); 

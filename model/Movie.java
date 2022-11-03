@@ -136,14 +136,14 @@ public class Movie{
      * Display the details of the movie.
      */
     public void display(){
-        System.out.printf("Movie titile:\n%s\n",this.movieTitle);
-        System.out.printf("Movie blockbuster type:\n%b\n",this.isBlockbuster);
-        System.out.printf("Movie status:\n%s\n",this.showingStatus);
+        System.out.printf("Movie title:  %s\n",this.movieTitle);
+        System.out.printf("Movie blockbuster type:  %b\n",this.isBlockbuster);
+        System.out.printf("Movie status:  %s\n",this.showingStatus);
         System.out.printf("Movie synposis:\n%s\n",this.synopsis);
-        System.out.printf("Movie director:\n%s\n",this.director);
+        System.out.printf("Movie director:  %s\n",this.director);
         System.out.printf("Movie cast:\n");
-        for(int i=0;i<this.castLength;++i) System.out.printf("%s\n",this.cast[i]);
-        System.out.printf("Overall rating:\n");
+        for(int i=0;i<this.castLength;++i) System.out.printf("%d. %s\n", i+1,this.cast[i]);
+        System.out.printf("Overall rating: ");
         if(this.pastReview.size()>1)System.out.printf("%.1lf\n",this.overallRating/this.pastReview.size());
         else System.out.printf("Overall rating not available!\n");
         System.out.printf("Past reviews:\n");

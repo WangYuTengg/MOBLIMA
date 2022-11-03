@@ -63,7 +63,7 @@ public class Staff {
     /**
      * Creating a Movie class, and adding it to the movieListing within the Database.
      */
-    public void addMovie(){
+    public static void addMovie(){
         Scanner scan = new Scanner(System.in);
         int alreadyExists = 0;
         System.out.println("Enter the Title of the Movie: "); // movie title

@@ -5,6 +5,7 @@ import java.util.*;
 public class MovieListing {
 	private ArrayList<Movie> movies = new ArrayList<>();
 	private static int len = 0;
+	private static Scanner in = new Scanner(System.in);
 
 	public void addMovie(Movie movie) {
 		movies.add(movie);
@@ -14,11 +15,9 @@ public class MovieListing {
 	public void deleteMovie() {
 		listMovies();
 		System.out.println("Enter the move Index to delete the movie");
-		Scanner in = new Scanner(System.in);
 		int movie_ind = in.nextInt();
 		movies.remove(movie_ind - 1);
 		len--;
-		in.close();
 	}
 
 	public void listMovies() {
@@ -36,8 +35,49 @@ public class MovieListing {
 		}
 	}
 
+	public void searchMovieByTitle(){
+		boolean exit = false;
+		boolean result = false;
+		do {
+			System.out.printf("Enter movie title to search for ( enter -1 to exit ): ");
+			String userInput = in.nextLine();
+			if (userInput.equals("-1")) exit = true;
+			
+			for (Movie movie: movies){
+				if (userInput.equals(movie.getTitle())){
+					System.out.printf("'%s' movie found. \n", movie.getTitle());
+					System.out.printf("Current showing status: %s \n", movie.getStatus());
+					result = true;
+				}
+			}
+			if (!result && !exit) System.out.println("Cannot find such a movie, try again!");
+			else exit = true;
+		}while(!exit);
+		System.out.println("Returning to Search Movie Menu...");
+	}
+
+	public void searchMovieByDirector(){
+		boolean exit = false;
+		boolean result = false;
+		do {
+			System.out.printf("Enter director to search for ( enter -1 to exit ):");
+			String userInput = in.nextLine();
+			if (userInput.equals("-1")) exit = true;
+			
+			for (Movie movie: movies){
+				if (userInput.equals(movie.getDirector())){
+					System.out.printf("'%s' movie found: %s\n", movie.getDirector(), movie.getTitle());
+					System.out.printf("Current showing status: %s \n", movie.getStatus());
+					result = true;
+				}
+			}
+			if (!result && !exit) System.out.println("Cannot find such a director, try again!");
+			else exit = true;
+		}while(!exit);
+		System.out.println("Returning to Search Movie Menu...");
+	}
+
 	public void updateMovie(int movie_ind) {
-		Scanner in = new Scanner(System.in);
 		int choice;
 		do {
 			System.out.printf("Choose Action:\n" + "1. Update Movie Type\n" + "2. Update Synopsis\n"
@@ -62,7 +102,6 @@ public class MovieListing {
 			}
 		} while (choice != 4);
 		System.out.println("Movie successfully updated");
-		in.close();
 	}
 
 	public int length() {
@@ -100,7 +139,7 @@ public class MovieListing {
 		listMovies(5);
 
 	}
-
+	
 	public ArrayList<Movie> getMovies() {
 		return movies;
 	}
