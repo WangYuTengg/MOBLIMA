@@ -11,7 +11,11 @@ public class Cinema {
      * The index of the cinema.
      */
     private int index;
+    /**
+     * The unique code of each cinema
+     */
     
+    private String cinemaCode;
     /**
      * The type of the cinema.
      */
@@ -45,8 +49,9 @@ public class Cinema {
      * @param rowLength     the number of rows of the seats.
      * @param columnLength  the number of columns of the seats.
      */
-    public Cinema(int index,String type,String cineplex,int rowLength,int columnLength){
+    public Cinema(int index, String cinemaCode, String type,String cineplex,int rowLength,int columnLength){
         this.index = index;
+        this.cinemaCode = cinemaCode;
         this.type = type;
         this.cineplexName = cineplex;
         this.rowLength = rowLength;
@@ -66,6 +71,7 @@ public class Cinema {
      */
     public Cinema(Cinema a){
         this.index = a.index;
+        this.cinemaCode = a.cinemaCode;
         this.type = a.type;
         this.cineplexName = a.cineplexName;
         this.rowLength = a.rowLength;
