@@ -149,5 +149,4 @@ public class Movie{
         System.out.printf("Past reviews:\n");
         for(int i=0;i<this.pastReview.size();++i) System.out.printf("Rating:%d\nComments:%s\n",this.pastReview.get(i).getRating(),this.pastReview.get(i).getComment());
     }
-    
 }
