@@ -24,7 +24,7 @@ public class MovieListing {
 		int i = 0;
 		for (Movie obj : movies) {
 			i++;
-			System.out.printf("%d. %s\n", i - 1, obj.getTitle());
+			System.out.printf("%d. %s\n", i , obj.getTitle());
 		}
 	}
 
@@ -85,18 +85,50 @@ public class MovieListing {
 			choice = in.nextInt();
 			switch (choice) {
 			case 1:
-				System.out.println("Is the movie a BlockBuster?");
-				Boolean type = in.nextBoolean();
+				in.nextLine();
+				System.out.println("Is the movie a Blockbuster movie? (true or false)"); // movie type
+				String input = in.nextLine();
+				Boolean type;
+				// Error checking for invalid inputs
+				while (input.equals("true") == false && input.equals("false") == false){
+					System.out.println("Invalid Input. Please re-enter.\nIs the movie a Blockbuster movie? (true or false)");
+					input = in.nextLine();
+				}
+				type = Boolean.parseBoolean(input);
 				movies.get(movie_ind).setBlockbuster(type);
 				break;
 			case 2:
+				in.nextLine();
 				System.out.println("Enter Movie Synopsis");
 				String synopsis = in.nextLine();
 				movies.get(movie_ind).setSynopsis(synopsis);
 				break;
 			case 3:
-				System.out.println("Enter Movie Status");
-				String status = in.next();
+				in.nextLine();
+				String status = "unknown";
+				System.out.println("Enter the Movie's Showing Status: \n1. Coming Soon\n2. Preview\n3. Now Showing\n4. End Of Showing"); // movie showing status
+				
+				String statusInput = in.nextLine();
+				// Error checking for invalid inputs
+				do {
+					switch (statusInput) {
+						case("1"):
+							status = "COMING_SOON";
+							break;
+						case("2"):
+							status = "PREVIEW";
+							break;
+						case("3"):
+							status = "NOW_SHOWING";
+							break;
+						case ("4"):
+							status = "END_OF_SHOWING";
+							break;
+						default:
+							System.out.println("Invalid Input. Please re-enter.\nEnter the Movie's Showing Status: \n1. Coming Soon\n2. Preview\n3. Now Showing\n4. End Of Showing");
+							statusInput = in.next();
+					}
+				} while(status.equals("unknown"));
 				movies.get(movie_ind).setStatus(status);
 				break;
 			}
