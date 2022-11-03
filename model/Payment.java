@@ -1,13 +1,16 @@
 /**
  Represents the Payment Class, to calculate the cost of the ticket.
- @version   1.2
+ @version   1.0
  @author    Davyn Yam
  @since     2022-11-01
  */
+
 package model;
 import java.util.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+
+
 
 public class Payment {
     
