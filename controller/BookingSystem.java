@@ -53,7 +53,8 @@ public class BookingSystem {
 		System.out.println("Choose Cinplex Index");
 		int cineplex_ind = in.nextInt();
 		String cineplex_name = cineplex[cineplex_ind - 1].getName();
-		Show[] shows = (Show[]) showListing.getShows().toArray();
+		Show[] shows = new Show[showListing.getShows().size()];
+		shows =	showListing.getShows().toArray(shows);
 		int show_length = showListing.length();
 		for (int i = 0; i < show_length; i++) {
 			if (movie_name.equals(shows[i].getMovie().getTitle())
@@ -69,9 +70,33 @@ public class BookingSystem {
 		int num_seats = in.nextInt();
 		String seat_index[] = new String[num_seats];
 		Ticket ticket[] = new Ticket[num_seats];
+		System.out.printf("Enter the index of the ticket category:\n"
+				+ "1. Standard\n"
+				+ "2. Student\n"
+				+ "3. Senior\n");
+		MoviegoerType mType = MoviegoerType.STANDARD;
+		switch(in.nextInt())
+		{
+		case 1:
+			mType = MoviegoerType.STANDARD;
+			break;
+		case 2:
+			mType = MoviegoerType.STUDENT;
+			break;	
+		case 3:
+			mType = MoviegoerType.SENIOR;
+			break;
+		}
+		double price = 0;
 		for (int i = 0; i < num_seats; i++) {
 			seat_index[i] = in.next();
-			ticket[i] = shows[show_index - 1].createTicket(seat_index[i]);
+			price += Payment.calPrice(shows[show_index - 1], mType);
+		}
+		System.out.printf("The total price of the tickets is: %.2f\n", price);
+		String TID = Payment.generateTID(shows[show_index - 1].getCinema());
+		System.out.println("Payment Successful! Transaction ID: " + TID);
+		for (int i = 0; i < num_seats; i++) {
+			ticket[i] = shows[show_index - 1].createTicket(seat_index[i], TID);
 		}
 		in.close();
 		return ticket;
