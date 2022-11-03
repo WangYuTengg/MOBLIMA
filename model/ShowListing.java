@@ -82,14 +82,9 @@ public class ShowListing {
 		displayShows(5);
 	}
 
-	public void addShow(Show show){
-		shows.add(show);
-		len++;
-	}
-	
 	public void createShow() throws ParseException {
 		Movie[] movies =  new Movie[Database.movieListing.getMovies().size()];
-	        movies = Database.movieListing.getMovies().toArray(movies);
+	    movies = Database.movieListing.getMovies().toArray(movies);
 		for (int i = 0; i < movies.length; i++) {
 			System.out.printf("%d. Movie Name: %s\n", i + 1, movies[i].getTitle());
 		}
@@ -110,11 +105,9 @@ public class ShowListing {
 		System.out.println("Enter Show time(yyyy-MM-dd hh:mm)");
 		SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd hh:mm");
 		Date showtime = ft.parse(in.next());
-		System.out.println("Enter ticket price");
-		double price = in.nextDouble();
 		in.close();
 		shows.add(new Show((cineplex[cineplex_ind].getCinemaList())[cinema_ind], movies[movie_ind - 1],
-				cineplex[cineplex_ind - 1], is3D, showtime, price));
+				cineplex[cineplex_ind - 1], is3D, showtime));
 		System.out.println("Show successfully created!");
 	}
 
@@ -133,7 +126,7 @@ public class ShowListing {
 		Show show = shows.get(show_ind);
 		do {
 			System.out.printf("Choose Action:\n" + "1. Update Cinema\n" + "2. Update Movie\n" + "3. Update Show time\n"
-					+ "4. Update ticket price\n" + "5. Update is3D\n" + "6. Exit\n");
+					 + "4. Update is3D\n" + "5. Exit\n");
 			choice = in.nextInt();
 			switch (choice) {
 			case 1:
@@ -144,7 +137,7 @@ public class ShowListing {
 				break;
 			case 2:
 				Movie[] movies =  new Movie[Database.movieListing.getMovies().size()];
-			        movies = Database.movieListing.getMovies().toArray(movies);
+			    movies = Database.movieListing.getMovies().toArray(movies);
 				for (int i = 0; i < movies.length; i++) {
 					System.out.printf("%d. Movie Name: %s\n", i + 1, movies[i].getTitle());
 				}
@@ -160,12 +153,7 @@ public class ShowListing {
 				show.setShowTime(showtime);
 				System.out.println("Show time updated succesfully");
 				break;
-			case 4:
-				System.out.println("Enter ticket price");
-				double price = in.nextDouble();
-				show.setPrice(price);
-				System.out.println("Price updated successfully!");
-			case 5: 
+			case 4: 
 				System.out.println("Is the show in 3D?");
 				boolean is3D = in.nextBoolean();
 				show.set3D(is3D);
