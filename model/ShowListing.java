@@ -82,6 +82,11 @@ public class ShowListing {
 		displayShows(5);
 	}
 
+	public void addShow(Show show){
+		shows.add(show);
+		len++;
+	}
+	
 	public void createShow() throws ParseException {
 		Movie[] movies =  new Movie[Database.movieListing.getMovies().size()];
 	        movies = Database.movieListing.getMovies().toArray(movies);

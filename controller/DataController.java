@@ -7,6 +7,9 @@ import model.Show;
 import model.Staff;
 import model.Movie;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 public class DataController {
 
 	public static Database main() {
@@ -15,40 +18,8 @@ public class DataController {
 		initCineplexes(database);
 		initMovieGoers(database);
 		initStaff(database);
-		initMovieListing(database);
-		initShowListing(database);
-		database.getCineplex("VivoCity Cineplex").getCinemaList();
+
 		return database;
-	}
-
-	public static void initCineplexes(Database db) {
-		Cineplex cineplex1 = new Cineplex("VivoCity Cineplex", 3);
-		Cinema cinema1 = new Cinema(1, "normal", "VivoCity Cineplex", 10, 10);
-		Cinema cinema2 = new Cinema(2, "normal", "VivoCity Cineplex", 10, 10);
-		Cinema cinema3 = new Cinema(3, "platinum", "VivoCity Cineplex", 10, 10);
-		cineplex1.addCinema(cinema1);
-		cineplex1.addCinema(cinema2);
-		cineplex1.addCinema(cinema3);
-
-		Cineplex cineplex2 = new Cineplex("WestMall Cineplex", 3);
-		Cinema cinema4 = new Cinema(1, "normal", "Westmall Cineplex", 10, 10);
-		Cinema cinema5 = new Cinema(2, "normal", "Westmall Cineplex", 10, 10);
-		Cinema cinema6 = new Cinema(3, "platinum", "Westmall Cineplex", 10, 10);
-		cineplex2.addCinema(cinema4);
-		cineplex2.addCinema(cinema5);
-		cineplex2.addCinema(cinema6);
-
-		Cineplex cineplex3 = new Cineplex("Jurong Point Cineplex", 3);
-		Cinema cinema7 = new Cinema(1, "normal", "Jurong Point Cineplex", 10, 10);
-		Cinema cinema8 = new Cinema(2, "normal", "Jurong Point Cineplex", 10, 10);
-		Cinema cinema9 = new Cinema(3, "platinum", "Jurong Point Cineplex", 10, 10);
-		cineplex3.addCinema(cinema7);
-		cineplex3.addCinema(cinema8);
-		cineplex3.addCinema(cinema9);
-
-		db.addCineplex(cineplex1);
-		db.addCineplex(cineplex2);
-		db.addCineplex(cineplex3);
 	}
 
 	public static void initMovieGoers(Database db) {
@@ -75,7 +46,7 @@ public class DataController {
 		db.addStaff(admin5);
 	}
 
-	public static void initMovieListing(Database db) {
+	public static void initCineplexes(Database db) {
 		String[] avengersCast = {"Tom Hiddlestone", "Samuel L Jackson", "Chris Hemsworth"};
 		String[] blackAdamCast = {"Dwayne Johnson", "Sarah Shahi"};
 		String[] zootopiaCast = {"Judy Hopps", "Nick Wilde", "Bell Weather", "Gazelle"};
@@ -93,10 +64,57 @@ public class DataController {
 		Database.movieListing.addMovie(hungerGames);
 		Database.movieListing.addMovie(shangChi);
 		Database.movieListing.addMovie(zootopia);
-	}
 
-	//    public Show(Cinema cinema,Movie movie,Cineplex cineplex,boolean is3d,Date showTime,double price)
-	public static void initShowListing(Database db) {
-		
+		Cineplex cineplex1 = new Cineplex("VivoCity Cineplex", 3);
+
+		Cinema cinema1 = new Cinema(1, "AAN", false, cineplex1.getName(), 10, 10);
+		Cinema cinema2 = new Cinema(2, "ABN", false, cineplex1.getName(), 10, 10);
+		Cinema cinema3 = new Cinema(3, "ACP", true, cineplex1.getName(), 10, 10);
+		cineplex1.addCinema(cinema1);
+		cineplex1.addCinema(cinema2);
+		cineplex1.addCinema(cinema3);
+
+		Cineplex cineplex2 = new Cineplex("WestMall Cineplex", 3);
+		Cinema cinema4 = new Cinema(1, "BAN", false, cineplex2.getName(), 10, 10);
+		Cinema cinema5 = new Cinema(2, "BBN", false, cineplex2.getName(), 10, 10);
+		Cinema cinema6 = new Cinema(3, "BCP", true, cineplex2.getName(), 10, 10);
+		cineplex2.addCinema(cinema4);
+		cineplex2.addCinema(cinema5);
+		cineplex2.addCinema(cinema6);
+
+		Cineplex cineplex3 = new Cineplex("Jurong Point Cineplex", 3);
+		Cinema cinema7 = new Cinema(1, "CAN", false, cineplex3.getName(), 10, 10);
+		Cinema cinema8 = new Cinema(2, "CBN", false, cineplex3.getName(), 10, 10);
+		Cinema cinema9 = new Cinema(3, "CCP", true, cineplex3.getName(), 10, 10);
+		cineplex3.addCinema(cinema7);
+		cineplex3.addCinema(cinema8);
+		cineplex3.addCinema(cinema9);
+
+		db.addCineplex(cineplex1);
+		db.addCineplex(cineplex2);
+		db.addCineplex(cineplex3);
+
+		//public Show(Cinema cinema,Movie movie,Cineplex cineplex,boolean is3d,Date showTime)
+		Calendar calendar = new GregorianCalendar();
+		Date date = calendar.getTime();
+		Show TAshow1 = new Show(cineplex1.getCinema("AAN"), theAvengers, cineplex1, false, date);
+		Show HGshow1 = new Show(cineplex1.getCinema("AAN"), hungerGames, cineplex1, false,  date);
+		Show HGshow2 = new Show(cineplex1.getCinema("AAN"), hungerGames, cineplex1, false, date);
+		Show HGshow3 = new Show(cineplex1.getCinema("AAN"), hungerGames, cineplex1, false,  date);
+		Show TAshow2 = new Show(cineplex1.getCinema("BAN"), theAvengers, cineplex2, false,  date);
+		Show HGshow4 = new Show(cineplex1.getCinema("BAN"), hungerGames, cineplex2, false, date);
+		Show HGshow5 = new Show(cineplex1.getCinema("BAN"), hungerGames, cineplex2, false, date);
+		Show TAshow3 = new Show(cineplex1.getCinema("BCP"), theAvengers, cineplex2, true,  date);
+		Show TAshow4 = new Show(cineplex1.getCinema("BCP"), theAvengers, cineplex2, true,  date);
+
+		Database.showListing.addShow(TAshow1);
+		Database.showListing.addShow(TAshow2);
+		Database.showListing.addShow(TAshow3);
+		Database.showListing.addShow(TAshow4);
+		Database.showListing.addShow(HGshow1);
+		Database.showListing.addShow(HGshow2);
+		Database.showListing.addShow(HGshow3);
+		Database.showListing.addShow(HGshow4);
+		Database.showListing.addShow(HGshow5);
 	}
 }

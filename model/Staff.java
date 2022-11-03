@@ -164,7 +164,7 @@ public class Staff {
         System.out.println("Please input the index of the movie to update.");
         int choice = scan.nextInt();
         Database.movieListing.updateMovie(choice-1);
-        System.out.println("Movie details have successfully been udpated.");
+        System.out.println("Movie details have successfully been updated.");
     }
 
     /**
