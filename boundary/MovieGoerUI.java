@@ -6,13 +6,12 @@ import controller.Database;
 import model.MovieGoer;
 
 public class MovieGoerUI {
-
+	private static Scanner sc = new Scanner(System.in);
 	/*
 	 * Method to search movie 
 	 */
 	public void searchMovieUI() {
 		boolean exit = false;
-		Scanner sc = new Scanner(System.in);
 		do {
 			//code
 			exit = true;
@@ -25,7 +24,6 @@ public class MovieGoerUI {
 	 */
 	public void viewMovieDetailsUI() {
 		boolean exit = false;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("||-------- View Movie Details Menu --------||");
 			System.out.println("1. Select movie to view details of ");
@@ -50,7 +48,6 @@ public class MovieGoerUI {
 	 */
 	public void listTop5UI() {
 		boolean exit = false;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("||-------- List top 5 menu --------||");
 			System.out.println("Would you like to list top 5 by: ");
@@ -80,7 +77,6 @@ public class MovieGoerUI {
 	 */
 	public void rateMovieUI() {
 		boolean exit = false;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("||------- Rate Movie Menu -------||");
 			System.out.println("1. Rate a movie ");
@@ -105,7 +101,6 @@ public class MovieGoerUI {
 	 */
 	public void viewBookingHistoryUI(MovieGoer user) {
 		boolean exit = false;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("||-------- View Booking History menu --------||");
 			System.out.println("1. View your booking history");
@@ -124,4 +119,5 @@ public class MovieGoerUI {
 		} while (!exit);
 		System.out.println("Returning to Movie Goer menu...");
 	}
+
 }
