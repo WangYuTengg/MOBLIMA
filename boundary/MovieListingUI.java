@@ -4,9 +4,7 @@ import java.util.Scanner;
 import model.Staff;
 
 public class MovieListingUI {
-
 	private static Scanner sc = new Scanner(System.in);
-
 	public void main() {
 		boolean exit = false;
 		do {

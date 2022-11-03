@@ -88,6 +88,7 @@ public class MovieGoer {
 
 	private static Scanner sc = new Scanner(System.in);
 	// Functionalities
+
 	/**
 	 * Add review to a movie.
 	 */
@@ -220,6 +221,4 @@ public class MovieGoer {
 		Database.movieListing.getMovies().get(index).display();
 	}
 }
-
-
 
