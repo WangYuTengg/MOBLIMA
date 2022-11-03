@@ -72,6 +72,10 @@ public class Payment {
         {
         	price += 1;
         }
+        if(show.getCinema().getType().equalsIgnoreCase("Payment"))
+        {
+        	price += 2;
+        }
         return price;
     }
     
