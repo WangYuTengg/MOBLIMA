@@ -8,7 +8,6 @@ import controller.Database;
 public class LoginUI {
 
     private static Scanner sc = new Scanner(System.in);
-    private static Scanner sc2 = new Scanner(System.in);
 
     public static boolean main(int role){
         if (role == 1) return verifyAdmin();
@@ -31,7 +30,7 @@ public class LoginUI {
 
         // validate password
         System.out.print("Enter your password:  ");
-        String password = sc2.nextLine();
+        String password = sc.nextLine();
         
         if ( password.equals(currentStaff.getPass()) ){
             System.out.printf("Welcome %s, you have successfully logged in as admin.\n", currentStaff.getName());
