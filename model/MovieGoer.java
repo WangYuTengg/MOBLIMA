@@ -69,6 +69,15 @@ public class MovieGoer {
 	}
 
 	/*
+	 * Get the password of this MovieGoer
+	 * 
+	 * @return String this MovieGoer's id
+	 */
+	public String getPass() {
+		return password;
+	}
+
+	/*
 	 * Get the past owned tickets and current tickets of this MovieGoer
 	 * 
 	 * @return ArrayList<Ticket> this MovieGoer's tickets
@@ -225,4 +234,6 @@ public class MovieGoer {
 		Database.movieListing.getMovies().get(index).display();
 	}
 }
+
+
 
