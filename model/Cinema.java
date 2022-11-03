@@ -90,7 +90,11 @@ public class Cinema {
      * @return  the index of the cinema.
      */
     public int getIndex(){return this.index;}
-    
+    /**
+     * Get the cinema code.
+     * @return  the cinema code
+     */
+    public String getCinemaCode() {return this.cinemaCode;}
     /**
      * Get the type of the cinema.
      * @return  the type of the cinema.
