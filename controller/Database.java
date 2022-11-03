@@ -133,7 +133,7 @@ public class Database {
 	 * 
 	 * @returns MovieGoer
 	 */
-	public MovieGoer getMovieGoer(String movieGoerName) {
+	public static MovieGoer getMovieGoer(String movieGoerName) {
 		MovieGoer targetMovieGoer;
 		for (MovieGoer i : movieGoers) {
 			if (movieGoerName.compareTo(i.getName()) == 0) {
@@ -167,7 +167,7 @@ public class Database {
 	 * 
 	 * @returns Staff
 	 */
-	public Staff getStaff(String staffID) {
+	public static Staff getStaff(String staffID) {
 		Staff targetStaff;
 		for (Staff i : staffs) {
 			if (staffID.compareTo(i.getID()) == 0) {
