@@ -24,11 +24,15 @@ public class Staff {
      * The name of the Staff member.
      */
     private String staffName;
-
+    /**
+     * A static Scanner class used throughout Staff
+     */
+    private static Scanner scan = new Scanner(System.in);
     /**
      * The Constructor of the class.
      * @param staffId
      * @param pass
+     * @param name
      */
     public Staff(String staffId, String pass, String name){
         userID = staffId;
@@ -59,12 +63,11 @@ public class Staff {
     public String getName(){
         return staffName;
     }
-
+    
     /**
      * Creating a Movie class, and adding it to the movieListing within the Database.
      */
     public static void addMovie(){
-        Scanner scan = new Scanner(System.in);
         int alreadyExists = 0;
         System.out.println("Enter the Title of the Movie: "); // movie title
         String title = scan.nextLine();
@@ -73,7 +76,7 @@ public class Staff {
         movies = Database.movieListing.getMovies();
 
         for (int i = 0; i<movies.size(); i++) {
-            if (movies.get(i).getTitle() == title){
+            if (movies.get(i).getTitle().equals(title)){
                 System.out.println("The movie already exists in the system.");
                 alreadyExists = 1;
                 break;
@@ -92,22 +95,58 @@ public class Staff {
                 }
             }
         }
-
-        System.out.println("Is the movie a Blockbuster movie?"); // movie type
-        Boolean type = scan.nextBoolean();
-
-        System.out.println("Enter the Movie's Showing Status: "); // movie showing status
-        String status = scan.nextLine();
+        Boolean type;
+        System.out.println("Is the movie a Blockbuster movie? (true or false)"); // movie type
+        String input = scan.nextLine();
+    
+        // Error checking for invalid inputs
+        while (input.equals("true") == false && input.equals("false") == false){
+            System.out.println("Invalid Input. Please re-enter.\nIs the movie a Blockbuster movie? (true or false)");
+            input = scan.nextLine();
+        }
+        type = Boolean.parseBoolean(input);
+        String status = "unknown";
+        System.out.println("Enter the Movie's Showing Status: \n1. Coming Soon\n2. Preview\n3. Now Showing\n4. End Of Showing"); // movie showing status
+        
+        String statusInput = scan.nextLine();
+        // Error checking for invalid inputs
+        do {
+            switch (statusInput) {
+                case("1"):
+                    status = "COMING_SOON";
+                    break;
+                case("2"):
+                    status = "PREVIEW";
+                    break;
+                case("3"):
+                    status = "NOW_SHOWING";
+                    break;
+                case ("4"):
+                    status = "END_OF_SHOWING";
+                    break;
+                default:
+                    System.out.println("Invalid Input. Please re-enter.\nEnter the Movie's Showing Status: \n1. Coming Soon\n2. Preview\n3. Now Showing\n4. End Of Showing");
+                    statusInput = scan.next();
+            }
+        } while(status.equals("unknown"));
+        
 
         System.out.println("Enter the Movie's director: "); // movie director
         String director = scan.nextLine();
 
-        System.out.println("How many cast members would you like to list?"); // movie cast
+        System.out.println("How many cast members would you like to list? (Maximum 10)"); // movie cast
         int castLength = scan.nextInt();
-        String[] cast = new String[castLength];
+        while (castLength > 10 || castLength <= 0){
+            System.out.println("Invalid Input.\nPlease re-enter.");
+            castLength = scan.nextInt();
+        }
+        scan.nextLine();
+        String[] cast = new String[10];
         System.out.println("Enter the name of the cast members: ");
         for (int i = 0; i < castLength; i++) {
-            cast[i] = scan.nextLine();
+            System.out.printf("Cast Member No.%d:\n", i+1);
+            String temp = scan.nextLine();
+            cast[i] = temp;
         }
 
         System.out.println("Enter the Synopsis of the Movie: "); // movie synopsis
@@ -116,20 +155,16 @@ public class Staff {
         Movie movie = new Movie(title, type, status, director, synopsis, cast, castLength);
 
         Database.movieListing.addMovie(movie); 
-
-        scan.close();
     }
     /**
      * Edit the details of a Movie.
      */
     public static void editMovie(){
-        Scanner scan = new Scanner(System.in);
         Database.movieListing.listMovies();
         System.out.println("Please input the index of the movie to update.");
         int choice = scan.nextInt();
-        Database.movieListing.updateMovie(choice);
+        Database.movieListing.updateMovie(choice-1);
         System.out.println("Movie details have successfully been udpated.");
-        scan.close();
     }
 
     /**
@@ -164,7 +199,6 @@ public class Staff {
      * Updating attributes of a Show
      */
     public static void updateShow(){ 
-        Scanner scan = new Scanner(System.in);
         Database.showListing.displayShows();
         System.out.println("Input the index of the show to be updated");
         int choice = scan.nextInt();
@@ -174,14 +208,12 @@ public class Staff {
 			e.printStackTrace();
 		}
         System.out.println("The Show has been udpated.");
-        scan.close();
     }
 
     public void setTicketPrice(){
-        Scanner scan = new Scanner(System.in);
         double price = scan.nextDouble();
         Payment.setBasePrice(price);
         System.out.println("The base ticket price has been updated.");
-		scan.close();
     }
+    
 }
