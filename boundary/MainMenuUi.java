@@ -86,7 +86,7 @@ public class MainMenuUi {
 			MovieGoerUI movieGoerUI = new MovieGoerUI();
 
 			//temp MovieGoer to pass in
-			MovieGoer member1 = new MovieGoer(30, "John Tan", 1,"abc123");
+			MovieGoer member1 = new MovieGoer(30, "John Tan", 4,"abc123");
 
 			switch (movieGoerInput) {
 			case "1":
@@ -102,7 +102,7 @@ public class MainMenuUi {
 				movieGoerUI.rateMovieUI();
 				break;
 			case "5":
-				Database.getMovieGoer("Adam Wong").bookTickets();
+				member1.bookTickets();
 				break;
 			case "6":
 				movieGoerUI.viewBookingHistoryUI(member1);

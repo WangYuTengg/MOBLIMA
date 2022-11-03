@@ -70,18 +70,26 @@ public class DataController {
 		db.addStaff(admin3);
 		db.addStaff(admin4);
 		db.addStaff(admin5);
-
 	}
 
 	public static void initMovieListing(Database db) {
 		String[] avengersCast = {"Tom Hiddlestone", "Samuel L Jackson", "Chris Hemsworth"};
 		String[] blackAdamCast = {"Dwayne Johnson", "Sarah Shahi"};
+		String[] zootopiaCast = {"Judy Hopps", "Nick Wilde", "Bell Weather", "Gazelle"};
+		String[] shangChiCast = {"Shang Chi"};
+		String[] hungerGamesCast = {"Katniss Everdeen", "Peeta Mellark"};
+
 		Movie theAvengers = new Movie("The Avengers", true, "NOW_SHOWING", "Anthony Russo", "The Avengers band together to defeat bad dudes", avengersCast, 3);
 		Movie blackAdam = new Movie("Black Adam", true, "PREVIEW", "Collet-Sarra", "Teth adams was bestowed powers by god", blackAdamCast, 2);
+		Movie zootopia = new Movie("Zootopia", false, "END_OF_SHOWING", "Byron Howard", "In a world of animals, rabbit cop follows her dreams and tries to protect the city of Zootopia", zootopiaCast, 4);
+		Movie shangChi = new Movie("Shang Chi and the Legend of the 10 Rings", true, "END_OF_SHOWING", "your mum", "Asian dude with 10 rings", shangChiCast, 1);
+		Movie hungerGames = new Movie("The Hunger Games", true, "NOW_SHOWING", "your dad", "Everyone is hungry and fights", hungerGamesCast, 2);
 		
 		Database.movieListing.addMovie(theAvengers);
 		Database.movieListing.addMovie(blackAdam);
-		return;
+		Database.movieListing.addMovie(hungerGames);
+		Database.movieListing.addMovie(shangChi);
+		Database.movieListing.addMovie(zootopia);
 	}
 
 	public static void initShowListing(Database db) {
