@@ -5,10 +5,9 @@ import java.util.*;
 import model.*;
 
 public class ShowsUI {
-
+	private static Scanner sc = new Scanner(System.in);
 	public void main() {
 		boolean exit = false;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("||---------- Show Listing Menu ----------||");
 			System.out.printf(
