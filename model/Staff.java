@@ -122,7 +122,7 @@ public class Staff {
     /**
      * Edit the details of a Movie.
      */
-    public void editMovie(){
+    public static void editMovie(){
         Scanner scan = new Scanner(System.in);
         Database.movieListing.listMovies();
         System.out.println("Please input the index of the movie to update.");
@@ -135,7 +135,7 @@ public class Staff {
     /**
      * Removing a movie from the movieListing within the Database. 
      */
-    public void deleteMovie(){
+    public static void deleteMovie(){
         Database.movieListing.deleteMovie();
         System.out.println("Movie has successfully been deleted.");
     }
@@ -143,7 +143,7 @@ public class Staff {
     /**
      * Adding a Show class to the MovieListing class.
      */
-    public void addShow(){
+    public static void addShow(){
         try {
 			Database.showListing.createShow();
 		} catch (ParseException e) {
@@ -155,7 +155,7 @@ public class Staff {
     /**
      * Removing a Show from the MovieListing.
      */
-    public void deleteShow() {
+    public static void deleteShow() {
        Database.showListing.deleteShow(); 
        System.out.println("The Show has been deleted");
     }
@@ -163,7 +163,7 @@ public class Staff {
     /**
      * Updating attributes of a Show
      */
-    public void updateShow(){ 
+    public static void updateShow(){ 
         Scanner scan = new Scanner(System.in);
         Database.showListing.displayShows();
         System.out.println("Input the index of the show to be updated");
@@ -184,5 +184,4 @@ public class Staff {
         System.out.println("The base ticket price has been updated.");
 		scan.close();
     }
-    
 }
