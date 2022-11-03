@@ -44,16 +44,17 @@ public class Show {
     private double price;
     /**
      * Constructor of the class.
-     * @param cinema        the tickets of the show.
+     * @param cinema        the cinema of the show.
      * @param movie         the movie of the show.
      * @param cineplex      the cineplex of the show.
-     * @param showDate      the time of the show.
      * @param showTime      the time of the show.
-     * @param price         the general price of each ticket of the show.
      */
-    public Show(Cinema cinema,Movie movie,Cineplex cineplex,boolean is3d,Date showTime,double price){
-        this.tickets=new Ticket[cinema.getLayoutRowLength()*cinema.getLayoutColumnLength()];
-        this.price=price;this.cinema=new Cinema(cinema);this.movie=movie;this.cineplex=cineplex;this.showTime=showTime;
+    public Show(Cinema cinema,Movie movie,Cineplex cineplex,boolean is3d,Date showTime){
+        this.tickets = new Ticket[cinema.getLayoutRowLength()*cinema.getLayoutColumnLength()];
+        this.cinema = cinema;
+        this.movie = movie;
+        this.cineplex = cineplex;
+        this.showTime = showTime;
 		this.is3D = is3d;
     }
     /**
@@ -69,11 +70,6 @@ public class Show {
     /**
      * Set the price of the show.
      * @param price the price to be set.
-     */
-    public void setPrice(double price){this.price=price;}
-    /**
-     * Set the cinema of the show;
-     * @param cinema    the cinema to be set.
      */
     public void setCinema(Cinema cinema){this.cinema=cinema;}
     /**
@@ -112,11 +108,6 @@ public class Show {
      * @return  the time of the show.
      */
     public Date getShowTime(){return this.showTime;}
-    /**
-     * Get the general price of the show.
-     * @return  the general price of the show.
-     */
-    public double getPrice(){return this.price;}
     /**
      * Create a ticket corresponding to the seat with index equal to seatIndex.
      * @param seatIndex the index of the seat.
