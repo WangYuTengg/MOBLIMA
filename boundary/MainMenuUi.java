@@ -8,7 +8,8 @@ public class MainMenuUi {
 	public void main(Database db) {
 		Scanner sc = new Scanner(System.in);
 		boolean exit = false;
-
+		
+		// main program loop
 		do {
 			System.out.println("||----------- Welcome to MOBLIMA ----------||");
 			System.out.println("1. Login as admin");
@@ -18,12 +19,10 @@ public class MainMenuUi {
 			String userInput = sc.next();
 			switch (userInput) {
 			case "1":
-				if (verifyLogin() == true)
-					adminLogin();
+				if (LoginUI.main(1) == true) adminLogin();
 				break;
 			case "2":
-				if (verifyLogin() == true)
-					movieGoerLogin();
+				if (LoginUI.main(2) == true) movieGoerLogin();
 				break;
 			case "3":
 				System.out.println("Exiting MOBLIMA...");
@@ -70,7 +69,6 @@ public class MainMenuUi {
 				System.out.println("Select a valid option.");
 			}
 		} while (loggedIn == true);
-		return;
 	}
 
 	// movieGoer UI after logging in --------------------
@@ -122,19 +120,6 @@ public class MainMenuUi {
 				System.out.println("Please enter a valid option.");
 			}
 		} while (loggedIn == true);
-		return;
-	}
-
-	// verifyLogin method for both admin and user
-	public static boolean verifyLogin() {
-		// add verifying code here
-		System.out.println("");
-		boolean result = true;
-		if (result == true)
-			System.out.println("Login verified.");
-		else
-			System.out.println("Login failed");
-		return result;
 	}
 	// end of main
 }
