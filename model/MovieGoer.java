@@ -86,8 +86,8 @@ public class MovieGoer {
 		return tickets;
 	}
 
+	private static Scanner sc = new Scanner(System.in);
 	// Functionalities
-
 	/**
 	 * Add review to a movie.
 	 */
@@ -97,15 +97,12 @@ public class MovieGoer {
 		int userInput, index, rating;
 		boolean exit = false;
 
-		// list the movies for MovieGoer to see
-		Database.movieListing.listMovies();
-		Scanner sc = new Scanner(System.in);
-		
 		// loop to get a valid index from user
 		do{
-			System.out.println("Please choose the movie by index:");
-			System.out.println("Enter -1 to exit.");
-			System.out.println("Select option: ");
+			System.out.println("Please choose the movie by index (enter -1 to exit):");
+			System.out.println("||------ Listing Movies ------||");
+			Database.movieListing.listMovies();
+			System.out.print("Select movie index:  ");
 
 			//check for integer input
 			while (!sc.hasNextInt()) {
@@ -131,7 +128,7 @@ public class MovieGoer {
 		// Loop to get a valid rating
 		do{
 			System.out.println("Please enter rating ( 1 to 5 )");
-			System.out.println("Option selected: ");
+			System.out.println("Enter rating here:  ");
 			//check for integer input
 			while (!sc.hasNextInt()) {
 				System.out.println("Please enter a valid rating ( 1 to 5 ).");
@@ -147,7 +144,7 @@ public class MovieGoer {
 		rating = userInput;
 
 		// get MovieGoer input for movie review
-		System.out.println("Please enter the comment: ");
+		System.out.println("Please enter the review comment:  ");
 		String comment = sc.next();
 
 		// add review to Movie
@@ -201,15 +198,12 @@ public class MovieGoer {
 		int userInput, index;
 		boolean exit = false;
 
-		// display list of movies for MovieGoer to choose movie to view details of
-		Database.movieListing.listMovies();
-		Scanner sc = new Scanner(System.in);
-
 		// loop to get valid index of movie from MovieGoer
 		do{
-			System.out.println("Please choose the movie by index:");
-			System.out.println("Enter -1 to exit.");
-			System.out.print("Select Option: ");
+			System.out.println("Please choose the movie by index (enter -1 to exit):");
+			System.out.println("||------ Listing Movies ------||");
+			Database.movieListing.listMovies();
+			System.out.print("Select movie index:  ");
 
 			//check for integer input
 			while (!sc.hasNextInt()) {
@@ -220,7 +214,7 @@ public class MovieGoer {
 
 			// return to main menu if MovieGoer inputs -1
 			if (userInput == -1){
-				System.out.println("Returning to main menu. Review not added.");
+				System.out.println("Returning to main menu.");
 				return; 
 			}
 
@@ -234,6 +228,4 @@ public class MovieGoer {
 		Database.movieListing.getMovies().get(index).display();
 	}
 }
-
-
 
