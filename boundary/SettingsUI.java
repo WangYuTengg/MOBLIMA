@@ -3,10 +3,9 @@ package boundary;
 import java.util.Scanner;
 
 public class SettingsUI {
-
+	private static Scanner sc = new Scanner(System.in);
 	public void main() {
 		boolean exit = false;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("||----------- Settings Menu -----------||");
 			System.out.println("1. List all holidays");
