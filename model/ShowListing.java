@@ -71,7 +71,10 @@ public class ShowListing {
 	public int length() {
 		return len;
 	}
-
+	public void addShow(Show show){
+		shows.add(show);
+		len++;
+	}
 	public void listTop5byRating() {
 		sortbyRating();
 		displayShows(5);
