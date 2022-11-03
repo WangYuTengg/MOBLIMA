@@ -3,10 +3,9 @@ package boundary;
 import java.util.Scanner;
 
 public class MovieListingUI {
-
+	private static Scanner sc = new Scanner(System.in);
 	public void main() {
 		boolean exit = false;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("||----------- Movie Listing Menu -----------||");
 			System.out.println("1. Create Movie in movie listing");
