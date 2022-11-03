@@ -40,5 +40,15 @@ public enum Holiday {
     public LocalDate getDate() {
         return this.date;
     }
+    
+    public static boolean isHoliday(LocalDate date)
+    {
+    	
+    	for(Holiday holiday : values())
+    	{
+    		if(holiday.getDate().compareTo(date) == 0) return true;
+    	}
+    	return false;
+    }
 
 };
