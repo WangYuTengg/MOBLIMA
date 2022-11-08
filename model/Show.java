@@ -10,6 +10,7 @@ import java.util.*;
 import java.text.*;
 
 public class Show {
+    private static Scanner sc = new Scanner(System.in);
     /**
      * The cineplex of the show.
      */
@@ -114,12 +115,12 @@ public class Show {
      * @return          the ticket created.
      */
     public Ticket createTicket(String seatIndex, String TID){
-        Scanner sc=new Scanner(seatIndex);
+        Scanner sc=new Scanner(seatIndex.substring(0, seatIndex.length()-1));
         int row=(sc.nextInt()-1);
-        int column=(int)(sc.next().charAt(0)-'A');
-        sc.close();
+        int column=(int)(seatIndex.charAt(seatIndex.length()-1)-'A');
+        //sc.close();
         if(this.cinema.getLayout()[row][column])
-            System.out.println("Oops! This seat is alr taken. Please select another one.");
+            System.out.println("Oops! This seat is already taken. Please select another one.");
         else
             this.cinema.assignSeat(row,column);
         this.movie.addSale();
