@@ -5,7 +5,7 @@ import model.*;
 
 public class BookingSystem {
 	private ShowListing showListing;
-
+	private static Scanner in = new Scanner(System.in);
 	public BookingSystem(ShowListing showListing) {
 		this.showListing = showListing;
 	}
@@ -37,12 +37,11 @@ public class BookingSystem {
 	// book tickets
 	public Ticket[] book(int id) {
 		Movie[] movies =  new Movie[Database.movieListing.getMovies().size()];
-	    movies = Database.movieListing.getMovies().toArray(movies);
+	    	movies = Database.movieListing.getMovies().toArray(movies);
 		for (int i = 0; i < movies.length; i++) {
 			System.out.printf("%d. Movie Name: %s\n", i + 1, movies[i].getTitle());
 		}
 		System.out.println("Choose Movie Index");
-		Scanner in = new Scanner(System.in);
 		int movie_ind = in.nextInt();
 		String movie_name = movies[movie_ind - 1].getTitle();
 		Cineplex cineplex[] = new Cineplex[Database.cineplexes.size()];
@@ -96,6 +95,7 @@ public class BookingSystem {
 		}
 		double price = 0;
 		for (int i = 0; i < num_seats; i++) {
+			System.out.println("Please input the seat that you want (e.g. 3E):");
 			seat_index[i] = in.next();
 			price += Payment.calPrice(shows[show_index - 1], mType);
 		}
@@ -105,7 +105,6 @@ public class BookingSystem {
 		for (int i = 0; i < num_seats; i++) {
 			ticket[i] = shows[show_index - 1].createTicket(seat_index[i], TID);
 		}
-		in.close();
 		return ticket;
 	}
 
@@ -117,9 +116,7 @@ public class BookingSystem {
 		}
 		System.out.println();
 		System.out.println("Enter the movie index for more details.");
-		Scanner in = new Scanner(System.in);
 		int ind = in.nextInt();
-		in.close();
 		// validating movie index
 		if (ind >= 1 || ind <= len) {
 			movies[ind - 1].display();
