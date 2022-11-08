@@ -12,16 +12,16 @@ public class LoginUI {
     
     public static Staff verifyAdmin(){
         Staff currentStaff;
-        // validate staffID
+        // validate admin email
         System.out.println("||-------- Admin Login --------||");
-        System.out.print("Enter your staffID:  ");
-        String staffID = sc.nextLine();
-        Staff ans=Database.getStaff("dkjkjsnw");
+        System.out.print("Enter your admin email:  ");
+        String adminEmail = sc.nextLine();
+        Staff ans = Database.getStaff("dkjkjsnw");
 
-        if ( Database.getStaff(staffID) == null ) {
+        if ( Database.getStaff(adminEmail) == null ) {
             System.out.println("Wrong StaffID - returning to main menu.");
             return ans;
-        } else currentStaff = Database.getStaff(staffID);
+        } else currentStaff = Database.getStaff(adminEmail);
 
         // validate password
         System.out.print("Enter your password:  ");
@@ -38,16 +38,16 @@ public class LoginUI {
 
     public static MovieGoer verifyMovieGoer(){
         MovieGoer currentUser;
-        // validate userName
+        // validate user email
         System.out.println("||-------- Movie Goer Login --------||");
-        System.out.print("Enter your name:  ");
-        String userName = sc.nextLine();
-        MovieGoer ans=Database.getMovieGoer("");
+        System.out.print("Enter your user email:  ");
+        String userEmail = sc.nextLine();
+        MovieGoer ans = Database.getMovieGoer("");
 
-        if ( Database.getMovieGoer(userName) == null ) {
+        if ( Database.getMovieGoer(userEmail) == null ) {
             System.out.println("Wrong user name - returning to main menu.");
             return ans;
-        } else currentUser = Database.getMovieGoer(userName);
+        } else currentUser = Database.getMovieGoer(userEmail);
         
         // validate password
         System.out.print("Enter your password:  ");
