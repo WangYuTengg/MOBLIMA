@@ -18,10 +18,13 @@ public class MainMenuUi {
 			String userInput = sc.next();
 			switch (userInput) {
 			case "1":
-				if (LoginUI.main(1) == true) adminLogin();
+				if (LoginUI.verifyAdmin().getID().equals("dkjkjsnw") ) break;
+				adminLogin();
 				break;
 			case "2":
-				if (LoginUI.main(2) == true) movieGoerLogin();
+				MovieGoer temp=LoginUI.verifyMovieGoer();
+				if (temp.getName().equals("")) break;
+				movieGoerLogin(temp);
 				break;
 			case "3":
 				System.out.println("Exiting MOBLIMA...");
@@ -69,7 +72,7 @@ public class MainMenuUi {
 	}
 
 	// movieGoer UI after logging in --------------------
-	public static void movieGoerLogin() {
+	public static void movieGoerLogin(MovieGoer member1) {
 		boolean loggedIn = true;
 		do {
 			System.out.println("||----------- Movie Goer Menu -----------||");
@@ -86,7 +89,7 @@ public class MainMenuUi {
 			MovieGoerUI movieGoerUI = new MovieGoerUI();
 
 			//temp MovieGoer to pass in
-			MovieGoer member1 = new MovieGoer(30, "John Tan", "JohnTan@gmail.com", 4,"abc123");
+			// MovieGoer member1 = new MovieGoer(30, "John Tan", 4,"abc123");
 
 			switch (movieGoerInput) {
 			case "1":
@@ -105,7 +108,7 @@ public class MainMenuUi {
 				member1.bookTickets();
 				break;
 			case "6":
-				movieGoerUI.viewBookingHistoryUI(member1);
+				member1.viewBookingHistory();
 				break;
 			case "7":
 				System.out.println("Logging out --- Returning to Main Menu");
