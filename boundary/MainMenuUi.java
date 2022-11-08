@@ -86,7 +86,7 @@ public class MainMenuUi {
 			MovieGoerUI movieGoerUI = new MovieGoerUI();
 
 			//temp MovieGoer to pass in
-			MovieGoer member1 = new MovieGoer(30, "John Tan", 4,"abc123");
+			MovieGoer member1 = new MovieGoer(30, "John Tan", "JohnTan@gmail.com", 4,"abc123");
 
 			switch (movieGoerInput) {
 			case "1":

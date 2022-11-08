@@ -31,17 +31,31 @@ public class MovieGoer {
 	private ArrayList<Ticket> tickets;
 
 	/**
+	 * MovieGoer's email
+	 */
+	private String email;
+
+	/**
 	 * Creates a MovieGoer with the given attributes
 	 */
-	public MovieGoer(int age, String name, int id, String password) {
+	public MovieGoer(int age, String name, String email, int id, String password) {
 		this.age = age;
 		this.name = name;
+		this.email = email;
 		this.id = id;
 		this.password = password;
 		this.tickets = new ArrayList<Ticket>();
 	}
 
-	/*
+	/**
+	 * Get the email of this MovieGoer
+	 * @return email
+	 */
+	public String getUserEmail(){
+		return email;
+	}
+
+	/**
 	 * Get the age of this MovieGoer
 	 * 
 	 * @return int this MovieGoer's age
@@ -50,18 +64,16 @@ public class MovieGoer {
 		return age;
 	}
 
-	/*
+	/**
 	 * Get the name of this MovieGoer
-	 * 
 	 * @return String this MovieGoer's name
 	 */
 	public String getName() {
 		return name;
 	}
 
-	/*
+	/**
 	 * Get the id of this MovieGoer
-	 * 
 	 * @return String this MovieGoer's id
 	 */
 	public int getId() {
@@ -70,7 +82,6 @@ public class MovieGoer {
 
 	/*
 	 * Get the password of this MovieGoer
-	 * 
 	 * @return String this MovieGoer's id
 	 */
 	public String getPass() {
@@ -79,7 +90,6 @@ public class MovieGoer {
 
 	/*
 	 * Get the past owned tickets and current tickets of this MovieGoer
-	 * 
 	 * @return ArrayList<Ticket> this MovieGoer's tickets
 	 */
 	public ArrayList<Ticket> getTickets() {
@@ -87,8 +97,6 @@ public class MovieGoer {
 	}
 
 	private static Scanner sc = new Scanner(System.in);
-	// Functionalities
-
 	/**
 	 * Add review to a movie.
 	 */
@@ -154,7 +162,7 @@ public class MovieGoer {
 	}
 
 	/**
-	 * Book tickets.
+	 * Method to book tickets for this MovieGoer
 	 */
 	public void bookTickets() {
 		Ticket[] temp = Database.bookingSystem.book(id);
@@ -162,10 +170,9 @@ public class MovieGoer {
 			this.tickets.add(i);
 	}
 
-	/*
+	/**
 	 * Function to view booking history of this MovieGoer Displays relevant
 	 * information of tickets owned by this MovieGoer
-	 * 
 	 * @returns void
 	 */
 	public void viewBookingHistory() {

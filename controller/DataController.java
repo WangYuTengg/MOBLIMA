@@ -23,9 +23,9 @@ public class DataController {
 	}
 
 	public static void initMovieGoers(Database db) {
-		MovieGoer member1 = new MovieGoer(30, "John Tan", 1,"abc123");
-		MovieGoer member2 = new MovieGoer(10, "Adam Wong",2, "abc123");
-		MovieGoer member3 = new MovieGoer(18, "Ben Sim", 3,"abc123");
+		MovieGoer member1 = new MovieGoer(30, "John Tan", "JohnTan@gmail.com", 1,"abc123");
+		MovieGoer member2 = new MovieGoer(10, "Adam Wong","AdamWong@gmail.com", 2, "abc123");
+		MovieGoer member3 = new MovieGoer(18, "Ben Sim","BenSim@gmail.com", 3,"abc123");
 
 		db.addMovieGoer(member1);
 		db.addMovieGoer(member2);

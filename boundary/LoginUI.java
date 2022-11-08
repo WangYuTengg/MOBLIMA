@@ -17,9 +17,9 @@ public class LoginUI {
     
     private static boolean verifyAdmin(){
         Staff currentStaff;
-        // validate staffID
+        // validate admin email
         System.out.println("||-------- Admin Login --------||");
-        System.out.print("Enter your adminEmail:  ");
+        System.out.print("Enter your admin email:  ");
         String adminEmail = sc.nextLine();
 
         if ( Database.getStaff(adminEmail) == null ) {
@@ -42,15 +42,15 @@ public class LoginUI {
 
     private static boolean verifyMovieGoer(){
         MovieGoer currentUser;
-        // validate userName
+        // validate user email
         System.out.println("||-------- Movie Goer Login --------||");
-        System.out.print("Enter your name:  ");
-        String userName = sc.nextLine();
+        System.out.print("Enter your email: ");
+        String userEmail = sc.nextLine();
 
-        if ( Database.getMovieGoer(userName) == null ) {
-            System.out.println("Wrong user name - returning to main menu.");
+        if ( Database.getMovieGoer(userEmail) == null ) {
+            System.out.println("Wrong email entered - returning to main menu.");
             return false;
-        } else currentUser = Database.getMovieGoer(userName);
+        } else currentUser = Database.getMovieGoer(userEmail);
         
         // validate password
         System.out.print("Enter your password:  ");

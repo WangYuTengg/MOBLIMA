@@ -129,15 +129,15 @@ public class Database {
 	}
 
 	/*
-	 * Function to check whether a target movie goer is already in the database
+	 * Function to get target movie goer in the database using user email
 	 * 
 	 * @returns MovieGoer
 	 */
-	public static MovieGoer getMovieGoer(String movieGoerName) {
+	public static MovieGoer getMovieGoer(String userEmail) {
 		MovieGoer targetMovieGoer;
-		for (MovieGoer i : movieGoers) {
-			if (movieGoerName.compareTo(i.getName()) == 0) {
-				targetMovieGoer = i;
+		for (MovieGoer user : movieGoers) {
+			if (userEmail.compareTo(user.getUserEmail()) == 0) {
+				targetMovieGoer = user;
 				return targetMovieGoer;
 			}
 		}
@@ -163,7 +163,7 @@ public class Database {
 	}
 
 	/*
-	 * Function to check whether a target staff is already in the database
+	 * Function to get staff in the database using email
 	 * 
 	 * @returns Staff
 	 */
