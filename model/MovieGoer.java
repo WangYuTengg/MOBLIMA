@@ -119,12 +119,12 @@ public class MovieGoer {
 			}
 
 			// check for valid movie index
-			if ( userInput >= 0 && userInput <= moviesLength-1) {
+			if ( userInput >= 1 && userInput <= moviesLength) {
 				exit = true; //exit loop
 			} 
 			else System.out.println("Invalid index, please try again.");
 		}while(!exit);
-		index = userInput;
+		index = userInput-1;
 
 		// Loop to get a valid rating
 		exit = false;
