@@ -18,7 +18,7 @@ public class MainMenuUi {
 			String userInput = sc.next();
 			switch (userInput) {
 			case "1":
-				if (LoginUI.verifyAdmin().getID().equals("dkjkjsnw") ) break;
+				if (LoginUI.verifyAdmin().getAdminEmail().equals("dkjkjsnw") ) break;
 				adminLogin();
 				break;
 			case "2":
