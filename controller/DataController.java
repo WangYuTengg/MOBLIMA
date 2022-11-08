@@ -23,22 +23,26 @@ public class DataController {
 	}
 
 	public static void initMovieGoers(Database db) {
+		MovieGoer defaultGoer = new MovieGoer(0, "", "", 0, ""); 
 		MovieGoer member1 = new MovieGoer(30, "John Tan", "JohnTan@gmail.com", 1,"abc123");
 		MovieGoer member2 = new MovieGoer(10, "Adam Wong","AdamWong@gmail.com", 2, "abc123");
 		MovieGoer member3 = new MovieGoer(18, "Ben Sim","BenSim@gmail.com", 3,"abc123");
-
+		
+		db.addMovieGoer(defaultGoer);
 		db.addMovieGoer(member1);
 		db.addMovieGoer(member2);
 		db.addMovieGoer(member3);
 	}
 
 	public static void initStaff(Database db) {
+		Staff admin0 = new Staff("dkjkjsnw", "dknkjnws", "wrong");
 		Staff admin1 = new Staff("admin1@gmail.com", "admin123", "Yu Teng");
 		Staff admin2 = new Staff("admin2@gmail.com", "admin123", "Yong Jian");
 		Staff admin3 = new Staff("admin3@gmail.com", "admin123", "Davyn");
 		Staff admin4 = new Staff("admin4@gmail.com", "admin123", "Aditya");
 		Staff admin5 = new Staff("admin5@gmail.com", "admin123", "Si Han");
-
+			
+		db.addStaff(admin0);
 		db.addStaff(admin1);
 		db.addStaff(admin2);
 		db.addStaff(admin3);
