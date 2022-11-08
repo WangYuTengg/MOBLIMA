@@ -9,23 +9,19 @@ public class LoginUI {
 
     private static Scanner sc = new Scanner(System.in);
 
-    public static boolean main(int role){
-        if (role == 1) return verifyAdmin();
-        if (role == 2) return verifyMovieGoer();
-        else return false;
-    }
     
-    private static boolean verifyAdmin(){
+    public static Staff verifyAdmin(){
         Staff currentStaff;
-        // validate admin email
+        // validate staffID
         System.out.println("||-------- Admin Login --------||");
-        System.out.print("Enter your admin email:  ");
-        String adminEmail = sc.nextLine();
+        System.out.print("Enter your staffID:  ");
+        String staffID = sc.nextLine();
+        Staff ans=Database.getStaff("dkjkjsnw");
 
-        if ( Database.getStaff(adminEmail) == null ) {
-            System.out.println("Wrong email entered - returning to main menu.");
-            return false;
-        } else currentStaff = Database.getStaff(adminEmail);
+        if ( Database.getStaff(staffID) == null ) {
+            System.out.println("Wrong StaffID - returning to main menu.");
+            return ans;
+        } else currentStaff = Database.getStaff(staffID);
 
         // validate password
         System.out.print("Enter your password:  ");
@@ -33,24 +29,25 @@ public class LoginUI {
         
         if ( password.equals(currentStaff.getPass()) ){
             System.out.printf("Welcome %s, you have successfully logged in as admin.\n", currentStaff.getName());
-            return true;
+            return currentStaff;
         } else {
             System.out.printf("Wrong password - returning to main menu.\n"); 
-            return false;
+            return ans;
         }
     }
 
-    private static boolean verifyMovieGoer(){
+    public static MovieGoer verifyMovieGoer(){
         MovieGoer currentUser;
-        // validate user email
+        // validate userName
         System.out.println("||-------- Movie Goer Login --------||");
-        System.out.print("Enter your email: ");
-        String userEmail = sc.nextLine();
+        System.out.print("Enter your name:  ");
+        String userName = sc.nextLine();
+        MovieGoer ans=Database.getMovieGoer("");
 
-        if ( Database.getMovieGoer(userEmail) == null ) {
-            System.out.println("Wrong email entered - returning to main menu.");
-            return false;
-        } else currentUser = Database.getMovieGoer(userEmail);
+        if ( Database.getMovieGoer(userName) == null ) {
+            System.out.println("Wrong user name - returning to main menu.");
+            return ans;
+        } else currentUser = Database.getMovieGoer(userName);
         
         // validate password
         System.out.print("Enter your password:  ");
@@ -58,10 +55,10 @@ public class LoginUI {
 
         if ( password.equals(currentUser.getPass())){
             System.out.printf("Welcome %s, you have successfully logged in as a usern.\n", currentUser.getName());
-            return true;
+            return currentUser;
         } else {
             System.out.println("Wrong password - returning to main menu."); 
-            return false;
+            return ans;
         }
     }
 }
