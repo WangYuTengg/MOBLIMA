@@ -113,13 +113,12 @@ public class Show {
      * @param seatIndex the index of the seat.
      * @return          the ticket created.
      */
-    public Ticket createTicket(String seatIndex, String TID){
-        Scanner sc=new Scanner(seatIndex);
+   public Ticket createTicket(String seatIndex, String TID){
+        Scanner sc=new Scanner(seatIndex.substring(0, seatIndex.length()-1));
+        int column=(int)(seatIndex.charAt(seatIndex.length()-1)-'A');
         int row=(sc.nextInt()-1);
-        int column=(int)(sc.next().charAt(0)-'A');
-        sc.close();
         if(this.cinema.getLayout()[row][column])
-            System.out.println("Oops! This seat is alr taken. Please select another one.");
+            System.out.println("Oops! This seat is already taken. Please select another one.");
         else
             this.cinema.assignSeat(row,column);
         this.movie.addSale();
