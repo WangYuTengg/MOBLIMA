@@ -30,7 +30,6 @@ public class MovieListing {
 
 	public void listMovies(int lim) {
 		for (int i = 0; i < lim; i++) {
-			i++;
 			System.out.printf("%d. %s\n", i + 1, movies.get(i).getTitle());
 		}
 	}
@@ -141,8 +140,8 @@ public class MovieListing {
 	}
 
 	public void sortbyRating() {
-		for (int i = 0; i < len; i++)
-			for (int j = i; j < len; j++)
+		for (int i = 0; i < len-1; i++)
+			for (int j = 0; j < len-1-i; j++)
 				if (movies.get(j).getOverallRating() < movies.get(j + 1).getOverallRating()) {
 					Movie temp = movies.get(j);
 					movies.set(j, movies.get(j + 1));
@@ -151,8 +150,8 @@ public class MovieListing {
 	}
 
 	public void sortbySales() {
-		for (int i = 0; i < len; i++)
-			for (int j = i; j < len; j++)
+		for (int i = 0; i < len-1; i++)
+			for (int j = 0; j < len-1-i; j++)
 				if (movies.get(j).getTotalSales() < movies.get(j + 1).getTotalSales()) {
 					Movie temp = movies.get(j);
 					movies.set(j, movies.get(j + 1));

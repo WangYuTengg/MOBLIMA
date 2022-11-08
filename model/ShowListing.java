@@ -12,7 +12,7 @@ public class ShowListing {
 
 	public void sortbyRating() {
 		for (int i = 0; i < this.shows.size() - 1; ++i)
-			for (int j = i; j < this.shows.size() - 1; ++j)
+			for (int j = 0; j < this.shows.size() - 1-i; ++j)
 				if (this.shows.get(j).getMovie().getOverallRating() < this.shows.get(j + 1).getMovie()
 						.getOverallRating()) {
 					Show temp = this.shows.get(j);
@@ -23,7 +23,7 @@ public class ShowListing {
 
 	public void sortbySales() {
 		for (int i = 0; i < this.shows.size() - 1; ++i)
-			for (int j = i; j < this.shows.size() - 1; ++j)
+			for (int j = 0; j < this.shows.size() - 1-i; ++j)
 				if (this.shows.get(j).getMovie().getTotalSales() < this.shows.get(j + 1).getMovie().getTotalSales()) {
 					Show temp = this.shows.get(j);
 					this.shows.set(j, this.shows.get(j + 1));
