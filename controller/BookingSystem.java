@@ -47,15 +47,22 @@ public class BookingSystem {
 		String movie_name = movies[movie_ind - 1].getTitle();
 		Cineplex cineplex[] = new Cineplex[Database.cineplexes.size()];
 		cineplex = Database.cineplexes.toArray(cineplex);
+		Show[] shows = new Show[showListing.getShows().size()];
+		shows =	showListing.getShows().toArray(shows);
+		int show_length = showListing.length();
 		for (int i = 0; i < cineplex.length; i++) {
-			System.out.printf("%d. Cineplex Name: %s\n", i + 1, cineplex[i].getName());
+			for(int j = 0; j < show_length; j++)
+			{
+				if(shows[j].getMovie().getTitle() == movie_name && shows[i].getCineplex().getName() == cineplex[i].getName())
+				{
+					System.out.printf("%d. Cineplex Name: %s\n", i + 1, cineplex[i].getName());
+					break;
+				}
+			}
 		}
 		System.out.println("Choose Cinplex Index");
 		int cineplex_ind = in.nextInt();
 		String cineplex_name = cineplex[cineplex_ind - 1].getName();
-		Show[] shows = new Show[showListing.getShows().size()];
-		shows =	showListing.getShows().toArray(shows);
-		int show_length = showListing.length();
 		for (int i = 0; i < show_length; i++) {
 			if (movie_name.equals(shows[i].getMovie().getTitle())
 					&& cineplex_name.equals(shows[i].getCineplex().getName())) {
