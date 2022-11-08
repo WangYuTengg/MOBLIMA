@@ -33,11 +33,11 @@ public class DataController {
 	}
 
 	public static void initStaff(Database db) {
-		Staff admin1 = new Staff("admin1", "admin123", "Yu Teng");
-		Staff admin2 = new Staff("admin2", "admin123", "Yong Jian");
-		Staff admin3 = new Staff("admin3", "admin123", "Davyn");
-		Staff admin4 = new Staff("admin4", "admin123", "Aditya");
-		Staff admin5 = new Staff("admin5", "admin123", "Si Han");
+		Staff admin1 = new Staff("admin1@gmail.com", "admin123", "Yu Teng");
+		Staff admin2 = new Staff("admin2@gmail.com", "admin123", "Yong Jian");
+		Staff admin3 = new Staff("admin3@gmail.com", "admin123", "Davyn");
+		Staff admin4 = new Staff("admin4@gmail.com", "admin123", "Aditya");
+		Staff admin5 = new Staff("admin5@gmail.com", "admin123", "Si Han");
 
 		db.addStaff(admin1);
 		db.addStaff(admin2);

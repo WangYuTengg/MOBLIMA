@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 public class Staff {
     /**
-     * The userID of the Staff member.
+     * The email of the Staff member.
      */
-    private String userID;
+    private String email;
     /**
      * The password of the Staff member.
      */
@@ -30,12 +30,12 @@ public class Staff {
     private static Scanner scan = new Scanner(System.in);
     /**
      * The Constructor of the class.
-     * @param staffId
+     * @param adminEmail
      * @param pass
      * @param name
      */
-    public Staff(String staffId, String pass, String name){
-        userID = staffId;
+    public Staff(String adminEmail, String pass, String name){
+        email = adminEmail;
         password = pass;
         staffName = name;
     }
@@ -44,8 +44,8 @@ public class Staff {
      * get the ID of the Staff member.
      * @return
      */
-    public String getID() {
-        return userID;
+    public String getAdminEmail() {
+        return email;
     }
 
     /**

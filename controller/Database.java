@@ -167,11 +167,11 @@ public class Database {
 	 * 
 	 * @returns Staff
 	 */
-	public static Staff getStaff(String staffID) {
+	public static Staff getStaff(String adminEmail) {
 		Staff targetStaff;
-		for (Staff i : staffs) {
-			if (staffID.compareTo(i.getID()) == 0) {
-				targetStaff = i;
+		for (Staff staff : staffs) {
+			if (adminEmail.compareTo(staff.getAdminEmail()) == 0) {
+				targetStaff = staff;
 				return targetStaff;
 			}
 		}

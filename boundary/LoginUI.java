@@ -19,13 +19,13 @@ public class LoginUI {
         Staff currentStaff;
         // validate staffID
         System.out.println("||-------- Admin Login --------||");
-        System.out.print("Enter your staffID:  ");
-        String staffID = sc.nextLine();
+        System.out.print("Enter your adminEmail:  ");
+        String adminEmail = sc.nextLine();
 
-        if ( Database.getStaff(staffID) == null ) {
-            System.out.println("Wrong StaffID - returning to main menu.");
+        if ( Database.getStaff(adminEmail) == null ) {
+            System.out.println("Wrong email entered - returning to main menu.");
             return false;
-        } else currentStaff = Database.getStaff(staffID);
+        } else currentStaff = Database.getStaff(adminEmail);
 
         // validate password
         System.out.print("Enter your password:  ");
