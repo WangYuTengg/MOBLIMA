@@ -124,8 +124,11 @@ public class Show {
         else
             this.cinema.assignSeat(row,column);
         this.movie.addSale();
-        return this.tickets[this.ticketLength++]=new Ticket(seatIndex,this.cineplex.getName(),this.movie.getTitle(),this.showTime,this.cinema.getIndex(),this.ticketLength+1,this.price, TID);
+        this.tickets[this.ticketLength]=new Ticket(seatIndex,this.cineplex.getName(),this.movie.getTitle(),this.showTime,this.cinema.getIndex(),this.ticketLength+1,this.price, TID);
+        this.ticketLength++;
+        return this.tickets[this.ticketLength-1];
     }
+
     /**
      * To display the detail of the show.
      */
