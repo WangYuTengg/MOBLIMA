@@ -96,7 +96,7 @@ public class Movie{
      * Get the overall rating of the movie.
      * @return  the overall rating of the movie.
      */
-    public double getOverallRating(){return this.pastReview.size()>0?this.overallRating/this.pastReview.size():-1;}
+    public double getOverallRating(){return this.pastReview.size()>1?this.overallRating/this.pastReview.size():-1;}
     /**
      * Get the past review of the movie.
      * @return  the past review of the movie.
