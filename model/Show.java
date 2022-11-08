@@ -113,12 +113,13 @@ public class Show {
      * @param seatIndex the index of the seat.
      * @return          the ticket created.
      */
-   public Ticket createTicket(String seatIndex, String TID){
-        Scanner sc=new Scanner(seatIndex.substring(0, seatIndex.length()-1));
-        int column=(int)(seatIndex.charAt(seatIndex.length()-1)-'A');
+    public Ticket createTicket(String seatIndex, String TID){
+        Scanner sc=new Scanner(seatIndex);
         int row=(sc.nextInt()-1);
+        int column=(int)(sc.next().charAt(0)-'A');
+        sc.close();
         if(this.cinema.getLayout()[row][column])
-            System.out.println("Oops! This seat is already taken. Please select another one.");
+            System.out.println("Oops! This seat is alr taken. Please select another one.");
         else
             this.cinema.assignSeat(row,column);
         this.movie.addSale();
@@ -129,6 +130,7 @@ public class Show {
      */
     public void display(){
         SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd hh:mm");
-        System.out.printf("%20s%10s%10d%tR %tD\n",this.movie.getTitle(),this.cineplex.getName(),this.cinema.getIndex(),ft.format(this.showTime));
+        //System.out.println("Hi");
+        System.out.printf("%20s%20s%20d%20s\n",this.movie.getTitle(),this.cineplex.getName(),this.cinema.getIndex(), ft.format(this.showTime));
     }
 }

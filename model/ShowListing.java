@@ -53,17 +53,17 @@ public class ShowListing {
 	}
 
 	public void displayShows() {
-		System.out.printf("%10s%20s%10s%10s%20s\n", "Index", "Movie Title", "Cineplex", "Cinema", "Time");
+		System.out.printf("%10s%20s%20s%20s%20s\n", "Index", "Movie Title", "Cineplex", "Cinema", "Time");
 		for (int i = 0; i < this.shows.size(); ++i) {
-			System.out.printf("%8d", i);
+			System.out.printf("%10d", i);
 			this.shows.get(i).display();
 		}
 	}
 
 	public void displayShows(int lim) {
-		System.out.printf("%10s%20s%10s%10s%20s\n", "Index", "Movie Title", "Cineplex", "Cinema", "Time");
+		System.out.printf("%10s%20s%20s%20s%20s\n", "Index", "Movie Title", "Cineplex", "Cinema", "Time");
 		for (int i = 0; i < lim; ++i) {
-			System.out.printf("%8d", i);
+			System.out.printf("%10d", i);
 			this.shows.get(i).display();
 		}
 	}
