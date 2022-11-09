@@ -19,7 +19,7 @@ public class LoginUI {
         Staff ans = Database.getStaff("dkjkjsnw");
 
         if ( Database.getStaff(adminEmail) == null ) {
-            System.out.println("Wrong StaffID - returning to main menu.");
+            System.out.println("Wrong admin email entered - returning to main menu.");
             return ans;
         } else currentStaff = Database.getStaff(adminEmail);
 
@@ -45,7 +45,7 @@ public class LoginUI {
         MovieGoer ans = Database.getMovieGoer("");
 
         if ( Database.getMovieGoer(userEmail) == null ) {
-            System.out.println("Wrong user name - returning to main menu.");
+            System.out.println("Wrong user email entered - returning to main menu.");
             return ans;
         } else currentUser = Database.getMovieGoer(userEmail);
         
