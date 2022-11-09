@@ -10,7 +10,6 @@ import java.util.*;
 import java.text.*;
 
 public class Show {
-    private static Scanner sc = new Scanner(System.in);
     /**
      * The cineplex of the show.
      */
