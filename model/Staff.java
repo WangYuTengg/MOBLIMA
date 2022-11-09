@@ -203,7 +203,7 @@ public class Staff {
         System.out.println("Input the index of the show to be updated");
         int choice = scan.nextInt();
         try {
-			Database.showListing.updateShow(choice);
+			Database.showListing.updateShow(choice-1);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
