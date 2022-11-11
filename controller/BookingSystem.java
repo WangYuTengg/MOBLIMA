@@ -19,12 +19,16 @@ public class BookingSystem {
 		System.out.printf("O: Available seats\nX: Occupied seats\n");
 		System.out.printf(" \t");
 		for (int j = 0; j < column; j++) {
+			if (j == (column / 5) || j == column - (column / 5))
+				System.out.print("     ");
 			System.out.printf("%c ", j + 'A');
 		}
 		System.out.println();
 		for (int i = 0; i < row; i++) {
 			System.out.printf("%d\t", i + 1);
 			for (int j = 0; j < column; j++) {
+				if (j == (column / 5) || j == column - (column / 5))
+					System.out.print("|  | ");
 				if (layout[i][j] == false)
 					System.out.print("O ");
 				else
