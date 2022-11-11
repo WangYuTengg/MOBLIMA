@@ -14,7 +14,7 @@ import model.MovieListing;
 import model.ShowListing;
 import model.Staff;
 
-public class Database {
+public class Database implements java.io.Serializable{
 	// Attributes
 	/**
 	 * The collection of cineplexes.
