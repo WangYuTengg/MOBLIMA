@@ -53,6 +53,70 @@ public class Payment {
     private static double senior_priceMultiplier = 0.5; 
 
     /**
+     * Get current base ticket price
+     * @return base_price;
+     */
+    public static double getBasePrice(){
+        return base_price;
+    }
+
+    /**
+     * Get current additional blockbuster movie charge
+     * @return blockBuster_price;
+     */
+    public static double getIsBBPrice(){
+        return blockBuster_price;
+    }
+
+    /**
+     * Get current additional 3D movie charge
+     * @return is3D_price;
+     */
+    public static double getIs3DPrice(){
+        return is3D_price;
+    }
+
+    /**
+     * Get current additional platinum cinema charge
+     * @return isPlat_price;
+     */
+    public static double getIsPlatPrice(){
+        return isPlat_price;
+    }
+
+    /**
+     * Get current holiday price multiplier
+     * @return holiday_priceMultiplier
+     */
+    public static double getHolidayMultiplier(){
+        return holiday_priceMultiplier;
+    }
+    
+    /**
+     * Get current weekend price multiplier
+     * @return weekend_priceMultiplier
+     */
+    public static double getWeekendMultiplier(){
+        return weekend_priceMultiplier;
+    }
+
+    /**
+     * Get current student price multiplier
+     * @return student_priceMultiplier
+     */
+    public static double getStudentMultipier(){
+        return student_priceMultiplier;
+    }
+
+    /**
+     * Get current senior price multiplier
+     * @return senior_priceMultiplier
+     */
+    public static double getSeniorMultipier(){
+        return senior_priceMultiplier;
+    }
+
+    /**
      * Set base price of ticket
      * @param price
      */
