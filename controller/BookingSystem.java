@@ -73,7 +73,7 @@ public class BookingSystem {
 				}
 			}
 		}
-		System.out.println("Choose Cinplex Index");
+		System.out.println("Choose Ciniplex Index");
 		int cineplex_ind = in.nextInt() - 1;
 		for(int i = 0; i < show_length; i++)
 		{
