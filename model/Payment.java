@@ -59,7 +59,7 @@ public class Payment {
     public static void setBasePrice(double price)
     {
     	base_price = price;
-    	System.out.printf("Price updated successfully to $%.2f.\n", base_price);
+    	System.out.printf("Base ticket price updated successfully to $%.2f.\n", base_price);
     }
 
     /**
@@ -99,7 +99,7 @@ public class Payment {
     public static void setHolidayPriceMultiplier(double multiplier)
     {
     	holiday_priceMultiplier = multiplier;
-    	System.out.printf("Holiday price multiplier updated successfully to $%.2f.\n", holiday_priceMultiplier);
+    	System.out.printf("Holiday price multiplier updated successfully to %.2f.\n", holiday_priceMultiplier);
     }
 
     /**
@@ -109,7 +109,7 @@ public class Payment {
     public static void setStudentPriceMultiplier(double multiplier)
     {
     	student_priceMultiplier = multiplier;
-    	System.out.printf("Student price multiplier updated successfully to $%.2f.\n", student_priceMultiplier);
+    	System.out.printf("Student price multiplier updated successfully to %.2f.\n", student_priceMultiplier);
     }
 
     /**
@@ -119,7 +119,7 @@ public class Payment {
     public static void setSeniorPriceMultiplier(double multiplier)
     {
     	senior_priceMultiplier = multiplier;
-    	System.out.printf("Senior price multiplier updated successfully to $%.2f.\n", senior_priceMultiplier);
+    	System.out.printf("Senior price multiplier updated successfully to %.2f.\n", senior_priceMultiplier);
     }
 
     /**
@@ -129,7 +129,7 @@ public class Payment {
     public static void setWeekendPriceMultiplier(double multiplier)
     {
     	weekend_priceMultiplier = multiplier;
-    	System.out.printf("Weekend price multiplier updated successfully to $%.2f.\n", weekend_priceMultiplier);
+    	System.out.printf("Weekend price multiplier updated successfully to %.2f.\n", weekend_priceMultiplier);
     }
 
 

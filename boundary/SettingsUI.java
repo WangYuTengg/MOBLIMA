@@ -1,6 +1,8 @@
 package boundary;
 
 import java.util.Scanner;
+
+import model.Holiday;
 import model.Payment;
 
 public class SettingsUI {
@@ -37,54 +39,47 @@ public class SettingsUI {
 			switch (adminInput) {
 			case "1":
 				System.out.println("Listing all holidays: ");
+				Holiday.listHoliday();
 				break;
 			case "2":
 				System.out.println("-------- Updating Holiday Multiplier --------");
 				newMultiplier = getMultiplierFromUser();
 				Payment.setHolidayPriceMultiplier(newMultiplier);
-				System.out.printf("Holiday price multiplier successfully updated to: %.2f\n", newMultiplier);
 				break;
 			case "3":
 				System.out.println("-------- Updating Weekend Multiplier --------");
 				newMultiplier = getMultiplierFromUser();
 				Payment.setWeekendPriceMultiplier(newMultiplier);
-				System.out.printf("Weekend price multiplier successfully updated to: %.2f\n", newMultiplier);
 				break;
 			case "4":
 				System.out.println("-------- Updating Senior Multiplier --------");
 				newMultiplier = getMultiplierFromUser();
 				Payment.setSeniorPriceMultiplier(newMultiplier);
-				System.out.printf("Senior price multiplier successfully updated to: %.2f\n", newMultiplier);
 				break;
 			case "5":
 				System.out.println("-------- Updating Student Multiplier --------");
 				newMultiplier = getMultiplierFromUser();
 				Payment.setStudentPriceMultiplier(newMultiplier);
-				System.out.printf("Student price multiplier successfully updated to: %.2f\n", newMultiplier);
 				break;
 			case "6":
 				System.out.println("-------- Updating Base Price --------");
 				newPrice = getPriceFromUser();
 				Payment.setBasePrice(newPrice);
-				System.out.printf("Base price successfully updated to: %.2f\n", newPrice);
 				break;
 			case "7":
 				System.out.println("-------- Updating 3D Charge --------");
 				newPrice = getPriceFromUser();
 				Payment.set3dAdditionalPrice(newPrice);
-				System.out.printf("3D additional charge successfully updated to: %.2f\n", newPrice);
 				break;
 			case "8":
 				System.out.println("-------- Updating Platinum Charge --------");
 				newPrice = getPriceFromUser();
 				Payment.setPlatAdditionalPrice(newPrice);
-				System.out.printf("Platinum cinema additional charge successfully updated to: %.2f\n", newPrice);
 				break;
 			case "9":
 				System.out.println("-------- Updating Blockbuster Charge --------");
 				newPrice = getPriceFromUser();
 				Payment.setBlockBusterAdditionalPrice(newPrice);
-				System.out.printf("Blockbuster movie additonal charge successfully updated to: %.2f\n", newPrice);
 				break;
 			case "10":
 				exit = true;

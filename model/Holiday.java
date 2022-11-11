@@ -1,5 +1,6 @@
 package model;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public enum Holiday {
     NEW_YEARS_DAY(LocalDate.of(2022, 1, 1)),
@@ -51,4 +52,13 @@ public enum Holiday {
     	return false;
     }
 
+    public static void listHoliday(){
+        int i = 0;
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        for (Holiday holiday: Holiday.values()){
+                i++;
+                System.out.printf("%d. %s: --- ", i, holiday.toString().replaceAll("_", " "));
+                System.out.println(dtf.format(holiday.getDate()));
+        }
+    }
 };
