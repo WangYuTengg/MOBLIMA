@@ -9,6 +9,7 @@ public class ShowsUI {
 	public void main() {
 		boolean exit = false;
 		do {
+			System.out.println("");
 			System.out.println("||---------- Show Listing Menu ----------||");
 			System.out.printf(
 					"1. Create showing of movie\n" + "2. Update showing of movie\n" + "3. Remove showing of movie\n"
@@ -17,18 +18,22 @@ public class ShowsUI {
 			String adminInput = sc.next();
 			switch (adminInput) {
 			case "1":
+				System.out.println("");
 				System.out.println("------- Creating show of movie -------");
 				Staff.addShow();
 				break;
 			case "2":
+				System.out.println("");
 				System.out.println("------ Update showing of movie -------");
 				Staff.updateShow();
 				break;
 			case "3":
+				System.out.println("");
 				System.out.println("------- Deleting showing of movie -------");
 				Staff.deleteShow();
 				break;
 			case "4":
+				System.out.println("");
 				System.out.println("||----- Display Shows -----||");
 				Database.showListing.displayShows();
 				break;

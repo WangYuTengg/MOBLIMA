@@ -9,6 +9,7 @@ public class MovieListingUI {
 	public void main() {
 		boolean exit = false;
 		do {
+			System.out.println("");
 			System.out.println("||----------- Movie Listing Menu -----------||");
 			System.out.println("1. Create Movie in movie listing");
 			System.out.println("2. Update Movie in movie listing");

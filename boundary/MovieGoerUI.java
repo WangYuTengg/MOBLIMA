@@ -12,7 +12,8 @@ public class MovieGoerUI {
 	 */
 	public void searchMovieUI() {
 		boolean exit = false;
-		do {
+		do {			
+			System.out.println("");
 			System.out.println("||-------- Search Movie Menu --------||");
 			System.out.println("1. List all movies");
 			System.out.println("2. Search Movie by movie title");
@@ -48,6 +49,7 @@ public class MovieGoerUI {
 	public void viewMovieDetailsUI() {
 		boolean exit = false;
 		do {
+			System.out.println("");
 			System.out.println("||-------- View Movie Details Menu --------||");
 			System.out.println("1. Select movie to view details of ");
 			System.out.println("2. Return to Movie Goer menu");
@@ -72,6 +74,7 @@ public class MovieGoerUI {
 	public void listTop5UI() {
 		boolean exit = false;
 		do {
+			System.out.println("");
 			System.out.println("||-------- List top 5 menu --------||");
 			System.out.println("Would you like to list top 5 by: ");
 			System.out.println("1. Overall Rating ");
@@ -101,6 +104,7 @@ public class MovieGoerUI {
 	public void rateMovieUI() {
 		boolean exit = false;
 		do {
+			System.out.println("");
 			System.out.println("||------- Rate Movie Menu -------||");
 			System.out.println("1. Rate a movie ");
 			System.out.println("2. Returning to Movie Goer menu");
@@ -125,6 +129,7 @@ public class MovieGoerUI {
 	public void viewBookingHistoryUI(MovieGoer user) {
 		boolean exit = false;
 		do {
+			System.out.println("");
 			System.out.println("||-------- View Booking History menu --------||");
 			System.out.println("1. View your booking history");
 			System.out.println("2. Returning to Movie Goer Menu");

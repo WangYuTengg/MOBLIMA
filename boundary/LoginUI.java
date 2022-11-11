@@ -13,6 +13,7 @@ public class LoginUI {
     public static Staff verifyAdmin(){
         Staff currentStaff;
         // validate admin email
+        System.out.println("");
         System.out.println("||-------- Admin Login --------||");
         System.out.print("Enter your admin email:  ");
         String adminEmail = sc.nextLine();
@@ -39,6 +40,7 @@ public class LoginUI {
     public static MovieGoer verifyMovieGoer(){
         MovieGoer currentUser;
         // validate user email
+        System.out.println("");
         System.out.println("||-------- Movie Goer Login --------||");
         System.out.print("Enter your user email:  ");
         String userEmail = sc.nextLine();

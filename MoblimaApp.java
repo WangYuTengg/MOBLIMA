@@ -1,6 +1,7 @@
 import boundary.MainMenuUi;
 import controller.DataController;
 import controller.Database;
+import controller.Serialization;
 
 public class MoblimaApp {
 

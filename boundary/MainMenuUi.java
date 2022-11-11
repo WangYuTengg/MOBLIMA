@@ -41,6 +41,7 @@ public class MainMenuUi {
 	public static void adminLogin() {
 		boolean loggedIn = true;
 		do {
+			System.out.println("");
 			System.out.println("||----------- Admin Menu -----------||");
 			System.out.println("1. Add/Delete/Update movies in movie listing");
 			System.out.println("2. Add/Delete/Update shows in show listing");
@@ -75,6 +76,7 @@ public class MainMenuUi {
 	public static void movieGoerLogin(MovieGoer member1) {
 		boolean loggedIn = true;
 		do {
+			System.out.println("");
 			System.out.println("||----------- Movie Goer Menu -----------||");
 			System.out.println("1. Search/List Movie");
 			System.out.println("2. View movie details");

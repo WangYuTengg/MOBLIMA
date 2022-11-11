@@ -18,6 +18,7 @@ public class SettingsUI {
 		double newPrice;
 		double newMultiplier;
 		do {
+			System.out.println("");
 			System.out.println("||----------- Settings Menu -----------||");
 			System.out.println("1. List all holidays");
 			System.out.println("||----------- Update Multipliers -----------||");
