@@ -18,7 +18,7 @@ public class BookingSystem {
 		boolean layout[][] = cinema.getLayout();
 		System.out.printf("O: Available seats\nX: Occupied seats\n");
 		System.out.printf(" \t");
-		for (int j = 0; j <= column; j++) {
+		for (int j = 0; j < column; j++) {
 			System.out.printf("%c ", j + 'A');
 		}
 		System.out.println();
@@ -35,21 +35,35 @@ public class BookingSystem {
 	}
 
 	// book tickets
-	public Ticket[] book(int id) {
+	public Ticket[] book(int id) throws InvalidIdException, ExitException {
 		Movie[] movies =  new Movie[Database.movieListing.getMovies().size()];
 	    	movies = Database.movieListing.getMovies().toArray(movies);
-		for (int i = 0; i < movies.length; i++) {
-			System.out.printf("%d. Movie Name: %s\n", i + 1, movies[i].getTitle());
-		}
-		System.out.println("Choose Movie Index");
-		int movie_ind = in.nextInt();
-		String movie_name = movies[movie_ind - 1].getTitle();
+		int movie_ind;
+		boolean flag1;
+		do
+		{
+			flag1 = true;
+			Database.movieListing.listMovies();
+			System.out.println("Choose Movie Index");
+			movie_ind = in.nextInt() - 1;
+			if(movie_ind >= movies.length || movie_ind < 0) 
+			{
+				throw new InvalidIdException("Invalid Movie index. Returning to Movie Goer Menu...");
+			}
+			else if(!movies[movie_ind].getStatus().equals("NOW_SHOWING"))
+			{
+				System.out.println("Movie currently not in cinemas. Choose another movie!");
+				flag1 = false;
+			}
+		}while(flag1 == false);
+		String movie_name = movies[movie_ind].getTitle();
 		Cineplex cineplex[] = new Cineplex[Database.cineplexes.size()];
 		cineplex = Database.cineplexes.toArray(cineplex);
 		Show[] shows = new Show[showListing.getShows().size()];
 		shows =	showListing.getShows().toArray(shows);
 		int show_length = showListing.length();
-		for (int i = 0; i < cineplex.length; i++) {
+		for (int i = 0; i < cineplex.length; i++) 
+		{
 			for(int j = 0; j < show_length; j++)
 			{
 				if(shows[j].getMovie().getTitle() == movie_name && shows[i].getCineplex().getName() == cineplex[i].getName())
@@ -59,9 +73,22 @@ public class BookingSystem {
 				}
 			}
 		}
-		System.out.println("Choose Ciniplex Index");
-		int cineplex_ind = in.nextInt();
-		String cineplex_name = cineplex[cineplex_ind - 1].getName();
+		System.out.println("Choose Cinplex Index");
+		int cineplex_ind = in.nextInt() - 1;
+		for(int i = 0; i < show_length; i++)
+		{
+			flag1 = false;
+			if(shows[i].getMovie().getTitle() == movie_name && shows[i].getCineplex().getName() == cineplex[cineplex_ind].getName())
+			{
+				flag1 = true;
+				break;
+			}	
+		}
+		if(flag1 == false)
+		{
+			throw new InvalidIdException("Incorrect Cineplex ID. Returning to Movie Goer Menu...");
+		}
+		String cineplex_name = cineplex[cineplex_ind].getName();
 		for (int i = 0; i < show_length; i++) {
 			if (movie_name.equals(shows[i].getMovie().getTitle())
 					&& cineplex_name.equals(shows[i].getCineplex().getName())) {
@@ -70,7 +97,9 @@ public class BookingSystem {
 			}
 		}
 		System.out.println("Choose Show Index");
-		int show_index = in.nextInt();
+		int show_index = in.nextInt() - 1;
+		if(!shows[show_index].getMovie().getTitle().equals(movie_name) || !shows[show_index].getCineplex().getName().equals(cineplex_name)) 
+			throw new InvalidIdException("Incoreect Show Index. Returning to movie goer menu...");
 		displayLayout(shows[show_index - 1]);
 		System.out.println("Enter the number of seats required");
 		int num_seats = in.nextInt();
@@ -97,8 +126,23 @@ public class BookingSystem {
 		for (int i = 0; i < num_seats; i++) {
 			System.out.println("Please input the seat that you want (e.g. 3E):");
 			seat_index[i] = in.next();
-			price += Payment.calPrice(shows[show_index - 1], mType);
+			price += Payment.calPrice(shows[show_index], mType);
 		}
+		String confirm;
+		do 
+		{
+			System.out.printf("Your chosen seats: ");
+			for (int i = 0; i < num_seats; i++)
+			{
+				System.out.printf("%s ", seat_index[i]);
+			}
+			System.out.printf("\nConfirm Seats?(Yes/No)\n");
+			confirm = in.nextLine();
+			if(confirm.equalsIgnoreCase("No"))
+			{
+				throw new ExitException("Cancelling order and returning to Movie goer Menu...");
+			}
+		}while(!confirm.equalsIgnoreCase("Yes") && !confirm.equalsIgnoreCase("No"));
 		System.out.printf("The total price of the tickets is: %.2f\n", price);
 		String TID = Payment.generateTID(shows[show_index - 1].getCinema());
 		System.out.println("Payment Successful! Transaction ID: " + TID);
@@ -125,3 +169,4 @@ public class BookingSystem {
 	}
 
 }
+
