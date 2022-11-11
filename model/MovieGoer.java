@@ -165,7 +165,13 @@ public class MovieGoer {
 	 * Method to book tickets for this MovieGoer
 	 */
 	public void bookTickets() {
-		Ticket[] temp = Database.bookingSystem.book(id);
+		Ticket[] temp = null;
+		try {
+			temp = Database.bookingSystem.book(id);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return;
+		}
 		for (Ticket i : temp)
 			this.tickets.add(i);
 	}
