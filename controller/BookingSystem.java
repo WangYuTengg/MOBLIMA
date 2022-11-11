@@ -35,7 +35,7 @@ public class BookingSystem {
 	}
 
 	// book tickets
-	public Ticket[] book(int id) throws InvalidIdException, ExitException {
+	public Ticket[] book(int id) throws InvalidIdException, ExitException, InputMismatchException{
 		Movie[] movies =  new Movie[Database.movieListing.getMovies().size()];
 	    	movies = Database.movieListing.getMovies().toArray(movies);
 		int movie_ind;
@@ -99,8 +99,8 @@ public class BookingSystem {
 		System.out.println("Choose Show Index");
 		int show_index = in.nextInt() - 1;
 		if(!shows[show_index].getMovie().getTitle().equals(movie_name) || !shows[show_index].getCineplex().getName().equals(cineplex_name)) 
-			throw new InvalidIdException("Incoreect Show Index. Returning to movie goer menu...");
-		displayLayout(shows[show_index - 1]);
+			throw new InvalidIdException("Incorrect Show Index. Returning to movie goer menu...");
+		displayLayout(shows[show_index]);
 		System.out.println("Enter the number of seats required");
 		int num_seats = in.nextInt();
 		String seat_index[] = new String[num_seats];
@@ -144,10 +144,10 @@ public class BookingSystem {
 			}
 		}while(!confirm.equalsIgnoreCase("Yes") && !confirm.equalsIgnoreCase("No"));
 		System.out.printf("The total price of the tickets is: %.2f\n", price);
-		String TID = Payment.generateTID(shows[show_index - 1].getCinema());
+		String TID = Payment.generateTID(shows[show_index].getCinema());
 		System.out.println("Payment Successful! Transaction ID: " + TID);
 		for (int i = 0; i < num_seats; i++) {
-			ticket[i] = shows[show_index - 1].createTicket(seat_index[i], TID);
+			ticket[i] = shows[show_index].createTicket(seat_index[i], TID);
 		}
 		return ticket;
 	}
