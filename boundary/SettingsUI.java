@@ -1,12 +1,10 @@
 package boundary;
 
 import java.util.Scanner;
-
 import model.Holiday;
 import model.Payment;
 
 public class SettingsUI {
-
 	/**
 	 * Declare static scanner once for this class
 	 */
@@ -14,6 +12,7 @@ public class SettingsUI {
 
 	/**
 	 * Main function containing the program loop for settings menu
+	 * @return void
 	 */
 	public void main() {
 		boolean exit = false;
@@ -24,15 +23,15 @@ public class SettingsUI {
 			System.out.println("||----------- Settings Menu -----------||");
 			System.out.println("1. List all holidays");
 			System.out.println("||----------- Update Multipliers -----------||");
-			System.out.println("2. Update Holiday Price Multiplier");
-			System.out.println("3. Update Weekend Price Multiplier");
-			System.out.println("4. Update Senior Price Multiplier");
-			System.out.println("5. Update Student Price Multiplier");
+			System.out.printf("2. Update Holiday Price Multiplier --- current: %.2fx\n", Payment.getHolidayMultiplier());
+			System.out.printf("3. Update Weekend Price Multiplier --- current: %.2fx\n", Payment.getWeekendMultiplier());
+			System.out.printf("4. Update Senior Price Multiplier  --- current: %.2fx\n", Payment.getSeniorMultipier());
+			System.out.printf("5. Update Student Price Multiplier --- current: %.2fx\n", Payment.getStudentMultipier());
 			System.out.println("||---------- Update Prices -----------||");
-			System.out.println("6. Update Base ticket price");
-			System.out.println("7. Update 3d Movie additional charge");
-			System.out.println("8. Update Platinum Cinema additional charge");
-			System.err.println("9. Update Blockbuster Movie additional charge");
+			System.out.printf("6. Update Base ticket price        --- current: $%.2f\n", Payment.getBasePrice());
+			System.out.printf("7. Update 3d Movie extra charge    --- current: $%.2f\n", Payment.getIs3DPrice());
+			System.out.printf("8. Update Platinum extra charge    --- current: $%.2f\n", Payment.getIsPlatPrice());
+			System.err.printf("9. Update Blockbuster extra charge --- current: $%.2f\n", Payment.getIsBBPrice());
 			System.out.println("10. Return to Admin menu");
 			System.out.print("Select option: ");
 			String adminInput = sc.next();
