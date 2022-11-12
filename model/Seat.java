@@ -21,11 +21,17 @@ public class Seat implements java.io.Serializable{
     private String index;
     
     /**
+     * The type of seat.(Elite or not)
+     */
+    private boolean elite;
+    /**
      * Creates a new Seat with a seat index
      * @param index   the index of the seat.
+     * @param elite	  is seat elite or not.
      */
-    public Seat(String index){
+    public Seat(String index, boolean elite){
     	this.index = index;
+    	this.elite = elite;
     }
  
     /**
@@ -49,5 +55,13 @@ public class Seat implements java.io.Serializable{
      */
     public void assign(){
     	this.occupied = true;
+    }
+    /**
+     * Get the type of seat(Elite or not).
+     * @return true for elite else false.
+     */
+    public boolean isElite()
+    {
+    	return this.elite;
     }
 }
