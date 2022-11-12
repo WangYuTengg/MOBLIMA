@@ -131,7 +131,7 @@ public class ShowListing implements java.io.Serializable{
 		}
 		
 		// in.close();
-		shows.add(new Show((cineplex[cineplex_ind-1].getCinemaList())[cinema_ind-1], movies[movie_ind - 1],
+		shows.add(new Show(new Cinema((cineplex[cineplex_ind-1].getCinemaList())[cinema_ind-1]), movies[movie_ind - 1],
 				cineplex[cineplex_ind - 1], is3D, showtime));
 		System.out.println("Show successfully created!");
 	}
