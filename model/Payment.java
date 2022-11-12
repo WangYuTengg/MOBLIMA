@@ -264,7 +264,7 @@ public class Payment implements java.io.Serializable{
     public void addLoyaltyCards(String card)
     {
     	loyaltyCards.add(card);
-    	System.out.println("Card added Successfully!");
+    	//System.out.println("Card added Successfully!");
     }
     
     /**
@@ -274,7 +274,7 @@ public class Payment implements java.io.Serializable{
     public void removeLoyaltyCards(String card)
     {
     	loyaltyCards.remove(card);
-    	System.out.println("Card removed Successfully!");
+        //System.out.println("Card removed Successfully!");
     }
 
 

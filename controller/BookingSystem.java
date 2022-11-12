@@ -222,14 +222,14 @@ public class BookingSystem implements java.io.Serializable{
 				ArrayList<String> loyaltyCards = db.payment.getLoyaltyCards();
 				for( i = 0; i < loyaltyCards.size(); i++)
 				{
-					System.out.printf("%d. %s", i+1, loyaltyCards.get(i));
+					System.out.printf("%d. %s\n", i+1, loyaltyCards.get(i));
 				}
 				System.out.printf("%d. Go Back\n", i+1);
 				int loyalty_ind = in.nextInt() - 1;
 				if(loyalty_ind != i)
 				{
 					price = db.payment.discountedPrice(price, loyaltyCards.get(loyalty_ind));
-					System.out.printf("The new discounted price is: %.2f", price);
+					System.out.printf("The new discounted price is: %.2f\n", price);
 					break;
 				}
 			}

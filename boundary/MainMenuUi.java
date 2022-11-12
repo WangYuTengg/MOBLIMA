@@ -10,13 +10,23 @@ public class MainMenuUi {
 		boolean exit = false;
 		// main program loop
 		do {
+			System.out.println("");
 			System.out.println("||----------- Welcome to MOBLIMA ----------||");
+			System.out.println("-------------- Log in --------------");
 			System.out.println("1. Login as admin");
 			System.out.println("2. Login as Movie Goer");
 			System.out.println("3. Create Movie Goer account");
-			System.out.println("4. Exit");
+			System.out.println("------- Available features ---------");
+			System.out.println("( Log in as movie goer for more features )");
+			System.out.println("4. Search/view movie list");
+			System.out.println("5. View Movie Details");
+			System.out.println("6. View Prices");
+			System.out.println("7. Exit");
 			System.out.print("Select Option: ");
+
+			MovieGoerUI movieGoerUI = new MovieGoerUI();
 			String userInput = sc.next();
+
 			switch (userInput) {
 			case "1":
 				if (LoginUI.verifyAdmin(db).getAdminEmail().equals("dkjkjsnw") ) break;
@@ -32,6 +42,15 @@ public class MainMenuUi {
 				createUserUI.main(db);
 				break;
 			case "4":
+				movieGoerUI.searchMovieUI(db);
+				break;
+			case "5":
+				movieGoerUI.viewMovieDetailsUI(db);
+				break;
+			case "6":
+				db.payment.displayPrices();
+				break;
+			case "7":
 				System.out.println("Exiting MOBLIMA...");
 				exit = true;
 				break;
@@ -56,9 +75,8 @@ public class MainMenuUi {
 			System.out.println("3. Add/Delete cineplex");
 			System.out.println("4. Configure system settings");
 			System.out.println("5. View/Block Top 5 Lists");
-			System.out.println("6. Display Show Status");
-			System.out.println("7. Sales Report of Movies ");
-			System.out.println("8. Log out ");
+			System.out.println("6. Sales Report of Movies ");
+			System.out.println("7. Log out ");
 			System.out.print("Select Option: ");
 			String adminInput = sc.next();
 			switch (adminInput) {
@@ -83,12 +101,9 @@ public class MainMenuUi {
 				top5UI.main(db);
 				break;
 			case "6":
-				db.bookingSystem.displayShowStatus(db);
-				break;
-			case "7":
 				db.movieListing.listSalesofMovie();
 				break;
-			case "8":
+			case "7":
 				System.out.println("Logging out --- Returning to Main Menu");
 				loggedIn = false;
 				break;
