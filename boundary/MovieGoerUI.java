@@ -18,7 +18,7 @@ public class MovieGoerUI {
 			System.out.println("1. List all movies");
 			System.out.println("2. Search Movie by movie title");
 			System.out.println("3. Search Movie by Director");
-			System.out.println("4. Return to Goer menu");
+			System.out.println("4. Return to Movie Goer menu");
 			System.out.printf("Select your option:  ");
 			String userInput = sc.nextLine();
 			switch(userInput){
