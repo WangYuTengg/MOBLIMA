@@ -46,7 +46,8 @@ public class MainMenuUi {
 			System.out.println("1. Add/Delete/Update movies in movie listing");
 			System.out.println("2. Add/Delete/Update shows in show listing");
 			System.out.println("3. Configure system settings");
-			System.out.println("4. Log out ");
+			System.out.println("4. View/Block Top 5 Lists");
+			System.out.println("5. Log out ");
 			System.out.print("Select Option: ");
 			String adminInput = sc.next();
 			switch (adminInput) {
@@ -63,6 +64,10 @@ public class MainMenuUi {
 				settingsUI.main();
 				break;
 			case "4":
+				Top5UI top5UI = new Top5UI();
+				top5UI.main(db);
+				break;
+			case "5":
 				System.out.println("Logging out --- Returning to Main Menu");
 				loggedIn = false;
 				break;

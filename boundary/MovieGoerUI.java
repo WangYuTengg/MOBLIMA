@@ -84,10 +84,14 @@ public class MovieGoerUI {
 			String userInput = sc.next();
 			switch (userInput) {
 			case "1":
-				db.movieListing.listTop5byRating();
+				System.out.println("Listing top 5 by overall rating: ");
+				if (!Top5UI.getIsTop5ByRatingBlocked()) db.movieListing.listTop5byRating();
+				else System.out.println("List currently blocked by admin.");
 				break;
 			case "2":
-				db.movieListing.listTop5bySales();
+				System.out.println("Listing top 5 by total ticket sales: ");
+				if (!Top5UI.getIsTop5BySalesBlocked()) db.movieListing.listTop5bySales();
+				else System.out.println("List currently blocked by admin.");
 				break;
 			case "3":
 				exit = true;
