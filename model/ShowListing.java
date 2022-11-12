@@ -54,7 +54,7 @@ public class ShowListing implements java.io.Serializable{
 	}
 
 	public void displayShows() {
-		System.out.printf("%10s%30s%25s%10s%20s\n", "Index", "Movie Title", "Cineplex", "Cinema", "Time");
+		System.out.printf("%10s%35s%25s%10s%20s\n", "Index", "Movie Title", "Cineplex", "Cinema", "Time");
 		for (int i = 0; i < this.shows.size(); ++i) {
 			System.out.printf("%10d", i+1);
 			this.shows.get(i).display();
@@ -62,7 +62,7 @@ public class ShowListing implements java.io.Serializable{
 	}
 
 	public void displayShows(int lim) {
-		System.out.printf("%10s%30s%25s%10s%20s\n", "Index", "Movie Title", "Cineplex", "Cinema", "Time");
+		System.out.printf("%10s%35s%25s%10s%20s\n", "Index", "Movie Title", "Cineplex", "Cinema", "Time");
 		for (int i = 0; i < lim; ++i) {
 			System.out.printf("%10d", i+1);
 			this.shows.get(i).display();
