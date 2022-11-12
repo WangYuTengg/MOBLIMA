@@ -2,9 +2,9 @@ package model;
 
 import java.util.*;
 
-public class MovieListing {
+public class MovieListing implements java.io.Serializable{
 	private ArrayList<Movie> movies = new ArrayList<>();
-	private static int len = 0;
+	private int len = 0;
 	private static Scanner in = new Scanner(System.in);
 
 	public void addMovie(Movie movie) {

@@ -1,6 +1,6 @@
 /**
  Represents the Staff Class.
- @version   1.0
+ @version   2.0
  @author    Davyn Yam
  @since     2022-11-01
  */
@@ -11,7 +11,7 @@ import java.util.Scanner;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-public class Staff {
+public class Staff implements java.io.Serializable{
     /**
      * The email of the Staff member.
      */
@@ -67,13 +67,13 @@ public class Staff {
     /**
      * Creating a Movie class, and adding it to the movieListing within the Database.
      */
-    public static void addMovie(){
+    public static void addMovie(Database db){
         int alreadyExists = 0;
         System.out.println("Enter the Title of the Movie: "); // movie title
         String title = scan.nextLine();
 
         ArrayList<Movie> movies = new ArrayList<Movie>();
-        movies = Database.movieListing.getMovies();
+        movies = db.movieListing.getMovies();
 
         for (int i = 0; i<movies.size(); i++) {
             if (movies.get(i).getTitle().equals(title)){
@@ -154,33 +154,33 @@ public class Staff {
 
         Movie movie = new Movie(title, type, status, director, synopsis, cast, castLength);
 
-        Database.movieListing.addMovie(movie); 
+        db.movieListing.addMovie(movie); 
     }
     /**
      * Edit the details of a Movie.
      */
-    public static void editMovie(){
-        Database.movieListing.listMovies();
+    public static void editMovie(Database db){
+        db.movieListing.listMovies();
         System.out.println("Please input the index of the movie to update.");
         int choice = scan.nextInt();
-        Database.movieListing.updateMovie(choice-1);
+        db.movieListing.updateMovie(choice-1);
         System.out.println("Movie details have successfully been updated.");
     }
 
     /**
      * Removing a movie from the movieListing within the Database. 
      */
-    public static void deleteMovie(){
-        Database.movieListing.deleteMovie();
+    public static void deleteMovie(Database db){
+        db.movieListing.deleteMovie();
         System.out.println("Movie has successfully been deleted.");
     }
     
     /**
      * Adding a Show class to the MovieListing class.
      */
-    public static void addShow(){
+    public static void addShow(Database db){
         try {
-			Database.showListing.createShow();
+			db.showListing.createShow(db);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -190,20 +190,20 @@ public class Staff {
     /**
      * Removing a Show from the MovieListing.
      */
-    public static void deleteShow() {
-       Database.showListing.deleteShow(); 
+    public static void deleteShow(Database db) {
+       db.showListing.deleteShow(); 
        System.out.println("The Show has been deleted");
     }
 
     /**
      * Updating attributes of a Show
      */
-    public static void updateShow(){ 
-        Database.showListing.displayShows();
+    public static void updateShow(Database db){ 
+        db.showListing.displayShows();
         System.out.println("Input the index of the show to be updated");
         int choice = scan.nextInt();
         try {
-			Database.showListing.updateShow(choice-1);
+			db.showListing.updateShow(choice-1,db);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}

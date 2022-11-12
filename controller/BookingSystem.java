@@ -1,18 +1,16 @@
 package controller;
 
 import java.util.*;
-
-import exception.ExitException;
-import exception.InvalidIdException;
 import model.*;
+import exception.*;
 
-public class BookingSystem {
+public class BookingSystem implements java.io.Serializable{
 	private ShowListing showListing;
 	private static Scanner in = new Scanner(System.in);
 	public BookingSystem(ShowListing showListing) {
 		this.showListing = showListing;
 	}
-
+	public ShowListing getShowlisting(){return this.showListing;}
 	// display cinema layout
 	private void displayLayout(Show show) {
 		Cinema cinema = show.getCinema();
@@ -42,15 +40,15 @@ public class BookingSystem {
 	}
 
 	// book tickets
-	public Ticket[] book(int id) throws InvalidIdException, ExitException, InputMismatchException{
-		Movie[] movies =  new Movie[Database.movieListing.getMovies().size()];
-	    	movies = Database.movieListing.getMovies().toArray(movies);
+	public Ticket[] book(int id, Database db) throws InvalidIdException, ExitException, InputMismatchException{
+		Movie[] movies =  new Movie[db.movieListing.getMovies().size()];
+	    	movies = db.movieListing.getMovies().toArray(movies);
 		int movie_ind;
 		boolean flag1;
 		do
 		{
 			flag1 = true;
-			Database.movieListing.listMovies();
+			db.movieListing.listMovies();
 			System.out.println("Choose Movie Index");
 			movie_ind = in.nextInt() - 1;
 			if(movie_ind >= movies.length || movie_ind < 0) 
@@ -64,8 +62,8 @@ public class BookingSystem {
 			}
 		}while(flag1 == false);
 		String movie_name = movies[movie_ind].getTitle();
-		Cineplex cineplex[] = new Cineplex[Database.cineplexes.size()];
-		cineplex = Database.cineplexes.toArray(cineplex);
+		Cineplex cineplex[] = new Cineplex[db.cineplexes.size()];
+		cineplex = db.cineplexes.toArray(cineplex);
 		Show[] shows = new Show[showListing.getShows().size()];
 		shows =	showListing.getShows().toArray(shows);
 		int show_length = showListing.length();
@@ -73,7 +71,7 @@ public class BookingSystem {
 		{
 			for(int j = 0; j < show_length; j++)
 			{
-				if(shows[j].getMovie().getTitle() == movie_name && shows[i].getCineplex().getName() == cineplex[i].getName())
+				if(shows[j].getMovie().getTitle() == movie_name && shows[j].getCineplex().getName() == cineplex[i].getName())
 				{
 					System.out.printf("%d. Cineplex Name: %s\n", i + 1, cineplex[i].getName());
 					break;

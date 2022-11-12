@@ -4,12 +4,12 @@ import java.util.Date;
 
 /**
   Represents a ticket.
-  @version  1.0
+  @version  2.0
   @author   Guo Sihan
   @since    2022-10-30
 */
 
-public class Ticket {
+public class Ticket implements java.io.Serializable{
     /**
 	 * Ticket's seatIndex 
 	 * Row represented by numbers e.g 4 for 4th row from the front

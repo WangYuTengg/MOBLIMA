@@ -63,11 +63,11 @@ public class DataController {
 		Movie shangChi = new Movie("Shang Chi and the Legend of the 10 Rings", true, "END_OF_SHOWING", "your mum", "Asian dude with 10 rings", shangChiCast, 1);
 		Movie hungerGames = new Movie("The Hunger Games", true, "NOW_SHOWING", "your dad", "Everyone is hungry and fights", hungerGamesCast, 2);
 		
-		Database.movieListing.addMovie(theAvengers);
-		Database.movieListing.addMovie(blackAdam);
-		Database.movieListing.addMovie(hungerGames);
-		Database.movieListing.addMovie(shangChi);
-		Database.movieListing.addMovie(zootopia);
+		db.movieListing.addMovie(theAvengers);
+		db.movieListing.addMovie(blackAdam);
+		db.movieListing.addMovie(hungerGames);
+		db.movieListing.addMovie(shangChi);
+		db.movieListing.addMovie(zootopia);
 
 		Cineplex cineplex1 = new Cineplex("VivoCity Cineplex", 3);
 
@@ -111,14 +111,14 @@ public class DataController {
 		Show TAshow3 = new Show(cinema6, theAvengers, cineplex2, true,  date);
 		Show TAshow4 = new Show(cinema6, theAvengers, cineplex2, true,  date);
 
-		Database.showListing.addShow(TAshow1);
-		Database.showListing.addShow(TAshow2);
-		Database.showListing.addShow(TAshow3);
-		Database.showListing.addShow(TAshow4);
-		Database.showListing.addShow(HGshow1);
-		Database.showListing.addShow(HGshow2);
-		Database.showListing.addShow(HGshow3);
-		Database.showListing.addShow(HGshow4);
-		Database.showListing.addShow(HGshow5);
+		db.showListing.addShow(TAshow1);
+		db.showListing.addShow(TAshow2);
+		db.showListing.addShow(TAshow3);
+		db.showListing.addShow(TAshow4);
+		db.showListing.addShow(HGshow1);
+		db.showListing.addShow(HGshow2);
+		db.showListing.addShow(HGshow3);
+		db.showListing.addShow(HGshow4);
+		db.showListing.addShow(HGshow5);
 	}
 }

@@ -6,9 +6,9 @@ import controller.Database;
 
 import java.text.*;
 
-public class ShowListing {
+public class ShowListing implements java.io.Serializable{
 	private ArrayList<Show> shows = new ArrayList<>();
-	static private int len = 0;
+	private int len = 0;
 	static private Scanner in = new Scanner(System.in);
 
 	public void sortbyRating() {
@@ -86,17 +86,17 @@ public class ShowListing {
 		displayShows(5);
 	}
 
-	public void createShow() throws ParseException {
-		Movie[] movies =  new Movie[Database.movieListing.getMovies().size()];
-	    movies = Database.movieListing.getMovies().toArray(movies);
+	public void createShow(Database db) throws ParseException {
+		Movie[] movies =  new Movie[db.movieListing.getMovies().size()];
+	    movies = db.movieListing.getMovies().toArray(movies);
 		for (int i = 0; i < movies.length; i++) {
 			System.out.printf("%d. Movie Name: %s\n", i + 1, movies[i].getTitle());
 		}
 		System.out.println("Choose Movie Index:");
 		// Scanner in = new Scanner(System.in);
 		int movie_ind = in.nextInt();
-		Cineplex cineplex[] = new Cineplex[Database.cineplexes.size()];
-		cineplex = Database.cineplexes.toArray(cineplex);
+		Cineplex cineplex[] = new Cineplex[db.cineplexes.size()];
+		cineplex = db.cineplexes.toArray(cineplex);
 		System.out.println("Choose a Cineplex index:");
 		for (int i = 0; i < cineplex.length; i++) {
 			System.out.printf("%d. Cineplex Name: %s\n", i + 1, cineplex[i].getName());
@@ -147,7 +147,7 @@ public class ShowListing {
 		System.out.println("Show successfully deleted!");
 	}
 
-	public void updateShow(int show_ind) throws ParseException {
+	public void updateShow(int show_ind, Database db) throws ParseException {
 		// Scanner in = new Scanner(System.in);
 		int choice;
 		Show show = shows.get(show_ind);
@@ -163,8 +163,8 @@ public class ShowListing {
 				System.out.println("Cinema Update successfully!");
 				break;
 			case 2:
-				Movie[] movies =  new Movie[Database.movieListing.getMovies().size()];
-			    movies = Database.movieListing.getMovies().toArray(movies);
+				Movie[] movies =  new Movie[db.movieListing.getMovies().size()];
+			    movies = db.movieListing.getMovies().toArray(movies);
 				for (int i = 0; i < movies.length; i++) {
 					System.out.printf("%d. Movie Name: %s\n", i + 1, movies[i].getTitle());
 				}
@@ -215,3 +215,4 @@ public class ShowListing {
 		return shows;
 	}
 }
+

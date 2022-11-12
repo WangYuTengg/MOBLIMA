@@ -1,11 +1,11 @@
 package model;
 /**
 Represents a review of a movie.
-@version  1.0
+@version  2.0
 @author   Guo Sihan
 @since    2022-10-30
 */
-public class Review {
+public class Review implements java.io.Serializable{
 	
   /**
    * Review's rating , integer from 1 to 5

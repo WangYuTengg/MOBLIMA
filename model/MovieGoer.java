@@ -4,7 +4,7 @@ import controller.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MovieGoer {
+public class MovieGoer implements java.io.Serializable{
 	/**
 	 * MovieGoer's age
 	 */
@@ -100,9 +100,9 @@ public class MovieGoer {
 	/**
 	 * Add review to a movie.
 	 */
-	public static void addReview() {
+	public static void addReview(Database db) {
 		// declare variables needed
-		int moviesLength = Database.movieListing.length();
+		int moviesLength = db.movieListing.length();
 		int userInput, index, rating;
 		boolean exit = false;
 
@@ -110,7 +110,7 @@ public class MovieGoer {
 		do{
 			System.out.println("Please choose the movie by index (enter -1 to exit):");
 			System.out.println("||------ Listing Movies ------||");
-			Database.movieListing.listMovies();
+			db.movieListing.listMovies();
 			System.out.print("Select movie index:  ");
 
 			//check for integer input
@@ -152,22 +152,23 @@ public class MovieGoer {
 		rating = userInput;
 
 		// get MovieGoer input for comment
+		sc.nextLine();
 		System.out.println("Please enter the review comment:");
 		String comment = sc.nextLine();
 
 		// add review to Movie
-		Database.movieListing.getMovies().get(index).addReview(rating, comment);
+		db.movieListing.getMovies().get(index).addReview(rating, comment);
 		System.out.printf("Successfully added review to %s!\n",
-				Database.movieListing.getMovies().get(index).getTitle());
+				db.movieListing.getMovies().get(index).getTitle());
 	}
 
 	/**
 	 * Method to book tickets for this MovieGoer
 	 */
-	public void bookTickets() {
+	public void bookTickets(Database db) {
 		Ticket[] temp = null;
 		try {
-			temp = Database.bookingSystem.book(id);
+			temp = db.bookingSystem.book(id, db);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return;
@@ -198,9 +199,9 @@ public class MovieGoer {
 	/**
 	 * View the detail of the movie.
 	 */
-	public static void viewMovieDetails() {
+	public static void viewMovieDetails(Database db) {
 		// declare variables needed
-		int moviesLength = Database.movieListing.length();
+		int moviesLength = db.movieListing.length();
 		int userInput, index;
 		boolean exit = false;
 
@@ -208,7 +209,7 @@ public class MovieGoer {
 		do{
 			System.out.println("Please choose the movie by index (enter -1 to exit):");
 			System.out.println("||------ Listing Movies ------||");
-			Database.movieListing.listMovies();
+			db.movieListing.listMovies();
 			System.out.print("Select movie index:  ");
 
 			//check for integer input
@@ -231,7 +232,9 @@ public class MovieGoer {
 			else System.out.println("Invalid index, please try again.");
 		}while(!exit);
 		index = userInput-1;
-		Database.movieListing.getMovies().get(index).display();
+		db.movieListing.getMovies().get(index).display();
 	}
 }
+
+
 

@@ -1,11 +1,11 @@
 package model;
 /**
  Represents a cinema
- @version   1.4
+ @version   2.0
  @author    Guo Sihan
  @since     2022-10-30
  */
-public class Cinema {
+public class Cinema implements java.io.Serializable{
     /**
      * The index of the cinema.
      */

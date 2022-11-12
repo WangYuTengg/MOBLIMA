@@ -1,11 +1,11 @@
 package model; 
 /**
  Represents a seat in a cinema.
- @version   1.0
+ @version   2.0
  @author    Guo Sihan
  @since     2022-10-30
  */
-public class Seat {
+public class Seat implements java.io.Serializable{
 	
     /**
      * The status of the seat.(Occupied or not)

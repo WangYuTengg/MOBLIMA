@@ -1,6 +1,6 @@
 /**
   Represents a available show.
-  @version  1.0
+  @version  2.0
   @author   Guo Sihan
   @since    2022-10-30
 */
@@ -9,7 +9,7 @@ package model;
 import java.util.*;
 import java.text.*;
 
-public class Show {
+public class Show implements java.io.Serializable{
     /**
      * The cineplex of the show.
      */
