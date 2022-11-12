@@ -83,7 +83,6 @@ public class Database implements java.io.Serializable{
 	/**
 	 * Function to add a new cineplex into the database
 	 * @param newCineplex The new cineplex to be added.
-	 * @return void
 	 */
 	public void addCineplex(Cineplex newCineplex) {
 		cineplexes.add(newCineplex);
@@ -92,7 +91,6 @@ public class Database implements java.io.Serializable{
 	/**
 	 * Function to remove a target cineplex from the database
 	 * @param cineplexToRemove	The cineplex to be removed.
-	 * @return void
 	 */
 	public void removeCineplex(Cineplex cineplexToRemove) {
 		cineplexes.remove(cineplexes.indexOf(cineplexToRemove));
@@ -117,7 +115,6 @@ public class Database implements java.io.Serializable{
 	/**
 	 * Function to add a new movie goer into the database
 	 * @param newMovieGoer	The new movie goer to be added. 
-	 * @return void
 	 */
 	public void addMovieGoer(MovieGoer newMovieGoer) {
 		movieGoers.add(newMovieGoer);
@@ -126,7 +123,6 @@ public class Database implements java.io.Serializable{
 	/**
 	 * Function to remove a target movie goer from the database
 	 * @param movieGoerToRemove The movie goer to be removed.
-	 * @return void
 	 */
 	public void removeMovieGoer(MovieGoer movieGoerToRemove) {
 		movieGoers.remove(movieGoers.indexOf(movieGoerToRemove));
@@ -151,7 +147,6 @@ public class Database implements java.io.Serializable{
 	/**
 	 * Function to add a new staff into the database
 	 * @param newStaff A new staff member to be added.
-	 * @return void
 	 */
 	public void addStaff(Staff newStaff) {
 		staffs.add(newStaff);
@@ -160,7 +155,6 @@ public class Database implements java.io.Serializable{
 	/**
 	 * Function to remove a target staff from the database
 	 * @param staffToRemove	The staff to be removed from the database.
-	 * @return void
 	 */
 	public void removeStaff(Staff staffToRemove) {
 		staffs.remove(staffs.indexOf(staffToRemove));

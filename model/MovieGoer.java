@@ -74,7 +74,7 @@ public class MovieGoer extends User implements java.io.Serializable {
 
 	/**
 	 * Get the past owned tickets and current tickets of this MovieGoer
-	 * @return ArrayList<Ticket> this MovieGoer's tickets
+	 * @return The MovieGoer's tickets
 	 */
 	public ArrayList<Ticket> getTickets() {
 		return tickets;
