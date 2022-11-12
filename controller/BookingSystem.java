@@ -40,7 +40,7 @@ public class BookingSystem implements java.io.Serializable{
 	}
 
 	// book tickets
-	public Ticket[] book(int id, Database db) throws InvalidIdException, ExitException, InputMismatchException{
+	public Ticket[] book(int id, Database db) throws exception.InvalidIdException, exception.ExitException, InputMismatchException{
 		Movie[] movies =  new Movie[db.movieListing.getMovies().size()];
 	    	movies = db.movieListing.getMovies().toArray(movies);
 		int movie_ind;
@@ -53,7 +53,7 @@ public class BookingSystem implements java.io.Serializable{
 			movie_ind = in.nextInt() - 1;
 			if(movie_ind >= movies.length || movie_ind < 0) 
 			{
-				throw new InvalidIdException("Invalid Movie index. Returning to Movie Goer Menu...");
+				throw new exception.InvalidIdException("Invalid Movie index. Returning to Movie Goer Menu...");
 			}
 			else if(!movies[movie_ind].getStatus().equals("NOW_SHOWING"))
 			{
@@ -91,7 +91,7 @@ public class BookingSystem implements java.io.Serializable{
 		}
 		if(flag1 == false)
 		{
-			throw new InvalidIdException("Incorrect Cineplex ID. Returning to Movie Goer Menu...");
+			throw new exception.InvalidIdException("Incorrect Cineplex ID. Returning to Movie Goer Menu...");
 		}
 		String cineplex_name = cineplex[cineplex_ind].getName();
 		for (int i = 0; i < show_length; i++) {
@@ -104,14 +104,10 @@ public class BookingSystem implements java.io.Serializable{
 		System.out.println("Choose Show Index");
 		int show_index = in.nextInt() - 1;
 		if(!shows[show_index].getMovie().getTitle().equals(movie_name) || !shows[show_index].getCineplex().getName().equals(cineplex_name)) 
-			throw new InvalidIdException("Incorrect Show Index. Returning to movie goer menu...");
+			throw new exception.InvalidIdException("Incorrect Show Index. Returning to movie goer menu...");
 		displayLayout(shows[show_index]);
-		System.out.println("Enter the number of seats required:");
+		System.out.println("Enter the number of seats required");
 		int num_seats = in.nextInt();
-		while (num_seats <= 0) {
-			System.out.println("Invalid Input.\nPlease re-enter the number of seats required:");
-			num_seats = in.nextInt();
-		}
 		String seat_index[] = new String[num_seats];
 		Ticket ticket[] = new Ticket[num_seats];
 		System.out.printf("Enter the index of the ticket category:\n"
@@ -132,13 +128,14 @@ public class BookingSystem implements java.io.Serializable{
 			break;
 		}
 		double price = 0;
-		for (int i = 0; i < num_seats; i++) {
+		while(num_seats>0) {
 			System.out.println("Please input the seat that you want (e.g. 3E):");
-			seat_index[i] = in.next();
+			seat_index[num_seats-1] = in.next();
+			if(shows[show_index].checkOccupied(seat_index[num_seats-1])){System.out.printf("Seat already choosen!\n");continue;}
+			num_seats--;
 			price += Payment.calPrice(shows[show_index], mType);
 		}
 		String confirm;
-		in.nextLine();
 		do 
 		{
 			System.out.printf("Your chosen seats: ");
@@ -150,7 +147,7 @@ public class BookingSystem implements java.io.Serializable{
 			confirm = in.nextLine();
 			if(confirm.equalsIgnoreCase("No"))
 			{
-				throw new ExitException("Cancelling order and returning to Movie goer Menu...");
+				throw new exception.ExitException("Cancelling order and returning to Movie goer Menu...");
 			}
 		}while(!confirm.equalsIgnoreCase("Yes") && !confirm.equalsIgnoreCase("No"));
 		System.out.printf("The total price of the tickets is: %.2f\n", price);
