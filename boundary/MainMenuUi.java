@@ -56,8 +56,9 @@ public class MainMenuUi {
 			System.out.println("3. Add/Delete cineplex");
 			System.out.println("4. Configure system settings");
 			System.out.println("5. View/Block Top 5 Lists");
-			System.out.println("6. Sales Report of Movies ");
-			System.out.println("7. Log out ");
+			System.out.println("6. Display Show Status");
+			System.out.println("7. Sales Report of Movies ");
+			System.out.println("8. Log out ");
 			System.out.print("Select Option: ");
 			String adminInput = sc.next();
 			switch (adminInput) {
@@ -82,9 +83,12 @@ public class MainMenuUi {
 				top5UI.main(db);
 				break;
 			case "6":
-				db.movieListing.listSalesofMovie();
+				db.bookingSystem.displayShowStatus(db);
 				break;
 			case "7":
+				db.movieListing.listSalesofMovie();
+				break;
+			case "8":
 				System.out.println("Logging out --- Returning to Main Menu");
 				loggedIn = false;
 				break;
