@@ -18,13 +18,13 @@ public class MainMenuUi {
 			String userInput = sc.next();
 			switch (userInput) {
 			case "1":
-				if (LoginUI.verifyAdmin().getAdminEmail().equals("dkjkjsnw") ) break;
-				adminLogin();
+				if (LoginUI.verifyAdmin(db).getAdminEmail().equals("dkjkjsnw") ) break;
+				adminLogin(db);
 				break;
 			case "2":
-				MovieGoer temp=LoginUI.verifyMovieGoer();
+				MovieGoer temp = LoginUI.verifyMovieGoer(db);
 				if (temp.getName().equals("")) break;
-				movieGoerLogin(temp);
+				movieGoerLogin(temp, db);
 				break;
 			case "3":
 				System.out.println("Exiting MOBLIMA...");
@@ -38,7 +38,7 @@ public class MainMenuUi {
 	}
 
 	// admin UI after logging in ---------------------
-	public static void adminLogin() {
+	public static void adminLogin(Database db) {
 		boolean loggedIn = true;
 		do {
 			System.out.println("");
@@ -52,11 +52,11 @@ public class MainMenuUi {
 			switch (adminInput) {
 			case "1":
 				MovieListingUI movieListingUI = new MovieListingUI();
-				movieListingUI.main();
+				movieListingUI.main(db);
 				break;
 			case "2":
 				ShowsUI showsUI = new ShowsUI();
-				showsUI.main();
+				showsUI.main(db);
 				break;
 			case "3":
 				SettingsUI settingsUI = new SettingsUI();
@@ -73,7 +73,7 @@ public class MainMenuUi {
 	}
 
 	// movieGoer UI after logging in --------------------
-	public static void movieGoerLogin(MovieGoer member1) {
+	public static void movieGoerLogin(MovieGoer currentUser, Database db) {
 		boolean loggedIn = true;
 		do {
 			System.out.println("");
@@ -90,27 +90,24 @@ public class MainMenuUi {
 			String movieGoerInput = sc.next();
 			MovieGoerUI movieGoerUI = new MovieGoerUI();
 
-			//temp MovieGoer to pass in
-			// MovieGoer member1 = new MovieGoer(30, "John Tan", 4,"abc123");
-
 			switch (movieGoerInput) {
 			case "1":
-				movieGoerUI.searchMovieUI();
+				movieGoerUI.searchMovieUI(db);
 				break;
 			case "2":
-				movieGoerUI.viewMovieDetailsUI();
+				movieGoerUI.viewMovieDetailsUI(db);
 				break;
 			case "3":
-				movieGoerUI.listTop5UI();
+				movieGoerUI.listTop5UI(db);
 				break;
 			case "4":
-				movieGoerUI.rateMovieUI();
+				movieGoerUI.rateMovieUI(db);
 				break;
 			case "5":
-				member1.bookTickets();
+				currentUser.bookTickets(db);
 				break;
 			case "6":
-				member1.viewBookingHistory();
+				currentUser.viewBookingHistory();
 				break;
 			case "7":
 				System.out.println("Logging out --- Returning to Main Menu");
@@ -123,4 +120,3 @@ public class MainMenuUi {
 	}
 	// end of main
 }
-

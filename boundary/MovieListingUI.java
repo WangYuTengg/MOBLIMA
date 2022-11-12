@@ -6,7 +6,7 @@ import controller.Database;
 
 public class MovieListingUI {
 	private static Scanner sc = new Scanner(System.in);
-	public void main() {
+	public void main(Database db) {
 		boolean exit = false;
 		do {
 			System.out.println("");
@@ -22,19 +22,19 @@ public class MovieListingUI {
 			switch (adminInput) {
 			case "1":
 				System.out.println("Creating movie...");
-				Staff.addMovie();
+				Staff.addMovie(db);
 				break;
 			case "2":
 				System.out.println("Updating movie...");
-				Staff.editMovie();
+				Staff.editMovie(db);
 				break;
 			case "3":
 				System.out.println("Deleting movie...");
-				Staff.deleteMovie();
+				Staff.deleteMovie(db);
 				break;
 			case "4":
 				System.out.println("Displaying movie list...");
-				Database.movieListing.listMovies();
+				db.movieListing.listMovies();
 				break;
 			case "5":
 				exit = true;

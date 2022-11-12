@@ -8,21 +8,20 @@ import controller.Database;
 public class LoginUI {
 
     private static Scanner sc = new Scanner(System.in);
-
     
-    public static Staff verifyAdmin(){
+    public static Staff verifyAdmin(Database db){
         Staff currentStaff;
         // validate admin email
         System.out.println("");
         System.out.println("||-------- Admin Login --------||");
         System.out.print("Enter your admin email:  ");
         String adminEmail = sc.nextLine();
-        Staff ans = Database.getStaff("dkjkjsnw");
+        Staff ans = db.getStaff("dkjkjsnw");
 
-        if ( Database.getStaff(adminEmail) == null ) {
+        if (db.getStaff(adminEmail) == null ) {
             System.out.println("Wrong admin email entered - returning to main menu.");
             return ans;
-        } else currentStaff = Database.getStaff(adminEmail);
+        } else currentStaff = db.getStaff(adminEmail);
 
         // validate password
         System.out.print("Enter your password:  ");
@@ -37,19 +36,19 @@ public class LoginUI {
         }
     }
 
-    public static MovieGoer verifyMovieGoer(){
+    public static MovieGoer verifyMovieGoer(Database db){
         MovieGoer currentUser;
         // validate user email
         System.out.println("");
         System.out.println("||-------- Movie Goer Login --------||");
         System.out.print("Enter your user email:  ");
         String userEmail = sc.nextLine();
-        MovieGoer ans = Database.getMovieGoer("");
+        MovieGoer ans = db.getMovieGoer("");
 
-        if ( Database.getMovieGoer(userEmail) == null ) {
+        if (db.getMovieGoer(userEmail) == null ) {
             System.out.println("Wrong user email entered - returning to main menu.");
             return ans;
-        } else currentUser = Database.getMovieGoer(userEmail);
+        } else currentUser = db.getMovieGoer(userEmail);
         
         // validate password
         System.out.print("Enter your password:  ");

@@ -10,7 +10,7 @@ public class MovieGoerUI {
 	/*
 	 * Method to search movie 
 	 */
-	public void searchMovieUI() {
+	public void searchMovieUI(Database db) {
 		boolean exit = false;
 		do {			
 			System.out.println("");
@@ -18,21 +18,21 @@ public class MovieGoerUI {
 			System.out.println("1. List all movies");
 			System.out.println("2. Search Movie by movie title");
 			System.out.println("3. Search Movie by Director");
-			System.out.println("4. Return to Movie Goer menu");
+			System.out.println("4. Return to Goer menu");
 			System.out.printf("Select your option:  ");
 			String userInput = sc.nextLine();
 			switch(userInput){
 				case "1": 
 					System.out.println("----- Listing all movies -----");
-					Database.movieListing.listMovies();
+					db.movieListing.listMovies();
 					break;
 				case "2":
 					System.out.println("----- Seaching movie by title -----");
-					Database.movieListing.searchMovieByTitle();
+					db.movieListing.searchMovieByTitle();
 					break;
 				case "3":
 					System.out.println("----- Searching movie by director -----");
-					Database.movieListing.searchMovieByDirector();
+					db.movieListing.searchMovieByDirector();
 					break;
 				case "4":
 					exit = true;
@@ -46,7 +46,7 @@ public class MovieGoerUI {
 	/**
 	 * Method to view details of a certain movie
 	 */
-	public void viewMovieDetailsUI() {
+	public void viewMovieDetailsUI(Database db) {
 		boolean exit = false;
 		do {
 			System.out.println("");
@@ -57,7 +57,7 @@ public class MovieGoerUI {
 			String userInput = sc.next();
 			switch(userInput){
 				case "1": 
-					MovieGoer.viewMovieDetails();
+					MovieGoer.viewMovieDetails(db);
 					break;
 				case "2":
 					exit = true;
@@ -71,7 +71,7 @@ public class MovieGoerUI {
 	/**
 	 * Method to ask MovieGoer to input choice to list top 5 by sales or rating.
 	 */
-	public void listTop5UI() {
+	public void listTop5UI(Database db) {
 		boolean exit = false;
 		do {
 			System.out.println("");
@@ -84,10 +84,10 @@ public class MovieGoerUI {
 			String userInput = sc.next();
 			switch (userInput) {
 			case "1":
-				Database.movieListing.listTop5byRating();
+				db.movieListing.listTop5byRating();
 				break;
 			case "2":
-				Database.movieListing.listTop5bySales();
+				db.movieListing.listTop5bySales();
 				break;
 			case "3":
 				exit = true;
@@ -101,7 +101,7 @@ public class MovieGoerUI {
 	/**
 	 * Method to allow MovieGoer to choose to rate a movie
 	 */
-	public void rateMovieUI() {
+	public void rateMovieUI(Database db) {
 		boolean exit = false;
 		do {
 			System.out.println("");
@@ -112,7 +112,7 @@ public class MovieGoerUI {
 			String userInput  = sc.next();
 			switch(userInput) {
 			case "1":
-				MovieGoer.addReview();
+				MovieGoer.addReview(db);
 				break;
 			case "2":
 				exit = true;

@@ -6,7 +6,7 @@ import model.*;
 
 public class ShowsUI {
 	private static Scanner sc = new Scanner(System.in);
-	public void main() {
+	public void main(Database db) {
 		boolean exit = false;
 		do {
 			System.out.println("");
@@ -20,22 +20,22 @@ public class ShowsUI {
 			case "1":
 				System.out.println("");
 				System.out.println("------- Creating show of movie -------");
-				Staff.addShow();
+				Staff.addShow(db);
 				break;
 			case "2":
 				System.out.println("");
 				System.out.println("------ Update showing of movie -------");
-				Staff.updateShow();
+				Staff.updateShow(db);
 				break;
 			case "3":
 				System.out.println("");
 				System.out.println("------- Deleting showing of movie -------");
-				Staff.deleteShow();
+				Staff.deleteShow(db);
 				break;
 			case "4":
 				System.out.println("");
 				System.out.println("||----- Display Shows -----||");
-				Database.showListing.displayShows();
+				db.showListing.displayShows();
 				break;
 			case "5":
 				exit = true;
@@ -46,3 +46,4 @@ public class ShowsUI {
 		System.out.println("Returning to Admin menu...");
 	}
 }
+
