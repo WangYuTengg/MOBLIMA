@@ -14,7 +14,7 @@ public class MovieListing implements java.io.Serializable{
 
 	public void deleteMovie() {
 		listMovies();
-		System.out.println("Enter the move Index to delete the movie");
+		System.out.println("Enter the Index of the movie to be deleted:");
 		int movie_ind = in.nextInt();
 		movies.remove(movie_ind - 1);
 		len--;
@@ -23,14 +23,22 @@ public class MovieListing implements java.io.Serializable{
 	public void listMovies() {
 		int i = 0;
 		for (Movie obj : movies) {
+			if (obj.getStatus().equals("END_OF_SHOWING"))
+				continue;
 			i++;
 			System.out.printf("%d. %s, STATUS: %s\n", i , obj.getTitle(), obj.getStatus());
 		}
 	}
 
 	public void listMovies(int lim) {
-		for (int i = 0; i < lim; i++) {
-			System.out.printf("%d. %s\n", i + 1, movies.get(i).getTitle());
+		int i = 1;
+		for (Movie obj : movies) {
+			if (obj.getStatus().equals("END_OF_SHOWING"))
+				continue;
+			System.out.printf("%d. %s, STATUS: %s\n", i, obj.getTitle(), obj.getStatus());
+			i++;
+			if (i == lim)
+				break;
 		}
 	}
 
