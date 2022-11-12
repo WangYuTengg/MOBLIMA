@@ -1,6 +1,6 @@
 package boundary;
 
-import controller.*;
+import data.Database;
 import model.*;
 import java.util.*;
 

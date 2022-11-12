@@ -3,7 +3,7 @@ package boundary;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import controller.Database;
+import data.Database;
 import model.Holiday;
 
 public class SettingsUI {
@@ -99,6 +99,7 @@ public class SettingsUI {
 				break;
 			case "12":
 				System.out.println("-------- Adding Loyalty Card --------");
+				sc.nextLine();
 				System.out.println("Enter Loyalty Card name:");
 				String card_name=sc.nextLine();
 				db.payment.addLoyaltyCards(card_name);

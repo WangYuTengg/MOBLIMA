@@ -6,8 +6,10 @@
  */
 
 package model;
-import controller.Database;
 import java.util.Scanner;
+
+import data.Database;
+
 import java.text.ParseException;
 import java.util.ArrayList;
 
@@ -46,7 +48,7 @@ public class Staff implements java.io.Serializable{
 
     /**
      * get the ID of the Staff member.
-     * @return
+     * @return String this Staff's email
      */
     public String getAdminEmail() {
         return email;

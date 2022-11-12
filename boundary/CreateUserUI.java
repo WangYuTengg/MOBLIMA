@@ -1,9 +1,10 @@
 package boundary;
 
-import controller.Database;
 import model.MovieGoer;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
+import data.Database;
 
 public class CreateUserUI {
     

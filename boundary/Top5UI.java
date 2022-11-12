@@ -1,7 +1,7 @@
 package boundary;
 
 import java.util.Scanner;
-import controller.Database;
+import data.Database;
 
 public class Top5UI {
 

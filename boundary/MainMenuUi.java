@@ -1,7 +1,7 @@
 package boundary;
 
 import java.util.Scanner;
-import controller.*;
+import data.Database;
 import model.MovieGoer;
 
 public class MainMenuUi {

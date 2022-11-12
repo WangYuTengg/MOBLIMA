@@ -1,8 +1,9 @@
 package boundary;
 
 import java.util.Scanner;
+
+import data.Database;
 import model.Staff;
-import controller.Database;
 
 public class MovieListingUI {
 	private static Scanner sc = new Scanner(System.in);

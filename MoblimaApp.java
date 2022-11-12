@@ -1,14 +1,14 @@
 import boundary.MainMenuUi;
-import controller.DataController;
-import controller.Database;
-import controller.Serialization;
+import data.DataInitialiser;
+import data.Database;
+import data.Serialization;
 
 public class MoblimaApp {
 
 	public static void main(String[] args) {
 		MainMenuUi mainMenuUI = new MainMenuUi();
 		Database db;
-		db = DataController.main();
+		db = DataInitialiser.main();
 		//db=Serialization.read();
 		mainMenuUI.main(db);
 		Serialization.write(db);
