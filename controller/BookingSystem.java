@@ -89,7 +89,7 @@ public class BookingSystem implements java.io.Serializable{
 					continue;
 				System.out.printf("%d. %s, STATUS: %s\n", i + 1, movies[i].getTitle(), movies[i].getStatus());
 			}
-			System.out.println("Choose Movie Index");
+			System.out.printf("Choose Movie Index:  ");
 			movie_ind = in.nextInt() - 1;
 			if(movie_ind >= movies.length || movie_ind < 0) 
 			{
@@ -118,7 +118,7 @@ public class BookingSystem implements java.io.Serializable{
 				}
 			}
 		}
-		System.out.println("Choose Ciniplex Index");
+		System.out.printf("Choose Ciniplex Index: ");
 		int cineplex_ind = in.nextInt() - 1;
 		for(int i = 0; i < show_length; i++)
 		{
