@@ -80,7 +80,7 @@ public class MovieListing implements java.io.Serializable{
 		int choice;
 		do {
 			System.out.printf("Choose Action:\n" + "1. Update Movie Type\n" + "2. Update Synopsis\n"
-					+ "3. Update Showing Status\n" + "4. Exit\n");
+					+ "3. Update Showing Status\n" + "4. Update Age Rating\n" + "5. Exit\n");
 			choice = in.nextInt();
 			switch (choice) {
 			case 1:
@@ -130,8 +130,40 @@ public class MovieListing implements java.io.Serializable{
 				} while(status.equals("unknown"));
 				movies.get(movie_ind).setStatus(status);
 				break;
+			case 4:
+				in.nextLine();
+				String ageRating = "unknown";
+				System.out.println("Please enter the age rating for the movie:\n1. G\n2. PG\n3. PG13\n4. R\n5. M18\n6. R21");
+				String ageRatingInput = in.nextLine();
+				do {
+					switch (ageRatingInput) {
+						case("1"):
+							ageRating = "G";
+							break;
+						case("2"):
+							ageRating = "PG";
+							break;
+						case("3"):
+							ageRating = "PG13";
+							break;
+						case ("4"):
+							ageRating = "R";
+							break;
+						case ("5"):
+							ageRating = "M18";
+							break;
+						case("6"):
+							ageRating = "R21";
+							break;
+						default:
+							System.out.println("Invalid Input. \nPlease enter the age rating for the movie:\n1. G\n2. PG\n3. PG-13\n4. R\n5. M18\n6. R21");
+							ageRatingInput = in.nextLine();
+					}
+				} while (ageRating.equals("unknown"));
+				movies.get(movie_ind).setAgeRating(ageRating);
+				break;
 			}
-		} while (choice != 4);
+		} while (choice != 5);
 		System.out.println("Movie successfully updated");
 	}
 
