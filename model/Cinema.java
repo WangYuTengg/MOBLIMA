@@ -128,6 +128,14 @@ public class Cinema implements java.io.Serializable{
     }
     
     /**
+     * Get seat layout
+     * @return layout
+     */
+    public Seat[][] getSeats()
+    {
+    	return this.layout;
+    }
+    /**
      * Find the occupying status of seats.
      * @return  occupying status shown in 2D array boolean form.
      */
