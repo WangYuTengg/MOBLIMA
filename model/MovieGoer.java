@@ -10,7 +10,7 @@ import java.util.Scanner;
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-public class MovieGoer extends User implements java.io.Serializable {
+public class MovieGoer extends User {
 	/**
 	 * MovieGoer's age
 	 */

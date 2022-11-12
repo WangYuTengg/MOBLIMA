@@ -12,7 +12,7 @@ import java.util.ArrayList;
 * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
 * @since    2022-10-30
 */
-public class Staff extends User implements java.io.Serializable{
+public class Staff extends User{
 
     /**
      * A static Scanner class used throughout Staff
