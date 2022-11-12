@@ -156,4 +156,7 @@ public class Cinema implements java.io.Serializable{
     	this.layout[row][column].assign();
     	}
     
+    public void setElite(int row){
+        for(int i=0;i<columnLength;++i) layout[row][i].setElite();
+    }
 }
