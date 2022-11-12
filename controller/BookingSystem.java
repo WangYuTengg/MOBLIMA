@@ -157,6 +157,43 @@ public class BookingSystem implements java.io.Serializable{
 				throw new exception.ExitException("Cancelling order and returning to Movie goer Menu...");
 			}
 		}while(!confirm.equalsIgnoreCase("Yes") && !confirm.equalsIgnoreCase("No"));
+		do
+		{
+			System.out.printf("Payment method:\n"
+					+ "1.PayNow\n"
+					+ "2.Debit/Credit card\n"
+					+ "3.PayPal\n"
+					+ "4.Loyalty Card(Additional Discount)\n"
+					+ "5. Cancel Order\n");
+			int choice = in.nextInt();
+			if (choice < 1 || choice > 5)
+			{
+				System.out.println("Invalid Choice!");
+			}
+			else if (choice > 0 && choice < 4) break;
+			else if (choice == 5)
+			{
+				throw new exception.ExitException("Cancelling order and returning to Movie goer Menu...");
+			}
+			else if(choice == 4)
+			{
+				int i;
+				System.out.printf("Choose the Loyalty card:\n");
+				ArrayList<String> loyaltyCards = db.payment.getLoyaltyCards();
+				for( i = 0; i < loyaltyCards.size(); i++)
+				{
+					System.out.printf("%d. %s", i+1, loyaltyCards.get(i));
+				}
+				System.out.printf("%d. Go Back\n", i+1);
+				int loyalty_ind = in.nextInt() - 1;
+				if(loyalty_ind != i)
+				{
+					price = db.payment.discountedPrice(price, loyaltyCards.get(loyalty_ind));
+					System.out.printf("The new discounted price is: %.2f", price);
+					break;
+				}
+			}
+		} while(true);
 		String TID = db.payment.generateTID(shows[show_index].getCinema());
 		System.out.println("Payment Successful! Transaction ID: " + TID);
 		for (int i = 0; i < num_seats; i++) {
