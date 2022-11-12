@@ -351,10 +351,7 @@ public class Payment implements java.io.Serializable{
      */
     public double discountedPrice(double price, String card_name)
     {
-    	if(loyaltyCards.contains(card_name) == true)
-        {
-        	price *= loyaltyCardMultiplier;
-        }
+        price *= loyaltyCardMultiplier;
     	return price;
     }
 
