@@ -13,7 +13,8 @@ public class MainMenuUi {
 			System.out.println("||----------- Welcome to MOBLIMA ----------||");
 			System.out.println("1. Login as admin");
 			System.out.println("2. Login as Movie Goer");
-			System.out.println("3. Exit");
+			System.out.println("3. Create Movie Goer account");
+			System.out.println("4. Exit");
 			System.out.print("Select Option: ");
 			String userInput = sc.next();
 			switch (userInput) {
@@ -27,6 +28,10 @@ public class MainMenuUi {
 				movieGoerLogin(temp, db);
 				break;
 			case "3":
+				CreateUserUI createUserUI = new CreateUserUI();
+				createUserUI.main(db);
+				break;
+			case "4":
 				System.out.println("Exiting MOBLIMA...");
 				exit = true;
 				break;
