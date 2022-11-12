@@ -128,11 +128,12 @@ public class BookingSystem implements java.io.Serializable{
 			break;
 		}
 		double price = 0;
-		while(num_seats>0) {
-			System.out.println("Please input the seat that you want (e.g. 3E):");
+		int cnt=0;
+		while(cnt<num_seats) {
+			System.out.printf("Please input the %d seat index that you want(e.g. 3E):\n",cnt+1);
 			seat_index[num_seats-1] = in.next();
-			if(shows[show_index].checkOccupied(seat_index[num_seats-1])){System.out.printf("Seat already choosen!\n");continue;}
-			num_seats--;
+			if(shows[show_index].checkOccupied(seat_index[cnt])){System.out.printf("Seat already choosen!\n");continue;}
+			cnt++;
 			price += Payment.calPrice(shows[show_index], mType);
 		}
 		String confirm;
