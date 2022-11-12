@@ -101,8 +101,8 @@ public class ShowListing implements java.io.Serializable{
 		for (int i = 0; i < cineplex.length; i++) {
 			System.out.printf("%d. Cineplex Name: %s\n", i + 1, cineplex[i].getName());
 		}
-		int cineplex_ind = in.nextInt();
-		System.out.println("Enter Cinema Number (1 to 3):");
+		int cineplex_ind = in.nextInt()-1;
+		System.out.printf("Enter Cinema Number (1 - %d):", cineplex[cineplex_ind].getCinemaList().length);
 		int cinema_ind = in.nextInt();
 		in.nextLine();
 		System.out.println("Is the Show going to be in 3D? (true or false):");
@@ -131,8 +131,9 @@ public class ShowListing implements java.io.Serializable{
 		}
 		
 		// in.close();
-		shows.add(new Show(new Cinema((cineplex[cineplex_ind-1].getCinemaList())[cinema_ind-1]), movies[movie_ind - 1],
-				cineplex[cineplex_ind - 1], is3D, showtime));
+		shows.add(new Show(new Cinema((cineplex[cineplex_ind].getCinemaList())[cinema_ind-1]), movies[movie_ind - 1],
+				cineplex[cineplex_ind], is3D, showtime));
+		len++;
 		System.out.println("Show successfully created!");
 	}
 
@@ -144,6 +145,7 @@ public class ShowListing implements java.io.Serializable{
 		int show_id = in.nextInt();
 		// in.close();
 		shows.remove(show_id-1);
+		len--;
 		System.out.println("Show successfully deleted!");
 	}
 

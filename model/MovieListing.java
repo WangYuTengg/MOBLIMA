@@ -31,11 +31,11 @@ public class MovieListing implements java.io.Serializable{
 	}
 
 	public void listMovies(int lim) {
-		int i = 1;
+		int i = 0;
 		for (Movie obj : movies) {
 			if (obj.getStatus().equals("END_OF_SHOWING"))
 				continue;
-			System.out.printf("%d. %s, STATUS: %s\n", i, obj.getTitle(), obj.getStatus());
+			System.out.printf("%d. %s, STATUS: %s\n", i+1, obj.getTitle(), obj.getStatus());
 			i++;
 			if (i == lim)
 				break;
