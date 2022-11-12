@@ -32,6 +32,11 @@ public class Seat implements java.io.Serializable{
     public Seat(String index){
     	this.index = index;
     }
+
+    public Seat(Seat a){
+        this.index=a.getIndex();
+        this.elite=a.isElite();
+    }
  
     /**
      * Check the status of the seat.
