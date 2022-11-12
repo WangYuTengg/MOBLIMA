@@ -254,14 +254,15 @@ public class Staff implements java.io.Serializable{
      * @param db Database containing the cineplexes
      */
     public static void addCineplex(Database db){
-        System.out.println("Enter the name of the cineplex");
-        String cineplex_name = scan.nextLine();
         System.out.println("Enter the number of the cinemas");
         while(!scan.hasNextInt()){System.out.println("Please enter a number!");}
         int num_cinema=scan.nextInt();
+        scan.nextLine();
+        System.out.println("Enter the name of the cineplex");
+        String cineplex_name = scan.nextLine();
         Cineplex cineplex;
         char first_letter='A';
-        if(db.cineplexes.size()>0) first_letter=(char)((int)db.cineplexes.get(db.cineplexes.size()-1).getCinema(1).getCinemaCode().charAt(0)+1);
+        if(db.cineplexes.size()>0) first_letter=(char)((int)db.cineplexes.get(db.cineplexes.size()-1).getCinema(0).getCinemaCode().charAt(0)+1);
         db.addCineplex(cineplex=new Cineplex(cineplex_name, num_cinema));
         int cnt=1;
         while(num_cinema>=cnt){
@@ -308,7 +309,7 @@ public class Staff implements java.io.Serializable{
      */
     public static void deleteCineplex(Database db){
         for(int i=1;i<=db.cineplexes.size();++i){
-            System.out.printf("%d %s\n",i,db.cineplexes.get(i-1).getName());
+            System.out.printf("%d. %s\n",i,db.cineplexes.get(i-1).getName());
         }
         System.out.println("Please enter the index of cineplex");
         int index;
