@@ -152,7 +152,36 @@ public class Staff implements java.io.Serializable{
         System.out.println("Enter the Synopsis of the Movie: "); // movie synopsis
         String synopsis = scan.nextLine();
 
-        Movie movie = new Movie(title, type, status, director, synopsis, cast, castLength);
+        String ageRating = "unknown";
+        System.out.println("Please enter the age rating for the movie:\n1. G\n2. PG\n3. PGs13\n4. R\n5. M18\n6. R21");
+        String ageRatingInput = scan.nextLine();
+        do {
+            switch (ageRatingInput) {
+                case("1"):
+                    ageRating = "G";
+                    break;
+                case("2"):
+                    ageRating = "PG";
+                    break;
+                case("3"):
+                    ageRating = "PG-13";
+                    break;
+                case ("4"):
+                    ageRating = "R";
+                    break;
+                case ("5"):
+                    ageRating = "M18";
+                    break;
+                case("6"):
+                    ageRating = "R21";
+                    break;
+                default:
+                    System.out.println("Invalid Input. \nPlease enter the age rating for the movie:\n1. G\n2. PG\n3. PG13\n4. R\n5. M18\n6. R21");
+                    ageRatingInput = scan.nextLine();
+            }
+        } while (ageRating.equals("unknown"));
+
+        Movie movie = new Movie(title, type, status, director, synopsis, cast, castLength, ageRating);
 
         db.movieListing.addMovie(movie); 
     }
