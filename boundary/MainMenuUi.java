@@ -66,7 +66,7 @@ public class MainMenuUi {
 				break;
 			case "4":
 				SettingsUI settingsUI = new SettingsUI();
-				settingsUI.main();
+				settingsUI.main(db);
 				break;
 			case "5":
 				Top5UI top5UI = new Top5UI();
