@@ -8,7 +8,7 @@
 package boundary;
 
 import java.util.Scanner;
-import controller.Database;
+import data.Database;
 
 /**
  * A class for Top5UI.
