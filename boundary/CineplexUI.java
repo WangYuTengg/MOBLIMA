@@ -12,7 +12,6 @@ import java.util.*;
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-
 public class CineplexUI {
 
     /**

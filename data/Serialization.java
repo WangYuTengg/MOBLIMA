@@ -12,7 +12,6 @@ public class Serialization {
     /**
      * Serialization of the current database to be saved.
      * @param db    The database.
-     * @return void
      */
     public static void write(Database db){
         try
@@ -32,6 +31,7 @@ public class Serialization {
 
     /**
      * Serialization of a file to read it into the program.
+     * @return The database.
      */
     public static Database read(){
         Database db = null;
