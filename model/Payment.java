@@ -269,7 +269,7 @@ public class Payment implements java.io.Serializable{
     public static String generateTID(Cinema cinema)
     {
     	String TID;
-    	SimpleDateFormat sdf = new SimpleDateFormat("YYYYMMDDhhmm");
+    	SimpleDateFormat sdf = new SimpleDateFormat("YYYYMMddhhmm");
     	Date temp_date = new Date();
     	String date = sdf.format(temp_date);
     	TID = cinema.getCinemaCode() + date;

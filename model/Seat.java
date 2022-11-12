@@ -29,9 +29,8 @@ public class Seat implements java.io.Serializable{
      * @param index   the index of the seat.
      * @param elite	  is seat elite or not.
      */
-    public Seat(String index, boolean elite){
+    public Seat(String index){
     	this.index = index;
-    	this.elite = elite;
     }
  
     /**
