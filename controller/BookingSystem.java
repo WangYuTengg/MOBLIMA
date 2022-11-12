@@ -55,7 +55,7 @@ public class BookingSystem implements java.io.Serializable{
 			{
 				throw new exception.InvalidIdException("Invalid Movie index. Returning to Movie Goer Menu...");
 			}
-			else if(!movies[movie_ind].getStatus().equals("NOW_SHOWING"))
+			else if(!((movies[movie_ind].getStatus().equals("NOW_SHOWING")) || (movies[movie_ind].getStatus().equals("PREVIEW"))))
 			{
 				System.out.println("Movie currently not in cinemas. Choose another movie!");
 				flag1 = false;
@@ -69,6 +69,7 @@ public class BookingSystem implements java.io.Serializable{
 		int show_length = showListing.length();
 		for (int i = 0; i < cineplex.length; i++) 
 		{
+			
 			for(int j = 0; j < show_length; j++)
 			{
 				if(shows[j].getMovie().getTitle() == movie_name && shows[j].getCineplex().getName() == cineplex[i].getName())

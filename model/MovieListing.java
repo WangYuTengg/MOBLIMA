@@ -24,7 +24,7 @@ public class MovieListing implements java.io.Serializable{
 		int i = 0;
 		for (Movie obj : movies) {
 			i++;
-			System.out.printf("%d. %s\n", i , obj.getTitle());
+			System.out.printf("%d. %s, STATUS: %s\n", i , obj.getTitle(), obj.getStatus());
 		}
 	}
 
