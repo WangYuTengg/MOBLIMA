@@ -24,6 +24,7 @@ public class Seat implements java.io.Serializable{
      * The type of seat.(Elite or not)
      */
     private boolean elite=false;
+    
     /**
      * Creates a new Seat with a seat index
      * @param index   the index of the seat.
@@ -33,6 +34,10 @@ public class Seat implements java.io.Serializable{
     	this.index = index;
     }
 
+    /**
+     * A constructor to duplicate an already existing seat.
+     * @param a
+     */
     public Seat(Seat a){
         this.index=a.getIndex();
         this.elite=a.isElite();
@@ -60,6 +65,7 @@ public class Seat implements java.io.Serializable{
     public void assign(){
     	this.occupied = true;
     }
+
     /**
      * Get the type of seat(Elite or not).
      * @return true for elite else false.
@@ -69,5 +75,8 @@ public class Seat implements java.io.Serializable{
     	return this.elite;
     }
 
+    /**
+     * Sets a seat to be an Elite seat.
+     */
     public void setElite(){this.elite=true;}
 }

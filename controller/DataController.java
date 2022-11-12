@@ -9,19 +9,21 @@ import model.Movie;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-// import java.util.Calendar;
-// import java.util.Date;
-// import java.util.GregorianCalendar;
 
+/**
+ * A class to instantiate the initial database.
+ */
 public class DataController {
 
+	/**
+	 * A function to instantiate the database.
+	 */
 	public static Database main() {
 		Database database = new Database();
 
 		try {
 			initCineplexes(database);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		initMovieGoers(database);
@@ -30,6 +32,10 @@ public class DataController {
 		return database;
 	}
 
+	/**
+	 * A function to instantiate a set of movie goers.
+	 * @param db	The database.
+	 */
 	public static void initMovieGoers(Database db) {
 		MovieGoer defaultGoer = new MovieGoer(0, "", "", 0, "");
 		MovieGoer member1 = new MovieGoer(30, "John Tan", "JohnTan@gmail.com", 1, "abc123");
@@ -42,6 +48,10 @@ public class DataController {
 		db.addMovieGoer(member3);
 	}
 
+	/**
+	 * A function to instantiate a set of staff members.
+	 * @param db	The database.
+	 */
 	public static void initStaff(Database db) {
 		Staff admin0 = new Staff("dkjkjsnw", "dknkjnws", "wrong");
 		Staff admin1 = new Staff("admin1@gmail.com", "admin123", "Yu Teng");
@@ -58,6 +68,11 @@ public class DataController {
 		db.addStaff(admin5);
 	}
 
+	/**
+	 * A function to initialize a set of cineplexes.
+	 * @param db	The database.
+	 * @throws ParseException	An exception thrown.
+	 */
 	public static void initCineplexes(Database db) throws ParseException {
 		String[] avengersCast = { "Tom Hiddlestone", "Samuel L Jackson", "Chris Hemsworth" };
 		String[] blackAdamCast = { "Dwayne Johnson", "Sarah Shahi" };
@@ -125,9 +140,6 @@ public class DataController {
 		db.addCineplex(cineplex1);
 		db.addCineplex(cineplex2);
 		db.addCineplex(cineplex3);
-
-		// public Show(Cinema cinema,Movie movie,Cineplex cineplex,boolean is3d,Date
-		// showTime)
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
 		Show TAshow1 = new Show(new Cinema(cinema1), theAvengers, cineplex1, false, sdf.parse("2022-11-13 10:00"));

@@ -1,7 +1,15 @@
 package controller;
 import java.io.*;
 
+/**
+ * Serialization class for interacting with an external file for storage and access.
+ */
 public class Serialization {
+
+    /**
+     * Serialization of the current database to be saved.
+     * @param db
+     */
     public static void write(Database db){
         try
         {
@@ -17,6 +25,10 @@ public class Serialization {
             i.printStackTrace();
         }
     }
+
+    /**
+     * Serialization of a file to read it into the program.
+     */
     public static Database read(){
         Database db = null;
         try

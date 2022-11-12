@@ -96,7 +96,11 @@ public class MovieGoer implements java.io.Serializable{
 		return tickets;
 	}
 
+	/**
+	 * A static scanner used within MovieGoer.
+	 */
 	private static Scanner sc = new Scanner(System.in);
+	
 	/**
 	 * Add review to a movie.
 	 */

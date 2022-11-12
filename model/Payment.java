@@ -63,13 +63,13 @@ public class Payment implements java.io.Serializable{
     private ArrayList<String> loyaltyCards = new ArrayList<>();
     
     /**
-     * Additional senior price multiplier
+     * The multiplier used when a loyalty card is used.
      */
     private double loyaltyCardMultiplier = 0.9;
     
     /**
      * Get current base ticket price
-     * @return base_price;
+     * @return base_price;  The base price.
      */
     public  double getBasePrice(){
         return base_price;
@@ -77,7 +77,7 @@ public class Payment implements java.io.Serializable{
 
     /**
      * Get current additional blockbuster movie charge
-     * @return blockBuster_price;
+     * @return blockBuster_price;   The additional cost incurred.
      */
     public  double getIsBBPrice(){
         return blockBuster_price;
@@ -85,7 +85,7 @@ public class Payment implements java.io.Serializable{
 
     /**
      * Get current additional 3D movie charge
-     * @return is3D_price;
+     * @return is3D_price;      The additional cost incurred.
      */
     public double getIs3DPrice(){
         return is3D_price;
@@ -93,7 +93,7 @@ public class Payment implements java.io.Serializable{
 
     /**
      * Get current additional platinum cinema charge
-     * @return isPlat_price;
+     * @return isPlat_price;    The additional cost incurred.
      */
     public double getIsPlatPrice(){
         return isPlat_price;
@@ -101,7 +101,7 @@ public class Payment implements java.io.Serializable{
     
     /**
      * Get current additional elite seat charge
-     * @return isPlat_price;
+     * @return isPlat_price;    The additional cost incurred.
      */
     public double getIsEliteSeatprice()
     {
@@ -109,7 +109,7 @@ public class Payment implements java.io.Serializable{
     }
     /**
      * Get current holiday price multiplier
-     * @return holiday_priceMultiplier
+     * @return holiday_priceMultiplier  The multiplier being used.
      */
     public double getHolidayMultiplier(){
         return holiday_priceMultiplier;
@@ -117,7 +117,7 @@ public class Payment implements java.io.Serializable{
     
     /**
      * Get current weekend price multiplier
-     * @return weekend_priceMultiplier
+     * @return weekend_priceMultiplier  The multiplier being used.
      */
     public double getWeekendMultiplier(){
         return weekend_priceMultiplier;
@@ -125,7 +125,7 @@ public class Payment implements java.io.Serializable{
 
     /**
      * Get current student price multiplier
-     * @return student_priceMultiplier
+     * @return student_priceMultiplier  The multiplier being used.
      */
     public double getStudentMultipier(){
         return student_priceMultiplier;
@@ -133,7 +133,7 @@ public class Payment implements java.io.Serializable{
 
     /**
      * Get current senior price multiplier
-     * @return senior_priceMultiplier
+     * @return senior_priceMultiplier   The multiplier being used.
      */
     public double getSeniorMultipier(){
         return senior_priceMultiplier;
@@ -141,7 +141,7 @@ public class Payment implements java.io.Serializable{
     
     /**
      * Get the list of loyalty cars
-     * @return loyaltyCards
+     * @return loyaltyCards The multiplier being used.
      */
     public ArrayList<String> getLoyaltyCards()
     {
@@ -150,7 +150,7 @@ public class Payment implements java.io.Serializable{
     
     /**
      * Get current Loyalty card multiplier
-     * @return loyaltyCardMultiplier
+     * @return loyaltyCardMultiplier The multiplier being used.
      */
     public double getLoyaltCardMultiplier()
     {
@@ -159,7 +159,7 @@ public class Payment implements java.io.Serializable{
 
     /**
      * Set base price of ticket
-     * @param price
+     * @param price The base price to be set.
      */
     public void setBasePrice(double price)
     {
@@ -169,7 +169,7 @@ public class Payment implements java.io.Serializable{
 
     /**
      * Set blockbuster price add-on of ticket
-     * @param price
+     * @param price The additional price to be added.
      */
     public void setBlockBusterAdditionalPrice(double price)
     {
@@ -178,8 +178,8 @@ public class Payment implements java.io.Serializable{
     }
 
     /**
-     * Set 3D price add-on of ticket
-     * @param price
+     * Set 3D price add-on of ticket.
+     * @param price The additional price to be added.
      */
     public void set3dAdditionalPrice(double price)
     {
@@ -188,8 +188,8 @@ public class Payment implements java.io.Serializable{
     }
 
     /**
-     * Set Platinum cinema price add-on of ticket
-     * @param price
+     * Set Platinum cinema price add-on of ticket.
+     * @param price The additional price to be added.
      */
     public void setPlatAdditionalPrice(double price)
     {
@@ -197,6 +197,10 @@ public class Payment implements java.io.Serializable{
     	System.out.printf("Additional Platinum Cinema charge updated successfully to $%.2f.\n", isPlat_price);
     }
     
+    /**
+     * Sets how much more to be charged when purchasing an elite seat.
+     * @param price The additional price to be added.
+     */
     public void setEliteAdditionalPrice(double price)
     {
     	isEliteSeat_price = price;
@@ -205,7 +209,7 @@ public class Payment implements java.io.Serializable{
 
     /**
      * Set Holiday price multiplier
-     * @param price
+     * @param multiplier    The multiplier value to be applied 
      */
     public void setHolidayPriceMultiplier(double multiplier)
     {
@@ -215,7 +219,7 @@ public class Payment implements java.io.Serializable{
 
     /**
      * Set Student price multiplier
-     * @param price
+     * @param multiplier    The multiplier value to be applied 
      */
     public void setStudentPriceMultiplier(double multiplier)
     {
@@ -225,7 +229,7 @@ public class Payment implements java.io.Serializable{
 
     /**
      * Set Senior price multiplier
-     * @param price
+     * @param multiplier    The multiplier value to be applied 
      */
     public void setSeniorPriceMultiplier(double multiplier)
     {
@@ -235,7 +239,7 @@ public class Payment implements java.io.Serializable{
 
     /**
      * Set Weekend price multiplier
-     * @param price
+     * @param multiplier    The multiplier value to be applied 
      */
     public void setWeekendPriceMultiplier(double multiplier)
     {
@@ -243,6 +247,10 @@ public class Payment implements java.io.Serializable{
     	System.out.printf("Weekend price multiplier updated successfully to %.2f.\n", weekend_priceMultiplier);
     }
     
+    /**
+     * Sets the multiplier to be applied when using a loyalty card during payment.
+     * @param multiplier    The multiplier to be used.
+     */
     public void setLoyaltyCardMultiplier(double multiplier)
     {
     	loyaltyCardMultiplier = multiplier;
@@ -369,7 +377,10 @@ public class Payment implements java.io.Serializable{
     	TID = cinema.getCinemaCode() + date;
     	return TID;
     }
-    
+
+    /**
+     * A function to display all prices and multiplier values.
+     */
     public void displayPrices(){
         System.out.println("---------- Displaying Price Table -----------");
         System.out.printf("%s %.2f\n","Base Price                             ",base_price);

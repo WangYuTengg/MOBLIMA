@@ -3,15 +3,33 @@ package model;
 import java.util.*;
 
 public class MovieListing implements java.io.Serializable{
+	/**
+	 * An ArrayList of movies.
+	 */
 	private ArrayList<Movie> movies = new ArrayList<>();
+
+	/**
+	 * The number of movies in MovieListing.
+	 */
 	private int len = 0;
+
+	/**
+	 * A static scanner to be used throughout MovieListing.
+	 */
 	private static Scanner in = new Scanner(System.in);
 
+	/**
+	 * Adds a movie
+	 * @param movie	the movie to be added.
+	 */
 	public void addMovie(Movie movie) {
 		movies.add(movie);
 		len++;
 	}
 
+	/**
+	 * Deletes a movie.
+	 */
 	public void deleteMovie() {
 		listMovies();
 		System.out.println("Enter the Index of the movie to be deleted:");
@@ -20,6 +38,9 @@ public class MovieListing implements java.io.Serializable{
 		len--;
 	}
 
+	/**
+	 * Lists all movies that are coming soon or currently showing.
+	 */
 	public void listMovies() {
 		int i = 0;
 		for (Movie obj : movies) {
@@ -30,6 +51,10 @@ public class MovieListing implements java.io.Serializable{
 		}
 	}
 
+	/**
+	 * Lists a number of movies that are coming soon or currently showing, limited by lim.
+	 * @param lim
+	 */
 	public void listMovies(int lim) {
 		int i = 0;
 		for (Movie obj : movies) {
@@ -42,6 +67,9 @@ public class MovieListing implements java.io.Serializable{
 		}
 	}
 
+	/**
+	 * Searches for the movie by title.
+	 */
 	public void searchMovieByTitle(){
 		boolean exit = false;
 		boolean result = false;
@@ -63,6 +91,9 @@ public class MovieListing implements java.io.Serializable{
 		System.out.println("Returning to Search Movie Menu...");
 	}
 
+	/**
+	 * Searches for the movie by director.
+	 */
 	public void searchMovieByDirector(){
 		boolean exit = false;
 		boolean result = false;
@@ -84,6 +115,10 @@ public class MovieListing implements java.io.Serializable{
 		System.out.println("Returning to Search Movie Menu...");
 	}
 
+	/**
+	 * Updates the movie.
+	 * @param movie_ind	index of the movie.
+	 */
 	public void updateMovie(int movie_ind) {
 		int choice;
 		do {
@@ -175,10 +210,17 @@ public class MovieListing implements java.io.Serializable{
 		System.out.println("Movie successfully updated");
 	}
 
+	/**
+	 * Returns the number of movies.
+	 * @return	the number of movies.
+	 */
 	public int length() {
 		return len;
 	}
 
+	/**
+	 * Sorts the movies by rating.
+	 */
 	public void sortbyRating() {
 		for (int i = 0; i < len-1; i++)
 			for (int j = 0; j < len-1-i; j++)
@@ -188,7 +230,10 @@ public class MovieListing implements java.io.Serializable{
 					movies.set(j + 1, temp);
 				}
 	}
-
+	
+	/**
+	 * Sorts the movies by sales.
+	 */
 	public void sortbySales() {
 		for (int i = 0; i < len-1; i++)
 			for (int j = 0; j < len-1-i; j++)
@@ -199,18 +244,27 @@ public class MovieListing implements java.io.Serializable{
 				}
 	}
 
+	/**
+	 * Lists the top 5 movies by rating
+	 */
 	public void listTop5byRating() {
 		sortbyRating();
 		listMovies(5);
 
 	}
 
+	/**
+	 * Lists the top 5 movies by sales
+	 */
 	public void listTop5bySales() {
 		sortbySales();
 		listMovies(5);
 
 	}
 	
+	/**
+	 * Lists the total sales of each movie
+	 */
 	public void listSalesofMovie() {
 		int i=1;
 		System.out.printf("%10s%40s%15s\n", "Index", "Movie Title", "Total Sales");
@@ -218,6 +272,10 @@ public class MovieListing implements java.io.Serializable{
 			System.out.printf("%10d%40s%15s\n", i++, movie.getTitle(), movie.getTotalSales());
 	}
 
+	/**
+	 * Returns the movies in an array.
+	 * @return	array of movies. 
+	 */
 	public ArrayList<Movie> getMovies() {
 		return movies;
 	}
