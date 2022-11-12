@@ -118,14 +118,20 @@ public class Show implements java.io.Serializable{
         int row=(sc.nextInt()-1);
         int column=(int)(seatIndex.charAt(seatIndex.length()-1)-'A');
         //sc.close();
-        if(this.cinema.getLayout()[row][column])
-            System.out.println("Oops! This seat is already taken. Please select another one.");
-        else
-            this.cinema.assignSeat(row,column);
+        
+
+        this.cinema.assignSeat(row,column);
         this.movie.addSale();
         this.tickets[this.ticketLength]=new Ticket(seatIndex,this.cineplex.getName(),this.movie.getTitle(),this.showTime,this.cinema.getIndex(),this.ticketLength+1,this.price, TID);
         this.ticketLength++;
         return this.tickets[this.ticketLength-1];
+    }
+
+    public boolean checkOccupied(String seatIndex){
+        Scanner sc=new Scanner(seatIndex.substring(0, seatIndex.length()-1));
+        int row=(sc.nextInt()-1);
+        int column=(int)(seatIndex.charAt(seatIndex.length()-1)-'A');
+        return this.cinema.getLayout()[row][column];
     }
 
     /**
