@@ -5,15 +5,20 @@ import model.Staff;
 import model.MovieGoer;
 import controller.Database;
 
+/**
+ * The class used for LoginUI.
+ */
 public class LoginUI {
 
-    // declare private static scanner once for this class
+    /**
+     * The static scanner used throughout LoginUI.
+     */
     private static Scanner sc = new Scanner(System.in);
     
     /**
      * UI Method to verify admin login
-     * @param db database to check for admin login details
-     * @return
+     * @param db The database.
+     * @return  The Staff member.
      */
     public static Staff verifyAdmin(Database db){
         Staff currentStaff;
@@ -45,8 +50,8 @@ public class LoginUI {
 
     /**
      * UI method to verify moviegoer login
-     * @param db
-     * @return
+     * @param db    The database.
+     * @return      The Movie Goer.
      */
     public static MovieGoer verifyMovieGoer(Database db){
         MovieGoer currentUser;

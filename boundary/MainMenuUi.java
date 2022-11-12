@@ -4,11 +4,22 @@ import java.util.Scanner;
 import controller.*;
 import model.MovieGoer;
 
+/**
+ * The class used for MainMenuUI.
+ */
 public class MainMenuUi {
+	
+	/**
+	 * A static scanner used throughout MainMenuUI.
+	 */
 	private static Scanner sc = new Scanner(System.in);
+
+	/**
+	 * The main function for the Main Menu of MOBLIMA.
+	 * @param db	The database.
+	 */
 	public void main(Database db) {
 		boolean exit = false;
-		// main program loop
 		do {
 			System.out.println("");
 			System.out.println("||----------- Welcome to MOBLIMA ----------||");
@@ -61,9 +72,9 @@ public class MainMenuUi {
 		System.out.println("||---- Program End ----||");
 	}
 
-	// admin UI after logging in ---------------------
 	/**
-	 * @param db
+	 * The Admin UI after successfully logging in.
+	 * @param db	The database.
 	 */
 	public static void adminLogin(Database db) {
 		boolean loggedIn = true;
@@ -113,7 +124,11 @@ public class MainMenuUi {
 		} while (loggedIn == true);
 	}
 
-	// movieGoer UI after logging in --------------------
+	/**
+	 * MovieGoer UI after logging in successfully.
+	 * @param currentUser	The current user.
+	 * @param db			The database.
+	 */
 	public static void movieGoerLogin(MovieGoer currentUser, Database db) {
 		boolean loggedIn = true;
 		do {
@@ -163,5 +178,4 @@ public class MainMenuUi {
 			}
 		} while (loggedIn == true);
 	}
-	// end of main
 }

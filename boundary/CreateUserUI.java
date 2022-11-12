@@ -7,12 +7,14 @@ import java.util.regex.Pattern;
 
 public class CreateUserUI {
     
-    //declare scanner once for this class
+    /**
+     * The static scanner used throughout CreateUserUI.
+     */
     private static Scanner sc = new Scanner(System.in);
 
     /**
-     * Main UI for creating of new movie goer account
-     * @param db database to add account into
+     * Main UI for creation of new movie goer account.
+     * @param db The database.
      */
     public void main(Database db){ 
         int age, id;

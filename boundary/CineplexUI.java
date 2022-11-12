@@ -6,7 +6,9 @@ import java.util.*;
 
 public class CineplexUI {
 
-    // declare a private static scanner for class
+    /**
+     * A static scanner used throughout CineplexUI.
+     */
     private static Scanner sc = new Scanner(System.in);
 
     /**

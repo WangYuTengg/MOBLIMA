@@ -4,8 +4,20 @@ import controller.*;
 import java.util.*;
 import model.*;
 
+/**
+ * The class used for ShowsUI.
+ */
 public class ShowsUI {
+
+	/**
+	 * A static scanner used throughout ShowsUI.
+	 */
 	private static Scanner sc = new Scanner(System.in);
+
+	/**
+	 * The Main UI used for Staff to edit shows.
+	 * @param db	The database.
+	 */
 	public void main(Database db) {
 		boolean exit = false;
 		do {
