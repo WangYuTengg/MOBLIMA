@@ -232,6 +232,7 @@ public class Staff implements java.io.Serializable{
     }
 
     public static boolean addCinema(Cineplex cineplex,int index,char first_letter){
+	System.out.printf("Adding cinema No.%d\n",index);
         System.out.println("Enter the platinum type of the cinema(P/N)");
         String platinum_type=scan.next();
         // System.out.println(platinum_type);
@@ -248,9 +249,7 @@ public class Staff implements java.io.Serializable{
     }
 
     public static void deleteCineplex(Database db){
-        int i=0;
-        for(Cineplex ci:db.cineplexes){
-            i++;
+        for(int i=1;i<=db.cineplexes.size();++i){
             System.out.printf("%d %s\n",i,db.cineplexes.get(i-1).getName());
         }
         System.out.println("Please enter the index of cineplex");
