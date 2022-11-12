@@ -55,7 +55,7 @@ public class LoginUI {
         String password = sc.nextLine();
 
         if ( password.equals(currentUser.getPass())){
-            System.out.printf("Welcome %s, you have successfully logged in as a usern.\n", currentUser.getName());
+            System.out.printf("Welcome %s, you have successfully logged in as a user.\n", currentUser.getName());
             return currentUser;
         } else {
             System.out.println("Wrong password - returning to main menu."); 

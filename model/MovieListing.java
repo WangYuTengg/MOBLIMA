@@ -211,6 +211,13 @@ public class MovieListing implements java.io.Serializable{
 
 	}
 	
+	public void listSalesofMovie() {
+		int i=1;
+		System.out.printf("%10s%40s%15s\n", "Index", "Movie Title", "Total Sales");
+		for (Movie movie : movies)
+			System.out.printf("%10d%40s%15s\n", i++, movie.getTitle(), movie.getTotalSales());
+	}
+
 	public ArrayList<Movie> getMovies() {
 		return movies;
 	}
