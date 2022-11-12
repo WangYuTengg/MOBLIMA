@@ -44,7 +44,7 @@ public class LoginUI {
         System.out.print("Enter your password:  ");
         String password = sc.nextLine();
         
-        if ( password.equals(currentStaff.getPass()) ){
+        if ( password.equals(currentStaff.getPassword()) ){
             System.out.printf("Welcome %s, you have successfully logged in as admin.\n", currentStaff.getName());
             return currentStaff;
         } else {
@@ -77,7 +77,7 @@ public class LoginUI {
         System.out.print("Enter your password:  ");
         String password = sc.nextLine();
 
-        if ( password.equals(currentUser.getPass())){
+        if ( password.equals(currentUser.getPassword())){
             System.out.printf("Welcome %s, you have successfully logged in as a user.\n", currentUser.getName());
             return currentUser;
         } else {
