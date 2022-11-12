@@ -164,7 +164,7 @@ public class MovieListing implements java.io.Serializable{
 							ageRating = "R21";
 							break;
 						default:
-							System.out.println("Invalid Input. \nPlease enter the age rating for the movie:\n1. G\n2. PG\n3. PG-13\n4. R\n5. M18\n6. R21");
+							System.out.println("Invalid Input. \nPlease enter the age rating for the movie:\n1. G\n2. PG\n3. PG13\n4. R\n5. M18\n6. R21");
 							ageRatingInput = in.nextLine();
 					}
 				} while (ageRating.equals("unknown"));
