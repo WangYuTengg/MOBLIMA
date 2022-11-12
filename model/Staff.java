@@ -273,7 +273,16 @@ public class Staff implements java.io.Serializable{
         System.out.println("Enter the number of columns");
         while(!scan.hasNextInt()){System.out.println("Please enter a number!");}
         int column=scan.nextInt();
-        cineplex.addCinema(new Cinema(index,new String(cinemaCode),platinum_type=="P",cineplex.getName(),row,column));
+        Cinema temp=new Cinema(index,new String(cinemaCode),platinum_type=="P",cineplex.getName(),row,column);
+        System.out.println("Enter the number of elite rows");
+        while(!scan.hasNextInt()){System.out.println("Please enter a number!");}
+        int num_elite=scan.nextInt();
+        for(int i=0;i<num_elite;++i){
+            System.out.printf("Enter the row index of the %dth row elite seats\n");
+            while(!scan.hasNextInt()){System.out.println("Please enter a number!");}
+            temp.setElite(scan.nextInt());
+        }
+        cineplex.addCinema(temp);
         return true;
     }
 
