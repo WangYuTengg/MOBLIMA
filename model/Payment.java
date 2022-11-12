@@ -1,6 +1,6 @@
 /**
  Represents the Payment Class, to calculate the cost of the ticket.
- @version   1.1
+ @version   2.0
  @author    Davyn Yam
  @since     2022-11-01
  */
@@ -10,7 +10,7 @@ import java.util.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
-public class Payment {
+public class Payment implements java.io.Serializable{
     
     /**
      * Base price of ticket

@@ -7,7 +7,7 @@
 package model;
 import java.util.ArrayList;
 
-public class Movie{
+public class Movie implements java.io.Serializable{
     /**
      * The title of the movie.
      */
