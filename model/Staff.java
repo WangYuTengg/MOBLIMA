@@ -278,7 +278,7 @@ public class Staff implements java.io.Serializable{
         while(!scan.hasNextInt()){System.out.println("Please enter a number!");}
         int num_elite=scan.nextInt();
         for(int i=0;i<num_elite;++i){
-            System.out.printf("Enter the row index of the %dth row elite seats(1-%d)\n",row);
+            System.out.printf("Enter the row index of the %dth row elite seats(1-%d)\n",i,row);
             while(!scan.hasNextInt()){System.out.println("Please enter a number!");}
             temp.setElite(scan.nextInt()-1);
         }
