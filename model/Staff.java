@@ -250,16 +250,6 @@ public class Staff implements java.io.Serializable{
     }
 
     /**
-     * Method to set ticker price
-     * @param db
-     */
-    public void setTicketPrice(Database db){
-        double price = scan.nextDouble();
-        db.payment.setBasePrice(price);
-        System.out.println("The base ticket price has been updated.");
-    }
-
-    /**
      * Method to add cineplex to database
      * @param db Database containing the cineplexes
      */
