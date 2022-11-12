@@ -67,17 +67,22 @@ public class BookingSystem implements java.io.Serializable{
 		Show[] shows = new Show[showListing.getShows().size()];
 		shows =	showListing.getShows().toArray(shows);
 		int show_length = showListing.length();
+		flag1 = false;
 		for (int i = 0; i < cineplex.length; i++) 
-		{
-			
+		{	
 			for(int j = 0; j < show_length; j++)
 			{
 				if(shows[j].getMovie().getTitle() == movie_name && shows[j].getCineplex().getName() == cineplex[i].getName())
 				{
 					System.out.printf("%d. Cineplex Name: %s\n", i + 1, cineplex[i].getName());
+					flag1 = true;
 					break;
 				}
 			}
+		}
+		if(flag1 == false)
+		{
+			throw new exception.InvalidIdException("Currently No Showings of this Movie are available.\nReturning to Movie Goer Menu...");
 		}
 		System.out.println("Choose Ciniplex Index");
 		int cineplex_ind = in.nextInt() - 1;
