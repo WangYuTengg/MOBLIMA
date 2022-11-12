@@ -23,7 +23,7 @@ public class Seat implements java.io.Serializable{
     /**
      * The type of seat.(Elite or not)
      */
-    private boolean elite;
+    private boolean elite=false;
     /**
      * Creates a new Seat with a seat index
      * @param index   the index of the seat.
@@ -63,4 +63,6 @@ public class Seat implements java.io.Serializable{
     {
     	return this.elite;
     }
+
+    public void setElite(){this.elite=true;}
 }
