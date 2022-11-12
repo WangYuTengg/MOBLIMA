@@ -1,10 +1,3 @@
-/**
-* Represents the Staff Class.
-* @version  4.0
-* @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
-* @since    2022-10-30
-*/
-
 package model;
 import java.util.Scanner;
 
@@ -13,6 +6,12 @@ import data.Database;
 import java.text.ParseException;
 import java.util.ArrayList;
 
+/**
+* Represents the Staff Class.
+* @version  4.0
+* @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+* @since    2022-10-30
+*/
 public class Staff extends User implements java.io.Serializable{
 
     /**
@@ -22,9 +21,9 @@ public class Staff extends User implements java.io.Serializable{
 
     /**
      * The Constructor of the class.
-     * @param adminEmail
-     * @param pass
-     * @param name
+     * @param adminEmail    The email of the Staff member.
+     * @param pass          The password of the Staff member.
+     * @param name          The name of the Staff member.
      */
     public Staff(String adminEmail, String pass, String name){
         super(name, adminEmail, pass);
@@ -198,7 +197,7 @@ public class Staff extends User implements java.io.Serializable{
 
     /**
      * Updating attributes of a Show
-     * @db Database containing the shows
+     * @param db Database containing the shows
      */
     public static void updateShow(Database db){ 
         db.showListing.displayShows();
@@ -235,10 +234,10 @@ public class Staff extends User implements java.io.Serializable{
 
     /**
      * Method to add cinema to database
-     * @param cineplex
-     * @param index
-     * @param first_letter
-     * @return
+     * @param cineplex      The cineplex being added to.
+     * @param index         The index of the cinema.
+     * @param first_letter  The first letter of the cinema code.
+     * @return              A boolean value for when the cinema has been added.
      */
     public static boolean addCinema(Cineplex cineplex,int index,char first_letter){
 	System.out.printf("Adding cinema No.%d\n",index);

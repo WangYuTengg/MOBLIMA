@@ -1,14 +1,13 @@
+package model;
+import java.util.*;
+import java.text.*;
+
 /**
  * Represents a available show.
  * @version  3.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
 */
-
-package model;
-import java.util.*;
-import java.text.*;
-
 public class Show implements java.io.Serializable{
 
     /**
@@ -85,8 +84,8 @@ public class Show implements java.io.Serializable{
     }
 
     /**
-     * Set the price of the show.
-     * @param price the price to be set.
+     * Set the cinema of the show.
+     * @param cinema the cinema to be set.
      */
     public void setCinema(Cinema cinema){
         this.cinema=cinema;
@@ -152,6 +151,7 @@ public class Show implements java.io.Serializable{
     /**
      * Create a ticket corresponding to the seat with index equal to seatIndex.
      * @param seatIndex the index of the seat.
+     * @param TID       the transaction ID.
      * @return          the ticket created.
      */
     public Ticket createTicket(String seatIndex, String TID){

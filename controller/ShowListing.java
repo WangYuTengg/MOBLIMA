@@ -1,8 +1,3 @@
-/**	A class to represent all the shows.
- * @version  3.0
- * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
- * @since    2022-10-30
- */
 package controller;
 
 import java.util.*;
@@ -15,6 +10,11 @@ import model.Show;
 
 import java.text.*;
 
+/**	A class to represent all the shows.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
 public class ShowListing implements java.io.Serializable{
 	/**
 	 * Instantiates an ArrayList of Show type.
@@ -143,8 +143,8 @@ public class ShowListing implements java.io.Serializable{
 
 	/**
 	 * Creates an instance of a Show.
-	 * @param db				Database
-	 * @throws ParseException
+	 * @param db				the database.
+	 * @throws ParseException	Throws an exception.
 	 */
 	public void createShow(Database db) throws ParseException {
 		Movie[] movies =  new Movie[db.movieListing.getMovies().size()];
@@ -211,8 +211,8 @@ public class ShowListing implements java.io.Serializable{
 	/**
 	 * Updates a Show.
 	 * @param show_ind			Index of the show to be updated.
-	 * @param db				Database
-	 * @throws ParseException
+	 * @param db				The database
+	 * @throws ParseException	Throws an exception.
 	 */
 	public void updateShow(int show_ind, Database db) throws ParseException {
 		int choice;
@@ -276,6 +276,10 @@ public class ShowListing implements java.io.Serializable{
 		} while (choice != 5);
 	}
 
+	/**
+	 * To get the ArrayList of Shows.
+	 * @return shows
+	 */
 	public ArrayList<Show> getShows() {
 		return shows;
 	}

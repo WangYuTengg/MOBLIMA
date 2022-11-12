@@ -1,12 +1,11 @@
+package model;
+
 /**
  * Represents a seat in a cinema.
  * @version  3.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-
-package model;
- 
 public class Seat implements java.io.Serializable{
 	
     /**
@@ -30,7 +29,6 @@ public class Seat implements java.io.Serializable{
     /**
      * Creates a new Seat with a seat index
      * @param index   the index of the seat.
-     * @param elite	  is seat elite or not.
      */
     public Seat(String index){
     	this.index = index;
@@ -38,7 +36,7 @@ public class Seat implements java.io.Serializable{
 
     /**
      * A constructor to duplicate an already existing seat.
-     * @param a
+     * @param a     an already existing seat used to create similar duplicate seats.
      */
     public Seat(Seat a){
         this.index=a.getIndex();

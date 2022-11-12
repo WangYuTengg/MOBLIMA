@@ -1,11 +1,4 @@
-/**
- * The class used for SettingsUI.
- * @version  3.0
- * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
- * @since    2022-10-30
- */
-
- package boundary;
+package boundary;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -13,6 +6,12 @@ import java.util.Scanner;
 import data.Database;
 import model.Holiday;
 
+/**
+ * The class used for SettingsUI.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
 public class SettingsUI {
 	/**
 	 * A static scanner used throughout SettingsUI.
@@ -21,7 +20,7 @@ public class SettingsUI {
 
 	/**
 	 * Main function containing the program loop for settings menu.
-	 * @return void
+	 * @param db The database.
 	 */
 	public void main(Database db) {
 		boolean exit = false;

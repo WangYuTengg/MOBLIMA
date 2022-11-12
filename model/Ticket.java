@@ -8,7 +8,6 @@ import java.util.Date;
 * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
 * @since    2022-10-30
 */
-
 public class Ticket implements java.io.Serializable{
     /**
 	 * Ticket's seatIndex 
@@ -56,7 +55,7 @@ public class Ticket implements java.io.Serializable{
 	/**
 	 * Creates a new ticket with the given attributes
 	 * @param seatIndex This Ticket's seat index.
-	 * @param cineplexNum This Ticket's cineplex number.
+	 * @param cineplexName This Ticket's cineplex name.
 	 * @param movieTitle This Ticket's movie title.
 	 * @param movieTiming This Ticket's movie timing.
 	 * @param cinemaNum This Ticket's cinema number.

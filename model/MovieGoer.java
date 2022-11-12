@@ -3,19 +3,13 @@ package model;
 import data.Database;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 /**
  * The MovieGoer Class.
  * @version  4.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-
-package model;
-
-import data.Database;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class MovieGoer extends User implements java.io.Serializable {
 	/**
 	 * MovieGoer's age

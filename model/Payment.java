@@ -1,15 +1,14 @@
+package model;
+import java.util.*;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+
 /**
  * Represents the Payment Class, to calculate the cost of the ticket.
  * @version  3.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-
-package model;
-import java.util.*;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-
 public class Payment implements java.io.Serializable{
     
     /**
@@ -281,9 +280,9 @@ public class Payment implements java.io.Serializable{
     /**
      * function to calculate price of a ticket depending on certain factors 
      * e.g holiday/senior/student/senior/is3d/isPlat etc. -> all taken from Show and MoviegoerType
-     * @param show 
-     * @param seat_index
-     * @param mType
+     * @param show              The show being used.
+     * @param seat_index        The seat index of the movie goer.
+     * @param mType             The movie goer type.
      * @return price of ticket
      */
     public double calPrice(Show show, String seat_index, MoviegoerType mType)
@@ -353,8 +352,8 @@ public class Payment implements java.io.Serializable{
     
     /**
      * function to calculate discounted price based on loyalty card 
-     * @param price 
-     * @param card_name
+     * @param price                         The current price.
+     * @param card_name                     The name of the loyalty card.
      * @return discounted price of ticket
      */
     public double discountedPrice(double price, String card_name)
@@ -365,7 +364,7 @@ public class Payment implements java.io.Serializable{
 
     /**
      * Method to generate transaction ID after payment is made
-     * @param cinema
+     * @param cinema    The cinema being booked in.
      * @return transaction id 
      */
     public String generateTID(Cinema cinema)

@@ -1,21 +1,18 @@
+package data;
+import java.io.*;
+
 /**
  * Serialization class for interacting with an external file for storage and access.
  * @version  1.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-
-package data;
-import java.io.*;
-
-/**
- * Serialization class for interacting with an external file for storage and access.
- */
 public class Serialization {
 
     /**
      * Serialization of the current database to be saved.
-     * @param db
+     * @param db    The database.
+     * @return void
      */
     public static void write(Database db){
         try

@@ -1,19 +1,20 @@
-/**
- * The class used for MovieGoerUI.
- * @version  3.0
- * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
- * @since    2022-10-30
- */
-
 package boundary;
 
 import java.util.Scanner;
 
 import data.Database;
 import model.MovieGoer;
+/**
+ * The class used for MovieGoerUI.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
 public class MovieGoerUI {
 
-	//declare private static scanner once for this class
+	/**
+	 * A static scanner used throughout MovierGoerUI
+	 */
 	private static Scanner sc = new Scanner(System.in);
 
 	/**

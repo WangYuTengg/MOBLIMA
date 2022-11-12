@@ -1,16 +1,14 @@
+package controller;
+
+import java.util.*;
+
+import model.Movie;
 /**
  * A Class to act as a List of all Movies.
  * @version  3.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-
-package controller;
-
-import java.util.*;
-
-import model.Movie;
-
 public class MovieListing implements java.io.Serializable{
 	/**
 	 * An ArrayList of movies.
@@ -62,7 +60,7 @@ public class MovieListing implements java.io.Serializable{
 
 	/**
 	 * Lists a number of movies that are coming soon or currently showing, limited by lim.
-	 * @param lim
+	 * @param lim the limit of number of movies displayed
 	 */
 	public void listMovies(int lim) {
 		int i = 0;
@@ -283,7 +281,7 @@ public class MovieListing implements java.io.Serializable{
 
 	/**
 	 * Lists the sorted total sales of a limited number of movies
-	 * @return void
+	 * @param lim The limit of number of movies displayed.
 	 */
 	public void listSalesofMovie(int lim) {
 		int i=1;
@@ -297,7 +295,7 @@ public class MovieListing implements java.io.Serializable{
 
 	/**
 	 * Lists top 5 movies with their overall ratings displayed
-	 * @return void
+	 * @param lim The limit of number of movies displayed.
 	 */
 	public void listRatingofMovie(int lim) {
 		int i=1;
