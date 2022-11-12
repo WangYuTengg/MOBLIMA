@@ -8,12 +8,7 @@ Stores the whole data.
  */
 
 import java.util.ArrayList;
-import model.Payment;
-import model.Cineplex;
-import model.MovieGoer;
-import model.MovieListing;
-import model.ShowListing;
-import model.Staff;
+import model.*;
 
 public class Database implements java.io.Serializable{
 	// Attributes
@@ -43,8 +38,12 @@ public class Database implements java.io.Serializable{
 	 * The collection of staffs.
 	 */
 	ArrayList<Staff> staffs;
-
+	
+	/**
+	 * instantiate payment for displaying of prices
+	 */
 	public Payment payment = new Payment();
+	
 	/**
 	 * Creates a new database
 	 */
