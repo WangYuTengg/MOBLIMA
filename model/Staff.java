@@ -153,7 +153,7 @@ public class Staff implements java.io.Serializable{
         String synopsis = scan.nextLine();
 
         String ageRating = "unknown";
-        System.out.println("Please enter the age rating for the movie:\n1. G\n2. PG\n3. PGs13\n4. R\n5. M18\n6. R21");
+        System.out.println("Please enter the age rating for the movie:\n1. G\n2. PG\n3. PG13\n4. R\n5. M18\n6. R21");
         String ageRatingInput = scan.nextLine();
         do {
             switch (ageRatingInput) {
@@ -164,7 +164,7 @@ public class Staff implements java.io.Serializable{
                     ageRating = "PG";
                     break;
                 case("3"):
-                    ageRating = "PG-13";
+                    ageRating = "PG13";
                     break;
                 case ("4"):
                     ageRating = "R";
