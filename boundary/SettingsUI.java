@@ -1,5 +1,6 @@
 package boundary;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import controller.Database;
@@ -24,16 +25,21 @@ public class SettingsUI {
 			System.out.println("||----------- Settings Menu -----------||");
 			System.out.println("1. List all holidays");
 			System.out.println("||----------- Update Multipliers -----------||");
-			System.out.printf("2. Update Holiday Price Multiplier --- current: %.2fx\n", db.payment.getHolidayMultiplier());
-			System.out.printf("3. Update Weekend Price Multiplier --- current: %.2fx\n", db.payment.getWeekendMultiplier());
-			System.out.printf("4. Update Senior Price Multiplier  --- current: %.2fx\n", db.payment.getSeniorMultipier());
-			System.out.printf("5. Update Student Price Multiplier --- current: %.2fx\n", db.payment.getStudentMultipier());
+			System.out.printf("2. Update Holiday Price Multiplier  --- current: %.2fx\n", db.payment.getHolidayMultiplier());
+			System.out.printf("3. Update Weekend Price Multiplier  --- current: %.2fx\n", db.payment.getWeekendMultiplier());
+			System.out.printf("4. Update Senior Price Multiplier   --- current: %.2fx\n", db.payment.getSeniorMultipier());
+			System.out.printf("5. Update Student Price Multiplier  --- current: %.2fx\n", db.payment.getStudentMultipier());
+			System.out.printf("6. Update Loyalty Card Multiplier   --- current: %.2fx\n", db.payment.getLoyaltCardMultiplier());
 			System.out.println("||---------- Update Prices -----------||");
-			System.out.printf("6. Update Base ticket price        --- current: $%.2f\n", db.payment.getBasePrice());
-			System.out.printf("7. Update 3d Movie extra charge    --- current: $%.2f\n", db.payment.getIs3DPrice());
-			System.out.printf("8. Update Platinum extra charge    --- current: $%.2f\n", db.payment.getIsPlatPrice());
-			System.err.printf("9. Update Blockbuster extra charge --- current: $%.2f\n", db.payment.getIsBBPrice());
-			System.out.println("10. Return to Admin menu");
+			System.out.printf("7. Update Base ticket price         --- current: $%.2f\n", db.payment.getBasePrice());
+			System.out.printf("8. Update 3d Movie extra charge     --- current: $%.2f\n", db.payment.getIs3DPrice());
+			System.out.printf("9. Update Platinum extra charge     --- current: $%.2f\n", db.payment.getIsPlatPrice());
+			System.err.printf("10. Update Blockbuster extra charge --- current: $%.2f\n", db.payment.getIsBBPrice());
+			System.err.printf("11. Update Elite Seat extra charge  --- current: $%.2f\n", db.payment.getIsEliteSeatprice());
+			System.out.println("||---------- Update Loyalty Cards -----------||");
+			System.out.printf("12. Add Loyalty Cards\n");
+			System.out.printf("13. Delete Loyalty Cards\n");
+			System.out.println("14. Return to Admin menu");
 			System.out.print("Select option: ");
 			String adminInput = sc.next();
 			switch (adminInput) {
@@ -62,26 +68,58 @@ public class SettingsUI {
 				db.payment.setStudentPriceMultiplier(newMultiplier);
 				break;
 			case "6":
+				System.out.println("-------- Updating Loyalty Card Multiplier --------");
+				newMultiplier = getMultiplierFromUser();
+				db.payment.setLoyaltyCardMultiplier(newMultiplier);
+				break;
+			case "7":
 				System.out.println("-------- Updating Base Price --------");
 				newPrice = getPriceFromUser();
 				db.payment.setBasePrice(newPrice);
 				break;
-			case "7":
+			case "8":
 				System.out.println("-------- Updating 3D Charge --------");
 				newPrice = getPriceFromUser();
 				db.payment.set3dAdditionalPrice(newPrice);
 				break;
-			case "8":
+			case "9":
 				System.out.println("-------- Updating Platinum Charge --------");
 				newPrice = getPriceFromUser();
 				db.payment.setPlatAdditionalPrice(newPrice);
 				break;
-			case "9":
+			case "10":
 				System.out.println("-------- Updating Blockbuster Charge --------");
 				newPrice = getPriceFromUser();
 				db.payment.setBlockBusterAdditionalPrice(newPrice);
 				break;
-			case "10":
+			case "11":
+				System.out.println("-------- Updating Elite Seat Charge --------");
+				newPrice = getPriceFromUser();
+				db.payment.setEliteAdditionalPrice(newPrice);
+				break;
+			case "12":
+				System.out.println("-------- Adding Loyalty Card --------");
+				System.out.println("Enter Loyalty Card name:");
+				String card_name=sc.nextLine();
+				db.payment.addLoyaltyCards(card_name);
+				break;
+			case "13":
+				System.out.println("-------- Deleting Loyalty Card --------");
+				ArrayList<String> loyaltyCards=db.payment.getLoyaltyCards();
+				for(int i=0;i<loyaltyCards.size();++i) System.out.printf("%d. %s\n",i+1,loyaltyCards.get(i));
+				System.out.printf("Enter Loyalty Card index(1-%d):",loyaltyCards.size());
+				int card_index;
+				while(true){
+					if(!sc.hasNextInt()) System.out.println("Please enter a number");
+					else{
+						card_index=sc.nextInt();
+						if(card_index<1||card_index>loyaltyCards.size()) System.out.println("Please enter a valid number");
+						else break;
+					}
+				}
+				db.payment.removeLoyaltyCards(loyaltyCards.get(card_index-1));
+				break;
+			case "14":
 				exit = true;
 				break;
 			default: System.out.println("Enter a valid option.");
