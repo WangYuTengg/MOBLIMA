@@ -16,7 +16,7 @@ public class BookingSystem implements java.io.Serializable{
 		Cinema cinema = show.getCinema();
 		int row = cinema.getLayoutRowLength();
 		int column = cinema.getLayoutColumnLength();
-		boolean layout[][] = cinema.getLayout();
+		Seat layout[][] = cinema.getSeats();
 		System.out.printf("O: Available seats\nX: Occupied seats\n");
 		System.out.printf(" \t");
 		for (int j = 0; j < column; j++) {
@@ -30,8 +30,9 @@ public class BookingSystem implements java.io.Serializable{
 			for (int j = 0; j < column; j++) {
 				if (j == (column / 5) || j == column - (column / 5))
 					System.out.print("|  | ");
-				if (layout[i][j] == false)
-					System.out.print("O ");
+				if (layout[i][j].isOccupied() == false)
+					if(layout[i][j].isElite())System.out.print("E ");
+					else System.out.print("O ");
 				else
 					System.out.print("X ");
 			}
