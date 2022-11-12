@@ -88,7 +88,6 @@ public class MovieGoer extends User {
 	/**
 	 * Add review to a movie.
 	 * @param db the database.
-	 * @return void
 	 */
 	public static void addReview(Database db) {
 		// declare variables needed
@@ -155,7 +154,6 @@ public class MovieGoer extends User {
 	/**
 	 * Method to book tickets for this MovieGoer
 	 * @param db the database.
-	 * @return void
 	 */
 	public void bookTickets(Database db) {
 		Ticket[] temp = null;
@@ -172,7 +170,6 @@ public class MovieGoer extends User {
 	/**
 	 * Function to view booking history of this MovieGoer Displays relevant
 	 * information of tickets owned by this MovieGoer
-	 * @return void
 	 */
 	public void viewBookingHistory() {
 		if (tickets.size() != 0) {
@@ -191,7 +188,6 @@ public class MovieGoer extends User {
 	/**
 	 * View the detail of the movie.
 	 * @param db the database.
-	 * @return void
 	 */
 	public static void viewMovieDetails(Database db) {
 		// declare variables needed
