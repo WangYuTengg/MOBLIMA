@@ -1,9 +1,4 @@
-/**
- * A class to instantiate the initial database.
- * @version  3.0
- * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
- * @since    2022-10-30
- */
+
 
 package data;
 
@@ -19,12 +14,15 @@ import java.text.SimpleDateFormat;
 
 /**
  * A class to instantiate the initial database.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
  */
-
 public class DataInitialiser {
 
 	/**
 	 * A function to instantiate the database.
+	 * @return Initialized database.
 	 */
 	public static Database main() {
 		Database database = new Database();

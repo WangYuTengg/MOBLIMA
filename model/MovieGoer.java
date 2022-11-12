@@ -1,16 +1,14 @@
+package model;
+
+import data.Database;
+import java.util.ArrayList;
+import java.util.Scanner;
 /**
  * The MovieGoer Class.
  * @version  4.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-
-package model;
-
-import data.Database;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class MovieGoer implements java.io.Serializable{
 	/**
 	 * MovieGoer's age
@@ -44,6 +42,11 @@ public class MovieGoer implements java.io.Serializable{
 
 	/**
 	 * Creates a MovieGoer with the given attributes
+	 * @param age		age of movie goer.
+	 * @param name		name of movie goer.
+	 * @param email		email of movie goer.
+	 * @param id		id of movie goer.
+	 * @param password	password of movie goer.
 	 */
 	public MovieGoer(int age, String name, String email, int id, String password) {
 		this.age = age;
@@ -87,7 +90,7 @@ public class MovieGoer implements java.io.Serializable{
 		return id;
 	}
 
-	/*
+	/**
 	 * Get the password of this MovieGoer
 	 * @return String this MovieGoer's id
 	 */
@@ -95,7 +98,7 @@ public class MovieGoer implements java.io.Serializable{
 		return password;
 	}
 
-	/*
+	/**
 	 * Get the past owned tickets and current tickets of this MovieGoer
 	 * @return ArrayList<Ticket> this MovieGoer's tickets
 	 */
@@ -110,6 +113,8 @@ public class MovieGoer implements java.io.Serializable{
 
 	/**
 	 * Add review to a movie.
+	 * @param db the database.
+	 * @return void
 	 */
 	public static void addReview(Database db) {
 		// declare variables needed
@@ -175,6 +180,8 @@ public class MovieGoer implements java.io.Serializable{
 
 	/**
 	 * Method to book tickets for this MovieGoer
+	 * @param db the database.
+	 * @return void
 	 */
 	public void bookTickets(Database db) {
 		Ticket[] temp = null;
@@ -191,7 +198,7 @@ public class MovieGoer implements java.io.Serializable{
 	/**
 	 * Function to view booking history of this MovieGoer Displays relevant
 	 * information of tickets owned by this MovieGoer
-	 * @returns void
+	 * @return void
 	 */
 	public void viewBookingHistory() {
 		if (tickets.size() != 0) {
@@ -209,6 +216,8 @@ public class MovieGoer implements java.io.Serializable{
 
 	/**
 	 * View the detail of the movie.
+	 * @param db the database.
+	 * @return void
 	 */
 	public static void viewMovieDetails(Database db) {
 		// declare variables needed

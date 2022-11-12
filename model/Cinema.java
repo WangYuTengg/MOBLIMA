@@ -1,12 +1,11 @@
+package model;
+
 /**
  * Represents a cinema
  * @version  2.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-
-package model;
-
 public class Cinema implements java.io.Serializable{
     /**
      * The index of the cinema.
@@ -50,6 +49,7 @@ public class Cinema implements java.io.Serializable{
     /**
      * Constructs a new cinema with the given attributes
      * @param index         the index of the cinema.
+     * @param cinemaCode    the cinema code.
      * @param isPlatinum    whether cinema is platinum class
      * @param cineplex      the name of the cineplex.
      * @param rowLength     the number of rows of the seats.

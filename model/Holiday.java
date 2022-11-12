@@ -1,14 +1,13 @@
+package model;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 /**
  * An ENUM for all Holidays through the year.
  * @version  3.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-
- package model;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 public enum Holiday {
         /**
          * New Years Day.
@@ -121,7 +120,7 @@ public enum Holiday {
     
     /**
      * Checks whether a specific date is a holiday.
-     * @param date
+     * @param date The date.
      * @return boolean of whether the date is a holiday or not.
      */
     public static boolean isHoliday(LocalDate date)

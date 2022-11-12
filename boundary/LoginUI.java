@@ -1,10 +1,3 @@
-/**
- * The class used for LoginUI.
- * @version  3.0
- * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
- * @since    2022-10-30
- */
-
 package boundary;
 
 import java.util.Scanner;
@@ -12,7 +5,12 @@ import java.util.Scanner;
 import data.Database;
 import model.Staff;
 import model.MovieGoer;
-
+/**
+ * The class used for LoginUI.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
 public class LoginUI {
 
     /**

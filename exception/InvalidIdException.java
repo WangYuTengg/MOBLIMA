@@ -1,12 +1,11 @@
+package exception;
+
 /**
  * An Invalid ID Exception class inherited from Exception.
  * @version  3.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-
-package exception;
-
 public class InvalidIdException extends Exception  
 {  
     /**

@@ -1,9 +1,4 @@
-/**
- * The Booking System class.
- * @version  3.0
- * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
- * @since    2022-10-30
- */
+
 
 package controller;
 
@@ -12,7 +7,12 @@ import data.Database;
 import model.*;
 import exception.*;
 
-
+/**
+ * The Booking System class.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
 public class BookingSystem implements java.io.Serializable{
 	/**
 	 * Show Listing.
@@ -26,7 +26,7 @@ public class BookingSystem implements java.io.Serializable{
 
 	/**
 	 * An instantiation of Booking System.
-	 * @param showListing
+	 * @param showListing The Show Listing used in this class.
 	 */
 	public BookingSystem(ShowListing showListing) {
 		this.showListing = showListing;
@@ -34,7 +34,7 @@ public class BookingSystem implements java.io.Serializable{
 
 	/**
 	 * Returns the Show Listing.
-	 * @return
+	 * @return	Returns the show listing 
 	 */
 	public ShowListing getShowlisting(){
 		return this.showListing;

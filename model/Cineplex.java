@@ -1,12 +1,11 @@
+package model;
+
 /**
  * Represents a cineplex
  * @version  3.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-
-package model;
-
 public class Cineplex implements java.io.Serializable{
 	
     /**
@@ -64,7 +63,8 @@ public class Cineplex implements java.io.Serializable{
 
     /**
      * Get cinema using index
-     * @param index the cinema index.
+     * @param cinemaId the cinema index.
+     * @return returns the cinema from the cinema list.
      */
     public Cinema getCinema(int cinemaId){
         return cinemaList[cinemaId];

@@ -1,9 +1,4 @@
-/**
- * The UI used when creating a new Movie Goer account.
- * @version  3.0
- * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
- * @since    2022-10-30
- */
+
 
 package boundary;
 
@@ -13,6 +8,12 @@ import java.util.regex.Pattern;
 
 import data.Database;
 
+/**
+ * The UI used when creating a new Movie Goer account.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
 public class CreateUserUI {
     
     /**
@@ -158,7 +159,7 @@ public class CreateUserUI {
      * Password must contain at least one digit [0-9].
      * Password must contain at least one lowercase Latin character [a-z].
      * Password must contain at least one uppercase Latin character [A-Z].
-     * Password must contain at least one special character like ! @ # & ( ).
+     * Password must contain at least one special character.
      * Password must contain a length of at least 8 characters and a maximum of 20 characters.
      * @return password 
      */

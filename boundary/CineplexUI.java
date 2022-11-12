@@ -1,15 +1,17 @@
-/**
- * The UI used when the Admin is Adding/Deleting a Cineplex.
- * @version  3.0
- * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
- * @since    2022-10-30
- */
+
 
 package boundary;
 
 import data.Database;
 import model.*;
 import java.util.*;
+
+/**
+ * The UI used when the Admin is Adding/Deleting a Cineplex.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
 
 public class CineplexUI {
 

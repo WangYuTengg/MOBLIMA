@@ -1,12 +1,12 @@
+package model;
+import java.util.ArrayList;
+
 /**
  * Represents a movie.
  * @version  3.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-package model;
-import java.util.ArrayList;
-
 public class Movie implements java.io.Serializable{
 
     /**
@@ -67,7 +67,7 @@ public class Movie implements java.io.Serializable{
     /**
      * The constructor of the class.
      * @param title         the title of the movie.
-     * @param type          the type of the movie.
+     * @param blockbuster   the blockbuster type of the movie.
      * @param status        the showing status of the movie.
      * @param director      the director of the movie.
      * @param synopsis      the synopsis of the movie.
@@ -190,7 +190,7 @@ public class Movie implements java.io.Serializable{
 
     /**
      * Sets the age rating of the movie.
-     * @param rating
+     * @param rating The age rating.
      */
     public void setAgeRating(String rating){
         this.ageRating=rating;
