@@ -1,10 +1,12 @@
-package model;
 /**
-Represents a review of a movie.
-@version  2.0
-@author   Guo Sihan
-@since    2022-10-30
+ * Represents a review of a movie.
+ * @version  4.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
 */
+
+package model;
+
 public class Review implements java.io.Serializable{
 	
   /**
@@ -34,7 +36,7 @@ public class Review implements java.io.Serializable{
   public int getRating(){
   	return this.rating;
   	}
-    
+
   /**
    * Gets the comment of this Review
    * @return this Review's comment

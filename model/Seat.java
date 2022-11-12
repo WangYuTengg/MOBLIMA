@@ -1,10 +1,12 @@
-package model; 
 /**
- Represents a seat in a cinema.
- @version   2.0
- @author    Guo Sihan
- @since     2022-10-30
+ * Represents a seat in a cinema.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
  */
+
+package model;
+ 
 public class Seat implements java.io.Serializable{
 	
     /**
@@ -24,7 +26,7 @@ public class Seat implements java.io.Serializable{
      * The type of seat.(Elite or not)
      */
     private boolean elite=false;
-    
+
     /**
      * Creates a new Seat with a seat index
      * @param index   the index of the seat.

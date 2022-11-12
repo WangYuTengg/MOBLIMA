@@ -1,4 +1,11 @@
-package boundary;
+/**
+ * The class used for SettingsUI.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
+
+ package boundary;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -6,9 +13,6 @@ import java.util.Scanner;
 import controller.Database;
 import model.Holiday;
 
-/**
- * The class used for SettingsUI.
- */
 public class SettingsUI {
 	/**
 	 * A static scanner used throughout SettingsUI.

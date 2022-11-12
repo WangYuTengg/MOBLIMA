@@ -1,12 +1,17 @@
+/**
+ * The Booking System class.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
+
 package controller;
 
 import java.util.*;
 import model.*;
 import exception.*;
 
-/**
- * Booking System class.
- */
+
 public class BookingSystem implements java.io.Serializable{
 	/**
 	 * Show Listing.

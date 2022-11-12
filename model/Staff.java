@@ -1,9 +1,9 @@
 /**
- Represents the Staff Class.
- @version   2.0
- @author    Davyn Yam
- @since     2022-11-01
- */
+* Represents the Staff Class.
+* @version  4.0
+* @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+* @since    2022-10-30
+*/
 
 package model;
 import controller.Database;

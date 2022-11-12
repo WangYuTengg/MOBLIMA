@@ -1,11 +1,11 @@
-package controller;
-
 /**
-Stores the whole data.
- @version   1.0
- @author    Ng Yong Jian
- @since     2022-11-01
+ * Stores all data used.
+ * @version  5.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
  */
+
+package controller;
 
 import java.util.ArrayList;
 import model.*;

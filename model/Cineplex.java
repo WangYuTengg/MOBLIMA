@@ -1,10 +1,12 @@
-package model;
 /**
- Represents a cineplex
- @version   2.0
- @author    Guo Sihan
- @since     2022-10-30
+ * Represents a cineplex
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
  */
+
+package model;
+
 public class Cineplex implements java.io.Serializable{
 	
     /**

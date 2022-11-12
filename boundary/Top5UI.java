@@ -1,11 +1,14 @@
+/**
+ * A class for Top5UI.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
+
 package boundary;
 
 import java.util.Scanner;
 import controller.Database;
-
-/**
- * A class for Top5UI.
- */
 public class Top5UI {
 
     /**

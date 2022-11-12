@@ -2,7 +2,9 @@ package model;
 
 /**
  * an ENUM for ShowingStatus
- * 
+ * @version  1.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
  */
 public enum ShowingStatus {
     /**

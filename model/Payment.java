@@ -1,8 +1,8 @@
 /**
- Represents the Payment Class, to calculate the cost of the ticket.
- @version   2.0
- @author    Davyn Yam
- @since     2022-11-01
+ * Represents the Payment Class, to calculate the cost of the ticket.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
  */
 
 package model;

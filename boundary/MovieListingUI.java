@@ -1,3 +1,10 @@
+/**
+ * The UI used for allowing the Staff to manipulate the MovieListing.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
+
 package boundary;
 
 import java.util.Scanner;

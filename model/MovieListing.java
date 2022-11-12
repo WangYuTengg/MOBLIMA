@@ -1,5 +1,11 @@
-package model;
+/**
+ * A Class to act as a List of all Movies.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
 
+package model;
 import java.util.*;
 
 public class MovieListing implements java.io.Serializable{

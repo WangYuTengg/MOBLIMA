@@ -1,12 +1,15 @@
-package boundary;
+/**
+ * The class used for MainMenuUI.
+ * @version  2.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
+
+ package boundary;
 
 import java.util.Scanner;
 import controller.*;
 import model.MovieGoer;
-
-/**
- * The class used for MainMenuUI.
- */
 public class MainMenuUi {
 	
 	/**

@@ -1,10 +1,12 @@
-package model;
 /**
- Represents a cinema
- @version   2.0
- @author    Guo Sihan
- @since     2022-10-30
+ * Represents a cinema
+ * @version  2.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
  */
+
+package model;
+
 public class Cinema implements java.io.Serializable{
     /**
      * The index of the cinema.
@@ -133,7 +135,7 @@ public class Cinema implements java.io.Serializable{
     {
     	return this.layout;
     }
-    
+
     /**
      * Find the occupying status of seats.
      * @return  occupying status shown in 2D array boolean form.

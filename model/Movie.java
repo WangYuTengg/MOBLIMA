@@ -1,14 +1,14 @@
 /**
- Represents a movie.
- @version   1.0
- @author    Guo Sihan
- @since     2022-10-30
+ * Represents a movie.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
  */
 package model;
 import java.util.ArrayList;
 
 public class Movie implements java.io.Serializable{
-    
+
     /**
      * The title of the movie.
      */

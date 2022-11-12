@@ -1,3 +1,10 @@
+/**
+ * The UI used when creating a new Movie Goer account.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
+
 package boundary;
 
 import controller.Database;

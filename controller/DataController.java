@@ -1,4 +1,11 @@
-package controller;
+/**
+ * A class to instantiate the initial database.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
+ */
+
+ package controller;
 
 import model.Cinema;
 import model.Cineplex;
@@ -10,9 +17,7 @@ import model.Movie;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-/**
- * A class to instantiate the initial database.
- */
+
 public class DataController {
 
 	/**

@@ -3,10 +3,10 @@ package model;
 import java.util.Date;
 
 /**
-  Represents a ticket.
-  @version  2.0
-  @author   Guo Sihan
-  @since    2022-10-30
+* Represents a ticket.
+* @version  3.0
+* @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+* @since    2022-10-30
 */
 
 public class Ticket implements java.io.Serializable{
@@ -130,7 +130,7 @@ public class Ticket implements java.io.Serializable{
     public int getIndex(){
     	return this.ticketIndex;
     	}
-        
+
     /**
      * Gets the transaction ID of the ticket. 
      * @return this Ticket's Transaction ID
