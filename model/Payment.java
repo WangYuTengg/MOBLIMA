@@ -370,5 +370,19 @@ public class Payment implements java.io.Serializable{
     	return TID;
     }
     
-
+    public void displayPrices(){
+        System.out.println("---------- Displaying Price Table -----------");
+        System.out.printf("%s %.2f\n","Base Price                             ",base_price);
+        System.out.println("---------- Discounts -----------");
+        System.out.printf("%s %.2f\n","Holiday Price Multiplier               ",holiday_priceMultiplier);
+        System.out.printf("%s %.2f\n","Loyalty Card Multiplier                ",loyaltyCardMultiplier);
+        System.out.printf("%s %.2f\n","Senior Price Multiplier                ",senior_priceMultiplier);
+        System.out.printf("%s %.2f\n","Student Price Multiplier               ",student_priceMultiplier);
+        System.out.printf("%s %.2f\n","Weekend Price Multiplier               ",weekend_priceMultiplier);
+        System.out.println("-----------Extra Charges -----------");
+        System.out.printf("%s %.2f\n","Block Buster Extra Charge              ",blockBuster_price);
+        System.out.printf("%s %.2f\n","3D Extra Charge                        ",is3D_price);
+        System.out.printf("%s %.2f\n","Elite Seat Extra Charge                ",isEliteSeat_price);
+        System.out.printf("%s %.2f\n","Platinum Cinema Extra Charge           ",isPlat_price);
+    }
 }
