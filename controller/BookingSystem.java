@@ -5,14 +5,40 @@ import data.Database;
 import model.*;
 import exception.*;
 
+/**
+ * Booking System class.
+ */
 public class BookingSystem implements java.io.Serializable{
+	/**
+	 * Show Listing.
+	 */
 	private ShowListing showListing;
+
+	/**
+	 * A static Scanner to be used in Booking System
+	 */
 	private static Scanner in = new Scanner(System.in);
+
+	/**
+	 * An instantiation of Booking System.
+	 * @param showListing
+	 */
 	public BookingSystem(ShowListing showListing) {
 		this.showListing = showListing;
 	}
-	public ShowListing getShowlisting(){return this.showListing;}
-	// display cinema layout
+
+	/**
+	 * Returns the Show Listing.
+	 * @return
+	 */
+	public ShowListing getShowlisting(){
+		return this.showListing;
+	}
+
+	/**
+	 * Displays the layout of the Cinema.
+	 * @param show	The show to be displayed.
+	 */
 	public void displayLayout(Show show) {
 		Cinema cinema = show.getCinema();
 		int row = cinema.getLayoutRowLength();
@@ -41,7 +67,15 @@ public class BookingSystem implements java.io.Serializable{
 		}
 	}
 
-	// book tickets
+	/**
+	 * A function for Movie Goers to book tickets.
+	 * @param id								The ID of the MovieGoer.
+	 * @param db								The database.
+	 * @return									An array of tickets.
+	 * @throws exception.InvalidIdException		An exception for invalid ID.
+	 * @throws exception.ExitException			An excpetion for when cancelling the booking of tickets.
+	 * @throws InputMismatchException			An exception for wrong type for inputs.
+	 */
 	public Ticket[] book(int id, Database db) throws exception.InvalidIdException, exception.ExitException, InputMismatchException{
 		Movie[] movies =  new Movie[db.movieListing.getMovies().size()];
 	    	movies = db.movieListing.getMovies().toArray(movies);
@@ -209,7 +243,10 @@ public class BookingSystem implements java.io.Serializable{
 		return ticket;
 	}
 
-	// List Movies
+	/**
+	 * Displays the Show Listing.
+	 * @param movies	An array of movies.
+	 */
 	public void displayshowListing(Movie movies[]) {
 		int len = movies.length;
 		for (int i = 0; i < len; i++) {
@@ -225,6 +262,10 @@ public class BookingSystem implements java.io.Serializable{
 			System.out.println("Index out of bound");
 	}
 
+	/**
+	 * Displays a selected show based on index, displaying the Cinema layout.
+	 * @param db	The database.
+	 */
 	public void displayShowStatus(Database db){
         System.out.println("Displaying all current shows:");
         db.showListing.displayShows();

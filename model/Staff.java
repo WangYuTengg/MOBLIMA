@@ -47,8 +47,8 @@ public class Staff implements java.io.Serializable{
     }
 
     /**
-     * get the ID of the Staff member.
-     * @return String this Staff's email
+     * Gets the Email of the Staff member.
+     * @return Returns the email of the Staff member.
      */
     public String getAdminEmail() {
         return email;
@@ -56,7 +56,7 @@ public class Staff implements java.io.Serializable{
 
     /**
      * Get the password of the Staff member.
-     * @return
+     * @return Returns the password of the Staff member.
      */
     public String getPass() {
         return password;
@@ -64,7 +64,7 @@ public class Staff implements java.io.Serializable{
 
     /**
      * Gets the name of the Staff member.
-     * @return
+     * @return Returns the name of the Staff member.
      */
     public String getName(){
         return staffName;
@@ -72,6 +72,7 @@ public class Staff implements java.io.Serializable{
     
     /**
      * Creating a Movie class, and adding it to the movieListing within the Database.
+     * @param db Inputing the database as a parameter.
      */
     public static void addMovie(Database db){
         int alreadyExists = 0;
@@ -283,7 +284,6 @@ public class Staff implements java.io.Serializable{
 	System.out.printf("Adding cinema No.%d\n",index);
         System.out.println("Enter the platinum type of the cinema(P/N)");
         String platinum_type=scan.next();
-        // System.out.println(platinum_type);
         while(!(platinum_type.equals("P")||platinum_type.equals("N"))){System.out.println("Enter the platinum type of the cinema(P/N)");platinum_type=scan.next();}
         char[] cinemaCode={first_letter,(char)(index+'0'),platinum_type.charAt(0)};
         System.out.println("Enter the number of rows");

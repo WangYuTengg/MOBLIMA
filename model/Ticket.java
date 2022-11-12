@@ -47,12 +47,12 @@ public class Ticket implements java.io.Serializable{
 	 * Ticket's price
 	 */
     private double price;
+
     /**
 	 * The transaction ID of the ticket
 	 */
     private String TID;
-    
-    
+
 	/**
 	 * Creates a new ticket with the given attributes
 	 * @param seatIndex This Ticket's seat index.
@@ -62,6 +62,7 @@ public class Ticket implements java.io.Serializable{
 	 * @param cinemaNum This Ticket's cinema number.
 	 * @param ticketIndex This Ticket's ticket index.
 	 * @param price This Ticket's price.
+     * @param TID This Ticket's transaction ID.
 	 */
     public Ticket(String seatIndex,String cineplexName,String movieTitle,Date movieTiming,int cinemaNum,int ticketIndex,double price, String TID){
         this.seatIndex=seatIndex;
@@ -73,7 +74,6 @@ public class Ticket implements java.io.Serializable{
         this.ticketIndex=ticketIndex;
         this.TID = TID;
     }
-    
     
     /**
      * Gets the seat index of the ticket. 
@@ -130,6 +130,7 @@ public class Ticket implements java.io.Serializable{
     public int getIndex(){
     	return this.ticketIndex;
     	}
+        
     /**
      * Gets the transaction ID of the ticket. 
      * @return this Ticket's Transaction ID

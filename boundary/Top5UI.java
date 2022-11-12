@@ -3,14 +3,30 @@ package boundary;
 import java.util.Scanner;
 import data.Database;
 
+/**
+ * A class for Top5UI.
+ */
 public class Top5UI {
 
-    // declare private scanner once
+    /**
+     * A static scanner to be used in Top5UI.
+     */
     private static Scanner sc = new Scanner(System.in);
 
+    /**
+     * A Boolean showing whether top 5 by sales is blocked.
+     */
     private static boolean isTop5BySalesBlocked = false;
+
+    /**
+     * A Boolean showing whether top 5 by rating is blocked.
+     */
     private static boolean isTop5ByRatingBlocked = false;
 
+    /**
+     * The main UI used for listing Top5 and Blocking/Unblocking Movie Goers.
+     * @param db The Databse.
+     */
     public void main(Database db){
         boolean exit = false;
 		do {
@@ -43,6 +59,9 @@ public class Top5UI {
 		System.out.println("Returning to Admin menu...");
     }
 
+    /**
+     * A UI used to change whether a specific method of listing Top5 movies is blocked for MovieGoer.
+     */
     private static void blockUI(){
         boolean exit = false;
         do{
@@ -68,10 +87,18 @@ public class Top5UI {
         }while(!exit);
     }
 
+    /**
+     * Checks whether top5 by Sales is blocked for MovieGoer.
+     * @return  Blocked or not.
+     */
     public static boolean getIsTop5BySalesBlocked(){
         return isTop5BySalesBlocked;
     }
 
+    /**
+     * Checks whether top5 by Rating is blocked for MovieGoer.
+     * @return  Blocked or not.
+     */
     public static boolean getIsTop5ByRatingBlocked(){
         return isTop5ByRatingBlocked;
     }

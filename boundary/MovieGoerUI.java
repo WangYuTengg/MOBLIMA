@@ -5,6 +5,9 @@ import java.util.Scanner;
 import data.Database;
 import model.MovieGoer;
 
+/**
+ * The class used for MovieGoerUI.
+ */
 public class MovieGoerUI {
 
 	//declare private static scanner once for this class
@@ -160,5 +163,4 @@ public class MovieGoerUI {
 		System.out.println("Returning to Movie Goer menu...");
 	}
 
-	// end of MovieGoerUI
 }

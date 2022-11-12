@@ -6,14 +6,17 @@ import java.util.Scanner;
 import data.Database;
 import model.Holiday;
 
+/**
+ * The class used for SettingsUI.
+ */
 public class SettingsUI {
 	/**
-	 * Declare static scanner once for this class
+	 * A static scanner used throughout SettingsUI.
 	 */
 	private static Scanner sc = new Scanner(System.in);
 
 	/**
-	 * Main function containing the program loop for settings menu
+	 * Main function containing the program loop for settings menu.
 	 * @return void
 	 */
 	public void main(Database db) {
@@ -154,7 +157,7 @@ public class SettingsUI {
 	
 	/**
 	 * Gets a non negative multiplier from admin for setting of new price multipliers
-	 * @return multi
+	 * @return 	The multiplier.
 	 */
 	private static double getMultiplierFromUser(){
 		boolean exit = false;

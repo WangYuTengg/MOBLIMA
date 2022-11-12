@@ -34,6 +34,7 @@ public class Review implements java.io.Serializable{
   public int getRating(){
   	return this.rating;
   	}
+    
   /**
    * Gets the comment of this Review
    * @return this Review's comment

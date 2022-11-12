@@ -6,7 +6,16 @@ import data.Database;
 import model.Staff;
 
 public class MovieListingUI {
+
+	/**
+	 * A static scanner used for MovieListingUI.
+	 */
 	private static Scanner sc = new Scanner(System.in);
+
+	/**
+	 * The main UI used for Staff members to create, update, and delete movies.
+	 * @param db	The database.
+	 */
 	public void main(Database db) {
 		boolean exit = false;
 		do {

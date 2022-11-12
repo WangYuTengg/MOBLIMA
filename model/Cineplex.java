@@ -42,7 +42,7 @@ public class Cineplex implements java.io.Serializable{
     
     /**
      * Return list of cinema in cineplex
-     * @return  cinemaList
+     * @return  cinemaList  The list of cinemas.
      */
     public Cinema[] getCinemaList() {
     	return this.cinemaList;
@@ -50,8 +50,8 @@ public class Cineplex implements java.io.Serializable{
 
     /**
      * Get cinema using cinema code
-     * @param cinemacode
-     * @return cinema 
+     * @param cinemacode    The cinema code.
+     * @return cinema       The cinema corresponding to the code. 
      */
     public Cinema getCinema(String cinemacode){
         for (Cinema cinema: cinemaList) {
@@ -62,7 +62,7 @@ public class Cineplex implements java.io.Serializable{
 
     /**
      * Get cinema using index
-     * @param index
+     * @param index the cinema index.
      */
     public Cinema getCinema(int cinemaId){
         return cinemaList[cinemaId];

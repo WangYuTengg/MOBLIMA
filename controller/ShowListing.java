@@ -11,10 +11,24 @@ import model.Show;
 import java.text.*;
 
 public class ShowListing implements java.io.Serializable{
+	/**
+	 * Instantiates an ArrayList of Show type.
+	 */
 	private ArrayList<Show> shows = new ArrayList<>();
+
+	/**
+	 * The number of shows in Show Listing.
+	 */
 	private int len = 0;
+
+	/**
+	 * A static scanner used throughout Show Listing.
+	 */
 	static private Scanner in = new Scanner(System.in);
 
+	/**
+	 * Sorts the movies by rating.
+	 */
 	public void sortbyRating() {
 		for (int i = 0; i < this.shows.size() - 1; ++i)
 			for (int j = 0; j < this.shows.size() - 1-i; ++j)
@@ -26,6 +40,9 @@ public class ShowListing implements java.io.Serializable{
 				}
 	}
 
+	/**
+	 * Sorts the movies by sales volume.
+	 */
 	public void sortbySales() {
 		for (int i = 0; i < this.shows.size() - 1; ++i)
 			for (int j = 0; j < this.shows.size() - 1-i; ++j)
@@ -36,6 +53,9 @@ public class ShowListing implements java.io.Serializable{
 				}
 	}
 
+	/**
+	 * Sorts the movies by show time.
+	 */
 	public void sortbyShowTime() {
 		for (int i = 0; i < this.shows.size() - 1; ++i)
 			for (int j = i; j < this.shows.size() - 1; ++j)
@@ -46,6 +66,9 @@ public class ShowListing implements java.io.Serializable{
 				}
 	}
 
+	/**
+	 * Sorts the shows by Movie name.
+	 */
 	public void sortbyMovieName() {
 		for (int i = 0; i < this.shows.size() - 1; ++i)
 			for (int j = i; j < this.shows.size() - 1; ++j)
@@ -57,6 +80,9 @@ public class ShowListing implements java.io.Serializable{
 				}
 	}
 
+	/**
+	 * Displays all shows.
+	 */
 	public void displayShows() {
 		System.out.printf("%10s%40s%25s%10s%20s\n", "Index", "Movie Title", "Cineplex", "Cinema", "Time");
 		for (int i = 0; i < this.shows.size(); ++i) {
@@ -65,6 +91,10 @@ public class ShowListing implements java.io.Serializable{
 		}
 	}
 
+	/**
+	 * Displays a number of shows determined by lim.
+	 * @param lim	The number of shows to be displayed.
+	 */
 	public void displayShows(int lim) {
 		System.out.printf("%10s%40s%25s%10s%20s\n", "Index", "Movie Title", "Cineplex", "Cinema", "Time");
 		for (int i = 0; i < lim; ++i) {
@@ -73,23 +103,44 @@ public class ShowListing implements java.io.Serializable{
 		}
 	}
 
+	/**
+	 * Returns the length of the Show Listing.
+	 * @return	Length of the Show Listing.
+	 */
 	public int length() {
 		return len;
 	}
+
+	/**
+	 * Adds a show to the Show Listing.
+	 * @param show	Show to be added.
+	 */
 	public void addShow(Show show){
 		shows.add(show);
 		len++;
 	}
+
+	/**
+	 * Lists the top 5 movies based on rating.
+	 */
 	public void listTop5byRating() {
 		sortbyRating();
 		displayShows(5);
 	}
 
+	/**
+	 * Lists the top 5 movies based on sales.
+	 */
 	public void listTop5bySales() {
 		sortbySales();
 		displayShows(5);
 	}
 
+	/**
+	 * Creates an instance of a Show.
+	 * @param db				Database
+	 * @throws ParseException
+	 */
 	public void createShow(Database db) throws ParseException {
 		Movie[] movies =  new Movie[db.movieListing.getMovies().size()];
 	    movies = db.movieListing.getMovies().toArray(movies);
@@ -97,7 +148,6 @@ public class ShowListing implements java.io.Serializable{
 			System.out.printf("%d. Movie Name: %s\n", i + 1, movies[i].getTitle());
 		}
 		System.out.println("Choose Movie Index:");
-		// Scanner in = new Scanner(System.in);
 		int movie_ind = in.nextInt();
 		Cineplex cineplex[] = new Cineplex[db.cineplexes.size()];
 		cineplex = db.cineplexes.toArray(cineplex);
@@ -134,27 +184,32 @@ public class ShowListing implements java.io.Serializable{
 			}
 		}
 		
-		// in.close();
 		shows.add(new Show(new Cinema((cineplex[cineplex_ind].getCinemaList())[cinema_ind-1]), movies[movie_ind - 1],
 				cineplex[cineplex_ind], is3D, showtime));
 		len++;
 		System.out.println("Show successfully created!");
 	}
 
+	/**
+	 * 	Deletes a show.
+	 */
 	public void deleteShow() {
 		System.out.println("||----- Display Shows -----||");
 		this.displayShows();
 		System.out.println("Enter Show Index to remove:");
-		// Scanner in = new Scanner(System.in);
 		int show_id = in.nextInt();
-		// in.close();
 		shows.remove(show_id-1);
 		len--;
 		System.out.println("Show successfully deleted!");
 	}
 
+	/**
+	 * Updates a Show.
+	 * @param show_ind			Index of the show to be updated.
+	 * @param db				Database
+	 * @throws ParseException
+	 */
 	public void updateShow(int show_ind, Database db) throws ParseException {
-		// Scanner in = new Scanner(System.in);
 		int choice;
 		Show show = shows.get(show_ind);
 		do {
@@ -214,7 +269,6 @@ public class ShowListing implements java.io.Serializable{
 				break;	
 			}
 		} while (choice != 5);
-		// in.close();
 	}
 
 	public ArrayList<Show> getShows() {

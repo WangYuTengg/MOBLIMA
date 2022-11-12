@@ -133,6 +133,7 @@ public class Cinema implements java.io.Serializable{
     {
     	return this.layout;
     }
+    
     /**
      * Find the occupying status of seats.
      * @return  occupying status shown in 2D array boolean form.
@@ -154,6 +155,10 @@ public class Cinema implements java.io.Serializable{
     	this.layout[row][column].assign();
     	}
     
+    /**
+     * Sets a row of seats to be Elite seats.
+     * @param row   The row number
+     */
     public void setElite(int row){
         for(int i=0;i<columnLength;++i) layout[row][i].setElite();
     }
