@@ -146,7 +146,9 @@ public class Movie implements java.io.Serializable{
         System.out.printf("Overall rating: ");
         if(this.pastReview.size()>1)System.out.printf("%.1f\n",this.overallRating/this.pastReview.size());
         else System.out.printf("Overall rating not available!\n");
-        System.out.printf("Past reviews:\n");
-        for(int i=0;i<this.pastReview.size();++i) System.out.printf("%d. Rating: %d/5, Comments: %s\n", i+1, this.pastReview.get(i).getRating(),this.pastReview.get(i).getComment());
+        if (this.pastReview.size()>1) {
+            System.out.printf("Past reviews:\n");
+            for(int i=0;i<this.pastReview.size();++i) System.out.printf("%d. Rating: %d/5, Comments: %s\n", i+1, this.pastReview.get(i).getRating(),this.pastReview.get(i).getComment());
+        }
     }
 }
