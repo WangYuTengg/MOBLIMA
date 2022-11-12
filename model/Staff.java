@@ -13,21 +13,7 @@ import data.Database;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-public class Staff implements java.io.Serializable{
-    /**
-     * The email of the Staff member.
-     */
-    private String email;
-
-    /**
-     * The password of the Staff member.
-     */
-    private String password;
-
-    /**
-     * The name of the Staff member.
-     */
-    private String staffName;
+public class Staff extends User implements java.io.Serializable{
 
     /**
      * A static Scanner class used throughout Staff
@@ -41,33 +27,7 @@ public class Staff implements java.io.Serializable{
      * @param name
      */
     public Staff(String adminEmail, String pass, String name){
-        email = adminEmail;
-        password = pass;
-        staffName = name;
-    }
-
-    /**
-     * Gets the Email of the Staff member.
-     * @return Returns the email of the Staff member.
-     */
-    public String getAdminEmail() {
-        return email;
-    }
-
-    /**
-     * Get the password of the Staff member.
-     * @return Returns the password of the Staff member.
-     */
-    public String getPass() {
-        return password;
-    }
-
-    /**
-     * Gets the name of the Staff member.
-     * @return Returns the name of the Staff member.
-     */
-    public String getName(){
-        return staffName;
+        super(name, adminEmail, pass);
     }
     
     /**

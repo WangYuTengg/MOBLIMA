@@ -9,36 +9,28 @@ import java.util.Scanner;
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-public class MovieGoer implements java.io.Serializable{
+
+package model;
+
+import data.Database;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MovieGoer extends User implements java.io.Serializable {
 	/**
 	 * MovieGoer's age
 	 */
 	private int age;
 	
 	/**
-	 * MovieGoer's name
-	 */
-	private String name;
-
-	/**
 	 * MovieGoer's id
 	 */
 	private int id;
 
 	/**
-	 * MovieGoer's password
-	 */
-	private String password;
-
-	/**
 	 * MovieGoer's tickets
 	 */
 	private ArrayList<Ticket> tickets;
-
-	/**
-	 * MovieGoer's email
-	 */
-	private String email;
 
 	/**
 	 * Creates a MovieGoer with the given attributes
@@ -49,11 +41,9 @@ public class MovieGoer implements java.io.Serializable{
 	 * @param password	password of movie goer.
 	 */
 	public MovieGoer(int age, String name, String email, int id, String password) {
+		super(name, email, password);
 		this.age = age;
-		this.name = name;
-		this.email = email;
 		this.id = id;
-		this.password = password;
 		this.tickets = new ArrayList<Ticket>();
 	}
 
@@ -61,9 +51,6 @@ public class MovieGoer implements java.io.Serializable{
 	 * Get the email of this MovieGoer
 	 * @return email
 	 */
-	public String getUserEmail(){
-		return email;
-	}
 
 	/**
 	 * Get the age of this MovieGoer
@@ -78,10 +65,6 @@ public class MovieGoer implements java.io.Serializable{
 	 * Get the name of this MovieGoer
 	 * @return String this MovieGoer's name
 	 */
-	public String getName() {
-		return name;
-	}
-
 	/**
 	 * Get the id of this MovieGoer
 	 * @return String this MovieGoer's id
@@ -94,9 +77,6 @@ public class MovieGoer implements java.io.Serializable{
 	 * Get the password of this MovieGoer
 	 * @return String this MovieGoer's id
 	 */
-	public String getPass() {
-		return password;
-	}
 
 	/**
 	 * Get the past owned tickets and current tickets of this MovieGoer

@@ -42,7 +42,7 @@ public class MainMenuUi {
 
 			switch (userInput) {
 			case "1":
-				if (LoginUI.verifyAdmin(db).getAdminEmail().equals("dkjkjsnw") ) break;
+				if (LoginUI.verifyAdmin(db).getEmail().equals("dkjkjsnw") ) break;
 				adminLogin(db);
 				break;
 			case "2":

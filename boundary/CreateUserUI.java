@@ -15,7 +15,7 @@ import data.Database;
  * @since    2022-10-30
  */
 public class CreateUserUI {
-    
+
     /**
      * The static scanner used throughout CreateUserUI.
      */
@@ -23,39 +23,41 @@ public class CreateUserUI {
 
     /**
      * Main UI for creation of new movie goer account.
+     * 
      * @param db The database.
      */
-    public void main(Database db){ 
+    public void main(Database db) {
         int age, id;
         String name, email, password;
 
         System.out.println("||------- Creating User Account -------||");
         age = getAgeFromUser();
-        if ( age == 0) {
+        if (age == 0) {
             System.out.println("Creation of account failed, returning to main menu...");
             return;
-        } else System.out.printf("Age successfully entered: %d years old\n", age);
-
+        } else
+            System.out.printf("Age successfully entered: %d years old\n", age);
 
         name = getNameFromUser(db);
-        if ( name == null) {
+        if (name == null) {
             System.out.println("Creation of account failed, returning to main menu...");
             return;
-        } else System.out.printf("Name successfully entered: %s\n", name);
-        
+        } else
+            System.out.printf("Name successfully entered: %s\n", name);
 
         email = getEmailFromUser(db);
-        if ( email == null) {
+        if (email == null) {
             System.out.println("Creation of account failed, returning to main menu...");
             return;
-        } else System.out.printf("Email successfully entered: %s\n", email);
-
+        } else
+            System.out.printf("Email successfully entered: %s\n", email);
 
         password = getPasswordFromUser();
-        if ( password == null) {
+        if (password == null) {
             System.out.println("Creation of account failed, returning to main menu...");
             return;
-        } else System.out.printf("Password successfully entered: %s\n", password);
+        } else
+            System.out.printf("Password successfully entered: %s\n", password);
 
         id = db.movieGoers.size() + 1;
 
@@ -65,46 +67,50 @@ public class CreateUserUI {
 
     /**
      * Method to get a valid age from moviegoer during account creation
+     * 
      * @return user age
      */
-    private static int getAgeFromUser(){
-       	boolean exit = false;
+    private static int getAgeFromUser() {
+        boolean exit = false;
         int userInput;
-		do{
-			System.out.print("Enter your age (type 0 to exit): ");
-			//check for integer input
-			while(!sc.hasNextInt()){
-				System.out.printf("Enter a valid age (+ve integer):  ");
-				sc.next();
-			}
-			userInput = sc.nextInt();
+        do {
+            System.out.print("Enter your age (type 0 to exit): ");
+            // check for integer input
+            while (!sc.hasNextInt()) {
+                System.out.printf("Enter a valid age (+ve integer):  ");
+                sc.next();
+            }
+            userInput = sc.nextInt();
 
-			if (userInput >= 0) exit = true; //exit if user is at least 1 years old
-			else System.out.println("Please enter a valid age.");
-		}while(!exit);
-		return userInput;
+            if (userInput >= 0)
+                exit = true; // exit if user is at least 1 years old
+            else
+                System.out.println("Please enter a valid age.");
+        } while (!exit);
+        return userInput;
     }
 
     /**
      * Method to get a name from user to create account
      * If name already exists, exit account creation
+     * 
      * @param db database to check for existing name
      * @return user name
      */
-    private static String getNameFromUser(Database db){
-        //get input from user
-        sc.nextLine(); 
+    private static String getNameFromUser(Database db) {
+        // get input from user
+        sc.nextLine();
         System.out.printf("Enter your name (type 0 to exit):  ");
         String userInput = sc.nextLine();
 
-        //check for exit
-        if(userInput.equals("0")){
+        // check for exit
+        if (userInput.equals("0")) {
             System.out.println("Exiting...");
             userInput = null;
         }
 
-        //check for existing name
-        for (MovieGoer movieGoer : db.movieGoers){
+        // check for existing name
+        for (MovieGoer movieGoer : db.movieGoers) {
             if (movieGoer.getName().equals(userInput)) {
                 System.out.printf("The name %s already exists.\n", movieGoer.getName());
                 userInput = null;
@@ -116,20 +122,21 @@ public class CreateUserUI {
 
     /**
      * Method to get a valid email from user for account creation
+     * 
      * @param db database to check for existing email
      * @return email
      */
-    private static String getEmailFromUser(Database db){
-        boolean exit = false; 
-        String regexPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" 
-        + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$"; // for validating email
+    private static String getEmailFromUser(Database db) {
+        boolean exit = false;
+        String regexPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
+                + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$"; // for validating email
         String userInput;
-		do{
-            //get user input for their email
-			System.out.print("Enter your email (type 0 to exit):  ");
+        do {
+            // get user input for their email
+            System.out.print("Enter your email (type 0 to exit):  ");
             userInput = sc.nextLine();
 
-            //check for exit
+            // check for exit
             if (userInput.equals("0")) {
                 System.out.println("Exiting...");
                 userInput = null;
@@ -137,19 +144,20 @@ public class CreateUserUI {
                 break;
             }
 
-            //check for existing email 
-            for (MovieGoer movieGoer : db.movieGoers){
-                if (movieGoer.getUserEmail().equals(userInput)) {
-                    System.out.printf("Email: %s already exists. \n", movieGoer.getUserEmail());
+            // check for existing email
+            for (MovieGoer movieGoer : db.movieGoers) {
+                if (movieGoer.getEmail().equals(userInput)) {
+                    System.out.printf("Email: %s already exists. \n", movieGoer.getEmail());
                     userInput = null;
                     exit = true;
                     break;
                 }
             }
 
-			//check for valid email input
-			if (Pattern.compile(regexPattern).matcher(userInput).matches()) exit = true;
-		}while(!exit);
+            // check for valid email input
+            if (Pattern.compile(regexPattern).matcher(userInput).matches())
+                exit = true;
+        } while (!exit);
         return userInput;
     }
 
@@ -160,24 +168,28 @@ public class CreateUserUI {
      * Password must contain at least one lowercase Latin character [a-z].
      * Password must contain at least one uppercase Latin character [A-Z].
      * Password must contain at least one special character.
-     * Password must contain a length of at least 8 characters and a maximum of 20 characters.
-     * @return password 
+     * Password must contain a length of at least 8 characters and a maximum of 20
+     * characters.
+     * 
+     * @return password
      */
-    private static String getPasswordFromUser(){
+    private static String getPasswordFromUser() {
         boolean exit = false;
-        String regexPattern =  "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$"; // for validating password
+        String regexPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$"; // for
+                                                                                                             // validating
+                                                                                                             // password
         String userInput;
-        do{
+        do {
             System.out.println("--------------- Password requirements ----------------");
             System.out.println("1. Password must contain at least one digit [0-9].");
             System.out.printf("2. Password must contain at least one lowercase Latin character [a-z].\n" +
-                              "3. Password must contain at least one uppercase Latin character [A-Z].\n" +
-                              "4. Password must contain at least one special character like ! @ # & ( ). \n" +
-                              "5. Password must contain a length of at least 8 characters and a maximum of 20 characters.\n");
+                    "3. Password must contain at least one uppercase Latin character [A-Z].\n" +
+                    "4. Password must contain at least one special character like ! @ # & ( ). \n" +
+                    "5. Password must contain a length of at least 8 characters and a maximum of 20 characters.\n");
             System.out.printf("Please enter the password (type 0 to exit):  ");
             userInput = sc.next();
 
-            //check for exit
+            // check for exit
             if (userInput.equals("0")) {
                 System.out.println("Exiting...");
                 userInput = null;
@@ -185,12 +197,14 @@ public class CreateUserUI {
                 break;
             }
 
-            //check password requirements
-            if (Pattern.compile(regexPattern).matcher(userInput).matches()) exit = true;
-            else System.out.println("Password does not meet the requirements.");
-        }while(!exit);
+            // check password requirements
+            if (Pattern.compile(regexPattern).matcher(userInput).matches())
+                exit = true;
+            else
+                System.out.println("Password does not meet the requirements.");
+        } while (!exit);
         return userInput;
     }
 
-    //end of CreateUserUI
+    // end of CreateUserUI
 }

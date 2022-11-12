@@ -140,7 +140,7 @@ public class Database implements java.io.Serializable{
 	public MovieGoer getMovieGoer(String userEmail) {
 		MovieGoer targetMovieGoer;
 		for (MovieGoer user : movieGoers) {
-			if (userEmail.compareTo(user.getUserEmail()) == 0) {
+			if (userEmail.compareTo(user.getEmail()) == 0) {
 				targetMovieGoer = user;
 				return targetMovieGoer;
 			}
@@ -174,7 +174,7 @@ public class Database implements java.io.Serializable{
 	public Staff getStaff(String adminEmail) {
 		Staff targetStaff;
 		for (Staff staff : staffs) {
-			if (adminEmail.compareTo(staff.getAdminEmail()) == 0) {
+			if (adminEmail.compareTo(staff.getEmail()) == 0) {
 				targetStaff = staff;
 				return targetStaff;
 			}
