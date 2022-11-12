@@ -12,7 +12,7 @@ public class BookingSystem implements java.io.Serializable{
 	}
 	public ShowListing getShowlisting(){return this.showListing;}
 	// display cinema layout
-	private void displayLayout(Show show) {
+	public void displayLayout(Show show) {
 		Cinema cinema = show.getCinema();
 		int row = cinema.getLayoutRowLength();
 		int column = cinema.getLayoutColumnLength();
@@ -218,6 +218,20 @@ public class BookingSystem implements java.io.Serializable{
 		} else
 			System.out.println("Index out of bound");
 	}
+
+	public void displayShowStatus(Database db){
+        System.out.println("Displaying all current shows:");
+        db.showListing.displayShows();
+        System.out.println("Please input the index of the show:");
+        int choice = in.nextInt();
+        while (choice < 1 || choice > db.showListing.length()){
+            System.out.println("Invalid index.\nPlease input the index of the show:");
+            choice = in.nextInt();
+        }
+		Show show = db.showListing.getShows().get(choice-1);
+		System.out.printf("Displaying status:\nMovie: %s, Cineplex: %s, Cinema: %s, time: %s\n", show.getMovie().getTitle(), show.getCineplex().getName(), show.getCinema().getCinemaCode(), show.getShowTime());
+        db.bookingSystem.displayLayout(show);
+    }
 
 }
 
