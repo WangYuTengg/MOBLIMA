@@ -16,18 +16,22 @@ public class Staff implements java.io.Serializable{
      * The email of the Staff member.
      */
     private String email;
+
     /**
      * The password of the Staff member.
      */
     private String password;
+
     /**
      * The name of the Staff member.
      */
     private String staffName;
+
     /**
      * A static Scanner class used throughout Staff
      */
     private static Scanner scan = new Scanner(System.in);
+
     /**
      * The Constructor of the class.
      * @param adminEmail
@@ -185,8 +189,10 @@ public class Staff implements java.io.Serializable{
 
         db.movieListing.addMovie(movie); 
     }
+
     /**
      * Edit the details of a Movie.
+     * @param db Database containing the movies
      */
     public static void editMovie(Database db){
         db.movieListing.listMovies();
@@ -197,7 +203,8 @@ public class Staff implements java.io.Serializable{
     }
 
     /**
-     * Removing a movie from the movieListing within the Database. 
+     * Removing a movie from the movieListing within the Database.
+     * @param db Database containing the movies 
      */
     public static void deleteMovie(Database db){
         db.movieListing.deleteMovie();
@@ -206,6 +213,7 @@ public class Staff implements java.io.Serializable{
     
     /**
      * Adding a Show class to the MovieListing class.
+     * @param db Database containing the Shows
      */
     public static void addShow(Database db){
         try {
@@ -218,6 +226,7 @@ public class Staff implements java.io.Serializable{
 
     /**
      * Removing a Show from the MovieListing.
+     * @param db Database containing the shows
      */
     public static void deleteShow(Database db) {
        db.showListing.deleteShow(); 
@@ -226,6 +235,7 @@ public class Staff implements java.io.Serializable{
 
     /**
      * Updating attributes of a Show
+     * @db Database containing the shows
      */
     public static void updateShow(Database db){ 
         db.showListing.displayShows();
@@ -239,14 +249,13 @@ public class Staff implements java.io.Serializable{
         System.out.println("The Show has been udpated.");
     }
 
-    public void setTicketPrice(Database db){
-        double price = scan.nextDouble();
-        db.payment.setBasePrice(price);
-        System.out.println("The base ticket price has been updated.");
-    }
+    /**
+     * Method to add cineplex to database
+     * @param db Database containing the cineplexes
+     */
     public static void addCineplex(Database db){
         System.out.println("Enter the name of the cineplex");
-        String cineplex_name=scan.nextLine();
+        String cineplex_name = scan.nextLine();
         System.out.println("Enter the number of the cinemas");
         while(!scan.hasNextInt()){System.out.println("Please enter a number!");}
         int num_cinema=scan.nextInt();
@@ -260,6 +269,13 @@ public class Staff implements java.io.Serializable{
         }
     }
 
+    /**
+     * Method to add cinema to database
+     * @param cineplex
+     * @param index
+     * @param first_letter
+     * @return
+     */
     public static boolean addCinema(Cineplex cineplex,int index,char first_letter){
 	System.out.printf("Adding cinema No.%d\n",index);
         System.out.println("Enter the platinum type of the cinema(P/N)");
@@ -286,6 +302,10 @@ public class Staff implements java.io.Serializable{
         return true;
     }
 
+    /**
+     * Method to delete cineplex from database
+     * @param db Database containing cineplexes
+     */
     public static void deleteCineplex(Database db){
         for(int i=1;i<=db.cineplexes.size();++i){
             System.out.printf("%d %s\n",i,db.cineplexes.get(i-1).getName());
@@ -301,6 +321,6 @@ public class Staff implements java.io.Serializable{
             }
         }
         db.cineplexes.remove(index-1);
-        System.out.println("Remove successful!");
+        System.out.println("Removal of cineplex successful!");
     }
 }

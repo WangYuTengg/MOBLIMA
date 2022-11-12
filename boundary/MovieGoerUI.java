@@ -1,14 +1,17 @@
 package boundary;
 
 import java.util.Scanner;
-
 import controller.Database;
 import model.MovieGoer;
 
 public class MovieGoerUI {
+
+	//declare private static scanner once for this class
 	private static Scanner sc = new Scanner(System.in);
-	/*
-	 * Method to search movie 
+
+	/**
+	 * UI method to search movie for movie goers
+	 * @param db database containing the movies
 	 */
 	public void searchMovieUI(Database db) {
 		boolean exit = false;
@@ -44,7 +47,8 @@ public class MovieGoerUI {
 	}
 
 	/**
-	 * Method to view details of a certain movie
+	 * UI method to view details of a certain movie
+	 * @param db database containing the movies
 	 */
 	public void viewMovieDetailsUI(Database db) {
 		boolean exit = false;
@@ -69,7 +73,8 @@ public class MovieGoerUI {
 	}
 
 	/**
-	 * Method to ask MovieGoer to input choice to list top 5 by sales or rating.
+	 * UI method for MovieGoer to input choice to list top 5 movies by sales or rating
+	 * @param db database containing the movies
 	 */
 	public void listTop5UI(Database db) {
 		boolean exit = false;
@@ -103,7 +108,8 @@ public class MovieGoerUI {
 	}
 
 	/**
-	 * Method to allow MovieGoer to choose to rate a movie
+	 * UI method to allow MovieGoer to rate a movie
+	 * @param db Database containing the movies
 	 */
 	public void rateMovieUI(Database db) {
 		boolean exit = false;
@@ -127,8 +133,9 @@ public class MovieGoerUI {
 		System.out.println("Returning to Movie Goer menu...");
 	}
 
-	/*
+	/**
 	 * Method to viewBookingHistory of MovieGoer
+	 * @param user MovieGoer to view booking history of
 	 */
 	public void viewBookingHistoryUI(MovieGoer user) {
 		boolean exit = false;
@@ -152,4 +159,5 @@ public class MovieGoerUI {
 		System.out.println("Returning to Movie Goer menu...");
 	}
 
+	// end of MovieGoerUI
 }
