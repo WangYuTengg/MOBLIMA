@@ -1,8 +1,9 @@
 package boundary;
 
 import java.util.Scanner;
+
+import controller.Database;
 import model.Holiday;
-import model.Payment;
 
 public class SettingsUI {
 	/**
@@ -14,7 +15,7 @@ public class SettingsUI {
 	 * Main function containing the program loop for settings menu
 	 * @return void
 	 */
-	public void main() {
+	public void main(Database db) {
 		boolean exit = false;
 		double newPrice;
 		double newMultiplier;
@@ -23,15 +24,15 @@ public class SettingsUI {
 			System.out.println("||----------- Settings Menu -----------||");
 			System.out.println("1. List all holidays");
 			System.out.println("||----------- Update Multipliers -----------||");
-			System.out.printf("2. Update Holiday Price Multiplier --- current: %.2fx\n", Payment.getHolidayMultiplier());
-			System.out.printf("3. Update Weekend Price Multiplier --- current: %.2fx\n", Payment.getWeekendMultiplier());
-			System.out.printf("4. Update Senior Price Multiplier  --- current: %.2fx\n", Payment.getSeniorMultipier());
-			System.out.printf("5. Update Student Price Multiplier --- current: %.2fx\n", Payment.getStudentMultipier());
+			System.out.printf("2. Update Holiday Price Multiplier --- current: %.2fx\n", db.payment.getHolidayMultiplier());
+			System.out.printf("3. Update Weekend Price Multiplier --- current: %.2fx\n", db.payment.getWeekendMultiplier());
+			System.out.printf("4. Update Senior Price Multiplier  --- current: %.2fx\n", db.payment.getSeniorMultipier());
+			System.out.printf("5. Update Student Price Multiplier --- current: %.2fx\n", db.payment.getStudentMultipier());
 			System.out.println("||---------- Update Prices -----------||");
-			System.out.printf("6. Update Base ticket price        --- current: $%.2f\n", Payment.getBasePrice());
-			System.out.printf("7. Update 3d Movie extra charge    --- current: $%.2f\n", Payment.getIs3DPrice());
-			System.out.printf("8. Update Platinum extra charge    --- current: $%.2f\n", Payment.getIsPlatPrice());
-			System.err.printf("9. Update Blockbuster extra charge --- current: $%.2f\n", Payment.getIsBBPrice());
+			System.out.printf("6. Update Base ticket price        --- current: $%.2f\n", db.payment.getBasePrice());
+			System.out.printf("7. Update 3d Movie extra charge    --- current: $%.2f\n", db.payment.getIs3DPrice());
+			System.out.printf("8. Update Platinum extra charge    --- current: $%.2f\n", db.payment.getIsPlatPrice());
+			System.err.printf("9. Update Blockbuster extra charge --- current: $%.2f\n", db.payment.getIsBBPrice());
 			System.out.println("10. Return to Admin menu");
 			System.out.print("Select option: ");
 			String adminInput = sc.next();
@@ -43,42 +44,42 @@ public class SettingsUI {
 			case "2":
 				System.out.println("-------- Updating Holiday Multiplier --------");
 				newMultiplier = getMultiplierFromUser();
-				Payment.setHolidayPriceMultiplier(newMultiplier);
+				db.payment.setHolidayPriceMultiplier(newMultiplier);
 				break;
 			case "3":
 				System.out.println("-------- Updating Weekend Multiplier --------");
 				newMultiplier = getMultiplierFromUser();
-				Payment.setWeekendPriceMultiplier(newMultiplier);
+				db.payment.setWeekendPriceMultiplier(newMultiplier);
 				break;
 			case "4":
 				System.out.println("-------- Updating Senior Multiplier --------");
 				newMultiplier = getMultiplierFromUser();
-				Payment.setSeniorPriceMultiplier(newMultiplier);
+				db.payment.setSeniorPriceMultiplier(newMultiplier);
 				break;
 			case "5":
 				System.out.println("-------- Updating Student Multiplier --------");
 				newMultiplier = getMultiplierFromUser();
-				Payment.setStudentPriceMultiplier(newMultiplier);
+				db.payment.setStudentPriceMultiplier(newMultiplier);
 				break;
 			case "6":
 				System.out.println("-------- Updating Base Price --------");
 				newPrice = getPriceFromUser();
-				Payment.setBasePrice(newPrice);
+				db.payment.setBasePrice(newPrice);
 				break;
 			case "7":
 				System.out.println("-------- Updating 3D Charge --------");
 				newPrice = getPriceFromUser();
-				Payment.set3dAdditionalPrice(newPrice);
+				db.payment.set3dAdditionalPrice(newPrice);
 				break;
 			case "8":
 				System.out.println("-------- Updating Platinum Charge --------");
 				newPrice = getPriceFromUser();
-				Payment.setPlatAdditionalPrice(newPrice);
+				db.payment.setPlatAdditionalPrice(newPrice);
 				break;
 			case "9":
 				System.out.println("-------- Updating Blockbuster Charge --------");
 				newPrice = getPriceFromUser();
-				Payment.setBlockBusterAdditionalPrice(newPrice);
+				db.payment.setBlockBusterAdditionalPrice(newPrice);
 				break;
 			case "10":
 				exit = true;
