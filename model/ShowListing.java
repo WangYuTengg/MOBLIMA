@@ -54,7 +54,7 @@ public class ShowListing implements java.io.Serializable{
 	}
 
 	public void displayShows() {
-		System.out.printf("%10s%30s%25s%10s%20s\n", "Index", "Movie Title", "Cineplex", "Cinema", "Time");
+		System.out.printf("%10s%40s%25s%10s%20s\n", "Index", "Movie Title", "Cineplex", "Cinema", "Time");
 		for (int i = 0; i < this.shows.size(); ++i) {
 			System.out.printf("%10d", i+1);
 			this.shows.get(i).display();
@@ -62,7 +62,7 @@ public class ShowListing implements java.io.Serializable{
 	}
 
 	public void displayShows(int lim) {
-		System.out.printf("%10s%30s%25s%10s%20s\n", "Index", "Movie Title", "Cineplex", "Cinema", "Time");
+		System.out.printf("%10s%40s%25s%10s%20s\n", "Index", "Movie Title", "Cineplex", "Cinema", "Time");
 		for (int i = 0; i < lim; ++i) {
 			System.out.printf("%10d", i+1);
 			this.shows.get(i).display();
@@ -131,7 +131,7 @@ public class ShowListing implements java.io.Serializable{
 		}
 		
 		// in.close();
-		shows.add(new Show((cineplex[cineplex_ind-1].getCinemaList())[cinema_ind-1], movies[movie_ind - 1],
+		shows.add(new Show(new Cinema((cineplex[cineplex_ind-1].getCinemaList())[cinema_ind-1]), movies[movie_ind - 1],
 				cineplex[cineplex_ind - 1], is3D, showtime));
 		System.out.println("Show successfully created!");
 	}
