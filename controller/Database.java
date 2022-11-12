@@ -19,39 +19,39 @@ public class Database implements java.io.Serializable{
 	/**
 	 * The collection of cineplexes.
 	 */
-	public static ArrayList<Cineplex> cineplexes;
+	public ArrayList<Cineplex> cineplexes;
 	/**
 	 * The storage of movie listing.
 	 */
-	public static MovieListing movieListing;
+	public MovieListing movieListing;
 	/**
 	 * The storage of show listing.
 	 */
-	public static ShowListing showListing;
+	public ShowListing showListing;
 	/**
 	 * The storage of booking system.
 	 */
-	public static BookingSystem bookingSystem;
+	public BookingSystem bookingSystem;
 	/**
 	 * The collection of movie goers.
 	 */
-	static ArrayList<MovieGoer> movieGoers;
+	ArrayList<MovieGoer> movieGoers;
 	/**
 	 * The collection of staffs.
 	 */
-	static ArrayList<Staff> staffs;
+	ArrayList<Staff> staffs;
 
 	// Constructor
 	/**
 	 * Creates a new database
 	 */
 	public Database() {
-		Database.cineplexes = new ArrayList<Cineplex>();
-		Database.movieListing = new MovieListing();
-		Database.showListing = new ShowListing();
-		Database.bookingSystem = new BookingSystem(Database.showListing);
-		Database.movieGoers = new ArrayList<MovieGoer>();
-		Database.staffs = new ArrayList<Staff>();
+		this.cineplexes = new ArrayList<Cineplex>();
+		this.movieListing = new MovieListing();
+		this.showListing = new ShowListing();
+		this.bookingSystem = new BookingSystem(this.showListing);
+		this.movieGoers = new ArrayList<MovieGoer>();
+		this.staffs = new ArrayList<Staff>();
 	}
 
 	/**
@@ -66,12 +66,12 @@ public class Database implements java.io.Serializable{
 	 */
 	Database(ArrayList<Cineplex> cineplexes, MovieListing movieListing, ShowListing showListing,
 			BookingSystem bookingSystem, ArrayList<MovieGoer> movieGoers, ArrayList<Staff> staffs) {
-		Database.cineplexes = new ArrayList<Cineplex>();
-		Database.movieListing = new MovieListing();
-		Database.showListing = new ShowListing();
-		Database.bookingSystem = new BookingSystem(Database.showListing);
-		Database.movieGoers = new ArrayList<MovieGoer>();
-		Database.staffs = new ArrayList<Staff>();
+		this.cineplexes = cineplexes;
+		this.movieListing = movieListing;
+		this.showListing = showListing;
+		this.bookingSystem = new BookingSystem(this.showListing);
+		this.movieGoers = movieGoers;
+		this.staffs = staffs;
 	}
 
 	// Methods
@@ -133,7 +133,7 @@ public class Database implements java.io.Serializable{
 	 * 
 	 * @returns MovieGoer
 	 */
-	public static MovieGoer getMovieGoer(String userEmail) {
+	public MovieGoer getMovieGoer(String userEmail) {
 		MovieGoer targetMovieGoer;
 		for (MovieGoer user : movieGoers) {
 			if (userEmail.compareTo(user.getUserEmail()) == 0) {
@@ -167,7 +167,7 @@ public class Database implements java.io.Serializable{
 	 * 
 	 * @returns Staff
 	 */
-	public static Staff getStaff(String adminEmail) {
+	public Staff getStaff(String adminEmail) {
 		Staff targetStaff;
 		for (Staff staff : staffs) {
 			if (adminEmail.compareTo(staff.getAdminEmail()) == 0) {
