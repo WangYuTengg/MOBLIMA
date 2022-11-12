@@ -26,6 +26,7 @@ public class DataController {
 		}
 		initMovieGoers(database);
 		initStaff(database);
+		initPayment(database);
 
 		return database;
 	}
@@ -56,6 +57,13 @@ public class DataController {
 		db.addStaff(admin3);
 		db.addStaff(admin4);
 		db.addStaff(admin5);
+	}
+
+	public static void initPayment(Database db)
+	{
+		db.payment.addLoyaltyCards("HSBC Card");
+		db.payment.addLoyaltyCards("Gold Card");
+		db.payment.addLoyaltyCards("Value movie pass");
 	}
 
 	public static void initCineplexes(Database db) throws ParseException {
