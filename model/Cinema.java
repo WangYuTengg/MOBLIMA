@@ -83,9 +83,7 @@ public class Cinema implements java.io.Serializable{
         this.layout = new Seat[a.getLayoutRowLength()][a.getLayoutColumnLength()];
         for(int i=0; i<this.rowLength; ++i)
             for(int j=0; j<this.columnLength; ++j){
-                char data[] = {(char)(i+'1'),(char)(j+'A')};
-                String temp = new String(data);
-                layout[i][j] = new Seat(temp);
+                layout[i][j] = new Seat(a.getSeats()[i][j]);
             }
     }
     
