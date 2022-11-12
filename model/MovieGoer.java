@@ -187,7 +187,7 @@ public class MovieGoer implements java.io.Serializable{
 			System.out.println("Displaying booking history:");
 			for (Ticket ticket : tickets) {
 				System.out.printf("Ticket ID: " + ticket.getIndex() + " - Movie: " + ticket.getMovieTitle() + " at "
-						+ ticket.getCineplexName());
+						+ ticket.getCineplexName() + ", in Cinema " + ticket.getCinemaNum() + ", at " + ticket.getMovieTiming() + ", at Seat: " + ticket.getSeatIndex());
 				System.out.println();
 			}
 
