@@ -256,7 +256,7 @@ public class MovieListing implements java.io.Serializable{
 	}
 
 	/**
-	 * Lists the top 5 movies by sales
+	 * Lists the top 5 movies by sales 
 	 */
 	public void listTop5bySales() {
 		sortbySales();
@@ -272,6 +272,34 @@ public class MovieListing implements java.io.Serializable{
 		System.out.printf("%10s%40s%15s\n", "Index", "Movie Title", "Total Sales");
 		for (Movie movie : movies)
 			System.out.printf("%10d%40s%15s\n", i++, movie.getTitle(), movie.getTotalSales());
+	}
+
+	/**
+	 * Lists the sorted total sales of a limited number of movies
+	 * @return void
+	 */
+	public void listSalesofMovie(int lim) {
+		int i=1;
+		sortbySales();
+		System.out.printf("%10s%40s%15s\n", "Index", "Movie Title", "Total Sales");
+		for (Movie movie : movies){
+			if (i > lim) break;
+			System.out.printf("%10d%40s%15s\n", i++, movie.getTitle(), movie.getTotalSales());
+		}
+	}
+
+	/**
+	 * Lists top 5 movies with their overall ratings displayed
+	 * @return void
+	 */
+	public void listRatingofMovie(int lim) {
+		int i=1;
+		sortbyRating();
+		System.out.printf("%10s%40s%15s\n", "Index", "Movie Title", "Overall Rating");
+		for (Movie movie : movies){
+			if (i > lim) break;
+			System.out.printf("%10d%40s%15s\n", i++, movie.getTitle(), movie.getOverallRating());
+		}
 	}
 
 	/**

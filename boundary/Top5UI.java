@@ -41,11 +41,11 @@ public class Top5UI {
 			switch (userInput) {
 			case "1":
                 System.out.println("Top 5 Movies by Rating: ");
-				db.movieListing.listTop5byRating();
+				db.movieListing.listRatingofMovie(5);
 				break;
 			case "2":
                 System.out.println("Top 5 Movies by Sales: ");
-				db.movieListing.listTop5bySales();
+				db.movieListing.listSalesofMovie(5);
 				break;
             case "3":
                 blockUI();
