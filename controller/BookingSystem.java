@@ -106,8 +106,12 @@ public class BookingSystem implements java.io.Serializable{
 		if(!shows[show_index].getMovie().getTitle().equals(movie_name) || !shows[show_index].getCineplex().getName().equals(cineplex_name)) 
 			throw new InvalidIdException("Incorrect Show Index. Returning to movie goer menu...");
 		displayLayout(shows[show_index]);
-		System.out.println("Enter the number of seats required");
+		System.out.println("Enter the number of seats required:");
 		int num_seats = in.nextInt();
+		while (num_seats <= 0) {
+			System.out.println("Invalid Input.\nPlease re-enter the number of seats required:");
+			num_seats = in.nextInt();
+		}
 		String seat_index[] = new String[num_seats];
 		Ticket ticket[] = new Ticket[num_seats];
 		System.out.printf("Enter the index of the ticket category:\n"
@@ -134,6 +138,7 @@ public class BookingSystem implements java.io.Serializable{
 			price += Payment.calPrice(shows[show_index], mType);
 		}
 		String confirm;
+		in.nextLine();
 		do 
 		{
 			System.out.printf("Your chosen seats: ");
