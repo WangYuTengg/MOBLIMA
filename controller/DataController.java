@@ -69,22 +69,22 @@ public class DataController {
 		String[] frozenThreeCast = { "Kristen Bell", "Idina Menzel", "Jonathan Groff" };
 
 		Movie theAvengers = new Movie("The Avengers", true, "NOW_SHOWING", "Anthony Russo",
-				"The Avengers band together to defeat bad dudes", avengersCast, 3);
+				"The Avengers band together to defeat bad dudes", avengersCast, 3, "PG");
 		Movie blackAdam = new Movie("Black Adam", true, "PREVIEW", "Collet-Sarra",
-				"Teth adams was bestowed powers by god", blackAdamCast, 2);
+				"Teth adams was bestowed powers by god", blackAdamCast, 2, "PG13");
 		Movie zootopia = new Movie("Zootopia", false, "PREVIEW", "Byron Howard",
 				"In a world of animals, rabbit cop follows her dreams and tries to protect the city of Zootopia",
-				zootopiaCast, 4);
+				zootopiaCast, 4, "G");
 		Movie shangChi = new Movie("Shang Chi & the Legend of the 10 Rings", true, "END_OF_SHOWING",
-				"Destin Daniel Cretton", "Asian dude with 10 rings", shangChiCast, 3);
+				"Destin Daniel Cretton", "Asian dude with 10 rings", shangChiCast, 3, "PG13");
 		Movie hungerGames = new Movie("The Hunger Games", true, "NOW_SHOWING", "Francis Lawrence",
-				"Everyone is hungry and fights", hungerGamesCast, 2);
+				"Everyone is hungry and fights", hungerGamesCast, 2, "PG13");
 		Movie blackPanther = new Movie("Black Panther: Wakanda Forever", true, "NOW_SHOWING", "Ryan Coogler",
-				"Wakanda needs a new king", blackPantherCast, 3);
+				"Wakanda needs a new king", blackPantherCast, 3, "PG13");
 		Movie avatar = new Movie("Avatar:The Way of Water", true, "COMING_SOON", "James Cameron",
-				"A war between alien and human", avatarCast, 2);
+				"A war between alien and human", avatarCast, 2, "PG");
 		Movie frozenThree = new Movie("Frozen III", false, "COMING_SOON", "Jennifer Lee",
-				"Elsa shoots fire instead of ice this time", frozenThreeCast, 3);
+				"Elsa shoots fire instead of ice this time", frozenThreeCast, 3, "G");
 
 		db.movieListing.addMovie(theAvengers);
 		db.movieListing.addMovie(blackAdam);
