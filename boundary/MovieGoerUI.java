@@ -21,7 +21,7 @@ public class MovieGoerUI {
 			System.out.println("1. List all movies");
 			System.out.println("2. Search Movie by movie title");
 			System.out.println("3. Search Movie by Director");
-			System.out.println("4. Return to Movie Goer menu");
+			System.out.println("4. Return to previous menu");
 			System.out.printf("Select your option:  ");
 			String userInput = sc.nextLine();
 			switch(userInput){
@@ -43,7 +43,7 @@ public class MovieGoerUI {
 				default: System.out.println("Please select a valid option.");
 			}
 		} while (!exit);
-		System.out.println("Returning to Movie Goer menu...");
+		System.out.println("Returning to previous menu...");
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class MovieGoerUI {
 			System.out.println("");
 			System.out.println("||-------- View Movie Details Menu --------||");
 			System.out.println("1. Select movie to view details of ");
-			System.out.println("2. Return to Movie Goer menu");
+			System.out.println("2. Return to previous menu");
 			System.out.print("Select option: ");
 			String userInput = sc.next();
 			switch(userInput){
@@ -69,7 +69,7 @@ public class MovieGoerUI {
 				default: System.out.println("Please enter a valid option.");
 			}
 		} while (!exit);
-		System.out.println("Returning to Movie Goer menu...");
+		System.out.println("Returning to previous menu...");
 	}
 
 	/**
