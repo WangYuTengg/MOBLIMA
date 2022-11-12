@@ -33,17 +33,18 @@ public class Database implements java.io.Serializable{
 	 * The storage of booking system.
 	 */
 	public BookingSystem bookingSystem;
+
 	/**
 	 * The collection of movie goers.
 	 */
-	public Payment payment = new Payment();
-	ArrayList<MovieGoer> movieGoers;
+	public ArrayList<MovieGoer> movieGoers;
+
 	/**
 	 * The collection of staffs.
 	 */
 	ArrayList<Staff> staffs;
 
-	// Constructor
+	public Payment payment = new Payment();
 	/**
 	 * Creates a new database
 	 */
