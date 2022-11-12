@@ -46,6 +46,10 @@ public class Movie implements java.io.Serializable{
      */
     private int castLength=0;
     /**
+     * The age rating of the movie.
+     */
+    private String ageRating;
+    /**
      * The past reviews of the movie.
      */
     private ArrayList<Review> pastReview=new ArrayList<Review>(); 
@@ -58,9 +62,10 @@ public class Movie implements java.io.Serializable{
      * @param synopsis      the synopsis of the movie.
      * @param cast          the cast list of the movie.
      * @param castLength    the length of the cast list of the movie.
+     * @param rating        the age rating of the movie.
      */
-    public Movie(String title,boolean blockbuster,String status,String director,String synopsis,String[] cast,int castLength){
-        this.movieTitle=title;this.isBlockbuster=blockbuster;this.showingStatus=status;this.director=director;this.synopsis=synopsis;this.cast=cast;this.castLength=castLength;
+    public Movie(String title,boolean blockbuster,String status,String director,String synopsis,String[] cast,int castLength, String rating){
+        this.movieTitle=title;this.isBlockbuster=blockbuster;this.showingStatus=status;this.director=director;this.synopsis=synopsis;this.cast=cast;this.castLength=castLength;this.ageRating=rating;
     }
     /**
      * Get the title of the movie.
@@ -108,6 +113,11 @@ public class Movie implements java.io.Serializable{
      */
     public int getTotalSales(){return this.totalSales;}
     /**
+     * Gets the age rating of the movie.
+     * @return age rating of the movie.
+     */
+    public String getAgeRating(){return this.ageRating;};
+    /**
      * Set the showing status as st.
      * @param st    the showing status to be set as.
      */
@@ -122,6 +132,11 @@ public class Movie implements java.io.Serializable{
      * @param synopsis  the synopsis to be set.
      */
     public void setSynopsis(String synopsis){this.synopsis=synopsis;}
+    /**
+     * Sets the age rating of the movie.
+     * @param rating
+     */
+    public void setAgeRating(String rating){this.ageRating=rating;}
     /**
      * Add a new review.
      * @param rating    the rating of the review.
@@ -139,6 +154,7 @@ public class Movie implements java.io.Serializable{
         System.out.printf("Movie title:  %s\n",this.movieTitle);
         System.out.printf("Movie blockbuster type:  %b\n",this.isBlockbuster);
         System.out.printf("Movie status:  %s\n",this.showingStatus);
+        System.out.printf("Movie age rating: %s\n", this.ageRating);
         System.out.printf("Movie synposis:\n%s\n",this.synopsis);
         System.out.printf("Movie director:  %s\n",this.director);
         System.out.printf("Movie cast:\n");
