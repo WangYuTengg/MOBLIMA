@@ -8,8 +8,9 @@
 package boundary;
 
 import java.util.Scanner;
+
+import data.Database;
 import model.Staff;
-import controller.Database;
 
 public class MovieListingUI {
 

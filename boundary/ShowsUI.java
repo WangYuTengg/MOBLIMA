@@ -7,7 +7,8 @@
 
 package boundary;
 
-import controller.*;
+import data.Database;
+
 import java.util.*;
 import model.*;
 public class ShowsUI {

@@ -5,7 +5,7 @@
  * @since    2022-10-30
  */
 
- package controller;
+package data;
 
 import model.Cinema;
 import model.Cineplex;
@@ -17,8 +17,11 @@ import model.Movie;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+/**
+ * A class to instantiate the initial database.
+ */
 
-public class DataController {
+public class DataInitialiser {
 
 	/**
 	 * A function to instantiate the database.

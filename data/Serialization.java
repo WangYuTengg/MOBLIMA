@@ -5,9 +5,12 @@
  * @since    2022-10-30
  */
 
-package controller;
+package data;
 import java.io.*;
 
+/**
+ * Serialization class for interacting with an external file for storage and access.
+ */
 public class Serialization {
 
     /**

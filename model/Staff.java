@@ -6,8 +6,10 @@
 */
 
 package model;
-import controller.Database;
 import java.util.Scanner;
+
+import data.Database;
+
 import java.text.ParseException;
 import java.util.ArrayList;
 

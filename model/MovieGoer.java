@@ -7,7 +7,7 @@
 
 package model;
 
-import controller.*;
+import data.Database;
 import java.util.ArrayList;
 import java.util.Scanner;
 

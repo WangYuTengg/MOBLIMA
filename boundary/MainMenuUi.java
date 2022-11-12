@@ -8,7 +8,7 @@
  package boundary;
 
 import java.util.Scanner;
-import controller.*;
+import data.Database;
 import model.MovieGoer;
 public class MainMenuUi {
 	
@@ -27,7 +27,7 @@ public class MainMenuUi {
 			System.out.println("");
 			System.out.println("||----------- Welcome to MOBLIMA ----------||");
 			System.out.println("-------------- Log in --------------");
-			System.out.println("1. Login as admin");
+			System.out.println("1. Login as Admin");
 			System.out.println("2. Login as Movie Goer");
 			System.out.println("3. Create Movie Goer account");
 			System.out.println("------- Available features ---------");
