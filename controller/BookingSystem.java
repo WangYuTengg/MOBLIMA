@@ -55,7 +55,7 @@ public class BookingSystem implements java.io.Serializable{
 			{
 				throw new exception.InvalidIdException("Invalid Movie index. Returning to Movie Goer Menu...");
 			}
-			else if(!((movies[movie_ind].getStatus().equals("NOW_SHOWING")) || (movies[movie_ind].getStatus().equals("PREVIEW"))))
+			else if(!movies[movie_ind].getStatus().equals("NOW_SHOWING"))
 			{
 				System.out.println("Movie currently not in cinemas. Choose another movie!");
 				flag1 = false;
@@ -67,22 +67,16 @@ public class BookingSystem implements java.io.Serializable{
 		Show[] shows = new Show[showListing.getShows().size()];
 		shows =	showListing.getShows().toArray(shows);
 		int show_length = showListing.length();
-		flag1 = false;
 		for (int i = 0; i < cineplex.length; i++) 
-		{	
+		{
 			for(int j = 0; j < show_length; j++)
 			{
 				if(shows[j].getMovie().getTitle() == movie_name && shows[j].getCineplex().getName() == cineplex[i].getName())
 				{
 					System.out.printf("%d. Cineplex Name: %s\n", i + 1, cineplex[i].getName());
-					flag1 = true;
 					break;
 				}
 			}
-		}
-		if(flag1 == false)
-		{
-			throw new exception.InvalidIdException("Currently No Showings of this Movie are available.\nReturning to Movie Goer Menu...");
 		}
 		System.out.println("Choose Ciniplex Index");
 		int cineplex_ind = in.nextInt() - 1;
@@ -143,8 +137,8 @@ public class BookingSystem implements java.io.Serializable{
 			System.out.printf("Please input the No.%d seat index that you want(e.g. 3E):\n",cnt+1);
 			seat_index[cnt] = in.next();
 			if(shows[show_index].checkOccupied(seat_index[cnt])){System.out.printf("Seat already choosen!\n");continue;}
+			price += db.payment.calPrice(shows[show_index], seat_index[cnt], mType);
 			cnt++;
-			price += Payment.calPrice(shows[show_index], mType);
 		}
 		String confirm;
 		in.nextLine();
@@ -155,15 +149,15 @@ public class BookingSystem implements java.io.Serializable{
 			{
 				System.out.printf("%s ", seat_index[i]);
 			}
-			System.out.printf("\nConfirm Seats?(Yes/No)\n");
+			System.out.printf("\nThe total price of the tickets is: %.2f\n", price);
+			System.out.printf("Confirm transaction?(Yes/No)\n");
 			confirm = in.nextLine();
 			if(confirm.equalsIgnoreCase("No"))
 			{
 				throw new exception.ExitException("Cancelling order and returning to Movie goer Menu...");
 			}
 		}while(!confirm.equalsIgnoreCase("Yes") && !confirm.equalsIgnoreCase("No"));
-		System.out.printf("The total price of the tickets is: %.2f\n", price);
-		String TID = Payment.generateTID(shows[show_index].getCinema());
+		String TID = db.payment.generateTID(shows[show_index].getCinema());
 		System.out.println("Payment Successful! Transaction ID: " + TID);
 		for (int i = 0; i < num_seats; i++) {
 			ticket[i] = shows[show_index].createTicket(seat_index[i], TID);
