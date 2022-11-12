@@ -110,7 +110,8 @@ public class MainMenuUi {
 			System.out.println("4. Rate movie");
 			System.out.println("5. Book ticket");
 			System.out.println("6. View booking history");
-			System.out.println("7. Log out");
+			System.out.println("7. View prices");
+			System.out.println("8. Log out");
 			System.out.print("Select Option: ");
 
 			String movieGoerInput = sc.next();
@@ -136,6 +137,9 @@ public class MainMenuUi {
 				currentUser.viewBookingHistory();
 				break;
 			case "7":
+				db.payment.displayPrices();
+				break;
+			case "8":
 				System.out.println("Logging out --- Returning to Main Menu");
 				loggedIn = false;
 				break;
