@@ -215,5 +215,55 @@ public class Staff implements java.io.Serializable{
         Payment.setBasePrice(price);
         System.out.println("The base ticket price has been updated.");
     }
-    
+    public static void addCineplex(Database db){
+        System.out.println("Enter the name of the cineplex");
+        String cineplex_name=scan.nextLine();
+        System.out.println("Enter the number of the cinemas");
+        while(!scan.hasNextInt()){System.out.println("Please enter a number!");}
+        int num_cinema=scan.nextInt();
+        Cineplex cineplex;
+        char first_letter='A';
+        if(db.cineplexes.size()>0) first_letter=(char)((int)db.cineplexes.get(db.cineplexes.size()-1).getCinema(1).getCinemaCode().charAt(0)+1);
+        db.addCineplex(cineplex=new Cineplex(cineplex_name, num_cinema));
+        int cnt=1;
+        while(num_cinema>=cnt){
+            if(addCinema(cineplex,cnt,first_letter)) cnt++;
+        }
+    }
+
+    public static boolean addCinema(Cineplex cineplex,int index,char first_letter){
+        System.out.println("Enter the platinum type of the cinema(P/N)");
+        String platinum_type=scan.next();
+        // System.out.println(platinum_type);
+        while(!(platinum_type.equals("P")||platinum_type.equals("N"))){System.out.println("Enter the platinum type of the cinema(P/N)");platinum_type=scan.next();}
+        char[] cinemaCode={first_letter,(char)(index+'0'),platinum_type.charAt(0)};
+        System.out.println("Enter the number of rows");
+        while(!scan.hasNextInt()){System.out.println("Please enter a number!");}
+        int row=scan.nextInt();
+        System.out.println("Enter the number of columns");
+        while(!scan.hasNextInt()){System.out.println("Please enter a number!");}
+        int column=scan.nextInt();
+        cineplex.addCinema(new Cinema(index,new String(cinemaCode),platinum_type=="P",cineplex.getName(),row,column));
+        return true;
+    }
+
+    public static void deleteCineplex(Database db){
+        int i=0;
+        for(Cineplex ci:db.cineplexes){
+            i++;
+            System.out.printf("%d %s\n",i,db.cineplexes.get(i-1).getName());
+        }
+        System.out.println("Please enter the index of cineplex");
+        int index;
+        while(true){
+            if(!scan.hasNextInt())System.out.println("Please enter a number!");
+            else{
+                index=scan.nextInt();
+                if(index<1||index>db.cineplexes.size()) System.out.println("Please enter a valid number!");
+                else break;
+            }
+        }
+        db.cineplexes.remove(index-1);
+        System.out.println("Remove successful!");
+    }
 }
