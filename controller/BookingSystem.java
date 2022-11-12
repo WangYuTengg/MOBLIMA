@@ -49,7 +49,12 @@ public class BookingSystem implements java.io.Serializable{
 		do
 		{
 			flag1 = true;
-			db.movieListing.listMovies();
+			for(int i = 0; i < movies.length; i++)
+			{
+				if (movies[i].getStatus().equals("END_OF_SHOWING") || movies[i].getStatus().equals("COMING_SOON"))
+					continue;
+				System.out.printf("%d. %s, STATUS: %s\n", i + 1, movies[i].getTitle(), movies[i].getStatus());
+			}
 			System.out.println("Choose Movie Index");
 			movie_ind = in.nextInt() - 1;
 			if(movie_ind >= movies.length || movie_ind < 0) 
