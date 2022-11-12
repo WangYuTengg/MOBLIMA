@@ -8,6 +8,7 @@ Stores the whole data.
  */
 
 import java.util.ArrayList;
+import model.Payment;
 import model.Cineplex;
 import model.MovieGoer;
 import model.MovieListing;
@@ -35,6 +36,7 @@ public class Database implements java.io.Serializable{
 	/**
 	 * The collection of movie goers.
 	 */
+	public Payment payment = new Payment();
 	ArrayList<MovieGoer> movieGoers;
 	/**
 	 * The collection of staffs.
