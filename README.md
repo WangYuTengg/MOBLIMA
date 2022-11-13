@@ -37,6 +37,9 @@
 	- main app source file
 8. README.md 
 
+## Feature Flow Diagram:
+<img width="1438" alt="feature diagram" src="">
+
 ## Challenges and lessons learnt:
 * We faced challenges when designing the initial application architecture as we lacked knowledge in implementing SOLID design principles. We then learnt to use the MVC (model-view-controller) model to help us organise our packages and their dependencies.
 * We have learnt to effectively use Github and git for source control and remote collaboration to reduce conflicts in code
