@@ -40,7 +40,7 @@ public class Staff extends User{
     public static void addMovie(Database db){
         scan=new Scanner(System.in);
         int alreadyExists = 0;
-        System.out.println("Enter the Title of the Movie: "); // movie title
+        System.out.printf("Enter the Title of the Movie: "); // movie title
         String title = scan.nextLine();
 
         ArrayList<Movie> movies = new ArrayList<Movie>();
@@ -55,7 +55,7 @@ public class Staff extends User{
         }
 
         while (alreadyExists == 1){
-            System.out.println("Please re-enter the Title of the Movie:");
+            System.out.printf("Please re-enter the Title of the Movie: ");
             title = scan.nextLine();
             alreadyExists = 0;
             for (int i = 0; i<movies.size(); i++) {
@@ -67,7 +67,7 @@ public class Staff extends User{
             }
         }
         Boolean type;
-        System.out.println("Is the movie a Blockbuster movie? (true or false)"); // movie type
+        System.out.printf("Is the movie a Blockbuster movie? (true or false) "); // movie type
         String input = scan.nextLine();
     
         // Error checking for invalid inputs
@@ -102,10 +102,10 @@ public class Staff extends User{
         } while(status.equals("unknown"));
         
 
-        System.out.println("Enter the Movie's director: "); // movie director
+        System.out.printf("Enter the Movie's director: "); // movie director
         String director = scan.nextLine();
 
-        System.out.println("How many cast members would you like to list? (Maximum 10)"); // movie cast
+        System.out.printf("How many cast members would you like to list? (Maximum 10) "); // movie cast
         int castLength = scan.nextInt();
         while (castLength > 10 || castLength <= 0){
             System.out.println("Invalid Input.\nPlease re-enter.");
@@ -115,7 +115,7 @@ public class Staff extends User{
         String[] cast = new String[10];
         System.out.println("Enter the name of the cast members: ");
         for (int i = 0; i < castLength; i++) {
-            System.out.printf("Cast Member No.%d:\n", i+1);
+            System.out.printf("Cast Member No.%d:", i+1);
             String temp = scan.nextLine();
             cast[i] = temp;
         }
@@ -124,7 +124,7 @@ public class Staff extends User{
         String synopsis = scan.nextLine();
 
         String ageRating = "unknown";
-        System.out.println("Please enter the age rating for the movie:\n1. G\n2. PG\n3. PG13\n4. R\n5. M18\n6. R21");
+        System.out.printf("Please enter the age rating for the movie:\n1. G\n2. PG\n3. PG13\n4. R\n5. M18\n6. R21");
         String ageRatingInput = scan.nextLine();
         do {
             switch (ageRatingInput) {
