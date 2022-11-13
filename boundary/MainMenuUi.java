@@ -1,8 +1,9 @@
 package boundary;
 
 import java.util.Scanner;
+
+import controller.MovieGoer;
 import data.Database;
-import model.MovieGoer;
 /**
  * The class used for MainMenuUI.
  * @version  2.0

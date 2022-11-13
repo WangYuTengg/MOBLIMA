@@ -2,9 +2,9 @@ package boundary;
 
 import java.util.Scanner;
 
+import controller.MovieGoer;
+import controller.Staff;
 import data.Database;
-import model.Staff;
-import model.MovieGoer;
 /**
  * The class used for LoginUI.
  * @version  3.0

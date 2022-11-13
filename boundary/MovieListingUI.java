@@ -2,8 +2,8 @@ package boundary;
 
 import java.util.Scanner;
 
+import controller.Staff;
 import data.Database;
-import model.Staff;
 
 /**
  * The UI used for allowing the Staff to manipulate the MovieListing.

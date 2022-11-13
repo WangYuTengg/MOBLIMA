@@ -2,10 +2,10 @@
 
 package boundary;
 
-import model.MovieGoer;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+import controller.MovieGoer;
 import data.Database;
 
 /**

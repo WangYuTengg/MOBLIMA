@@ -4,13 +4,14 @@ package data;
 
 import model.Cinema;
 import model.Cineplex;
-import model.MovieGoer;
 import model.Show;
-import model.Staff;
 import model.Movie;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
+import controller.MovieGoer;
+import controller.Staff;
 
 /**
  * A class to instantiate the initial database.

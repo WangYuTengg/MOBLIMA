@@ -6,6 +6,8 @@ import data.Database;
 import model.*;
 import java.util.*;
 
+import controller.Staff;
+
 /**
  * The UI used when the Admin is Adding/Deleting a Cineplex.
  * @version  3.0
