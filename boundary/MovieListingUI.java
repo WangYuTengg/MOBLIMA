@@ -11,7 +11,7 @@ import data.Database;
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-public class MovieListingUI {
+public class MovieListingUI  implements BaseUI{
 
 	/**
 	 * A static scanner used for MovieListingUI.
@@ -26,15 +26,7 @@ public class MovieListingUI {
 		sc=new Scanner(System.in);
 		boolean exit = false;
 		do {
-			System.out.println("");
-			System.out.println("||----------- Movie Listing Menu -----------||");
-			System.out.println("1. Create Movie in movie listing");
-			System.out.println("2. Update Movie in movie listing");
-			System.out.println("3. Delete Movie in movie listing");
-			System.out.println("4. View movie listing");
-			System.out.println("5. Return to admin menu");
-			System.out.print("Select option: ");
-
+			display();
 			String adminInput = sc.next();
 			switch (adminInput) {
 			case "1":
@@ -63,5 +55,15 @@ public class MovieListingUI {
 		System.out.println("Returning to Admin menu...");
 		return;
 	}
-
+	private void display()
+	{
+		System.out.println("");
+			System.out.println("||----------- Movie Listing Menu -----------||");
+			System.out.println("1. Create Movie in movie listing");
+			System.out.println("2. Update Movie in movie listing");
+			System.out.println("3. Delete Movie in movie listing");
+			System.out.println("4. View movie listing");
+			System.out.println("5. Return to admin menu");
+			System.out.print("Select option: ");
+	}
 }

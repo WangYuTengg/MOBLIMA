@@ -28,26 +28,7 @@ public class SettingsUI implements BaseUI{
 		double newPrice;
 		double newMultiplier;
 		do {
-			System.out.println("");
-			System.out.println("||----------- Settings Menu -----------||");
-			System.out.println("1. List all holidays");
-			System.out.println("||----------- Update Multipliers -----------||");
-			System.out.printf("2. Update Holiday Price Multiplier  --- current: %.2fx\n", db.payment.getHolidayMultiplier());
-			System.out.printf("3. Update Weekend Price Multiplier  --- current: %.2fx\n", db.payment.getWeekendMultiplier());
-			System.out.printf("4. Update Senior Price Multiplier   --- current: %.2fx\n", db.payment.getSeniorMultipier());
-			System.out.printf("5. Update Student Price Multiplier  --- current: %.2fx\n", db.payment.getStudentMultipier());
-			System.out.printf("6. Update Loyalty Card Multiplier   --- current: %.2fx\n", db.payment.getLoyaltCardMultiplier());
-			System.out.println("||---------- Update Prices -----------||");
-			System.out.printf("7. Update Base ticket price         --- current: $%.2f\n", db.payment.getBasePrice());
-			System.out.printf("8. Update 3d Movie extra charge     --- current: $%.2f\n", db.payment.getIs3DPrice());
-			System.out.printf("9. Update Platinum extra charge     --- current: $%.2f\n", db.payment.getIsPlatPrice());
-			System.err.printf("10. Update Blockbuster extra charge --- current: $%.2f\n", db.payment.getIsBBPrice());
-			System.err.printf("11. Update Elite Seat extra charge  --- current: $%.2f\n", db.payment.getIsEliteSeatprice());
-			System.out.println("||---------- Update Loyalty Cards -----------||");
-			System.out.printf("12. Add Loyalty Cards\n");
-			System.out.printf("13. Delete Loyalty Cards\n");
-			System.out.println("14. Return to Admin menu");
-			System.out.print("Select option: ");
+			display(db);
 			String adminInput = sc.next();
 			switch (adminInput) {
 			case "1":
@@ -182,5 +163,29 @@ public class SettingsUI implements BaseUI{
 			else System.out.println("Enter a proper multiplier please. ( more than 0 )");
 		}while(!exit);
 		return multi;
+	}
+
+	private void display(Database db)
+	{
+		System.out.println("");
+			System.out.println("||----------- Settings Menu -----------||");
+			System.out.println("1. List all holidays");
+			System.out.println("||----------- Update Multipliers -----------||");
+			System.out.printf("2. Update Holiday Price Multiplier  --- current: %.2fx\n", db.payment.getHolidayMultiplier());
+			System.out.printf("3. Update Weekend Price Multiplier  --- current: %.2fx\n", db.payment.getWeekendMultiplier());
+			System.out.printf("4. Update Senior Price Multiplier   --- current: %.2fx\n", db.payment.getSeniorMultipier());
+			System.out.printf("5. Update Student Price Multiplier  --- current: %.2fx\n", db.payment.getStudentMultipier());
+			System.out.printf("6. Update Loyalty Card Multiplier   --- current: %.2fx\n", db.payment.getLoyaltCardMultiplier());
+			System.out.println("||---------- Update Prices -----------||");
+			System.out.printf("7. Update Base ticket price         --- current: $%.2f\n", db.payment.getBasePrice());
+			System.out.printf("8. Update 3d Movie extra charge     --- current: $%.2f\n", db.payment.getIs3DPrice());
+			System.out.printf("9. Update Platinum extra charge     --- current: $%.2f\n", db.payment.getIsPlatPrice());
+			System.err.printf("10. Update Blockbuster extra charge --- current: $%.2f\n", db.payment.getIsBBPrice());
+			System.err.printf("11. Update Elite Seat extra charge  --- current: $%.2f\n", db.payment.getIsEliteSeatprice());
+			System.out.println("||---------- Update Loyalty Cards -----------||");
+			System.out.printf("12. Add Loyalty Cards\n");
+			System.out.printf("13. Delete Loyalty Cards\n");
+			System.out.println("14. Return to Admin menu");
+			System.out.print("Select option: ");
 	}
 }
