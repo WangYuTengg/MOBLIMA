@@ -282,7 +282,7 @@ public class Payment implements java.io.Serializable {
      */
     public void addLoyaltyCards(String card) {
         loyaltyCards.add(card);
-        System.out.printf("%s loyalty card successfully added!\n", card);
+        //System.out.printf("%s loyalty card successfully added!\n", card);
     }
 
     /**
