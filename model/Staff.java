@@ -162,7 +162,7 @@ public class Staff extends User{
         int choice = scan.nextInt();
         if (choice==-1)
         {
-            System.out.println("Returning");
+            System.out.println("Returning...");
             return;
         }
         db.movieListing.updateMovie(choice-1);
@@ -206,8 +206,13 @@ public class Staff extends User{
      */
     public static void updateShow(Database db){ 
         db.showListing.displayShows();
-        System.out.println("Input the index of the show to be updated");
+        System.out.println("Input the index of the show to be updated (-1 to return)");
         int choice = scan.nextInt();
+        if (choice==-1)
+        {
+            System.out.println("Returning...");
+            return;
+        }
         try {
 			db.showListing.updateShow(choice-1,db);
 		} catch (ParseException e) {

@@ -39,10 +39,16 @@ public class MovieListing implements java.io.Serializable{
 	 */
 	public void deleteMovie(boolean isAdmin) {
 		listMovies(isAdmin);
-		System.out.println("Enter the Index of the movie to be deleted:");
+		System.out.println("Enter the Index of the movie to be deleted: (-1 to return)");
 		int movie_ind = in.nextInt();
+		if (movie_ind==-1)
+		{
+			System.out.println("Returning...");
+			return;
+		}
 		movies.remove(movie_ind - 1);
 		len--;
+		System.out.println("Movie has successfully been deleted.");
 	}
 
 	/**
