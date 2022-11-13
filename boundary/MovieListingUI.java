@@ -55,6 +55,10 @@ public class MovieListingUI  implements BaseUI{
 		System.out.println("Returning to Admin menu...");
 		return;
 	}
+
+	/**
+	 * Displays the Movie Listing Menu.
+	 */
 	private void display()
 	{
 		System.out.println("");

@@ -46,6 +46,9 @@ public class CineplexUI implements BaseUI{
         }
     }
 
+    /**
+     * Dsiplays the Admin Cineplex Management Menu.
+     */
     private void display()
     {
         System.out.println("");

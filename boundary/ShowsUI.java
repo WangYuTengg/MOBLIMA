@@ -59,6 +59,9 @@ public class ShowsUI implements BaseUI{
 		System.out.println("Returning to Admin menu...");
 	}
 
+	/**
+	 * Displays the Show Listing Menu.
+	 */
 	private void display()
 	{
 		System.out.println("");
