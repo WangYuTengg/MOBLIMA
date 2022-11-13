@@ -181,7 +181,7 @@ public class Show implements java.io.Serializable{
      * To display the details of the movie showing.
      */
     public void display(){
-        SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd hh:mm");
+        SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd HH:mm");
         System.out.printf("%40s%25s%10d%20s\n",this.movie.getTitle(),this.cineplex.getName(),this.cinema.getIndex(), ft.format(this.showTime));
     }
 }
