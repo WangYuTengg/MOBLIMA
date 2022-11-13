@@ -212,10 +212,21 @@ public class Staff extends User{
         scan=new Scanner(System.in);
         db.showListing.displayShows();
         System.out.println("Input the index of the show to be updated (-1 to return)");
+        
+        while(!scan.hasNextInt()){
+            System.out.println("Please enter a valid index.");
+            scan.next();
+        }
         int choice = scan.nextInt();
+        
         if (choice==-1)
         {
             System.out.println("Returning...");
+            return;
+        }
+
+        if(choice < -1 || choice >= db.showListing.getShows().size() || choice == 0){
+            System.out.println("Invalid input. Returning to previous menu...");
             return;
         }
         try {

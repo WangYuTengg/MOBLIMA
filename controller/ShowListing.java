@@ -289,6 +289,7 @@ public class ShowListing implements java.io.Serializable {
 	public void updateShow(int show_ind, Database db) throws ParseException {
 		in = new Scanner(System.in);
 		String choice;
+		boolean exit = false;
 		Show show = shows.get(show_ind);
 		do {
 			System.out.printf("Choose Action:\n" + "1. Update Cinema\n" + "2. Update Movie\n" + "3. Update Show time\n"
@@ -345,10 +346,14 @@ public class ShowListing implements java.io.Serializable {
 					is3D = Boolean.parseBoolean(input);
 					show.set3D(is3D);
 					break;
+				case "5":
+					System.out.println("Exiting...");
+					exit = true;
+					break;
 				default:
 					System.out.println("Invalid input, please try again.");
 			}
-		} while (choice.equals("5"));
+		} while (!exit);
 	}
 
 	/**
