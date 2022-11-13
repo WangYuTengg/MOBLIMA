@@ -239,7 +239,6 @@ public class ShowListing implements java.io.Serializable {
 				System.out.println("Invalid input\nPlease re-enter the Show time (e.g. 2021-04-20 23:00):");
 			}
 		}
-
 		shows.add(new Show(new Cinema((cineplex[cineplex_ind - 1].getCinemaList())[cinema_ind - 1]), movies[movie_ind - 1],
 				cineplex[cineplex_ind], is3D, showtime));
 		len++;
@@ -255,10 +254,26 @@ public class ShowListing implements java.io.Serializable {
 		this.displayShows();
 		System.out.println("Enter Show Index to remove: (-1 to return)");
 		int show_id = in.nextInt();
+
+		//check for integer input
+		while(!in.hasNextInt()){
+			System.out.printf("Please enter a valid show index: ");
+			in.next();
+		}
+
+		//exit key
 		if (show_id == -1) {
 			System.out.println("Returning");
 			return;
 		}
+
+		//check for valid show index
+		if (show_id < -1 || show_id == 0 || show_id > shows.size()){
+			System.out.println("Invalid show index entered. Returning to main menu...");
+			return;
+		}
+
+		//remove show from shows
 		shows.remove(show_id - 1);
 		len--;
 		System.out.println("Show successfully deleted!");
