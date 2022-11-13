@@ -24,6 +24,7 @@ public class CineplexUI {
      * @param db The database with Cineplexes.
      */
     public void main(Database db){
+        sc=new Scanner(System.in);
         boolean flag=true;
         while(flag){
             System.out.println("");

@@ -159,6 +159,7 @@ public class Staff extends User{
      * @param db The database containing the movies.
      */
     public static void editMovie(Database db){
+        scan=new Scanner(System.in);
         db.movieListing.listMovies(true);
         System.out.println("Please input the index of the movie to update. (-1 to return)");
         int choice = scan.nextInt();
@@ -207,6 +208,7 @@ public class Staff extends User{
      * @param db The database containing the shows.
      */
     public static void updateShow(Database db){ 
+        scan=new Scanner(System.in);
         db.showListing.displayShows();
         System.out.println("Input the index of the show to be updated (-1 to return)");
         int choice = scan.nextInt();
@@ -228,6 +230,7 @@ public class Staff extends User{
      * @param db The database containing the cineplexes.
      */
     public static void addCineplex(Database db){
+        scan=new Scanner(System.in);
         System.out.println("Enter the number of the cinemas");
         while(!scan.hasNextInt()){System.out.println("Please enter a number!");}
         int num_cinema=scan.nextInt();
@@ -252,10 +255,14 @@ public class Staff extends User{
      * @return              A boolean value for when the cinema has been added.
      */
     public static boolean addCinema(Cineplex cineplex,int index,char first_letter){
-	System.out.printf("Adding cinema No.%d\n",index);
+        scan=new Scanner(System.in);
+	    System.out.printf("Adding cinema No.%d\n",index);
         System.out.println("Enter the platinum type of the cinema(P/N)");
         String platinum_type=scan.next();
-        while(!(platinum_type.equals("P")||platinum_type.equals("N"))){System.out.println("Enter the platinum type of the cinema(P/N)");platinum_type=scan.next();}
+        while(!(platinum_type.equals("P")||platinum_type.equals("N"))){
+            System.out.println("Enter the platinum type of the cinema(P/N)");
+            platinum_type=scan.next();
+        }
         char[] cinemaCode={first_letter,(char)(index+'0'),platinum_type.charAt(0)};
         System.out.println("Enter the number of rows");
         while(!scan.hasNextInt()){System.out.println("Please enter a number!");}
@@ -281,6 +288,7 @@ public class Staff extends User{
      * @param db The database containing all the cineplexes.
      */
     public static void deleteCineplex(Database db){
+        scan=new Scanner(System.in);
         for(int i=1;i<=db.cineplexes.size();++i){
             System.out.printf("%d. %s\n",i,db.cineplexes.get(i-1).getName());
         }

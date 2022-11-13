@@ -24,6 +24,7 @@ public class LoginUI {
      * @return  The Staff member.
      */
     public static Staff verifyAdmin(Database db){
+        sc=new Scanner(System.in);
         Staff currentStaff;
 
         System.out.println("");
@@ -57,6 +58,7 @@ public class LoginUI {
      * @return      The Movie Goer.
      */
     public static MovieGoer verifyMovieGoer(Database db){
+        sc=new Scanner(System.in);
         MovieGoer currentUser;
 
         System.out.println("");

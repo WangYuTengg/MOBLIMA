@@ -154,6 +154,7 @@ public class ShowListing implements java.io.Serializable {
 	 * @throws ParseException Throws an exception.
 	 */
 	public void createShow(Database db) throws ParseException {
+		in = new Scanner(System.in);
 		Movie[] movies = new Movie[db.movieListing.getMovies().size()];
 		movies = db.movieListing.getMovies().toArray(movies);
 		for (int i = 0; i < movies.length; i++) {
@@ -206,6 +207,7 @@ public class ShowListing implements java.io.Serializable {
 	 * Deletes a show.
 	 */
 	public void deleteShow() {
+		in = new Scanner(System.in);
 		System.out.println("||----- Display Shows -----||");
 		this.displayShows();
 		System.out.println("Enter Show Index to remove: (-1 to return)");
@@ -227,6 +229,7 @@ public class ShowListing implements java.io.Serializable {
 	 * @throws ParseException Throws an exception.
 	 */
 	public void updateShow(int show_ind, Database db) throws ParseException {
+		in=new Scanner(System.in);
 		int choice;
 		Show show = shows.get(show_ind);
 		do {

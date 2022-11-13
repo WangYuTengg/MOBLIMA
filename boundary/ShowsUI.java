@@ -23,6 +23,7 @@ public class ShowsUI {
 	 * @param db	The database.
 	 */
 	public void main(Database db) {
+		sc=new Scanner(System.in);
 		boolean exit = false;
 		do {
 			System.out.println("");

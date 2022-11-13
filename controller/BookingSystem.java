@@ -83,6 +83,7 @@ public class BookingSystem implements java.io.Serializable{
 	 * @throws InputMismatchException			An exception for wrong type for inputs.
 	 */
 	public Ticket[] book(int id, Database db) throws exception.InvalidIdException, exception.ExitException, InputMismatchException{
+		in=new Scanner(System.in);
 		Movie[] movies =  new Movie[db.movieListing.getMovies().size()];
 	    	movies = db.movieListing.getMovies().toArray(movies);
 		int movie_ind;
@@ -211,7 +212,7 @@ public class BookingSystem implements java.io.Serializable{
 					+ "2.Debit/Credit card\n"
 					+ "3.PayPal\n"
 					+ "4.Loyalty Card(Additional Discount)\n"
-					+ "5. Cancel Order\n");
+					+ "5.Cancel Order\n");
 			int choice = in.nextInt();
 			if (choice < 1 || choice > 5)
 			{
@@ -254,6 +255,7 @@ public class BookingSystem implements java.io.Serializable{
 	 * @param movies	An array of movies.
 	 */
 	public void displayshowListing(Movie movies[]) {
+		in=new Scanner(System.in);
 		int len = movies.length;
 		for (int i = 0; i < len; i++) {
 			System.out.printf("%d. Movie Name: %s, Status: %s\n", i + 1, movies[i].getTitle(), movies[i].getStatus());
@@ -273,6 +275,7 @@ public class BookingSystem implements java.io.Serializable{
 	 * @param db	The database.
 	 */
 	public void displayShowStatus(Database db){
+		in=new Scanner(System.in);
         System.out.println("Displaying all current shows:");
         db.showListing.displayShows();
         System.out.println("Please input the index of the show:");

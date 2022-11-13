@@ -21,6 +21,7 @@ public class MainMenuUi {
 	 * @param db	The database.
 	 */
 	public void main(Database db) {
+		sc=new Scanner(System.in);
 		boolean exit = false;
 		do {
 			System.out.println("");
@@ -79,6 +80,7 @@ public class MainMenuUi {
 	 * @param db	The database.
 	 */
 	public static void adminLogin(Database db) {
+		sc=new Scanner(System.in);
 		boolean loggedIn = true;
 		do {
 			System.out.println("");
@@ -132,6 +134,7 @@ public class MainMenuUi {
 	 * @param db			The database.
 	 */
 	public static void movieGoerLogin(MovieGoer currentUser, Database db) {
+		sc=new Scanner(System.in);
 		boolean loggedIn = true;
 		do {
 			System.out.println("");

@@ -69,6 +69,7 @@ public class CreateUserUI {
      * @return The user's age.
      */
     private static int getAgeFromUser() {
+        sc=new Scanner(System.in);
         boolean exit = false;
         int userInput;
         do {
@@ -96,6 +97,7 @@ public class CreateUserUI {
      * @return The user's name.
      */
     private static String getNameFromUser(Database db) {
+        sc=new Scanner(System.in);
         // get input from user
         sc.nextLine();
         System.out.printf("Enter your name (type 0 to exit):  ");
@@ -125,6 +127,7 @@ public class CreateUserUI {
      * @return The email of the user.
      */
     private static String getEmailFromUser(Database db) {
+        sc=new Scanner(System.in);
         boolean exit = false;
         String regexPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
                 + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$"; // for validating email
@@ -170,6 +173,7 @@ public class CreateUserUI {
      * @return The password used.
      */
     private static String getPasswordFromUser() {
+        sc=new Scanner(System.in);
         boolean exit = false;
         String regexPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$"; // for
                                                                                                              // validating

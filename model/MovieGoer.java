@@ -77,6 +77,7 @@ public class MovieGoer extends User {
 	 */
 	public static void addReview(Database db) {
 		// declare variables needed
+		sc=new Scanner(System.in);
 		int moviesLength = db.movieListing.length();
 		int userInput, index, rating;
 		boolean exit = false;
@@ -176,6 +177,7 @@ public class MovieGoer extends User {
 	 */
 	public static void viewMovieDetails(Database db) {
 		// declare variables needed
+		sc=new Scanner(System.in);
 		int moviesLength = db.movieListing.length();
 		int userInput, index;
 		boolean exit = false;

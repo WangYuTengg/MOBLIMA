@@ -35,6 +35,7 @@ public class Top5UI {
      * @param db The Databse.
      */
     public void main(Database db){
+        sc=new Scanner(System.in);
         boolean exit = false;
 		do {
 			System.out.println("");
@@ -70,6 +71,7 @@ public class Top5UI {
      * A UI used to change whether a specific method of listing Top5 movies is blocked for MovieGoer.
      */
     private static void blockUI(){
+        sc=new Scanner(System.in);
         boolean exit = false;
         do{
             System.out.println("");

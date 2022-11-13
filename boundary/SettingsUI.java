@@ -12,7 +12,7 @@ import model.Holiday;
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-public class SettingsUI {
+public class SettingsUI implements BaseUI{
 	/**
 	 * A static scanner used throughout SettingsUI.
 	 */
@@ -23,6 +23,7 @@ public class SettingsUI {
 	 * @param db The database.
 	 */
 	public void main(Database db) {
+		sc=new Scanner(System.in);
 		boolean exit = false;
 		double newPrice;
 		double newMultiplier;
@@ -140,6 +141,7 @@ public class SettingsUI {
 	 * @return The new price.
 	 */
 	private static double getPriceFromUser(){
+		sc=new Scanner(System.in);
 		boolean exit = false;
 		double price = -1;
 		do{
@@ -163,6 +165,7 @@ public class SettingsUI {
 	 * @return 	The new multiplier.
 	 */
 	private static double getMultiplierFromUser(){
+		sc=new Scanner(System.in);
 		boolean exit = false;
 		double multi = -1;
 		do {

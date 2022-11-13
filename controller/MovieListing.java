@@ -39,6 +39,7 @@ public class MovieListing implements java.io.Serializable{
 	 * Deletes a movie.
 	 */
 	public void deleteMovie(boolean isAdmin) {
+		in = new Scanner(System.in);
 		listMovies(isAdmin);
 		System.out.println("Enter the Index of the movie to be deleted: (-1 to return)");
 		int movie_ind = in.nextInt();
@@ -85,6 +86,7 @@ public class MovieListing implements java.io.Serializable{
 	 * Searches for the movie by title.
 	 */
 	public void searchMovieByTitle(){
+		in=new Scanner(System.in);
 		boolean exit = false;
 		boolean result = false;
 		do {
@@ -109,6 +111,7 @@ public class MovieListing implements java.io.Serializable{
 	 * Searches for the movie by director.
 	 */
 	public void searchMovieByDirector(){
+		in=new Scanner(System.in);
 		boolean exit = false;
 		boolean result = false;
 		do {
@@ -134,6 +137,7 @@ public class MovieListing implements java.io.Serializable{
 	 * @param movie_ind	Index of the movie.
 	 */
 	public void updateMovie(int movie_ind) {
+		in=new Scanner(System.in);
 		int choice;
 		do {
 			System.out.printf("Choose Action:\n" + "1. Update Movie Type\n" + "2. Update Synopsis\n"
@@ -259,7 +263,8 @@ public class MovieListing implements java.io.Serializable{
 	}
 
 	/**
-	 * Lists the top 5 movies by rating
+	 * Lists the top 5 movies by rating.
+	 * @param isAdmin	A boolean for whether the user is an Admin or a Movie Goer.
 	 */
 	public void listTop5byRating(boolean isAdmin) {
 		sortbyRating();
@@ -268,7 +273,8 @@ public class MovieListing implements java.io.Serializable{
 	}
 
 	/**
-	 * Lists the top 5 movies by sales 
+	 * Lists the top 5 movies by sales.
+	 * @param isAdmin	A boolean for whether the user is an Admin or a Movie Goer.
 	 */
 	public void listTop5bySales(boolean isAdmin) {
 		sortbySales();
@@ -277,7 +283,7 @@ public class MovieListing implements java.io.Serializable{
 	}
 	
 	/**
-	 * Lists the total sales of each movie
+	 * Lists the total sales of each movie.
 	 */
 	public void listSalesofMovie() {
 		int i=1;
@@ -287,7 +293,7 @@ public class MovieListing implements java.io.Serializable{
 	}
 
 	/**
-	 * Lists the sorted total sales of a limited number of movies
+	 * Lists the sorted total sales of a limited number of movies.
 	 * @param lim The limit of number of movies displayed.
 	 */
 	public void listSalesofMovie(int lim) {
@@ -301,7 +307,7 @@ public class MovieListing implements java.io.Serializable{
 	}
 
 	/**
-	 * Lists top 5 movies with their overall ratings displayed
+	 * Lists top 5 movies with their overall ratings displayed.
 	 * @param lim The limit of number of movies displayed.
 	 */
 	public void listRatingofMovie(int lim) {

@@ -22,6 +22,7 @@ public class MovieGoerUI {
 	 * @param db The database containing the movies.
 	 */
 	public void searchMovieUI(Database db) {
+		sc=new Scanner(System.in);
 		boolean exit = false;
 		do {			
 			System.out.println("");
@@ -59,6 +60,7 @@ public class MovieGoerUI {
 	 * @param db The database containing the movies.
 	 */
 	public void viewMovieDetailsUI(Database db) {
+		sc=new Scanner(System.in);
 		boolean exit = false;
 		do {
 			System.out.println("");
@@ -85,6 +87,7 @@ public class MovieGoerUI {
 	 * @param db The database containing the movies.
 	 */
 	public void listTop5UI(Database db) {
+		sc=new Scanner(System.in);
 		boolean exit = false;
 		do {
 			System.out.println("");
@@ -120,6 +123,7 @@ public class MovieGoerUI {
 	 * @param db The database containing the movies.
 	 */
 	public void rateMovieUI(Database db) {
+		sc=new Scanner(System.in);
 		boolean exit = false;
 		do {
 			System.out.println("");
@@ -146,6 +150,7 @@ public class MovieGoerUI {
 	 * @param user MovieGoer to view booking history of.
 	 */
 	public void viewBookingHistoryUI(MovieGoer user) {
+		sc=new Scanner(System.in);
 		boolean exit = false;
 		do {
 			System.out.println("");
