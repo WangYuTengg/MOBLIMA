@@ -148,9 +148,9 @@ public class BookingSystem implements java.io.Serializable{
 						String value3d;
 						String valuePlat;
 						if (shows[i].is3D())
-							value3d = "No";
-						else
 							value3d = "Yes";
+						else
+							value3d = "No";
 						if (shows[i].getCinema().getType())
 							valuePlat = "Platinum";
 						else
