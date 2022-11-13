@@ -1,9 +1,4 @@
-/**
- * A class for Top5UI.
- * @version  3.0
- * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
- * @since    2022-10-30
- */
+
 
 package boundary;
 
@@ -12,6 +7,9 @@ import data.Database;
 
 /**
  * A class for Top5UI.
+ * @version  3.0
+ * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
+ * @since    2022-10-30
  */
 public class Top5UI implements BaseUI{
 
@@ -60,6 +58,9 @@ public class Top5UI implements BaseUI{
 		System.out.println("Returning to Admin menu...");
     }
 
+    /**
+     * Display the UI to list the top 5 movies by specific methods.
+     */
     private void display() 
     {
         System.out.println("");

@@ -17,10 +17,10 @@ public interface BaseUI {
     public void main(Database db);
     
     /**
-     * 
+     * Base display function for other UI to implement.
      */
     private void display()
     {
-        
+
     }
 }

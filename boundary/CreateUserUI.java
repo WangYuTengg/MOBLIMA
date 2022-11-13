@@ -204,6 +204,10 @@ public class CreateUserUI implements BaseUI {
         } while (!exit);
         return userInput;
     }
+
+    /**
+     * Displays the User Creation UI Header.
+     */
     private void display()
     {
         System.out.println("||------- Creating User Account -------||");
