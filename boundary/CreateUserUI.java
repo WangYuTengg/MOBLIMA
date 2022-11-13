@@ -99,7 +99,6 @@ public class CreateUserUI {
     private static String getNameFromUser(Database db) {
         sc=new Scanner(System.in);
         // get input from user
-        sc.nextLine();
         System.out.printf("Enter your name (type 0 to exit):  ");
         String userInput = sc.nextLine();
 
