@@ -43,15 +43,24 @@ public class MovieListing implements java.io.Serializable{
 		in = new Scanner(System.in);
 		listMovies(isAdmin);
 		System.out.println("Enter the Index of the movie to be deleted: (-1 to return)");
-		int movie_ind = in.nextInt();
-		if (movie_ind==-1)
-		{
-			System.out.println("Returning...");
-			return;
+		
+		try {
+			int movie_ind = in.nextInt();
+			if (movie_ind==-1)
+			{
+				System.out.println("Returning...");
+				return;
+			}
+			if (movie_ind < -1 || movie_ind > movies.size() || movie_ind == 0) {
+				System.out.println("Invalid index entered. Returning to previous menu...");
+				return;
+			}
+			movies.remove(movie_ind - 1);
+			len--;
+			System.out.println("Movie has successfully been deleted.");
+		} catch (Exception e) {
+			System.out.println("Non-integer value detected. Returning to previous menu...");
 		}
-		movies.remove(movie_ind - 1);
-		len--;
-		System.out.println("Movie has successfully been deleted.");
 	}
 
 	/**
