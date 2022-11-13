@@ -253,13 +253,13 @@ public class ShowListing implements java.io.Serializable {
 		System.out.println("||----- Display Shows -----||");
 		this.displayShows();
 		System.out.println("Enter Show Index to remove: (-1 to return)");
-		int show_id = in.nextInt();
 
 		//check for integer input
 		while(!in.hasNextInt()){
 			System.out.printf("Please enter a valid show index: ");
 			in.next();
 		}
+		int show_id = in.nextInt();
 
 		//exit key
 		if (show_id == -1) {
@@ -287,21 +287,21 @@ public class ShowListing implements java.io.Serializable {
 	 * @throws ParseException Throws an exception when the date and show time are added incorrectly.
 	 */
 	public void updateShow(int show_ind, Database db) throws ParseException {
-		in=new Scanner(System.in);
-		int choice;
+		in = new Scanner(System.in);
+		String choice;
 		Show show = shows.get(show_ind);
 		do {
 			System.out.printf("Choose Action:\n" + "1. Update Cinema\n" + "2. Update Movie\n" + "3. Update Show time\n"
 					+ "4. Update is3D\n" + "5. Exit\n");
-			choice = in.nextInt();
+			choice = in.next();
 			switch (choice) {
-				case 1:
+				case "1":
 					System.out.println("Enter Cinema Number");
 					int cinema_ind = in.nextInt();
 					show.setCinema(show.getCineplex().getCinemaList()[cinema_ind - 1]);
 					System.out.println("Cinema Update successfully!");
 					break;
-				case 2:
+				case "2":
 					Movie[] movies = new Movie[db.movieListing.getMovies().size()];
 					movies = db.movieListing.getMovies().toArray(movies);
 					for (int i = 0; i < movies.length; i++) {
@@ -312,7 +312,7 @@ public class ShowListing implements java.io.Serializable {
 					show.setMovie(movies[movie_ind - 1]);
 					System.out.println("Movie Update successfully!");
 					break;
-				case 3:
+				case "3":
 					in.nextLine();
 					System.out.println("Enter Show time (e.g. 2021-04-20 23:00):");
 					SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd HH:m");
@@ -331,7 +331,7 @@ public class ShowListing implements java.io.Serializable {
 					show.setShowTime(showtime);
 					System.out.println("Show time updated succesfully");
 					break;
-				case 4:
+				case "4":
 					in.nextLine();
 					System.out.println("Is the Show going to be in 3D? (true or false):");
 					boolean is3D;
@@ -345,8 +345,10 @@ public class ShowListing implements java.io.Serializable {
 					is3D = Boolean.parseBoolean(input);
 					show.set3D(is3D);
 					break;
+				default:
+					System.out.println("Invalid input, please try again.");
 			}
-		} while (choice != 5);
+		} while (choice.equals("5"));
 	}
 
 	/**

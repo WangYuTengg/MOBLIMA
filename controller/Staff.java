@@ -201,8 +201,7 @@ public class Staff extends User{
      * @param db The database containing the shows.
      */
     public static void deleteShow(Database db) {
-       db.showListing.deleteShow(); 
-       //System.out.println("The Show has been deleted");
+            db.showListing.deleteShow(); 
     }
 
     /**
