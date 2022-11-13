@@ -151,7 +151,7 @@ public class ShowListing implements java.io.Serializable {
 	 * Creates an instance of a Show.
 	 * 
 	 * @param db The database.
-	 * @throws ParseException Throws an exception.
+	 * @throws ParseException Throws an exception when the date and showtime are entered incorrectly.
 	 */
 	public void createShow(Database db) throws ParseException {
 		in = new Scanner(System.in);
@@ -226,7 +226,7 @@ public class ShowListing implements java.io.Serializable {
 	 * 
 	 * @param show_ind Index of the show to be updated.
 	 * @param db       The database.
-	 * @throws ParseException Throws an exception.
+	 * @throws ParseException Throws an exception when the date and show time are added incorrectly.
 	 */
 	public void updateShow(int show_ind, Database db) throws ParseException {
 		in=new Scanner(System.in);

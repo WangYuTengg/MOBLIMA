@@ -16,4 +16,11 @@ public interface BaseUI {
      */
     public void main(Database db);
     
+    /**
+     * 
+     */
+    private void display()
+    {
+        
+    }
 }

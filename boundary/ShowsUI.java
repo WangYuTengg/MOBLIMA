@@ -12,7 +12,7 @@ import controller.Staff;
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-public class ShowsUI {
+public class ShowsUI implements BaseUI{
 
 	/**
 	 * A static scanner used throughout ShowsUI.
@@ -24,15 +24,10 @@ public class ShowsUI {
 	 * @param db	The database.
 	 */
 	public void main(Database db) {
+		display();
 		sc=new Scanner(System.in);
 		boolean exit = false;
 		do {
-			System.out.println("");
-			System.out.println("||---------- Show Listing Menu ----------||");
-			System.out.printf(
-					"1. Create showing of movie\n" + "2. Update showing of movie\n" + "3. Remove showing of movie\n"
-							+ "4. View list of showings of a movie\n" + "5. Return to Admin Menu\n");
-			System.out.print("Select option: ");
 			String adminInput = sc.next();
 			switch (adminInput) {
 			case "1":
@@ -62,6 +57,16 @@ public class ShowsUI {
 			}
 		} while (!exit);
 		System.out.println("Returning to Admin menu...");
+	}
+
+	private void display()
+	{
+		System.out.println("");
+			System.out.println("||---------- Show Listing Menu ----------||");
+			System.out.printf(
+					"1. Create showing of movie\n" + "2. Update showing of movie\n" + "3. Remove showing of movie\n"
+							+ "4. View list of showings of a movie\n" + "5. Return to Admin Menu\n");
+			System.out.print("Select option: ");
 	}
 }
 

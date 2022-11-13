@@ -14,7 +14,7 @@ import data.Database;
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-public class CreateUserUI {
+public class CreateUserUI implements BaseUI {
 
     /**
      * The static scanner used throughout CreateUserUI.
@@ -29,7 +29,7 @@ public class CreateUserUI {
         int age, id;
         String name, email, password;
 
-        System.out.println("||------- Creating User Account -------||");
+        display();
         age = getAgeFromUser();
         if (age == 0) {
             System.out.println("Creation of account failed, returning to main menu...");
@@ -203,6 +203,10 @@ public class CreateUserUI {
                 System.out.println("Password does not meet the requirements.");
         } while (!exit);
         return userInput;
+    }
+    private void display()
+    {
+        System.out.println("||------- Creating User Account -------||");
     }
 
 }

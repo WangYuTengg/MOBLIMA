@@ -13,13 +13,12 @@ import data.Database;
 /**
  * A class for Top5UI.
  */
-public class Top5UI {
+public class Top5UI implements BaseUI{
 
     /**
      * A static scanner to be used in Top5UI.
      */
     private static Scanner sc = new Scanner(System.in);
-
     /**
      * A Boolean showing whether top 5 by sales is blocked.
      */
@@ -38,13 +37,7 @@ public class Top5UI {
         sc=new Scanner(System.in);
         boolean exit = false;
 		do {
-			System.out.println("");
-			System.out.println("||---------- Top 5 menu ----------||");
-			System.out.println("1. List Top 5 by Overall Rating ");
-			System.out.println("2. List Top 5 by Total ticket sales ");
-            System.out.println("3. Block/Unblock List for MovieGoers");
-			System.out.println("4. Return to Admin Menu");
-			System.out.print("Select your option: ");
+			display();
 			String userInput = sc.next();
 			switch (userInput) {
 			case "1":
@@ -65,6 +58,17 @@ public class Top5UI {
 			}
 		} while (!exit);
 		System.out.println("Returning to Admin menu...");
+    }
+
+    private void display() 
+    {
+        System.out.println("");
+			System.out.println("||---------- Top 5 menu ----------||");
+			System.out.println("1. List Top 5 by Overall Rating ");
+			System.out.println("2. List Top 5 by Total ticket sales ");
+            System.out.println("3. Block/Unblock List for MovieGoers");
+			System.out.println("4. Return to Admin Menu");
+			System.out.print("Select your option: ");
     }
 
     /**
