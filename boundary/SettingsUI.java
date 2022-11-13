@@ -13,6 +13,7 @@ import model.Holiday;
  * @since    2022-10-30
  */
 public class SettingsUI implements BaseUI{
+
 	/**
 	 * A static scanner used throughout SettingsUI.
 	 */
@@ -165,6 +166,10 @@ public class SettingsUI implements BaseUI{
 		return multi;
 	}
 
+	/**
+	 * Displays the Settings Menu for the Staff.
+	 * @param db	The database.
+	 */
 	private void display(Database db)
 	{
 		System.out.println("");

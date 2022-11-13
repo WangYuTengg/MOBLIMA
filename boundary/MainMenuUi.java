@@ -173,6 +173,9 @@ public class MainMenuUi implements BaseUI{
 		} while (loggedIn == true);
 	}
 
+	/**
+	 * Displays the Main MOBLIMA UI.
+	 */
 	private void display()
 	{
 		System.out.println("");

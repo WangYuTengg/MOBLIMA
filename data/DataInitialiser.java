@@ -1,5 +1,4 @@
 
-
 package data;
 
 import model.Cinema;
@@ -15,14 +14,17 @@ import controller.Staff;
 
 /**
  * A class to instantiate the initial database.
- * @version  3.0
- * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
- * @since    2022-10-30
+ * 
+ * @version 3.0
+ * @author Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong
+ *         Jian
+ * @since 2022-10-30
  */
 public class DataInitialiser {
 
 	/**
 	 * A function to instantiate the database.
+	 * 
 	 * @return Initialized database.
 	 */
 	public static Database main() {
@@ -42,7 +44,8 @@ public class DataInitialiser {
 
 	/**
 	 * A function to instantiate a set of movie goers.
-	 * @param db	The database.
+	 * 
+	 * @param db The database.
 	 */
 	public static void initMovieGoers(Database db) {
 		MovieGoer defaultGoer = new MovieGoer(0, "", "", 0, "");
@@ -58,7 +61,8 @@ public class DataInitialiser {
 
 	/**
 	 * A function to instantiate a set of staff members.
-	 * @param db	The database.
+	 * 
+	 * @param db The database.
 	 */
 	public static void initStaff(Database db) {
 		Staff admin0 = new Staff("dkjkjsnw", "dknkjnws", "wrong");
@@ -78,10 +82,10 @@ public class DataInitialiser {
 
 	/**
 	 * Initilialise Payment.
-	 * @param db	The database.
+	 * 
+	 * @param db The database.
 	 */
-	public static void initPayment(Database db)
-	{
+	public static void initPayment(Database db) {
 		db.payment.addLoyaltyCards("HSBC Card");
 		db.payment.addLoyaltyCards("Gold Card");
 		db.payment.addLoyaltyCards("Value movie pass");
@@ -89,8 +93,9 @@ public class DataInitialiser {
 
 	/**
 	 * A function to initialize a set of cineplexes.
-	 * @param db	The database.
-	 * @throws ParseException	An exception thrown.
+	 * 
+	 * @param db The database.
+	 * @throws ParseException An exception thrown.
 	 */
 	public static void initCineplexes(Database db) throws ParseException {
 		String[] avengersCast = { "Tom Hiddlestone", "Samuel L Jackson", "Chris Hemsworth" };
@@ -159,6 +164,17 @@ public class DataInitialiser {
 		db.addCineplex(cineplex1);
 		db.addCineplex(cineplex2);
 		db.addCineplex(cineplex3);
+
+		cinema1.setElite(9);
+		cinema2.setElite(9);
+		cinema3.setElite(9);
+		cinema4.setElite(9);
+		cinema5.setElite(9);
+		cinema6.setElite(9);
+		cinema7.setElite(9);
+		cinema8.setElite(9);
+		cinema9.setElite(9);
+		cinema10.setElite(9);
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
 		Show TAshow1 = new Show(new Cinema(cinema1), theAvengers, cineplex1, false, sdf.parse("2022-11-13 10:00"));

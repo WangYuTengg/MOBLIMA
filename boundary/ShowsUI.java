@@ -24,7 +24,8 @@ public class ShowsUI implements BaseUI{
 	 * @param db	The database.
 	 */
 	public void main(Database db) {
-		sc = new Scanner(System.in);
+		
+		sc=new Scanner(System.in);
 		boolean exit = false;
 		do {
 			display();
@@ -59,6 +60,9 @@ public class ShowsUI implements BaseUI{
 		System.out.println("Returning to Admin menu...");
 	}
 
+	/**
+	 * Displays the Show Listing Menu.
+	 */
 	private void display()
 	{
 		System.out.println("");
