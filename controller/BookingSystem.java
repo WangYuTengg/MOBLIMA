@@ -5,7 +5,6 @@ package controller;
 import java.util.*;
 import data.Database;
 import model.*;
-import exception.*;
 
 /**
  * The Booking System class.
