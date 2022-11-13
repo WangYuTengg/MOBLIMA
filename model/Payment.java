@@ -264,6 +264,7 @@ public class Payment implements java.io.Serializable{
     public void addLoyaltyCards(String card)
     {
     	loyaltyCards.add(card);
+        System.out.printf("%s loyalty card successfully added!\n", card);
     }
     
     /**
@@ -273,6 +274,7 @@ public class Payment implements java.io.Serializable{
     public void removeLoyaltyCards(String card)
     {
     	loyaltyCards.remove(card);
+        System.out.printf("%s loyalty card successfully removed.\n", card);
     }
 
 
