@@ -45,12 +45,12 @@ public class Database implements java.io.Serializable{
 	ArrayList<Staff> staffs;
 	
 	/**
-	 * instantiate payment for displaying of prices
+	 * Instantiates all the prices and multipliers used during payment.
 	 */
 	public Payment payment = new Payment();
 	
 	/**
-	 * Creates a new database
+	 * Creates a new database.
 	 */
 	public Database() {
 		this.cineplexes = new ArrayList<Cineplex>();
@@ -62,7 +62,7 @@ public class Database implements java.io.Serializable{
 	}
 
 	/**
-	 * Construct a new database with the following parameters
+	 * Construct a new database with the following parameters:
 	 * @param cineplexes		An ArrayList of Cineplexes.
 	 * @param movieListing		An ArrayList of Movies.
 	 * @param showListing		An ArrayList of Shows.
@@ -81,7 +81,7 @@ public class Database implements java.io.Serializable{
 	}
 
 	/**
-	 * Function to add a new cineplex into the database
+	 * A function to add a new cineplex into the database.
 	 * @param newCineplex The new cineplex to be added.
 	 */
 	public void addCineplex(Cineplex newCineplex) {
@@ -89,7 +89,7 @@ public class Database implements java.io.Serializable{
 	}
 
 	/**
-	 * Function to remove a target cineplex from the database
+	 * A function to remove a target cineplex from the database.
 	 * @param cineplexToRemove	The cineplex to be removed.
 	 */
 	public void removeCineplex(Cineplex cineplexToRemove) {
@@ -97,9 +97,9 @@ public class Database implements java.io.Serializable{
 	}
 
 	/**
-	 * Function to check whether a target cineplex is already in the database
+	 * A function to check whether a target cineplex is already in the database.
 	 * @param cineplexName	The name of the cineplex.
-	 * @return Cineplex
+	 * @return The cineplex if found, else null.
 	 */
 	public Cineplex getCineplex(String cineplexName) {
 		Cineplex targetCineplex;
@@ -113,7 +113,7 @@ public class Database implements java.io.Serializable{
 	}
 
 	/**
-	 * Function to add a new movie goer into the database
+	 * A function to add a new movie goer into the database.
 	 * @param newMovieGoer	The new movie goer to be added. 
 	 */
 	public void addMovieGoer(MovieGoer newMovieGoer) {
@@ -121,7 +121,7 @@ public class Database implements java.io.Serializable{
 	}
 
 	/**
-	 * Function to remove a target movie goer from the database
+	 * A function to remove a target movie goer from the database.
 	 * @param movieGoerToRemove The movie goer to be removed.
 	 */
 	public void removeMovieGoer(MovieGoer movieGoerToRemove) {
@@ -129,9 +129,9 @@ public class Database implements java.io.Serializable{
 	}
 
 	/**
-	 * Function to get target movie goer in the database using user email
+	 * A function to get fetch the movie goer from the database using user email.
 	 * @param userEmail The user's email.
-	 * @return MovieGoer
+	 * @return The target Movie Goer.
 	 */
 	public MovieGoer getMovieGoer(String userEmail) {
 		MovieGoer targetMovieGoer;
@@ -145,7 +145,7 @@ public class Database implements java.io.Serializable{
 	}
 
 	/**
-	 * Function to add a new staff into the database
+	 * A function to add a new staff member into the database.
 	 * @param newStaff A new staff member to be added.
 	 */
 	public void addStaff(Staff newStaff) {
@@ -153,7 +153,7 @@ public class Database implements java.io.Serializable{
 	}
 
 	/**
-	 * Function to remove a target staff from the database
+	 * A function to remove a target staff from the database.
 	 * @param staffToRemove	The staff to be removed from the database.
 	 */
 	public void removeStaff(Staff staffToRemove) {
@@ -161,9 +161,9 @@ public class Database implements java.io.Serializable{
 	}
 
 	/**
-	 * Function to get staff in the database using email
+	 * A function to fetch a staff member from the database using their email.
 	 * @param adminEmail The email of the staff member.
-	 * @return Staff
+	 * @return The staff member.
 	 */
 	public Staff getStaff(String adminEmail) {
 		Staff targetStaff;

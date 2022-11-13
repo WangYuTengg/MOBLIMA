@@ -19,7 +19,7 @@ public class LoginUI {
     private static Scanner sc = new Scanner(System.in);
     
     /**
-     * UI Method to verify admin login
+     * UI Method to verify admin login.
      * @param db The database.
      * @return  The Staff member.
      */
@@ -52,7 +52,7 @@ public class LoginUI {
     }
 
     /**
-     * UI method to verify moviegoer login
+     * UI method to verify moviegoer login.
      * @param db    The database.
      * @return      The Movie Goer.
      */

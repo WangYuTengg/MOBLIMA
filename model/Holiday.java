@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
  * @since    2022-10-30
  */
 public enum Holiday {
+
         /**
          * New Years Day.
          */
@@ -90,20 +91,20 @@ public enum Holiday {
          * Christmas day.
          */
     CHRISTMAS_DAY(LocalDate.of(2022, 12,
-
             25)),
+
         /**
          * Christmas day replacement.
          */
     CHRISTMAS_DAY_REPLACEMENT(LocalDate.of(2022, 12, 26));
 
     /**
-     * the date.
+     * The current date.
      */
     private final LocalDate date;
 
     /**
-     * Constructor of Holiday.
+     * A Constructor of Holiday.
      * @param date The current date.
      */
     Holiday(LocalDate date) {
@@ -111,8 +112,8 @@ public enum Holiday {
     }
 
     /**
-     * Returns the current date
-     * @return  the date.
+     * Returns the date.
+     * @return The date.
      */
     public LocalDate getDate() {
         return this.date;
@@ -121,7 +122,7 @@ public enum Holiday {
     /**
      * Checks whether a specific date is a holiday.
      * @param date The date.
-     * @return boolean of whether the date is a holiday or not.
+     * @return Boolean of whether the date is a holiday or not.
      */
     public static boolean isHoliday(LocalDate date)
     {

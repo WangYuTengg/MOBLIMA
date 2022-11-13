@@ -3,7 +3,7 @@ import java.util.*;
 import java.text.*;
 
 /**
- * Represents a available show.
+ * Represents a showing of a movie.
  * @version  3.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
@@ -11,52 +11,52 @@ import java.text.*;
 public class Show implements java.io.Serializable{
 
     /**
-     * The cineplex of the show.
+     * The cineplex of the movie showing.
      */
     private Cineplex cineplex;
 
     /**
-     * The time of the show.
+     * The time of the movie showing.
      */
     private Date showTime;
 
     /**
-     * The movie of the show.
+     * The movie being shown.
      */
     private Movie movie;
 
     /**
-     * The 3D type of the show.
+     * The 3D type of the movie showing. 
      */
     private boolean is3D;
 
     /**
-     * The cinema of the show.
+     * The cinema used for the movie showing.
      */
     private Cinema cinema;
 
     /**
-     * The tickets of the show.
+     * The tickets of the movie showing.
      */
     private Ticket[] tickets;
 
     /**
-     * The number of sold tickets of the show.
+     * The number of sold tickets of the movie showing.
      */
     private int ticketLength=0;
 
     /**
-     * The general price of each ticket of the show.
+     * The general price of each ticket of the movie showing.
      */
     private double price;
 
     /**
      * Constructor of the class.
-     * @param cinema        the cinema of the show.
-     * @param movie         the movie of the show.
-     * @param cineplex      the cineplex of the show.
-     * @param is3d          whether the show is in 3D.
-     * @param showTime      the time of the show.
+     * @param cinema        The cinema of the movie showing.
+     * @param movie         The movie being shown.
+     * @param cineplex      The cineplex of the movie showing.
+     * @param is3d          Whether the show is in 3D.
+     * @param showTime      The time of the show.
      */
     public Show(Cinema cinema,Movie movie,Cineplex cineplex,boolean is3d,Date showTime){
         this.tickets = new Ticket[cinema.getLayoutRowLength()*cinema.getLayoutColumnLength()];
@@ -68,16 +68,16 @@ public class Show implements java.io.Serializable{
     }
 
     /**
-     * Set the movie of the show.
-     * @param movie the movie to be set.
+     * Sets the movie of the show.
+     * @param movie The movie to be set.
      */
     public void setMovie(Movie movie){
         this.movie=movie;
     }
 
     /**
-     * Set the time of the show.
-     * @param showTime  the time to be set.
+     * Sets the time of the show.
+     * @param showTime  The time to be set.
      */
     public void setShowTime(Date showTime){
         this.showTime=showTime;
@@ -85,15 +85,15 @@ public class Show implements java.io.Serializable{
 
     /**
      * Set the cinema of the show.
-     * @param cinema the cinema to be set.
+     * @param cinema The cinema to be set.
      */
     public void setCinema(Cinema cinema){
         this.cinema=cinema;
     }
 
     /**
-     * Set the 3D type of the show.
-     * @param is3D  the 3D type.
+     * Set the 3D type of the movie showing.
+     * @param is3D  Whether the showing is in 3D or not.
      */
     public void set3D(boolean is3D){
         this.is3D=is3D;
@@ -101,58 +101,58 @@ public class Show implements java.io.Serializable{
 
     /**
      * Finding a specific ticket
-     * @param index the index of the ticket to be found.
-     * @return      the ticket found.
+     * @param index The index of the ticket to be found.
+     * @return      The ticket found.
      */
     public Ticket ticketAt(int index){
         return this.tickets[index];
     }
 
     /**
-     * Get the cinema of the show.
-     * @return  the cinema of the show.
+     * Get the cinema of the movie showing.
+     * @return  The cinema of the movie showing.
      */
     public Cinema getCinema(){
         return this.cinema;
     }
 
     /**
-     * Get the movie of the show.
-     * @return  the movie of the show.
+     * Get the movie being shown.
+     * @return  The movie being shown.
      */
     public Movie getMovie(){
         return this.movie;
     
     }
     /**
-     * Get the cineplex of the show.
-     * @return  the cineplex of the show.
+     * Get the cineplex of the movie showing.
+     * @return  The cineplex of the movie showing.
      */
     public Cineplex getCineplex(){
         return this.cineplex;
     }
 
     /**
-     * Get the 3D type of the show.
-     * @return  the 3D type.
+     * Get the 3D type of the movie showing.
+     * @return  Whether the movie showing is in 3D or not.
      */
     public boolean is3D(){
         return this.is3D;
     }
 
     /**
-     * Get the time of the show.
-     * @return  the time of the show.
+     * Get the time of the movie showing.
+     * @return  The time of the movie showing.
      */
     public Date getShowTime(){
         return this.showTime;
         }
 
     /**
-     * Create a ticket corresponding to the seat with index equal to seatIndex.
-     * @param seatIndex the index of the seat.
-     * @param TID       the transaction ID.
-     * @return          the ticket created.
+     * Creates a ticket corresponding to the seat with index equal to seatIndex.
+     * @param seatIndex The index of the seat.
+     * @param TID       The transaction ID.
+     * @return          The ticket created.
      */
     public Ticket createTicket(String seatIndex, String TID){
         Scanner sc=new Scanner(seatIndex.substring(0, seatIndex.length()-1));
@@ -178,7 +178,7 @@ public class Show implements java.io.Serializable{
     }
 
     /**
-     * To display the detail of the show.
+     * To display the details of the movie showing.
      */
     public void display(){
         SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd hh:mm");

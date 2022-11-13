@@ -15,12 +15,12 @@ import java.util.ArrayList;
 public class Staff extends User{
 
     /**
-     * A static Scanner class used throughout Staff
+     * A static Scanner class used throughout the Staff class.
      */
     private static Scanner scan = new Scanner(System.in);
 
     /**
-     * The Constructor of the class.
+     * The Constructor of the Staff class.
      * @param adminEmail    The email of the Staff member.
      * @param pass          The password of the Staff member.
      * @param name          The name of the Staff member.
@@ -153,8 +153,8 @@ public class Staff extends User{
     }
 
     /**
-     * Edit the details of a Movie.
-     * @param db Database containing the movies
+     * Edits the details of a Movie.
+     * @param db The database containing the movies.
      */
     public static void editMovie(Database db){
         db.movieListing.listMovies();
@@ -166,7 +166,7 @@ public class Staff extends User{
 
     /**
      * Removing a movie from the movieListing within the Database.
-     * @param db Database containing the movies 
+     * @param db The database containing the movies. 
      */
     public static void deleteMovie(Database db){
         db.movieListing.deleteMovie();
@@ -174,8 +174,8 @@ public class Staff extends User{
     }
     
     /**
-     * Adding a Show class to the MovieListing class.
-     * @param db Database containing the Shows
+     * Adding a Show class to the ShowListing class.
+     * @param db The database containing the shows.
      */
     public static void addShow(Database db){
         try {
@@ -187,8 +187,8 @@ public class Staff extends User{
     }
 
     /**
-     * Removing a Show from the MovieListing.
-     * @param db Database containing the shows
+     * Removing a Show from the ShowListing class.
+     * @param db The database containing the shows.
      */
     public static void deleteShow(Database db) {
        db.showListing.deleteShow(); 
@@ -196,8 +196,8 @@ public class Staff extends User{
     }
 
     /**
-     * Updating attributes of a Show
-     * @param db Database containing the shows
+     * Updates attributes of an existing Show.
+     * @param db The database containing the shows.
      */
     public static void updateShow(Database db){ 
         db.showListing.displayShows();
@@ -212,8 +212,8 @@ public class Staff extends User{
     }
 
     /**
-     * Method to add cineplex to database
-     * @param db Database containing the cineplexes
+     * Method to add a Cineplex to the database.
+     * @param db The database containing the cineplexes.
      */
     public static void addCineplex(Database db){
         System.out.println("Enter the number of the cinemas");
@@ -233,8 +233,8 @@ public class Staff extends User{
     }
 
     /**
-     * Method to add cinema to database
-     * @param cineplex      The cineplex being added to.
+     * Method to add a Cinema to the database.
+     * @param cineplex      The cineplex that the cinema is being added to.
      * @param index         The index of the cinema.
      * @param first_letter  The first letter of the cinema code.
      * @return              A boolean value for when the cinema has been added.
@@ -265,8 +265,8 @@ public class Staff extends User{
     }
 
     /**
-     * Method to delete cineplex from database
-     * @param db Database containing cineplexes
+     * Method to delete cineplex from database.
+     * @param db The database containing all the cineplexes.
      */
     public static void deleteCineplex(Database db){
         for(int i=1;i<=db.cineplexes.size();++i){

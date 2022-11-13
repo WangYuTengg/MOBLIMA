@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Represents a cinema
+ * Represents a Cinema.
  * @version  2.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
@@ -13,11 +13,11 @@ public class Cinema implements java.io.Serializable{
     private int index;
 
     /**
-     * The unique code of each cinema
-     * 1st letter -> represents cineplex -> 
-     * 2nd letter -> cinema number in alphabet
-     * 3rd letter -> N or P -> normal or platinum
-     * e.g "ABN" -> cineplex1,cinema1, not platinum
+     * The unique code of each cinema.
+     * 1st letter -> Represents the cineplex.
+     * 2nd letter -> Cinema number corresponding to the alphabet. (e.g B == 2)
+     * 3rd letter -> N or P -> Normal or Platinum.
+     * e.g "ABN" -> cineplex1, cinema1, Normal.
      */
     private String cinemaCode;
 
@@ -37,23 +37,23 @@ public class Cinema implements java.io.Serializable{
     private Seat[][] layout;
     
     /**
-     * The number of rows of the seats.
+     * The number of rows of seats.
      */
     private int rowLength;
     
     /**
-     * The number of columns of the seats.
+     * The number of columns of seats.
      */
     private int columnLength;
     
     /**
-     * Constructs a new cinema with the given attributes
-     * @param index         the index of the cinema.
-     * @param cinemaCode    the cinema code.
-     * @param isPlatinum    whether cinema is platinum class
-     * @param cineplex      the name of the cineplex.
-     * @param rowLength     the number of rows of the seats.
-     * @param columnLength  the number of columns of the seats.
+     * Constructs a new Cinema with the given attributes.
+     * @param index         The index of the Cinema.
+     * @param cinemaCode    The Cinema code.
+     * @param isPlatinum    Whether Cinema is Normal or Platinum
+     * @param cineplex      The name of the Cineplex.
+     * @param rowLength     The number of rows of seats.
+     * @param columnLength  The number of columns of seats.
      */
     public Cinema(int index, String cinemaCode, boolean isPlatinum, String cineplex,int rowLength,int columnLength){
         this.index = index;
@@ -72,8 +72,8 @@ public class Cinema implements java.io.Serializable{
     }
     
     /**
-     * Simplified constructor of the class.(used in show class)
-     * @param a the cinema to be copied.
+     * Simplified constructor of the class. (used in show class)
+     * @param a The Cinema to be copied.
      */
     public Cinema(Cinema a){
         this.index = a.index;
@@ -90,46 +90,46 @@ public class Cinema implements java.io.Serializable{
     }
     
     /**
-     * Get the index of the cinema.
-     * @return  the index of the cinema.
+     * Gets the index of the Cinema.
+     * @return  The index of the Cinema.
      */
     public int getIndex(){return this.index;}
 
     /**
-     * Get the type of the cinema.
-     * @return  the type of the cinema.
+     * Gets the type of the Cinema.
+     * @return  The type of the Cinema.
      */
     public boolean getType(){return this.isPlatinum;}
     
     /**
-     * Get the name of the cineplex.
-     * @return  the name of the cineplex.
+     * Gets the name of the Cineplex.
+     * @return  The name of the Cineplex.
      */
     public String getCiniplexName(){return this.cineplexName;}
     
     /**
-     * Get the number of rows of the seats.
-     * @return  the number of rows of the seats.
+     * Gets the number of rows of seats.
+     * @return  The number of rows of seats.
      */
     public int getLayoutRowLength(){return this.rowLength;}
     
     /**
-     * Get the number of columns of the seats.
-     * @return  the number of columns of the seats
+     * Gets the number of columns of seats.
+     * @return  The number of columns of seats.
      */
     public int getLayoutColumnLength(){return this.columnLength;}
 
     /**
-     * Get cinema code
-     * @return cinemaCode
+     * Gets the cinema code.
+     * @return The Cinema code.
      */
     public String getCinemaCode(){
         return this.cinemaCode;
     }
     
     /**
-     * Get seat layout
-     * @return layout
+     * Gets the seat layout of the Cinema.
+     * @return The layout of the Cinema.
      */
     public Seat[][] getSeats()
     {
@@ -137,8 +137,8 @@ public class Cinema implements java.io.Serializable{
     }
 
     /**
-     * Find the occupying status of seats.
-     * @return  occupying status shown in 2D array boolean form.
+     * Finds the status of seats. (Occupied or not)
+     * @return  Seats status shown in 2D array boolean form.
      */
     public boolean[][] getLayout(){
         boolean[][] a=new boolean[rowLength][columnLength];
@@ -149,9 +149,9 @@ public class Cinema implements java.io.Serializable{
     }
     
     /**
-     * To assign a seat.
-     * @param row       the row of the seat.
-     * @param column    the column of the seat.
+     * Assigns a seat by setting it to be occupied.
+     * @param row       The corresponding row of the seat.
+     * @param column    The corresponding column of the seat.
      */
     public void assignSeat(int row,int column){
     	this.layout[row][column].assign();
@@ -159,7 +159,7 @@ public class Cinema implements java.io.Serializable{
     
     /**
      * Sets a row of seats to be Elite seats.
-     * @param row   The row number
+     * @param row   The row number.
      */
     public void setElite(int row){
         for(int i=0;i<columnLength;++i) layout[row][i].setElite();

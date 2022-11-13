@@ -13,13 +13,13 @@ import model.MovieGoer;
 public class MovieGoerUI {
 
 	/**
-	 * A static scanner used throughout MovierGoerUI
+	 * A static scanner used throughout MovierGoerUI.
 	 */
 	private static Scanner sc = new Scanner(System.in);
 
 	/**
-	 * UI method to search movie for movie goers
-	 * @param db database containing the movies
+	 * UI method to search movie for movie goers.
+	 * @param db The database containing the movies.
 	 */
 	public void searchMovieUI(Database db) {
 		boolean exit = false;
@@ -55,8 +55,8 @@ public class MovieGoerUI {
 	}
 
 	/**
-	 * UI method to view details of a certain movie
-	 * @param db database containing the movies
+	 * UI method to view details of a certain movie.
+	 * @param db The database containing the movies.
 	 */
 	public void viewMovieDetailsUI(Database db) {
 		boolean exit = false;
@@ -81,8 +81,8 @@ public class MovieGoerUI {
 	}
 
 	/**
-	 * UI method for MovieGoer to input choice to list top 5 movies by sales or rating
-	 * @param db database containing the movies
+	 * UI method for MovieGoer to input choice to list top 5 movies by sales or rating.
+	 * @param db The database containing the movies.
 	 */
 	public void listTop5UI(Database db) {
 		boolean exit = false;
@@ -116,8 +116,8 @@ public class MovieGoerUI {
 	}
 
 	/**
-	 * UI method to allow MovieGoer to rate a movie
-	 * @param db Database containing the movies
+	 * UI method to allow MovieGoer to rate a movie.
+	 * @param db The database containing the movies.
 	 */
 	public void rateMovieUI(Database db) {
 		boolean exit = false;
@@ -142,8 +142,8 @@ public class MovieGoerUI {
 	}
 
 	/**
-	 * Method to viewBookingHistory of MovieGoer
-	 * @param user MovieGoer to view booking history of
+	 * Method to viewBookingHistory of MovieGoer.
+	 * @param user MovieGoer to view booking history of.
 	 */
 	public void viewBookingHistoryUI(MovieGoer user) {
 		boolean exit = false;

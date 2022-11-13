@@ -96,7 +96,7 @@ public class Top5UI {
 
     /**
      * Checks whether top5 by Sales is blocked for MovieGoer.
-     * @return  Blocked or not.
+     * @return  A boolean representing if the list is blocked or not.
      */
     public static boolean getIsTop5BySalesBlocked(){
         return isTop5BySalesBlocked;
@@ -104,7 +104,7 @@ public class Top5UI {
 
     /**
      * Checks whether top5 by Rating is blocked for MovieGoer.
-     * @return  Blocked or not.
+     * @return  A boolean representing if the list is blocked or not.
      */
     public static boolean getIsTop5ByRatingBlocked(){
         return isTop5ByRatingBlocked;

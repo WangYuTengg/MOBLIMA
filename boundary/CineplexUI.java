@@ -20,8 +20,8 @@ public class CineplexUI {
     private static Scanner sc = new Scanner(System.in);
 
     /**
-     * Main UI for adding/deleting Cineplexes
-     * @param db database with cineplexes
+     * Main UI for adding/deleting Cineplexes.
+     * @param db The database with Cineplexes.
      */
     public void main(Database db){
         boolean flag=true;

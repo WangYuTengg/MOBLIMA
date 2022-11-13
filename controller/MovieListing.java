@@ -10,6 +10,12 @@ import model.Movie;
  * @since    2022-10-30
  */
 public class MovieListing implements java.io.Serializable{
+	
+	/**
+	 * A static scanner to be used throughout MovieListing.
+	 */
+	private static Scanner in = new Scanner(System.in);
+
 	/**
 	 * An ArrayList of movies.
 	 */
@@ -21,12 +27,7 @@ public class MovieListing implements java.io.Serializable{
 	private int len = 0;
 
 	/**
-	 * A static scanner to be used throughout MovieListing.
-	 */
-	private static Scanner in = new Scanner(System.in);
-
-	/**
-	 * Adds a movie
+	 * Adds a movie to the Movie Listing.
 	 * @param movie	the movie to be added.
 	 */
 	public void addMovie(Movie movie) {
@@ -60,7 +61,7 @@ public class MovieListing implements java.io.Serializable{
 
 	/**
 	 * Lists a number of movies that are coming soon or currently showing, limited by lim.
-	 * @param lim the limit of number of movies displayed
+	 * @param lim the limit of number of movies displayed.
 	 */
 	public void listMovies(int lim) {
 		int i = 0;
@@ -123,8 +124,8 @@ public class MovieListing implements java.io.Serializable{
 	}
 
 	/**
-	 * Updates the movie.
-	 * @param movie_ind	index of the movie.
+	 * Updates the details of a movie.
+	 * @param movie_ind	Index of the movie.
 	 */
 	public void updateMovie(int movie_ind) {
 		int choice;
@@ -219,7 +220,7 @@ public class MovieListing implements java.io.Serializable{
 
 	/**
 	 * Returns the number of movies.
-	 * @return	the number of movies.
+	 * @return	The number of movies.
 	 */
 	public int length() {
 		return len;
@@ -309,7 +310,7 @@ public class MovieListing implements java.io.Serializable{
 
 	/**
 	 * Returns the movies in an array.
-	 * @return	array of movies. 
+	 * @return	An array of all movies. 
 	 */
 	public ArrayList<Movie> getMovies() {
 		return movies;

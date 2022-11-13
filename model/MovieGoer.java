@@ -11,6 +11,12 @@ import java.util.Scanner;
  * @since    2022-10-30
  */
 public class MovieGoer extends User {
+
+	/**
+	 * A static scanner used within MovieGoer.
+	 */
+	private static Scanner sc = new Scanner(System.in);
+
 	/**
 	 * MovieGoer's age
 	 */
@@ -28,11 +34,11 @@ public class MovieGoer extends User {
 
 	/**
 	 * Creates a MovieGoer with the given attributes
-	 * @param age		age of movie goer.
-	 * @param name		name of movie goer.
-	 * @param email		email of movie goer.
-	 * @param id		id of movie goer.
-	 * @param password	password of movie goer.
+	 * @param age		Age of the movie goer.
+	 * @param name		Name of the movie goer.
+	 * @param email		Email of the movie goer.
+	 * @param id		ID of the movie goer.
+	 * @param password	Password of the movie goer.
 	 */
 	public MovieGoer(int age, String name, String email, int id, String password) {
 		super(name, email, password);
@@ -42,51 +48,31 @@ public class MovieGoer extends User {
 	}
 
 	/**
-	 * Get the email of this MovieGoer
-	 * @return email
-	 */
-
-	/**
-	 * Get the age of this MovieGoer
-	 * 
-	 * @return int this MovieGoer's age
+	 * Gets the age of the MovieGoer.
+	 * @return The MovieGoer's age.
 	 */
 	public int getAge() {
 		return age;
 	}
 
 	/**
-	 * Get the name of this MovieGoer
-	 * @return String this MovieGoer's name
-	 */
-	/**
-	 * Get the id of this MovieGoer
-	 * @return String this MovieGoer's id
+	 * Gets the ID of this MovieGoer.
+	 * @return The MovieGoer's ID.
 	 */
 	public int getId() {
 		return id;
 	}
 
 	/**
-	 * Get the password of this MovieGoer
-	 * @return String this MovieGoer's id
-	 */
-
-	/**
-	 * Get the past owned tickets and current tickets of this MovieGoer
-	 * @return The MovieGoer's tickets
+	 * Gets all the tickets owned by the MovieGoer.
+	 * @return The MovieGoer's tickets.
 	 */
 	public ArrayList<Ticket> getTickets() {
 		return tickets;
 	}
 
 	/**
-	 * A static scanner used within MovieGoer.
-	 */
-	private static Scanner sc = new Scanner(System.in);
-
-	/**
-	 * Add review to a movie.
+	 * Adds a review to a movie.
 	 * @param db the database.
 	 */
 	public static void addReview(Database db) {
@@ -152,8 +138,8 @@ public class MovieGoer extends User {
 	}
 
 	/**
-	 * Method to book tickets for this MovieGoer
-	 * @param db the database.
+	 * A Method used to book tickets for the MovieGoer.
+	 * @param db The database.
 	 */
 	public void bookTickets(Database db) {
 		Ticket[] temp = null;
@@ -168,8 +154,7 @@ public class MovieGoer extends User {
 	}
 
 	/**
-	 * Function to view booking history of this MovieGoer Displays relevant
-	 * information of tickets owned by this MovieGoer
+	 * Function to view booking history of this MovieGoer, displaying relevant information of all tickets owned by this MovieGoer.
 	 */
 	public void viewBookingHistory() {
 		if (tickets.size() != 0) {
@@ -186,8 +171,8 @@ public class MovieGoer extends User {
 	}
 
 	/**
-	 * View the detail of the movie.
-	 * @param db the database.
+	 * Views the details of a movie.
+	 * @param db The database.
 	 */
 	public static void viewMovieDetails(Database db) {
 		// declare variables needed

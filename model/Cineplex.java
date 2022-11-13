@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Represents a cineplex
+ * Represents a Cineplex.
  * @version  3.0
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
@@ -9,24 +9,24 @@ package model;
 public class Cineplex implements java.io.Serializable{
 	
     /**
-     * The list of cinemas in the cineplex.
+     * The list of cinemas in a Cineplex.
      */
     private Cinema[] cinemaList;
     
     /**
-     * The current number of cinemas in the cineplex.
+     * The current number of Cinemas in the Cineplex.
      */
     private int cinemaNum = 0;
     
     /**
-     * The name of the cineplex.
+     * The name of the Cineplex.
      */
     private String name;
     
     /**
-     * Creates a new Cineplex with Cineplex's name and size
-     * @param name          the name of the cineplex.
-     * @param cineplexSize  the total number of cinemas.
+     * Creates a new Cineplex with Cineplex's name and size.
+     * @param name          The name of the Cineplex.
+     * @param cineplexSize  The total number of Cinemas.
      */
     public Cineplex(String name,int cineplexSize){
     	this.name = name;
@@ -34,25 +34,25 @@ public class Cineplex implements java.io.Serializable{
     }
     
     /**
-     * Get the name of the cineplex.
-     * @return  the name of the cineplex.
+     * Gets the name of the Cineplex.
+     * @return  The name of the Cineplex.
      */
     public String getName(){
     	return this.name;
     }
     
     /**
-     * Return list of cinema in cineplex
-     * @return  cinemaList  The list of cinemas.
+     * Returns a list of all Cinemas in the Cineplex.
+     * @return  The list of Cinemas.
      */
     public Cinema[] getCinemaList() {
     	return this.cinemaList;
     }
 
     /**
-     * Get cinema using cinema code
-     * @param cinemacode    The cinema code.
-     * @return cinema       The cinema corresponding to the code. 
+     * Gets a Cinema using it's Cinema Code.
+     * @param cinemacode    The Cinema Code.
+     * @return The Cinema corresponding to the code. 
      */
     public Cinema getCinema(String cinemacode){
         for (Cinema cinema: cinemaList) {
@@ -62,17 +62,17 @@ public class Cineplex implements java.io.Serializable{
     }
 
     /**
-     * Get cinema using index
-     * @param cinemaId the cinema index.
-     * @return returns the cinema from the cinema list.
+     * Gets a Cinema using an index.
+     * @param cinemaId The Cinema index.
+     * @return returns The Cinema from the Cinema list.
      */
     public Cinema getCinema(int cinemaId){
         return cinemaList[cinemaId];
     }
     
     /**
-     * Add a cinema to the cineplex.
-     * @param a the cinema to be added to the cineplex.
+     * Adds a Cinema to the Cineplex.
+     * @param a The Cinema to be added to the Cineplex.
      */
     public void addCinema(Cinema a){
     	this.cinemaList[this.cinemaNum++]=a;

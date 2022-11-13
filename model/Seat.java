@@ -9,26 +9,26 @@ package model;
 public class Seat implements java.io.Serializable{
 	
     /**
-     * The status of the seat.(Occupied or not)
+     * The status of the seat. (Occupied or not)
      */
     private boolean occupied = false;
     
     /**
      * The index of the seat.
-	    * Row represented by numbers e.g 4 for 4th row from the front
-	    * Columns represented by uppercase letters e.g B for 2nd row from the left
-	    * e.g index = "3C" -> row 3 col 3 
+    * Row represented by numbers e.g 4 for 4th row from the front,
+    * Columns represented by uppercase letters e.g B for 2nd row from the left,
+    * e.g index = "3C" -> row 3 col 3 
      */
     private String index;
     
     /**
-     * The type of seat.(Elite or not)
+     * The type of seat. (Elite or not)
      */
     private boolean elite=false;
 
     /**
-     * Creates a new Seat with a seat index
-     * @param index   the index of the seat.
+     * Creates a new Seat with a seat index.
+     * @param index   The index of the seat.
      */
     public Seat(String index){
     	this.index = index;
@@ -36,7 +36,7 @@ public class Seat implements java.io.Serializable{
 
     /**
      * A constructor to duplicate an already existing seat.
-     * @param a     an already existing seat used to create similar duplicate seats.
+     * @param a     An already existing seat used to create similar duplicate seats.
      */
     public Seat(Seat a){
         this.index=a.getIndex();
@@ -45,7 +45,7 @@ public class Seat implements java.io.Serializable{
  
     /**
      * Check the status of the seat.
-     * @return  whether the seat is occupied.
+     * @return  Whether the seat is occupied.
      */
     public boolean isOccupied(){
     	return this.occupied;
@@ -53,22 +53,22 @@ public class Seat implements java.io.Serializable{
     
     /**
      * Get the index of the seat.
-     * @return  the index of the seat.
+     * @return  The index of the seat.
      */
     public String getIndex(){
     	return this.index;
     }
     
     /**
-     * Assign the seat.
+     * Assigns a seat to a ticket, by changing its status to Occupied.
      */
     public void assign(){
     	this.occupied = true;
     }
 
     /**
-     * Get the type of seat(Elite or not).
-     * @return true for elite else false.
+     * Gets the type of seat (Elite or not).
+     * @return True for elite, else false.
      */
     public boolean isElite()
     {

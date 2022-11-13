@@ -15,7 +15,7 @@ public class Movie implements java.io.Serializable{
     private String movieTitle;
 
     /**
-     * The bolockbuster type of the movie.
+     * The Blockbuster type of the movie. 
      */
     private boolean isBlockbuster;
 
@@ -40,7 +40,7 @@ public class Movie implements java.io.Serializable{
     private String[] cast;
 
     /**
-     * The total score of ratings of the movie.
+     * The total average score of ratings of the movie.
      */
     private double overallRating=0;
 
@@ -66,14 +66,14 @@ public class Movie implements java.io.Serializable{
 
     /**
      * The constructor of the class.
-     * @param title         the title of the movie.
-     * @param blockbuster   the blockbuster type of the movie.
-     * @param status        the showing status of the movie.
-     * @param director      the director of the movie.
-     * @param synopsis      the synopsis of the movie.
-     * @param cast          the cast list of the movie.
-     * @param castLength    the length of the cast list of the movie.
-     * @param rating        the age rating of the movie.
+     * @param title         The title of the movie.
+     * @param blockbuster   The blockbuster type of the movie.
+     * @param status        The showing status of the movie.
+     * @param director      The director of the movie.
+     * @param synopsis      The synopsis of the movie.
+     * @param cast          The cast list of the movie.
+     * @param castLength    The length of the cast list of the movie.
+     * @param rating        The age rating of the movie.
      */
     public Movie(String title,boolean blockbuster,String status,String director,String synopsis,String[] cast,int castLength, String rating){
         this.movieTitle=title;
@@ -87,70 +87,70 @@ public class Movie implements java.io.Serializable{
     }
 
     /**
-     * Get the title of the movie.
-     * @return  the title of the movie.
+     * Gets the title of the movie.
+     * @return  The title of the movie.
      */
     public String getTitle(){
         return this.movieTitle;
     }
     /**
-     * Get the blockbuster type of the movie.
-     * @return  the blockbuster type of the movie.
+     * Gets the blockbuster type of the movie.
+     * @return  The blockbuster type of the movie.
      */
     public boolean isBlockbuster(){
         return this.isBlockbuster;
     }
 
     /**
-     * Get the showing status of the movie.
-     * @return  the showing status of the movie.
+     * Gets the showing status of the movie.
+     * @return  The showing status of the movie.
      */
     public String getStatus(){
         return this.showingStatus;
     }
 
     /**
-     * Get the synopsis of the movie.
-     * @return  the synopsis of the movie.
+     * Gets the synopsis of the movie.
+     * @return  The synopsis of the movie.
      */
     public String getSynopsis(){
         return this.synopsis;
     }
 
     /**
-     * Get the director of the movie.
-     * @return  thr director of the movie.
+     * Gets the director of the movie.
+     * @return  The director of the movie.
      */
     public String getDirector(){
         return this.director;
     }
     /**
-     * Get the cast list of the movie.
-     * @return  the cast list of the movie.
+     * Gets the cast list of the movie.
+     * @return  The cast list of the movie.
      */
     public String[] getCast(){
         return this.cast;
     }
 
     /**
-     * Get the overall rating of the movie.
-     * @return  the overall rating of the movie.
+     * Gets the overall rating of the movie.
+     * @return  The overall rating of the movie.
      */
     public double getOverallRating(){
         return this.pastReview.size()>1?this.overallRating/this.pastReview.size():-1;
     }
 
     /**
-     * Get the past review of the movie.
-     * @return  the past review of the movie.
+     * Gets the past reviews of the movie.
+     * @return  The past reviews of the movie.
      */
     public ArrayList<Review> getPastReview(){
         return this.pastReview;
     }
 
     /**
-     * Get the total sales of the movie.
-     * @return  the total sales of the movie.
+     * Gets the total sales of the movie.
+     * @return  The total sales of the movie.
      */
     public int getTotalSales(){
         return this.totalSales;
@@ -158,31 +158,31 @@ public class Movie implements java.io.Serializable{
 
     /**
      * Gets the age rating of the movie.
-     * @return age rating of the movie.
+     * @return The age rating of the movie.
      */
     public String getAgeRating(){
         return this.ageRating;
     }
 
     /**
-     * Set the showing status as st.
-     * @param st    the showing status to be set as.
+     * Set the showing status of the movie.
+     * @param st    The showing status to be set.
      */
     public void setStatus(String st){
         this.showingStatus=st;
     }
 
     /**
-     * Set the blockbuster type of the movie.
-     * @param blockbuster  the blockbuster type to be set.
+     * Sets the blockbuster type of the movie.
+     * @param blockbuster  The blockbuster type to be set.
      */
     public void setBlockbuster(boolean blockbuster){
         this.isBlockbuster=blockbuster;
     }
 
     /**
-     * Set the synopsis of the movie.
-     * @param synopsis  the synopsis to be set.
+     * Sets the synopsis of the movie.
+     * @param synopsis  The synopsis to be set.
      */
     public void setSynopsis(String synopsis){
         this.synopsis=synopsis;
@@ -197,9 +197,9 @@ public class Movie implements java.io.Serializable{
     }
 
     /**
-     * Add a new review.
-     * @param rating    the rating of the review.
-     * @param review    the comment of the review.
+     * Adds a new review.
+     * @param rating    The rating of the review.
+     * @param review    The comment of the review.
      */
     public void addReview(int rating,String review){
         this.pastReview.add(new Review(rating,review));
@@ -207,14 +207,14 @@ public class Movie implements java.io.Serializable{
     }
 
     /**
-     * Increment the total sales by 1.
+     * Increments the total sales by 1.
      */
     public void addSale(){
         this.totalSales++;
     }
 
     /**
-     * Display the details of the movie.
+     * Displays the details of the movie.
      */
     public void display(){
         System.out.printf("Movie title:  %s\n",this.movieTitle);
