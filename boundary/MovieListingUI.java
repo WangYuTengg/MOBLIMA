@@ -50,7 +50,7 @@ public class MovieListingUI {
 				break;
 			case "4":
 				System.out.println("Displaying movie list...");
-				db.movieListing.listMovies();
+				db.movieListing.listMovies(true);
 				break;
 			case "5":
 				exit = true;
