@@ -24,10 +24,10 @@ public class ShowsUI implements BaseUI{
 	 * @param db	The database.
 	 */
 	public void main(Database db) {
-		display();
-		sc=new Scanner(System.in);
+		sc = new Scanner(System.in);
 		boolean exit = false;
 		do {
+			display();
 			String adminInput = sc.next();
 			switch (adminInput) {
 			case "1":
