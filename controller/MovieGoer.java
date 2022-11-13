@@ -161,10 +161,11 @@ public class MovieGoer extends User {
 	 * Function to view booking history of this MovieGoer, displaying relevant information of all tickets owned by this MovieGoer.
 	 */
 	public void viewBookingHistory() {
+		int count = 1;
 		if (tickets.size() != 0) {
 			System.out.println("Displaying booking history:");
 			for (Ticket ticket : tickets) {
-				System.out.printf("Ticket ID: " + ticket.getIndex() + " - Movie: " + ticket.getMovieTitle() + " at "
+				System.out.printf(count++ + ". TID: " + ticket.getTID() + " Ticket index: "+ticket.getIndex()+" - Movie: " + ticket.getMovieTitle() + " at "
 						+ ticket.getCineplexName() + ", in Cinema " + ticket.getCinemaNum() + ", at " + ticket.getMovieTiming() + ", at Seat: " + ticket.getSeatIndex());
 				System.out.println();
 			}

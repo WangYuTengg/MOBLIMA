@@ -20,8 +20,8 @@ public class MoblimaApp {
 		MainMenuUi mainMenuUI = new MainMenuUi();
 		Database db; 
 
-		db = DataInitialiser.main(); //uncomment this for first run of program, comment it out for subsequent runs
-		//db=Serialization.read(); //uncomment this for 2nd run onwards
+		// db = DataInitialiser.main(); //uncomment this for first run of program, comment it out for subsequent runs
+		db=Serialization.read(); //uncomment this for 2nd run onwards
 		mainMenuUI.main(db);
 		Serialization.write(db);
 	}

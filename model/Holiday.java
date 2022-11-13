@@ -129,6 +129,7 @@ public enum Holiday {
     	
     	for(Holiday holiday : values())
     	{
+            // System.out.println(holiday);
     		if(holiday.getDate().compareTo(date) == 0) return true;
     	}
     	return false;
