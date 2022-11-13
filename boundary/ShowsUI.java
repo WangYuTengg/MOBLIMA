@@ -5,7 +5,6 @@ import data.Database;
 import java.util.*;
 
 import controller.Staff;
-import model.*;
 
 /**
  * The class used for ShowsUI.
