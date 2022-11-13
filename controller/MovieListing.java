@@ -37,6 +37,7 @@ public class MovieListing implements java.io.Serializable{
 
 	/**
 	 * Deletes a movie.
+	 * @param isAdmin A boolean for whether the user is an Admin or a Movie Goer.
 	 */
 	public void deleteMovie(boolean isAdmin) {
 		in = new Scanner(System.in);
@@ -55,6 +56,7 @@ public class MovieListing implements java.io.Serializable{
 
 	/**
 	 * Lists all movies that are coming soon or currently showing.
+	 * @param isAdmin A boolean for whether the user is an Admin or a Movie Goer.
 	 */
 	public void listMovies(boolean isAdmin) {
 		int i = 0;
@@ -69,6 +71,7 @@ public class MovieListing implements java.io.Serializable{
 	/**
 	 * Lists a number of movies that are coming soon or currently showing, limited by lim.
 	 * @param lim the limit of number of movies displayed.
+	 * @param isAdmin A boolean for whether the user is an Admin or a Movie Goer.
 	 */
 	public void listMovies(int lim, boolean isAdmin) {
 		int i = 0;
