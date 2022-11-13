@@ -35,7 +35,7 @@ public class MovieGoerUI {
 			switch(userInput){
 				case "1": 
 					System.out.println("----- Listing all movies -----");
-					db.movieListing.listMovies();
+					db.movieListing.listMovies(false);
 					break;
 				case "2":
 					System.out.println("----- Seaching movie by title -----");
@@ -98,12 +98,12 @@ public class MovieGoerUI {
 			switch (userInput) {
 			case "1":
 				System.out.println("Listing top 5 by overall rating: ");
-				if (!Top5UI.getIsTop5ByRatingBlocked()) db.movieListing.listTop5byRating();
+				if (!Top5UI.getIsTop5ByRatingBlocked()) db.movieListing.listTop5byRating(false);
 				else System.out.println("List currently blocked by admin.");
 				break;
 			case "2":
 				System.out.println("Listing top 5 by total ticket sales: ");
-				if (!Top5UI.getIsTop5BySalesBlocked()) db.movieListing.listTop5bySales();
+				if (!Top5UI.getIsTop5BySalesBlocked()) db.movieListing.listTop5bySales(false);
 				else System.out.println("List currently blocked by admin.");
 				break;
 			case "3":

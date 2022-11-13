@@ -157,9 +157,14 @@ public class Staff extends User{
      * @param db The database containing the movies.
      */
     public static void editMovie(Database db){
-        db.movieListing.listMovies();
-        System.out.println("Please input the index of the movie to update.");
+        db.movieListing.listMovies(true);
+        System.out.println("Please input the index of the movie to update. (-1 to return)");
         int choice = scan.nextInt();
+        if (choice==-1)
+        {
+            System.out.println("Returning...");
+            return;
+        }
         db.movieListing.updateMovie(choice-1);
         System.out.println("Movie details have successfully been updated.");
     }
@@ -169,8 +174,8 @@ public class Staff extends User{
      * @param db The database containing the movies. 
      */
     public static void deleteMovie(Database db){
-        db.movieListing.deleteMovie();
-        System.out.println("Movie has successfully been deleted.");
+        db.movieListing.deleteMovie(true);
+        //System.out.println("Movie has successfully been deleted.");
     }
     
     /**
@@ -192,7 +197,7 @@ public class Staff extends User{
      */
     public static void deleteShow(Database db) {
        db.showListing.deleteShow(); 
-       System.out.println("The Show has been deleted");
+       //System.out.println("The Show has been deleted");
     }
 
     /**
@@ -201,8 +206,13 @@ public class Staff extends User{
      */
     public static void updateShow(Database db){ 
         db.showListing.displayShows();
-        System.out.println("Input the index of the show to be updated");
+        System.out.println("Input the index of the show to be updated (-1 to return)");
         int choice = scan.nextInt();
+        if (choice==-1)
+        {
+            System.out.println("Returning...");
+            return;
+        }
         try {
 			db.showListing.updateShow(choice-1,db);
 		} catch (ParseException e) {

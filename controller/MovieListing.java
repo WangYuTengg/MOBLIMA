@@ -38,22 +38,28 @@ public class MovieListing implements java.io.Serializable{
 	/**
 	 * Deletes a movie.
 	 */
-	public void deleteMovie() {
-		listMovies();
-		System.out.println("Enter the Index of the movie to be deleted:");
+	public void deleteMovie(boolean isAdmin) {
+		listMovies(isAdmin);
+		System.out.println("Enter the Index of the movie to be deleted: (-1 to return)");
 		int movie_ind = in.nextInt();
+		if (movie_ind==-1)
+		{
+			System.out.println("Returning...");
+			return;
+		}
 		movies.remove(movie_ind - 1);
 		len--;
+		System.out.println("Movie has successfully been deleted.");
 	}
 
 	/**
 	 * Lists all movies that are coming soon or currently showing.
 	 */
-	public void listMovies() {
+	public void listMovies(boolean isAdmin) {
 		int i = 0;
 		for (Movie obj : movies) {
 			i++;
-			if (obj.getStatus().equals("END_OF_SHOWING"))
+			if (!isAdmin && obj.getStatus().equals("END_OF_SHOWING"))
 				continue;
 			System.out.printf("%d. %s, STATUS: %s\n", i , obj.getTitle(), obj.getStatus());
 		}
@@ -63,10 +69,10 @@ public class MovieListing implements java.io.Serializable{
 	 * Lists a number of movies that are coming soon or currently showing, limited by lim.
 	 * @param lim the limit of number of movies displayed.
 	 */
-	public void listMovies(int lim) {
+	public void listMovies(int lim, boolean isAdmin) {
 		int i = 0;
 		for (Movie obj : movies) {
-			if (obj.getStatus().equals("END_OF_SHOWING"))
+			if (!isAdmin && obj.getStatus().equals("END_OF_SHOWING"))
 				continue;
 			System.out.printf("%d. %s, STATUS: %s\n", i+1, obj.getTitle(), obj.getStatus());
 			i++;
@@ -255,18 +261,18 @@ public class MovieListing implements java.io.Serializable{
 	/**
 	 * Lists the top 5 movies by rating
 	 */
-	public void listTop5byRating() {
+	public void listTop5byRating(boolean isAdmin) {
 		sortbyRating();
-		listMovies(5);
+		listMovies(5,isAdmin);
 
 	}
 
 	/**
 	 * Lists the top 5 movies by sales 
 	 */
-	public void listTop5bySales() {
+	public void listTop5bySales(boolean isAdmin) {
 		sortbySales();
-		listMovies(5);
+		listMovies(5,isAdmin);
 
 	}
 	

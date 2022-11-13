@@ -85,7 +85,7 @@ public class MovieGoer extends User {
 		do{
 			System.out.println("Please choose the movie by index (enter -1 to exit):");
 			System.out.println("||------ Listing Movies ------||");
-			db.movieListing.listMovies();
+			db.movieListing.listMovies(false);
 			System.out.print("Select movie index:  ");
 
 			//check for integer input
@@ -184,7 +184,7 @@ public class MovieGoer extends User {
 		do{
 			System.out.println("Please choose the movie by index (enter -1 to exit):");
 			System.out.println("||------ Listing Movies ------||");
-			db.movieListing.listMovies();
+			db.movieListing.listMovies(false);
 			System.out.print("Select movie index:  ");
 
 			//check for integer input
