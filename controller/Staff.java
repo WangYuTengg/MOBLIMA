@@ -249,6 +249,7 @@ public class Staff extends User{
         while(num_cinema>=cnt){
             if(addCinema(cineplex,cnt,first_letter)) cnt++;
         }
+        System.out.printf("%s added successfully!\n",cineplex.getName());
     }
 
     /**
