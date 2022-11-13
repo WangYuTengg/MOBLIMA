@@ -124,7 +124,7 @@ public class Staff extends User{
         String synopsis = scan.nextLine();
 
         String ageRating = "unknown";
-        System.out.printf("Please enter the age rating for the movie:\n1. G\n2. PG\n3. PG13\n4. R\n5. M18\n6. R21");
+        System.out.println("Please enter the age rating for the movie:\n1. G\n2. PG\n3. PG13\n4. R\n5. M18\n6. R21");
         String ageRatingInput = scan.nextLine();
         do {
             switch (ageRatingInput) {
@@ -155,7 +155,7 @@ public class Staff extends User{
         Movie movie = new Movie(title, type, status, director, synopsis, cast, castLength, ageRating);
 
         db.movieListing.addMovie(movie); 
-
+        System.out.printf("%s successfully added to movie list.\n", movie.getTitle());
     }
 
     /**
