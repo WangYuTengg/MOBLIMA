@@ -34,6 +34,7 @@ public class Staff extends User{
      * @param db Inputing the database as a parameter.
      */
     public static void addMovie(Database db){
+        scan=new Scanner(System.in);
         int alreadyExists = 0;
         System.out.println("Enter the Title of the Movie: "); // movie title
         String title = scan.nextLine();
@@ -150,6 +151,7 @@ public class Staff extends User{
         Movie movie = new Movie(title, type, status, director, synopsis, cast, castLength, ageRating);
 
         db.movieListing.addMovie(movie); 
+
     }
 
     /**
