@@ -182,7 +182,6 @@ public class Staff extends User{
      */
     public static void deleteMovie(Database db){
         db.movieListing.deleteMovie(true);
-        //System.out.println("Movie has successfully been deleted.");
     }
     
     /**
@@ -195,7 +194,6 @@ public class Staff extends User{
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-        System.out.println("The Show has been successfully created.");
     }
 
     /**

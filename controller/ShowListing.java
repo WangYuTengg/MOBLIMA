@@ -154,23 +154,66 @@ public class ShowListing implements java.io.Serializable {
 	 * @throws ParseException Throws an exception when the date and showtime are entered incorrectly.
 	 */
 	public void createShow(Database db) throws ParseException {
+
 		in = new Scanner(System.in);
 		Movie[] movies = new Movie[db.movieListing.getMovies().size()];
 		movies = db.movieListing.getMovies().toArray(movies);
+
+		//display list of movieas
 		for (int i = 0; i < movies.length; i++) {
 			System.out.printf("%d. Movie Name: %s\n", i + 1, movies[i].getTitle());
 		}
-		System.out.println("Choose Movie Index:");
+		System.out.printf("Choose Movie Index: ");
+
+		// check for integer input
+		while(!in.hasNextInt()){
+			System.out.printf("Please choose a valid movie index (integer): ");
+			in.next();
+		}
 		int movie_ind = in.nextInt();
+
+		// check for valid index
+		if(movie_ind <= 0 || movie_ind > movies.length){
+			System.out.println("Invalid index entered. Returning to previous menu...");
+			return;
+		}
+
 		Cineplex cineplex[] = new Cineplex[db.cineplexes.size()];
 		cineplex = db.cineplexes.toArray(cineplex);
-		System.out.println("Choose a Cineplex index:");
+
+		// choose cineplex
+		System.out.printf("Choose a Cineplex index: \n");
 		for (int i = 0; i < cineplex.length; i++) {
 			System.out.printf("%d. Cineplex Name: %s\n", i + 1, cineplex[i].getName());
 		}
-		int cineplex_ind = in.nextInt() - 1;
-		System.out.printf("Enter Cinema Number (1 - %d):", cineplex[cineplex_ind].getCinemaList().length);
+
+		// check for integer input
+		while(!in.hasNextInt()){
+			System.out.printf("Please enter a valid cineplex index: ");
+			in.next();
+		}
+		int cineplex_ind = in.nextInt();
+
+		// check for valid cineplex index
+		if(cineplex_ind <= 0 || cineplex_ind > cineplex.length) {
+			System.out.println("Invalid cineplex index entered. Returning to main menu...");
+			return;
+		}
+
+		// check for integer input
+		System.out.printf("Enter Cinema Number (1 - %d): ", cineplex[cineplex_ind].getCinemaList().length);
+		while(!in.hasNextInt()){
+			System.out.printf("Please enter a valid cinema number:  ");
+			in.next();
+		}
 		int cinema_ind = in.nextInt();
+
+		// check for valid cinema number
+		if (cinema_ind <= 0 || cinema_ind > cineplex[cineplex_ind].getCinemaList().length){
+			System.out.println("Invalid cinema number chosen. Returning to main menu...");
+			return;
+		}
+
 		in.nextLine();
 		System.out.println("Is the Show going to be in 3D? (true or false):");
 		boolean is3D;
@@ -196,8 +239,7 @@ public class ShowListing implements java.io.Serializable {
 				System.out.println("Invalid input\nPlease re-enter the Show time (e.g. 2021-04-20 23:00):");
 			}
 		}
-
-		shows.add(new Show(new Cinema((cineplex[cineplex_ind].getCinemaList())[cinema_ind - 1]), movies[movie_ind - 1],
+		shows.add(new Show(new Cinema((cineplex[cineplex_ind - 1].getCinemaList())[cinema_ind - 1]), movies[movie_ind - 1],
 				cineplex[cineplex_ind], is3D, showtime));
 		len++;
 		System.out.println("Show successfully created!");
@@ -212,10 +254,26 @@ public class ShowListing implements java.io.Serializable {
 		this.displayShows();
 		System.out.println("Enter Show Index to remove: (-1 to return)");
 		int show_id = in.nextInt();
+
+		//check for integer input
+		while(!in.hasNextInt()){
+			System.out.printf("Please enter a valid show index: ");
+			in.next();
+		}
+
+		//exit key
 		if (show_id == -1) {
 			System.out.println("Returning");
 			return;
 		}
+
+		//check for valid show index
+		if (show_id < -1 || show_id == 0 || show_id > shows.size()){
+			System.out.println("Invalid show index entered. Returning to main menu...");
+			return;
+		}
+
+		//remove show from shows
 		shows.remove(show_id - 1);
 		len--;
 		System.out.println("Show successfully deleted!");
