@@ -25,11 +25,6 @@ public class ShowListing implements java.io.Serializable {
 	static private Scanner in = new Scanner(System.in);
 
 	/**
-	 * A static scanner used throughout Show Listing.
-	 */
-	static private Scanner in = new Scanner(System.in);
-
-	/**
 	 * Instantiates an ArrayList of Show type.
 	 */
 	private ArrayList<Show> shows = new ArrayList<>();
