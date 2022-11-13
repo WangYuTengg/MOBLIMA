@@ -182,14 +182,14 @@ public class DataInitialiser {
 		Show TAshow3 = new Show(new Cinema(cinema2), theAvengers, cineplex1, true, sdf.parse("2022-11-18 21:00"));
 		Show TAshow4 = new Show(new Cinema(cinema4), theAvengers, cineplex2, false, sdf.parse("2022-11-17 21:45"));
 		Show TAshow5 = new Show(new Cinema(cinema4), theAvengers, cineplex2, false, sdf.parse("2022-11-20 12:30"));
-		Show TAshow6 = new Show(new Cinema(cinema7), theAvengers, cineplex3, false, sdf.parse("2022-11-14 14:20"));
+		Show TAshow6 = new Show(new Cinema(cinema9), theAvengers, cineplex3, false, sdf.parse("2022-11-14 14:20"));
 		Show TAshow7 = new Show(new Cinema(cinema7), theAvengers, cineplex3, false, sdf.parse("2022-11-15 21:30"));
-		Show TAshow8 = new Show(new Cinema(cinema9), theAvengers, cineplex3, true, sdf.parse("2022-11-19 11:15"));
+		Show TAshow8 = new Show(new Cinema(cinema9), theAvengers, cineplex3, true, sdf.parse("2022-11-18 11:15"));
 
 		Show BAshow1 = new Show(new Cinema(cinema3), blackAdam, cineplex1, false, sdf.parse("2022-12-21 15:00"));
 		Show BAshow2 = new Show(new Cinema(cinema3), blackAdam, cineplex1, false, sdf.parse("2022-12-25 09:00"));
 		Show BAshow3 = new Show(new Cinema(cinema5), blackAdam, cineplex2, false, sdf.parse("2022-12-20 20:00"));
-		Show BAshow4 = new Show(new Cinema(cinema6), blackAdam, cineplex2, true, sdf.parse("2022-12-24 15:00"));
+		Show BAshow4 = new Show(new Cinema(cinema5), blackAdam, cineplex2, false, sdf.parse("2022-12-24 15:00"));
 		Show BAshow5 = new Show(new Cinema(cinema5), blackAdam, cineplex2, false, sdf.parse("2022-12-26 22:00"));
 		Show BAshow6 = new Show(new Cinema(cinema8), blackAdam, cineplex3, true, sdf.parse("2022-12-18 21:30"));
 		Show BAshow7 = new Show(new Cinema(cinema10), blackAdam, cineplex3, false, sdf.parse("2022-12-22 10:30"));
@@ -208,7 +208,7 @@ public class DataInitialiser {
 		Show SCshow5 = new Show(new Cinema(cinema10), shangChi, cineplex3, false, sdf.parse("2022-10-21 20:15"));
 
 		Show HGshow1 = new Show(new Cinema(cinema1), hungerGames, cineplex1, false, sdf.parse("2022-11-14 15:20"));
-		Show HGshow2 = new Show(new Cinema(cinema3), hungerGames, cineplex1, false, sdf.parse("2022-11-20 21:20"));
+		Show HGshow2 = new Show(new Cinema(cinema3), hungerGames, cineplex1, false, sdf.parse("2022-11-21 21:20"));
 		Show HGshow3 = new Show(new Cinema(cinema4), hungerGames, cineplex2, false, sdf.parse("2022-11-19 09:50"));
 		Show HGshow4 = new Show(new Cinema(cinema6), hungerGames, cineplex2, true, sdf.parse("2022-11-22 22:30"));
 		Show HGshow5 = new Show(new Cinema(cinema7), hungerGames, cineplex3, false, sdf.parse("2022-11-15 11:00"));
