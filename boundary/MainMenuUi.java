@@ -2,6 +2,7 @@ package boundary;
 
 import java.util.Scanner;
 
+import controller.Login;
 import controller.MovieGoer;
 import data.Database;
 /**
@@ -44,11 +45,11 @@ public class MainMenuUi {
 
 			switch (userInput) {
 			case "1":
-				if (LoginUI.verifyAdmin(db).getEmail().equals("dkjkjsnw") ) break;
+				if (Login.verifyAdmin(db).getEmail().equals("dkjkjsnw") ) break;
 				adminLogin(db);
 				break;
 			case "2":
-				MovieGoer temp = LoginUI.verifyMovieGoer(db);
+				MovieGoer temp = Login.verifyMovieGoer(db);
 				if (temp.getName().equals("")) break;
 				movieGoerLogin(temp, db);
 				break;
