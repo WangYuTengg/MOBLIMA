@@ -10,7 +10,7 @@ import data.Database;
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-public class MovieGoerUI {
+public class MovieGoerUI{
 
 	/**
 	 * A static scanner used throughout MovierGoerUI.

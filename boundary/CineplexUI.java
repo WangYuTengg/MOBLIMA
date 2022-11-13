@@ -13,7 +13,7 @@ import controller.Staff;
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-public class CineplexUI {
+public class CineplexUI implements BaseUI{
 
     /**
      * A static scanner used throughout CineplexUI.
@@ -28,12 +28,7 @@ public class CineplexUI {
         sc=new Scanner(System.in);
         boolean flag=true;
         while(flag){
-            System.out.println("");
-			System.out.println("||----------- Admin Cineplex Management Menu -----------||");
-            System.out.println("1. Add cineplex");
-			System.out.println("2. Delete cineplex");
-            System.out.println("3. Exit");
-            System.out.print("Select Option: ");
+            display();
             String opt=sc.next();
             switch(opt){
                 case "1":
@@ -49,5 +44,15 @@ public class CineplexUI {
                     System.out.println("Please enter a valid option!");
             }
         }
+    }
+
+    private void display()
+    {
+        System.out.println("");
+			System.out.println("||----------- Admin Cineplex Management Menu -----------||");
+            System.out.println("1. Add cineplex");
+			System.out.println("2. Delete cineplex");
+            System.out.println("3. Exit");
+            System.out.print("Select Option: ");
     }
 }

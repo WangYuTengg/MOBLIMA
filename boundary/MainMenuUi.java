@@ -11,7 +11,7 @@ import data.Database;
  * @author   Guo Sihan, Davyn Yam JunHao, Wang Yu Teng, Aditya Pugalia, Ng Yong Jian
  * @since    2022-10-30
  */
-public class MainMenuUi {
+public class MainMenuUi implements BaseUI{
 	
 	/**
 	 * A static scanner used throughout MainMenuUI.
@@ -26,20 +26,7 @@ public class MainMenuUi {
 		sc=new Scanner(System.in);
 		boolean exit = false;
 		do {
-			System.out.println("");
-			System.out.println("||----------- Welcome to MOBLIMA ----------||");
-			System.out.println("-------------- Log in --------------");
-			System.out.println("1. Login as Admin");
-			System.out.println("2. Login as Movie Goer");
-			System.out.println("3. Create Movie Goer account");
-			System.out.println("------- Available features ---------");
-			System.out.println("( Log in as movie goer for more features )");
-			System.out.println("4. Search/view movie list");
-			System.out.println("5. View Movie Details");
-			System.out.println("6. View Prices");
-			System.out.println("7. Exit");
-			System.out.print("Select Option: ");
-
+			display();
 			MovieGoerUI movieGoerUI = new MovieGoerUI();
 			String userInput = sc.next();
 
@@ -184,5 +171,23 @@ public class MainMenuUi {
 				System.out.println("Please enter a valid option.");
 			}
 		} while (loggedIn == true);
+	}
+
+	private void display()
+	{
+		System.out.println("");
+			System.out.println("||----------- Welcome to MOBLIMA ----------||");
+			System.out.println("-------------- Log in --------------");
+			System.out.println("1. Login as Admin");
+			System.out.println("2. Login as Movie Goer");
+			System.out.println("3. Create Movie Goer account");
+			System.out.println("------- Available features ---------");
+			System.out.println("( Log in as movie goer for more features )");
+			System.out.println("4. Search/view movie list");
+			System.out.println("5. View Movie Details");
+			System.out.println("6. View Prices");
+			System.out.println("7. Exit");
+			System.out.print("Select Option: ");
+
 	}
 }
