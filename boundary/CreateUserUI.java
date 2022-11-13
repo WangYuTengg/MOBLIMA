@@ -23,7 +23,6 @@ public class CreateUserUI {
 
     /**
      * Main UI for creation of new movie goer account.
-     * 
      * @param db The database.
      */
     public void main(Database db) {
@@ -66,9 +65,8 @@ public class CreateUserUI {
     }
 
     /**
-     * Method to get a valid age from moviegoer during account creation
-     * 
-     * @return user age
+     * Method to get a valid age from moviegoer during account creation.
+     * @return The user's age.
      */
     private static int getAgeFromUser() {
         boolean exit = false;
@@ -91,11 +89,11 @@ public class CreateUserUI {
     }
 
     /**
-     * Method to get a name from user to create account
-     * If name already exists, exit account creation
+     * Method to get a name from user to create account.
+     * If name already exists, exit account creation.
      * 
-     * @param db database to check for existing name
-     * @return user name
+     * @param db The database to check for existing name.
+     * @return The user's name.
      */
     private static String getNameFromUser(Database db) {
         // get input from user
@@ -121,10 +119,10 @@ public class CreateUserUI {
     }
 
     /**
-     * Method to get a valid email from user for account creation
+     * Method to get a valid email from user for account creation.
      * 
-     * @param db database to check for existing email
-     * @return email
+     * @param db The database to check for existing email.
+     * @return The email of the user.
      */
     private static String getEmailFromUser(Database db) {
         boolean exit = false;
@@ -162,16 +160,14 @@ public class CreateUserUI {
     }
 
     /**
-     * Method to get password from user to create account
+     * Method to get password from user to create an account.
      * Password requirements:
      * Password must contain at least one digit [0-9].
      * Password must contain at least one lowercase Latin character [a-z].
      * Password must contain at least one uppercase Latin character [A-Z].
      * Password must contain at least one special character.
-     * Password must contain a length of at least 8 characters and a maximum of 20
-     * characters.
-     * 
-     * @return password
+     * Password must contain a length of at least 8 characters and a maximum of 20 characters.
+     * @return The password used.
      */
     private static String getPasswordFromUser() {
         boolean exit = false;
@@ -206,5 +202,4 @@ public class CreateUserUI {
         return userInput;
     }
 
-    // end of CreateUserUI
 }

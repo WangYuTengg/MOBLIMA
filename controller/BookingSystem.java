@@ -14,15 +14,16 @@ import exception.*;
  * @since    2022-10-30
  */
 public class BookingSystem implements java.io.Serializable{
-	/**
-	 * Show Listing.
-	 */
-	private ShowListing showListing;
-
+	
 	/**
 	 * A static Scanner to be used in Booking System
 	 */
 	private static Scanner in = new Scanner(System.in);
+
+	/**
+	 * Show Listing.
+	 */
+	private ShowListing showListing;
 
 	/**
 	 * An instantiation of Booking System.
@@ -34,7 +35,7 @@ public class BookingSystem implements java.io.Serializable{
 
 	/**
 	 * Returns the Show Listing.
-	 * @return	Returns the show listing 
+	 * @return	Returns the show listing. 
 	 */
 	public ShowListing getShowlisting(){
 		return this.showListing;

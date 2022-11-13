@@ -20,6 +20,11 @@ import java.text.*;
  */
 public class ShowListing implements java.io.Serializable {
 	/**
+	 * A static scanner used throughout Show Listing.
+	 */
+	static private Scanner in = new Scanner(System.in);
+
+	/**
 	 * Instantiates an ArrayList of Show type.
 	 */
 	private ArrayList<Show> shows = new ArrayList<>();
@@ -28,11 +33,6 @@ public class ShowListing implements java.io.Serializable {
 	 * The number of shows in Show Listing.
 	 */
 	private int len = 0;
-
-	/**
-	 * A static scanner used throughout Show Listing.
-	 */
-	static private Scanner in = new Scanner(System.in);
 
 	/**
 	 * Sorts the movies by rating.
@@ -150,7 +150,7 @@ public class ShowListing implements java.io.Serializable {
 	/**
 	 * Creates an instance of a Show.
 	 * 
-	 * @param db the database.
+	 * @param db The database.
 	 * @throws ParseException Throws an exception.
 	 */
 	public void createShow(Database db) throws ParseException {
@@ -223,7 +223,7 @@ public class ShowListing implements java.io.Serializable {
 	 * Updates a Show.
 	 * 
 	 * @param show_ind Index of the show to be updated.
-	 * @param db       The database
+	 * @param db       The database.
 	 * @throws ParseException Throws an exception.
 	 */
 	public void updateShow(int show_ind, Database db) throws ParseException {
@@ -291,7 +291,7 @@ public class ShowListing implements java.io.Serializable {
 	/**
 	 * To get the ArrayList of Shows.
 	 * 
-	 * @return shows
+	 * @return An arraylist of all the shows.
 	 */
 	public ArrayList<Show> getShows() {
 		return shows;

@@ -136,8 +136,8 @@ public class SettingsUI {
 	}
 	
 	/**
-	 * Gets a non negative double input from admin for setting of new prices
-	 * @return price
+	 * Gets a non negative double input from admin for setting of new prices.
+	 * @return The new price.
 	 */
 	private static double getPriceFromUser(){
 		boolean exit = false;
@@ -159,8 +159,8 @@ public class SettingsUI {
 	}
 	
 	/**
-	 * Gets a non negative multiplier from admin for setting of new price multipliers
-	 * @return 	The multiplier.
+	 * Gets a non negative multiplier from admin for setting of new price multipliers.
+	 * @return 	The new multiplier.
 	 */
 	private static double getMultiplierFromUser(){
 		boolean exit = false;
