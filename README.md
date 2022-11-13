@@ -38,7 +38,7 @@
 8. README.md 
 
 ## Feature Flow Diagram:
-<img width="1438" alt="feature diagram" src="">
+<img width="1438" alt="feature diagram" src="https://github.com/WangYuTengg/MOBLIMA/blob/main/FeatureFlow_Diagram.png">
 
 ## Challenges and lessons learnt:
 * We faced challenges when designing the initial application architecture as we lacked knowledge in implementing SOLID design principles. We then learnt to use the MVC (model-view-controller) model to help us organise our packages and their dependencies.
