@@ -206,7 +206,7 @@ public class MovieGoer extends User {
 			}
 
 			// check for valid movie index
-			if ( userInput >= 0 && userInput <= moviesLength) {
+			if ( userInput > 0 && userInput <= moviesLength) {
 				exit = true; //exit loop
 			} 
 			else System.out.println("Invalid index, please try again.");
